@@ -1,6 +1,7 @@
 export interface ClientCredentials {
     username: string;
-    password: string;
+    apiKey: string;
+    serverUrl: string;
 }
 
 export interface OscMessage {
