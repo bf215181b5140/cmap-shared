@@ -1,11 +1,11 @@
 export class ClientCredentials {
-    webserver: string;
+    serverUrl: string;
     username: string;
     password: string;
 
-    constructor(username: string, password: string, webserver?: string) {
-        this.username = username;
-        this.password = password;
-        if(webserver) this.webserver = webserver;
+    constructor(username?: string, password?: string, serverUrl?: string) {
+        this.username = username ? username : '';
+        this.password = password ? password : '';
+        this.serverUrl = serverUrl ? serverUrl : '';
     }
 }

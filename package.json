@@ -11,5 +11,8 @@
   "bugs": {
     "url": "https://github.com/bf215181b5140/cmap-shared/issues"
   },
-  "homepage": "https://github.com/bf215181b5140/cmap-shared#readme"
+  "homepage": "https://github.com/bf215181b5140/cmap-shared#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
