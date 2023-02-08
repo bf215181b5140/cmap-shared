@@ -1,23 +1,16 @@
-class ClientCredentials {
+declare class ClientCredentials {
     serverUrl: string;
     username: string;
     password: string;
-
-    constructor(username?: string, password?: string, serverUrl?: string) {
-        this.username = username ? username : '';
-        this.password = password ? password : '';
-        this.serverUrl = serverUrl ? serverUrl : '';
-    }
+    constructor(username?: string, password?: string, serverUrl?: string);
 }
-
-class FormMeta {
+declare class FormMeta {
     version: string | undefined;
     name: string | undefined;
     label: string | undefined;
     fields: FormFields[] | undefined | null;
 }
-
-class FormFields {
+declare class FormFields {
     name: string | undefined | null;
     label: string | undefined | null;
     length: number | undefined | null;
@@ -27,11 +20,8 @@ class FormFields {
     editable: boolean | undefined | null;
     visible: boolean | undefined | null;
 }
-
 interface OscMessage {
     oscType: string;
     address: string;
     args: [boolean | number | string];
 }
-
-module.exports = { ClientCredentials, FormMeta, FormFields };
