@@ -1,4 +1,4 @@
-export class ClientCredentials {
+class ClientCredentials {
     serverUrl: string;
     username: string;
     password: string;
@@ -10,14 +10,14 @@ export class ClientCredentials {
     }
 }
 
-export class FormMeta {
+class FormMeta {
     version: string | undefined;
     name: string | undefined;
     label: string | undefined;
     fields: FormFields[] | undefined | null;
 }
 
-export class FormFields {
+class FormFields {
     name: string | undefined | null;
     label: string | undefined | null;
     length: number | undefined | null;
@@ -28,14 +28,10 @@ export class FormFields {
     visible: boolean | undefined | null;
 }
 
-export interface ClientCredentials {
-    username: string;
-    apiKey: string;
-    serverUrl: string;
-}
-
-export interface OscMessage {
+interface OscMessage {
     oscType: string;
     address: string;
     args: [boolean | number | string];
 }
+
+module.exports = { ClientCredentials, FormMeta, FormFields };
