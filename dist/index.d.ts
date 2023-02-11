@@ -1,3 +1,4 @@
+import { FieldType } from './forms';
 export declare class ClientCredentials {
     serverUrl: string;
     username: string;
@@ -25,3 +26,4 @@ export interface OscMessage {
     address: string;
     args: [boolean | number | string];
 }
+export { FieldType };
