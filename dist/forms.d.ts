@@ -5,17 +5,17 @@ export declare class FormMeta {
     fields: FormField[] | undefined | null;
 }
 export declare class FormField {
-    name: string | undefined | null;
-    label: string | undefined | null;
+    name: string;
+    label: string;
     description: string | undefined | null;
-    type: string | undefined | null;
+    type: string;
     required: boolean | undefined | null;
     minLength: number | undefined | null;
     maxLength: number | undefined | null;
     pattern: string | undefined | null;
-    order: number | undefined | null;
-    editable: boolean | undefined | null;
-    visible: boolean | undefined | null;
+    order: number;
+    editable: boolean;
+    visible: boolean;
     options: FieldOption[] | undefined | null;
 }
 export declare class FieldOption {
