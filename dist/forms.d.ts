@@ -24,10 +24,12 @@ export declare class FieldOption {
 }
 export declare enum FieldType {
     Text = "text",
+    Password = "password",
     Textarea = "textarea",
     File = "file",
     Boolean = "boolean",
     Radio = "radio",
     Checkbox = "checkbox",
-    Select = "select"
+    Select = "select",
+    Submit = "submit"
 }
