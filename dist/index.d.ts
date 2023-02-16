@@ -1,4 +1,4 @@
-import { FormMeta, FormField, FieldOption, FieldType } from './forms';
+import { FormMeta, FormField, FieldOption, InputType } from './forms';
 export declare class ClientCredentials {
     serverUrl: string;
     username: string;
@@ -10,4 +10,4 @@ export interface OscMessage {
     address: string;
     args: [boolean | number | string];
 }
-export { FormMeta, FormField, FieldOption, FieldType };
+export { FormMeta, FormField, FieldOption, InputType };

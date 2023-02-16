@@ -8,7 +8,7 @@ export declare class FormField {
     name: string;
     label: string;
     description: string | undefined | null;
-    type: string;
+    type: InputType;
     required: boolean | undefined | null;
     minLength: number | undefined | null;
     maxLength: number | undefined | null;
@@ -22,14 +22,24 @@ export declare class FieldOption {
     key: string;
     value: string;
 }
-export declare enum FieldType {
+export declare enum InputType {
     Text = "text",
-    Password = "password",
-    Textarea = "textarea",
-    File = "file",
-    Boolean = "boolean",
-    Radio = "radio",
+    Button = "button",
     Checkbox = "checkbox",
+    Date = "date",
+    Email = "email",
+    File = "file",
+    Hidden = "hidden",
+    Number = "number",
+    Password = "password",
+    Radio = "radio",
+    Range = "range",
+    Reset = "reset",
+    Submit = "submit",
+    Time = "time",
+    Url = "url",
+    Label = "label",
+    Boolean = "boolean",
     Select = "select",
-    Submit = "submit"
+    Textarea = "textarea"
 }

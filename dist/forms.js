@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldType = exports.FieldOption = exports.FormField = exports.FormMeta = void 0;
+exports.InputType = exports.FieldOption = exports.FormField = exports.FormMeta = void 0;
 var FormMeta = /** @class */ (function () {
     function FormMeta() {
     }
@@ -19,15 +19,25 @@ var FieldOption = /** @class */ (function () {
     return FieldOption;
 }());
 exports.FieldOption = FieldOption;
-var FieldType;
-(function (FieldType) {
-    FieldType["Text"] = "text";
-    FieldType["Password"] = "password";
-    FieldType["Textarea"] = "textarea";
-    FieldType["File"] = "file";
-    FieldType["Boolean"] = "boolean";
-    FieldType["Radio"] = "radio";
-    FieldType["Checkbox"] = "checkbox";
-    FieldType["Select"] = "select";
-    FieldType["Submit"] = "submit";
-})(FieldType = exports.FieldType || (exports.FieldType = {}));
+var InputType;
+(function (InputType) {
+    InputType["Text"] = "text";
+    InputType["Button"] = "button";
+    InputType["Checkbox"] = "checkbox";
+    InputType["Date"] = "date";
+    InputType["Email"] = "email";
+    InputType["File"] = "file";
+    InputType["Hidden"] = "hidden";
+    InputType["Number"] = "number";
+    InputType["Password"] = "password";
+    InputType["Radio"] = "radio";
+    InputType["Range"] = "range";
+    InputType["Reset"] = "reset";
+    InputType["Submit"] = "submit";
+    InputType["Time"] = "time";
+    InputType["Url"] = "url";
+    InputType["Label"] = "label";
+    InputType["Boolean"] = "boolean";
+    InputType["Select"] = "select";
+    InputType["Textarea"] = "textarea";
+})(InputType = exports.InputType || (exports.InputType = {}));
