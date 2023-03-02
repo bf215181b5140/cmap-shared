@@ -8,7 +8,7 @@ export declare class FormField {
     name: string;
     label: string;
     description: string | undefined | null;
-    value: string | boolean | number | undefined | null;
+    value: string | number | boolean | Date | undefined | null;
     type: InputType;
     required: boolean | undefined | null;
     minLength: number | undefined | null;
