@@ -2,6 +2,7 @@ export declare class FormMeta {
     version: string | undefined;
     name: string | undefined;
     label: string | undefined;
+    validationSchema: any;
     fields: FormField[] | undefined | null;
 }
 export declare class FormField {
