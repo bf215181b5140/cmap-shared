@@ -15,5 +15,8 @@
   "homepage": "https://github.com/bf215181b5140/cmap-shared#readme",
   "devDependencies": {
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
   }
 }

@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export class FormMeta {
     version: string | undefined;
     name: string | undefined;
@@ -47,4 +49,39 @@ export enum InputType {
     Boolean = 'boolean',
     Select = 'select',
     Textarea = 'textarea',
+}
+
+export class zodSchemas {
+    profile = z.object({
+        displayName: z.string().min(3).max(50),
+        bio: z.string().max(500),
+        hidden: z.boolean()
+    });
+
+    avatar = z.object({
+        id: z.number().nullable(),
+        client: z.number(),
+        avatar: z.string(),
+        label: z.string(),
+        primary: z.boolean(),
+        order: z.number()
+    });
+
+    layout = z.object({
+        id: z.number().nullable(),
+        avatar: z.number(),
+        name: z.string(),
+        order: z.number()
+    });
+
+    button = z.object({
+        id: z.number().nullable(),
+        layout: z.number(),
+        label: z.string().max(20).nullable(),
+        key: z.string().max(100),
+        value: z.string().max(5),
+        type: z.string(),
+        image: z.any().nullable(),
+        order: z.number()
+    });
 }
