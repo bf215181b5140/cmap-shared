@@ -1,16 +1,15 @@
 export class ClientDto {
-    key: string;
+    id: string;
     username: string;
     displayName: string;
     bio: string | null;
     picture: string | null;
     hidden: boolean;
-    lastActivity: Date | null;
     avatars: AvatarDto[];
 }
 
 export class AvatarDto {
-    key: string;
+    id: string;
     vrcId: string;
     label: string;
     primary: boolean | null;
@@ -19,14 +18,14 @@ export class AvatarDto {
 }
 
 export class LayoutDto {
-    key: string;
+    id: string;
     name: string;
     order: number;
     buttons: ButtonDto[];
 }
 
 export class ButtonDto {
-    key: string;
+    id: string;
     label: string;
     path: string;
     value: string;
