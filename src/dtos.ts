@@ -19,7 +19,7 @@ export class AvatarDto {
 
 export class LayoutDto {
     id: string;
-    name: string;
+    label: string;
     order: number;
     buttons: ButtonDto[];
 }

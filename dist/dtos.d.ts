@@ -17,7 +17,7 @@ export declare class AvatarDto {
 }
 export declare class LayoutDto {
     id: string;
-    name: string;
+    label: string;
     order: number;
     buttons: ButtonDto[];
 }
