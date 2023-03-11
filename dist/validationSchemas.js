@@ -9,29 +9,30 @@ var profileSchema = zod_1.z.object({
 });
 exports.profileSchema = profileSchema;
 var avatarSchema = zod_1.z.object({
-    id: zod_1.z.number().nullable(),
-    client: zod_1.z.number(),
-    avatar: zod_1.z.string(),
-    label: zod_1.z.string(),
-    primary: zod_1.z.boolean(),
-    order: zod_1.z.number()
+    id: zod_1.z.string().nullable(),
+    vrcId: zod_1.z.string(),
+    label: zod_1.z.string().min(3).max(50),
+    default: zod_1.z.boolean(),
+    order: zod_1.z.number(),
+    client: zod_1.z.string().nullable()
 });
 exports.avatarSchema = avatarSchema;
 var layoutSchema = zod_1.z.object({
-    id: zod_1.z.number().nullable(),
-    avatar: zod_1.z.number(),
-    name: zod_1.z.string(),
-    order: zod_1.z.number()
+    id: zod_1.z.string().nullable(),
+    label: zod_1.z.string().min(3).max(50),
+    order: zod_1.z.number(),
+    avatar: zod_1.z.string().nullable()
 });
 exports.layoutSchema = layoutSchema;
 var buttonSchema = zod_1.z.object({
-    id: zod_1.z.number().nullable(),
-    layout: zod_1.z.number(),
+    id: zod_1.z.string().nullable(),
     label: zod_1.z.string().max(20).nullable(),
-    key: zod_1.z.string().max(100),
+    path: zod_1.z.string().max(100),
     value: zod_1.z.string().max(5),
-    type: zod_1.z.string(),
+    valueType: zod_1.z.string(),
+    buttonType: zod_1.z.string(),
     image: zod_1.z.any().nullable(),
-    order: zod_1.z.number()
+    order: zod_1.z.number(),
+    layout: zod_1.z.string().nullable()
 });
 exports.buttonSchema = buttonSchema;

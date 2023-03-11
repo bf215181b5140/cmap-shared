@@ -11,7 +11,7 @@ export declare class AvatarDto {
     id: string;
     vrcId: string;
     label: string;
-    primary: boolean | null;
+    default: boolean;
     order: number;
     layouts: LayoutDto[];
 }

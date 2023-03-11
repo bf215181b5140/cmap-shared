@@ -13,69 +13,72 @@ declare const profileSchema: z.ZodObject<{
     hidden?: boolean;
 }>;
 declare const avatarSchema: z.ZodObject<{
-    id: z.ZodNullable<z.ZodNumber>;
-    client: z.ZodNumber;
-    avatar: z.ZodString;
+    id: z.ZodNullable<z.ZodString>;
+    vrcId: z.ZodString;
     label: z.ZodString;
-    primary: z.ZodBoolean;
+    default: z.ZodBoolean;
     order: z.ZodNumber;
+    client: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    id?: number;
-    client?: number;
-    avatar?: string;
+    id?: string;
+    vrcId?: string;
     label?: string;
-    primary?: boolean;
+    default?: boolean;
     order?: number;
+    client?: string;
 }, {
-    id?: number;
-    client?: number;
-    avatar?: string;
+    id?: string;
+    vrcId?: string;
     label?: string;
-    primary?: boolean;
+    default?: boolean;
     order?: number;
+    client?: string;
 }>;
 declare const layoutSchema: z.ZodObject<{
-    id: z.ZodNullable<z.ZodNumber>;
-    avatar: z.ZodNumber;
-    name: z.ZodString;
+    id: z.ZodNullable<z.ZodString>;
+    label: z.ZodString;
     order: z.ZodNumber;
+    avatar: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    id?: number;
-    avatar?: number;
-    name?: string;
+    id?: string;
+    label?: string;
     order?: number;
+    avatar?: string;
 }, {
-    id?: number;
-    avatar?: number;
-    name?: string;
+    id?: string;
+    label?: string;
     order?: number;
+    avatar?: string;
 }>;
 declare const buttonSchema: z.ZodObject<{
-    id: z.ZodNullable<z.ZodNumber>;
-    layout: z.ZodNumber;
+    id: z.ZodNullable<z.ZodString>;
     label: z.ZodNullable<z.ZodString>;
-    key: z.ZodString;
+    path: z.ZodString;
     value: z.ZodString;
-    type: z.ZodString;
+    valueType: z.ZodString;
+    buttonType: z.ZodString;
     image: z.ZodNullable<z.ZodAny>;
     order: z.ZodNumber;
+    layout: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    id?: number;
-    layout?: number;
+    id?: string;
     label?: string;
-    key?: string;
+    path?: string;
     value?: string;
-    type?: string;
+    valueType?: string;
+    buttonType?: string;
     image?: any;
     order?: number;
+    layout?: string;
 }, {
-    id?: number;
-    layout?: number;
+    id?: string;
     label?: string;
-    key?: string;
+    path?: string;
     value?: string;
-    type?: string;
+    valueType?: string;
+    buttonType?: string;
     image?: any;
     order?: number;
+    layout?: string;
 }>;
 export { profileSchema, avatarSchema, layoutSchema, buttonSchema };
