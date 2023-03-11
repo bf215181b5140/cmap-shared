@@ -12,14 +12,14 @@ const avatarSchema = z.object({
     label: z.string().min(3).max(50),
     default: z.boolean(),
     order: z.number(),
-    client: z.string().nullable()
+    client: z.string().optional()
 });
 
 const layoutSchema = z.object({
     id: z.string().nullable(),
     label: z.string().min(3).max(50),
     order: z.number(),
-    avatar: z.string().nullable()
+    avatar: z.string().optional()
 });
 
 const buttonSchema = z.object({
@@ -31,7 +31,7 @@ const buttonSchema = z.object({
     buttonType: z.string(),
     image: z.any().nullable(),
     order: z.number(),
-    layout: z.string().nullable()
+    layout: z.string().optional()
 });
 
 export { profileSchema, avatarSchema, layoutSchema, buttonSchema };

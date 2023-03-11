@@ -18,7 +18,7 @@ declare const avatarSchema: z.ZodObject<{
     label: z.ZodString;
     default: z.ZodBoolean;
     order: z.ZodNumber;
-    client: z.ZodNullable<z.ZodString>;
+    client: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     vrcId?: string;
@@ -38,7 +38,7 @@ declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     order: z.ZodNumber;
-    avatar: z.ZodNullable<z.ZodString>;
+    avatar: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     label?: string;
@@ -59,7 +59,7 @@ declare const buttonSchema: z.ZodObject<{
     buttonType: z.ZodString;
     image: z.ZodNullable<z.ZodAny>;
     order: z.ZodNumber;
-    layout: z.ZodNullable<z.ZodString>;
+    layout: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     label?: string;

@@ -14,14 +14,14 @@ var avatarSchema = zod_1.z.object({
     label: zod_1.z.string().min(3).max(50),
     default: zod_1.z.boolean(),
     order: zod_1.z.number(),
-    client: zod_1.z.string().nullable()
+    client: zod_1.z.string().optional()
 });
 exports.avatarSchema = avatarSchema;
 var layoutSchema = zod_1.z.object({
     id: zod_1.z.string().nullable(),
     label: zod_1.z.string().min(3).max(50),
     order: zod_1.z.number(),
-    avatar: zod_1.z.string().nullable()
+    avatar: zod_1.z.string().optional()
 });
 exports.layoutSchema = layoutSchema;
 var buttonSchema = zod_1.z.object({
@@ -33,6 +33,6 @@ var buttonSchema = zod_1.z.object({
     buttonType: zod_1.z.string(),
     image: zod_1.z.any().nullable(),
     order: zod_1.z.number(),
-    layout: zod_1.z.string().nullable()
+    layout: zod_1.z.string().optional()
 });
 exports.buttonSchema = buttonSchema;
