@@ -17,19 +17,16 @@ declare const avatarSchema: z.ZodObject<{
     vrcId: z.ZodString;
     label: z.ZodString;
     default: z.ZodBoolean;
-    client: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     vrcId?: string;
     label?: string;
     default?: boolean;
-    client?: string;
 }, {
     id?: string;
     vrcId?: string;
     label?: string;
     default?: boolean;
-    client?: string;
 }>;
 declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
