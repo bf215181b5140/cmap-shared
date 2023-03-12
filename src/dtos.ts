@@ -13,7 +13,7 @@ export class ClientDto {
 }
 
 export class AvatarDto extends ParentId {
-    id: string;
+    id: string = null;
     vrcId: string;
     label: string;
     default: boolean;
@@ -21,14 +21,14 @@ export class AvatarDto extends ParentId {
 }
 
 export class LayoutDto extends ParentId {
-    id: string;
+    id: string = null;
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
 
 export class ButtonDto extends ParentId {
-    id: string;
+    id: string = null;
     label: string;
     path: string;
     value: string;

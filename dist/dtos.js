@@ -31,7 +31,9 @@ exports.ClientDto = ClientDto;
 var AvatarDto = /** @class */ (function (_super) {
     __extends(AvatarDto, _super);
     function AvatarDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.id = null;
+        return _this;
     }
     return AvatarDto;
 }(ParentId));
@@ -39,7 +41,9 @@ exports.AvatarDto = AvatarDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
     function LayoutDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.id = null;
+        return _this;
     }
     return LayoutDto;
 }(ParentId));
@@ -47,7 +51,9 @@ exports.LayoutDto = LayoutDto;
 var ButtonDto = /** @class */ (function (_super) {
     __extends(ButtonDto, _super);
     function ButtonDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.id = null;
+        return _this;
     }
     return ButtonDto;
 }(ParentId));
