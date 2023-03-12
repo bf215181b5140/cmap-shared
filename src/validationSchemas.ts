@@ -10,8 +10,7 @@ const avatarSchema = z.object({
     id: z.string().nullable(),
     vrcId: z.string(),
     label: z.string().min(3).max(50),
-    default: z.boolean(),
-    client: z.string().optional()
+    default: z.boolean()
 });
 
 const layoutSchema = z.object({

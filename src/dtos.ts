@@ -13,7 +13,6 @@ export class AvatarDto {
     vrcId: string;
     label: string;
     default: boolean;
-    order: number;
     layouts: LayoutDto[];
 }
 
