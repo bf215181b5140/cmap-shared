@@ -1,3 +1,6 @@
+export declare class ParentId {
+    parentId?: string;
+}
 export declare class ClientDto {
     id: string;
     username: string;
@@ -7,20 +10,20 @@ export declare class ClientDto {
     hidden: boolean;
     avatars: AvatarDto[];
 }
-export declare class AvatarDto {
+export declare class AvatarDto extends ParentId {
     id: string;
     vrcId: string;
     label: string;
     default: boolean;
     layouts: LayoutDto[];
 }
-export declare class LayoutDto {
+export declare class LayoutDto extends ParentId {
     id: string;
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
-export declare class ButtonDto {
+export declare class ButtonDto extends ParentId {
     id: string;
     label: string;
     path: string;
