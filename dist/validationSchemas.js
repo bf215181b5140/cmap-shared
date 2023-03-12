@@ -13,7 +13,6 @@ var avatarSchema = zod_1.z.object({
     vrcId: zod_1.z.string(),
     label: zod_1.z.string().min(3).max(50),
     default: zod_1.z.boolean(),
-    order: zod_1.z.number(),
     client: zod_1.z.string().optional()
 });
 exports.avatarSchema = avatarSchema;

@@ -11,7 +11,6 @@ const avatarSchema = z.object({
     vrcId: z.string(),
     label: z.string().min(3).max(50),
     default: z.boolean(),
-    order: z.number(),
     client: z.string().optional()
 });
 
