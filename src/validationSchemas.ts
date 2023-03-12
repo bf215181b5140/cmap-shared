@@ -14,7 +14,7 @@ const avatarSchema = z.object({
 });
 
 const layoutSchema = z.object({
-    id: z.string().nullable(),
+    id: z.string().optional(),
     label: z.string().min(3).max(50),
     order: z.number(),
     parentId: z.string()
