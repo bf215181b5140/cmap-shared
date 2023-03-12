@@ -17,7 +17,7 @@ const layoutSchema = z.object({
     id: z.string().nullable(),
     label: z.string().min(3).max(50),
     order: z.number(),
-    avatar: z.string().optional()
+    parentId: z.string()
 });
 
 const buttonSchema = z.object({
@@ -29,7 +29,7 @@ const buttonSchema = z.object({
     buttonType: z.string(),
     image: z.any().nullable(),
     order: z.number(),
-    layout: z.string().optional()
+    parentId: z.string()
 });
 
 export { profileSchema, avatarSchema, layoutSchema, buttonSchema };

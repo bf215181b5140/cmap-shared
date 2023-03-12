@@ -32,17 +32,17 @@ declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     order: z.ZodNumber;
-    avatar: z.ZodOptional<z.ZodString>;
+    parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     label?: string;
     order?: number;
-    avatar?: string;
+    parentId?: string;
 }, {
     id?: string;
     label?: string;
     order?: number;
-    avatar?: string;
+    parentId?: string;
 }>;
 declare const buttonSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
@@ -53,7 +53,7 @@ declare const buttonSchema: z.ZodObject<{
     buttonType: z.ZodString;
     image: z.ZodNullable<z.ZodAny>;
     order: z.ZodNumber;
-    layout: z.ZodOptional<z.ZodString>;
+    parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     label?: string;
@@ -63,7 +63,7 @@ declare const buttonSchema: z.ZodObject<{
     buttonType?: string;
     image?: any;
     order?: number;
-    layout?: string;
+    parentId?: string;
 }, {
     id?: string;
     label?: string;
@@ -73,6 +73,6 @@ declare const buttonSchema: z.ZodObject<{
     buttonType?: string;
     image?: any;
     order?: number;
-    layout?: string;
+    parentId?: string;
 }>;
 export { profileSchema, avatarSchema, layoutSchema, buttonSchema };

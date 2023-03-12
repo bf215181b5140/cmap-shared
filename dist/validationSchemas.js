@@ -19,7 +19,7 @@ var layoutSchema = zod_1.z.object({
     id: zod_1.z.string().nullable(),
     label: zod_1.z.string().min(3).max(50),
     order: zod_1.z.number(),
-    avatar: zod_1.z.string().optional()
+    parentId: zod_1.z.string()
 });
 exports.layoutSchema = layoutSchema;
 var buttonSchema = zod_1.z.object({
@@ -31,6 +31,6 @@ var buttonSchema = zod_1.z.object({
     buttonType: zod_1.z.string(),
     image: zod_1.z.any().nullable(),
     order: zod_1.z.number(),
-    layout: zod_1.z.string().optional()
+    parentId: zod_1.z.string()
 });
 exports.buttonSchema = buttonSchema;
