@@ -3,6 +3,7 @@ export declare class ClientCredentials {
     serverUrl: string;
     username: string;
     password: string;
+    apiToken: string | undefined | null;
     constructor(username?: string, password?: string, serverUrl?: string);
 }
 export interface OscMessage {
