@@ -11,6 +11,10 @@ export class ClientCredentials {
         this.password = password ? password : '';
         this.serverUrl = serverUrl ? serverUrl : '';
     }
+
+    setApiToken(token: string) {
+        this.apiToken = token;
+    }
 }
 
 export interface OscMessage {

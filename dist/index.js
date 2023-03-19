@@ -12,6 +12,9 @@ var ClientCredentials = /** @class */ (function () {
         this.password = password ? password : '';
         this.serverUrl = serverUrl ? serverUrl : '';
     }
+    ClientCredentials.prototype.setApiToken = function (token) {
+        this.apiToken = token;
+    };
     return ClientCredentials;
 }());
 exports.ClientCredentials = ClientCredentials;
