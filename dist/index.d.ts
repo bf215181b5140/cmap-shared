@@ -5,7 +5,6 @@ export declare class ClientCredentials {
     password: string;
     apiToken: string | undefined | null;
     constructor(username?: string, password?: string, serverUrl?: string);
-    setApiToken(token: string): void;
 }
 export interface OscMessage {
     oscType: string;
