@@ -15,19 +15,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOption = exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
+exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
+// -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
         this.id = null;
     }
     return BaseDto;
 }());
-var ParentIdDto = /** @class */ (function (_super) {
-    __extends(ParentIdDto, _super);
-    function ParentIdDto() {
+var BaseParentDto = /** @class */ (function (_super) {
+    __extends(BaseParentDto, _super);
+    function BaseParentDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return ParentIdDto;
+    return BaseParentDto;
 }(BaseDto));
 var ClientDto = /** @class */ (function (_super) {
     __extends(ClientDto, _super);
@@ -43,7 +44,7 @@ var AvatarDto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return AvatarDto;
-}(ParentIdDto));
+}(BaseParentDto));
 exports.AvatarDto = AvatarDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
@@ -51,7 +52,7 @@ var LayoutDto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return LayoutDto;
-}(ParentIdDto));
+}(BaseParentDto));
 exports.LayoutDto = LayoutDto;
 var ButtonDto = /** @class */ (function (_super) {
     __extends(ButtonDto, _super);
@@ -59,7 +60,7 @@ var ButtonDto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return ButtonDto;
-}(ParentIdDto));
+}(BaseParentDto));
 exports.ButtonDto = ButtonDto;
 var ParameterDto = /** @class */ (function (_super) {
     __extends(ParameterDto, _super);
@@ -67,7 +68,7 @@ var ParameterDto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return ParameterDto;
-}(ParentIdDto));
+}(BaseParentDto));
 exports.ParameterDto = ParameterDto;
 var TierDto = /** @class */ (function (_super) {
     __extends(TierDto, _super);
@@ -75,8 +76,15 @@ var TierDto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return TierDto;
-}(ParentIdDto));
+}(BaseDto));
 exports.TierDto = TierDto;
+var FieldOption = /** @class */ (function () {
+    function FieldOption() {
+    }
+    return FieldOption;
+}());
+exports.FieldOption = FieldOption;
+// -- Enums -- //
 var ClientTier;
 (function (ClientTier) {
     ClientTier["Basic"] = "basic";
@@ -123,9 +131,3 @@ var InputType;
     InputType["Select"] = "select";
     InputType["Textarea"] = "textarea";
 })(InputType = exports.InputType || (exports.InputType = {}));
-var FieldOption = /** @class */ (function () {
-    function FieldOption() {
-    }
-    return FieldOption;
-}());
-exports.FieldOption = FieldOption;

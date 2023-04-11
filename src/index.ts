@@ -1,16 +1,28 @@
+// -- Interfaces -- //
 export interface OscMessage {
     oscType: string;
     address: string;
     args: [boolean | number | string];
 }
 
+export interface Profile {
+    tier: TierDto;
+    client: ClientDto;
+}
+
+export interface Avatars {
+    tier: TierDto;
+    avatars: AvatarDto[];
+}
+
+// -- Classes -- //
 class BaseDto {
     id: string = null;
     createDate: Date;
     updateDate: Date;
 }
 
-class ParentIdDto extends BaseDto {
+class BaseParentDto extends BaseDto {
     parentId?: string;
 }
 
@@ -23,20 +35,20 @@ export class ClientDto extends BaseDto {
     avatars: AvatarDto[];
 }
 
-export class AvatarDto extends ParentIdDto {
+export class AvatarDto extends BaseParentDto {
     vrcId: string;
     label: string;
     default: boolean;
     layouts: LayoutDto[];
 }
 
-export class LayoutDto extends ParentIdDto {
+export class LayoutDto extends BaseParentDto {
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
 
-export class ButtonDto extends ParentIdDto {
+export class ButtonDto extends BaseParentDto {
     label: string;
     path: string;
     value: string;
@@ -46,7 +58,7 @@ export class ButtonDto extends ParentIdDto {
     order: number;
 }
 
-export class ParameterDto extends ParentIdDto {
+export class ParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string;
@@ -54,13 +66,21 @@ export class ParameterDto extends ParentIdDto {
     valueType: ValueType;
 }
 
-export class TierDto extends ParentIdDto {
+export class TierDto extends BaseDto {
     tier: ClientTier;
     avatars: number;
     layouts: number;
     buttons: number;
+    exp: boolean;
+    hp: boolean;
 }
 
+export class FieldOption {
+    key: string;
+    value: string;
+}
+
+// -- Enums -- //
 export enum ClientTier {
     Basic = 'basic',
     Advance = 'advance',
@@ -105,9 +125,4 @@ export enum InputType {
     Boolean = 'boolean',
     Select = 'select',
     Textarea = 'textarea',
-}
-
-export class FieldOption {
-    key: string;
-    value: string;
 }

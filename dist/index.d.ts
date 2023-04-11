@@ -3,12 +3,20 @@ export interface OscMessage {
     address: string;
     args: [boolean | number | string];
 }
+export interface Profile {
+    tier: TierDto;
+    client: ClientDto;
+}
+export interface Avatars {
+    tier: TierDto;
+    avatars: AvatarDto[];
+}
 declare class BaseDto {
     id: string;
     createDate: Date;
     updateDate: Date;
 }
-declare class ParentIdDto extends BaseDto {
+declare class BaseParentDto extends BaseDto {
     parentId?: string;
 }
 export declare class ClientDto extends BaseDto {
@@ -19,18 +27,18 @@ export declare class ClientDto extends BaseDto {
     hidden: boolean;
     avatars: AvatarDto[];
 }
-export declare class AvatarDto extends ParentIdDto {
+export declare class AvatarDto extends BaseParentDto {
     vrcId: string;
     label: string;
     default: boolean;
     layouts: LayoutDto[];
 }
-export declare class LayoutDto extends ParentIdDto {
+export declare class LayoutDto extends BaseParentDto {
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
-export declare class ButtonDto extends ParentIdDto {
+export declare class ButtonDto extends BaseParentDto {
     label: string;
     path: string;
     value: string;
@@ -39,18 +47,24 @@ export declare class ButtonDto extends ParentIdDto {
     image: string | null;
     order: number;
 }
-export declare class ParameterDto extends ParentIdDto {
+export declare class ParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string;
     value: string;
     valueType: ValueType;
 }
-export declare class TierDto extends ParentIdDto {
+export declare class TierDto extends BaseDto {
     tier: ClientTier;
     avatars: number;
     layouts: number;
     buttons: number;
+    exp: boolean;
+    hp: boolean;
+}
+export declare class FieldOption {
+    key: string;
+    value: string;
 }
 export declare enum ClientTier {
     Basic = "basic",
@@ -92,9 +106,5 @@ export declare enum InputType {
     Boolean = "boolean",
     Select = "select",
     Textarea = "textarea"
-}
-export declare class FieldOption {
-    key: string;
-    value: string;
 }
 export {};
