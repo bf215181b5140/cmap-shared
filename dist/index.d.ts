@@ -3,11 +3,15 @@ export interface OscMessage {
     address: string;
     args: [boolean | number | string];
 }
-export declare class ParentId {
+declare class BaseDto {
+    id: string;
+    createDate: Date;
+    updateDate: Date;
+}
+declare class ParentIdDto extends BaseDto {
     parentId?: string;
 }
-export declare class ClientDto {
-    id: string;
+export declare class ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
@@ -15,21 +19,18 @@ export declare class ClientDto {
     hidden: boolean;
     avatars: AvatarDto[];
 }
-export declare class AvatarDto extends ParentId {
-    id: string;
+export declare class AvatarDto extends ParentIdDto {
     vrcId: string;
     label: string;
     default: boolean;
     layouts: LayoutDto[];
 }
-export declare class LayoutDto extends ParentId {
-    id: string;
+export declare class LayoutDto extends ParentIdDto {
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
-export declare class ButtonDto extends ParentId {
-    id: string;
+export declare class ButtonDto extends ParentIdDto {
     label: string;
     path: string;
     value: string;
@@ -37,6 +38,29 @@ export declare class ButtonDto extends ParentId {
     buttonType: ButtonType;
     image: string | null;
     order: number;
+}
+export declare class ParameterDto extends ParentIdDto {
+    label: string;
+    role: ParameterRole;
+    path: string;
+    value: string;
+    valueType: ValueType;
+}
+export declare class TierDto extends ParentIdDto {
+    tier: ClientTier;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+}
+export declare enum ClientTier {
+    Basic = "basic",
+    Advance = "advance",
+    Premium = "premium",
+    Unlocked = "unlocked"
+}
+export declare enum ParameterRole {
+    Exp = "exp",
+    HP = "hp"
 }
 export declare enum ValueType {
     Int = "int",
@@ -73,3 +97,4 @@ export declare class FieldOption {
     key: string;
     value: string;
 }
+export {};

@@ -15,49 +15,80 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOption = exports.InputType = exports.ButtonType = exports.ValueType = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = exports.ParentId = void 0;
-var ParentId = /** @class */ (function () {
-    function ParentId() {
+exports.FieldOption = exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
+var BaseDto = /** @class */ (function () {
+    function BaseDto() {
+        this.id = null;
     }
-    return ParentId;
+    return BaseDto;
 }());
-exports.ParentId = ParentId;
-var ClientDto = /** @class */ (function () {
+var ParentIdDto = /** @class */ (function (_super) {
+    __extends(ParentIdDto, _super);
+    function ParentIdDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ParentIdDto;
+}(BaseDto));
+var ClientDto = /** @class */ (function (_super) {
+    __extends(ClientDto, _super);
     function ClientDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return ClientDto;
-}());
+}(BaseDto));
 exports.ClientDto = ClientDto;
 var AvatarDto = /** @class */ (function (_super) {
     __extends(AvatarDto, _super);
     function AvatarDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.id = null;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return AvatarDto;
-}(ParentId));
+}(ParentIdDto));
 exports.AvatarDto = AvatarDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
     function LayoutDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.id = null;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return LayoutDto;
-}(ParentId));
+}(ParentIdDto));
 exports.LayoutDto = LayoutDto;
 var ButtonDto = /** @class */ (function (_super) {
     __extends(ButtonDto, _super);
     function ButtonDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.id = null;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return ButtonDto;
-}(ParentId));
+}(ParentIdDto));
 exports.ButtonDto = ButtonDto;
+var ParameterDto = /** @class */ (function (_super) {
+    __extends(ParameterDto, _super);
+    function ParameterDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ParameterDto;
+}(ParentIdDto));
+exports.ParameterDto = ParameterDto;
+var TierDto = /** @class */ (function (_super) {
+    __extends(TierDto, _super);
+    function TierDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return TierDto;
+}(ParentIdDto));
+exports.TierDto = TierDto;
+var ClientTier;
+(function (ClientTier) {
+    ClientTier["Basic"] = "basic";
+    ClientTier["Advance"] = "advance";
+    ClientTier["Premium"] = "premium";
+    ClientTier["Unlocked"] = "unlocked";
+})(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
+var ParameterRole;
+(function (ParameterRole) {
+    ParameterRole["Exp"] = "exp";
+    ParameterRole["HP"] = "hp";
+})(ParameterRole = exports.ParameterRole || (exports.ParameterRole = {}));
 var ValueType;
 (function (ValueType) {
     ValueType["Int"] = "int";

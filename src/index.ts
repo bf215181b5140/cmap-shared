@@ -4,12 +4,17 @@ export interface OscMessage {
     args: [boolean | number | string];
 }
 
-export class ParentId {
+class BaseDto {
+    id: string = null;
+    createDate: Date;
+    updateDate: Date;
+}
+
+class ParentIdDto extends BaseDto {
     parentId?: string;
 }
 
-export class ClientDto {
-    id: string;
+export class ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
@@ -18,23 +23,20 @@ export class ClientDto {
     avatars: AvatarDto[];
 }
 
-export class AvatarDto extends ParentId {
-    id: string = null;
+export class AvatarDto extends ParentIdDto {
     vrcId: string;
     label: string;
     default: boolean;
     layouts: LayoutDto[];
 }
 
-export class LayoutDto extends ParentId {
-    id: string = null;
+export class LayoutDto extends ParentIdDto {
     label: string;
     order: number;
     buttons: ButtonDto[];
 }
 
-export class ButtonDto extends ParentId {
-    id: string = null;
+export class ButtonDto extends ParentIdDto {
     label: string;
     path: string;
     value: string;
@@ -42,6 +44,33 @@ export class ButtonDto extends ParentId {
     buttonType: ButtonType;
     image: string | null;
     order: number;
+}
+
+export class ParameterDto extends ParentIdDto {
+    label: string;
+    role: ParameterRole;
+    path: string;
+    value: string;
+    valueType: ValueType;
+}
+
+export class TierDto extends ParentIdDto {
+    tier: ClientTier;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+}
+
+export enum ClientTier {
+    Basic = 'basic',
+    Advance = 'advance',
+    Premium = 'premium',
+    Unlocked = 'unlocked',
+}
+
+export enum ParameterRole {
+    Exp = 'exp',
+    HP = 'hp',
 }
 
 export enum ValueType {
