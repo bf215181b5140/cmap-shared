@@ -73,13 +73,7 @@ exports.ParameterDto = ParameterDto;
 var TierDto = /** @class */ (function (_super) {
     __extends(TierDto, _super);
     function TierDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.avatars = 0;
-        _this.layouts = 0;
-        _this.buttons = 0;
-        _this.exp = false;
-        _this.hp = false;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return TierDto;
 }(BaseDto));

@@ -68,11 +68,11 @@ export class ParameterDto extends BaseParentDto {
 
 export class TierDto extends BaseDto {
     tier: ClientTier;
-    avatars: number = 0;
-    layouts: number = 0;
-    buttons: number = 0;
-    exp: boolean = false;
-    hp: boolean = false;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+    exp: boolean;
+    hp: boolean;
 }
 
 export class FieldOption {
