@@ -75,6 +75,12 @@ export class TierDto extends BaseDto {
     hp: boolean;
 }
 
+export class FileUploadDto {
+    parentType: string;
+    parentId: string;
+    file: File;
+}
+
 export class FieldOption {
     key: string;
     value: string;

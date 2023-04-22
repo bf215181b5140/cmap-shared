@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
+exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
@@ -78,6 +78,12 @@ var TierDto = /** @class */ (function (_super) {
     return TierDto;
 }(BaseDto));
 exports.TierDto = TierDto;
+var FileUploadDto = /** @class */ (function () {
+    function FileUploadDto() {
+    }
+    return FileUploadDto;
+}());
+exports.FileUploadDto = FileUploadDto;
 var FieldOption = /** @class */ (function () {
     function FieldOption() {
     }
