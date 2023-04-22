@@ -2,14 +2,17 @@ import { z } from 'zod';
 declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
+    hidden: z.ZodBoolean;
     picture: z.ZodNullable<z.ZodAny>;
 }, "strip", z.ZodTypeAny, {
     displayName?: string;
     bio?: string;
+    hidden?: boolean;
     picture?: any;
 }, {
     displayName?: string;
     bio?: string;
+    hidden?: boolean;
     picture?: any;
 }>;
 declare const avatarSchema: z.ZodObject<{

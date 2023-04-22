@@ -5,6 +5,7 @@ var zod_1 = require("zod");
 var profileSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(50),
     bio: zod_1.z.string().max(500),
+    hidden: zod_1.z.boolean(),
     picture: zod_1.z.any().nullable()
 });
 exports.profileSchema = profileSchema;
