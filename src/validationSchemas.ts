@@ -3,7 +3,7 @@ import { z } from 'zod';
 const profileSchema = z.object({
     displayName: z.string().min(3).max(50),
     bio: z.string().max(500),
-    hidden: z.boolean()
+    picture: z.any().nullable()
 });
 
 const avatarSchema = z.object({
