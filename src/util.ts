@@ -1,6 +1,6 @@
 import { ButtonDto, ValueType } from './index';
 
-export function convertParameterValue(valueType: ValueType, value: string): Object {
+export function convertParameterValue(valueType: ValueType, value: string): string | number | boolean | null {
     try {
         let tempValue;
         switch (valueType) {
