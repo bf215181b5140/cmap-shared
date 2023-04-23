@@ -11,6 +11,12 @@ export interface Avatars {
     tier: TierDto;
     avatars: AvatarDto[];
 }
+export interface ActivationForm {
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    activationKey: string;
+}
 declare class BaseDto {
     id: string;
     createDate: Date;

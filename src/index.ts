@@ -15,6 +15,13 @@ export interface Avatars {
     avatars: AvatarDto[];
 }
 
+export interface ActivationForm {
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    activationKey: string;
+}
+
 // -- Classes -- //
 class BaseDto {
     id: string = null;
