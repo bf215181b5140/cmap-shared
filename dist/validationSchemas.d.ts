@@ -1,19 +1,17 @@
 import { z } from 'zod';
+import { ButtonType, ValueType } from './index';
 declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
     hidden: z.ZodBoolean;
-    picture: z.ZodNullable<z.ZodAny>;
 }, "strip", z.ZodTypeAny, {
     displayName?: string;
     bio?: string;
     hidden?: boolean;
-    picture?: any;
 }, {
     displayName?: string;
     bio?: string;
     hidden?: boolean;
-    picture?: any;
 }>;
 declare const avatarSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
@@ -47,14 +45,14 @@ declare const layoutSchema: z.ZodObject<{
     order?: number;
     parentId?: string;
 }>;
-declare const buttonSchema: z.ZodObject<{
+declare const buttonSchema: z.ZodEffects<z.ZodEffects<z.ZodEffects<z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodNullable<z.ZodString>;
     path: z.ZodString;
     value: z.ZodString;
-    valueType: z.ZodString;
-    buttonType: z.ZodString;
-    image: z.ZodNullable<z.ZodAny>;
+    valueAlt: z.ZodNullable<z.ZodString>;
+    valueType: z.ZodNativeEnum<typeof ValueType>;
+    buttonType: z.ZodNativeEnum<typeof ButtonType>;
     order: z.ZodNumber;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
@@ -62,9 +60,9 @@ declare const buttonSchema: z.ZodObject<{
     label?: string;
     path?: string;
     value?: string;
-    valueType?: string;
-    buttonType?: string;
-    image?: any;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
     order?: number;
     parentId?: string;
 }, {
@@ -72,9 +70,69 @@ declare const buttonSchema: z.ZodObject<{
     label?: string;
     path?: string;
     value?: string;
-    valueType?: string;
-    buttonType?: string;
-    image?: any;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}>, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}>, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}>, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
+    order?: number;
+    parentId?: string;
+}, {
+    id?: string;
+    label?: string;
+    path?: string;
+    value?: string;
+    valueAlt?: string;
+    valueType?: ValueType;
+    buttonType?: ButtonType;
     order?: number;
     parentId?: string;
 }>;
