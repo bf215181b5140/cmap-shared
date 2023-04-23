@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = void 0;
+exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.activateSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("./index");
 var activateSchema = zod_1.z.object({
@@ -9,6 +9,7 @@ var activateSchema = zod_1.z.object({
     passwordTwo: zod_1.z.string().max(50),
     activationKey: zod_1.z.string().max(50)
 });
+exports.activateSchema = activateSchema;
 var profileSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(50),
     bio: zod_1.z.string().max(500),

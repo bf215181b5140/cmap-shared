@@ -62,4 +62,4 @@ const buttonSchema = z.object({
     }
 });
 
-export { profileSchema, avatarSchema, layoutSchema, buttonSchema };
+export { activateSchema, profileSchema, avatarSchema, layoutSchema, buttonSchema };

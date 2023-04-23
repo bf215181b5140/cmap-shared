@@ -1,5 +1,21 @@
 import { z } from 'zod';
 import { ButtonType, ValueType } from './index';
+declare const activateSchema: z.ZodObject<{
+    username: z.ZodString;
+    passwordOne: z.ZodString;
+    passwordTwo: z.ZodString;
+    activationKey: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    username?: string;
+    passwordOne?: string;
+    passwordTwo?: string;
+    activationKey?: string;
+}, {
+    username?: string;
+    passwordOne?: string;
+    passwordTwo?: string;
+    activationKey?: string;
+}>;
 declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
@@ -96,4 +112,4 @@ declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     order?: number;
     parentId?: string;
 }>;
-export { profileSchema, avatarSchema, layoutSchema, buttonSchema };
+export { activateSchema, profileSchema, avatarSchema, layoutSchema, buttonSchema };
