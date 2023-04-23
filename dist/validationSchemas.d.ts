@@ -45,7 +45,7 @@ declare const layoutSchema: z.ZodObject<{
     order?: number;
     parentId?: string;
 }>;
-declare const buttonSchema: z.ZodEffects<z.ZodEffects<z.ZodEffects<z.ZodObject<{
+declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodNullable<z.ZodString>;
     path: z.ZodString;
@@ -56,46 +56,6 @@ declare const buttonSchema: z.ZodEffects<z.ZodEffects<z.ZodEffects<z.ZodObject<{
     order: z.ZodNumber;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    order?: number;
-    parentId?: string;
-}, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    order?: number;
-    parentId?: string;
-}>, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    order?: number;
-    parentId?: string;
-}, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    order?: number;
-    parentId?: string;
-}>, {
     id?: string;
     label?: string;
     path?: string;

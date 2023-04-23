@@ -52,6 +52,7 @@ export class ButtonDto extends BaseParentDto {
     label: string;
     path: string;
     value: string;
+    valueAlt: string;
     valueType: ValueType;
     buttonType: ButtonType;
     image: string | null;

@@ -38,18 +38,28 @@ const buttonSchema = z.object({
     buttonType: z.nativeEnum(ButtonType),
     order: z.number(),
     parentId: z.string()
-}).refine((val) => {
-        if (val.buttonType === ButtonType.Slider && val.valueType !== ValueType.Float) return false;
-    },
-    {message: 'Slider can only be float type', path: ['valueType']}
-).refine((val) => {
-        if (val.valueType === ValueType.Boolean && (val.value !== 'true' && val.value !== 'false')) return false;
-    },
-    {message: 'Bad input for boolean (true or false)', path: ['value']}
-).refine((val) => {
-        if ((val.buttonType === ButtonType.Slider || val.buttonType === ButtonType.Toggle) && (!val.valueAlt || val.valueAlt === '')) return false;
-    },
-    {message: 'Secondary value required for slider or toggle button', path: ['valueAlt']}
-);
+}).superRefine((val, ctx) => {
+    if (val.buttonType === ButtonType.Slider && val.valueType !== ValueType.Float) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Slider can only be float type',
+            path: ['valueType']
+        });
+    }
+    if (val.valueType === ValueType.Boolean && (val.value !== 'true' && val.value !== 'false')) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Bad input for boolean (true or false)',
+            path: ['value']
+        });
+    }
+    if ((val.buttonType === ButtonType.Slider || val.buttonType === ButtonType.Toggle) && (!val.valueAlt || val.valueAlt === '')) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Secondary value required for slider or toggle button',
+            path: ['valueAlt']
+        });
+    }
+});
 
 export { profileSchema, avatarSchema, layoutSchema, buttonSchema };
