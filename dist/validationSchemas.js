@@ -3,34 +3,38 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.activateSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("./index");
-var activateSchema = zod_1.z.object({
+exports.activateSchema = zod_1.z.object({
     username: zod_1.z.string().max(50),
     passwordOne: zod_1.z.string().max(50),
     passwordTwo: zod_1.z.string().max(50),
     activationKey: zod_1.z.string().max(50)
+}).superRefine(function (val, ctx) {
+    if (val.passwordOne !== val.passwordTwo) {
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Passwords don\'t match',
+            path: ['passwordOne', 'passwordTwo']
+        });
+    }
 });
-exports.activateSchema = activateSchema;
-var profileSchema = zod_1.z.object({
+exports.profileSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(50),
     bio: zod_1.z.string().max(500),
     hidden: zod_1.z.boolean()
 });
-exports.profileSchema = profileSchema;
-var avatarSchema = zod_1.z.object({
+exports.avatarSchema = zod_1.z.object({
     id: zod_1.z.string().nullable(),
     vrcId: zod_1.z.string(),
     label: zod_1.z.string().min(3).max(50),
     default: zod_1.z.boolean()
 });
-exports.avatarSchema = avatarSchema;
-var layoutSchema = zod_1.z.object({
+exports.layoutSchema = zod_1.z.object({
     id: zod_1.z.string().nullable(),
     label: zod_1.z.string().min(3).max(50),
     order: zod_1.z.number(),
     parentId: zod_1.z.string()
 });
-exports.layoutSchema = layoutSchema;
-var buttonSchema = zod_1.z.object({
+exports.buttonSchema = zod_1.z.object({
     id: zod_1.z.string().nullable(),
     label: zod_1.z.string().max(20).nullable(),
     path: zod_1.z.string().max(100),
@@ -63,4 +67,3 @@ var buttonSchema = zod_1.z.object({
         });
     }
 });
-exports.buttonSchema = buttonSchema;

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { ButtonType, ValueType } from './index';
-declare const activateSchema: z.ZodObject<{
+export declare const activateSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
     passwordTwo: z.ZodString;
@@ -15,8 +15,18 @@ declare const activateSchema: z.ZodObject<{
     passwordOne?: string;
     passwordTwo?: string;
     activationKey?: string;
+}>, {
+    username?: string;
+    passwordOne?: string;
+    passwordTwo?: string;
+    activationKey?: string;
+}, {
+    username?: string;
+    passwordOne?: string;
+    passwordTwo?: string;
+    activationKey?: string;
 }>;
-declare const profileSchema: z.ZodObject<{
+export declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
     hidden: z.ZodBoolean;
@@ -29,7 +39,7 @@ declare const profileSchema: z.ZodObject<{
     bio?: string;
     hidden?: boolean;
 }>;
-declare const avatarSchema: z.ZodObject<{
+export declare const avatarSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     vrcId: z.ZodString;
     label: z.ZodString;
@@ -45,7 +55,7 @@ declare const avatarSchema: z.ZodObject<{
     label?: string;
     default?: boolean;
 }>;
-declare const layoutSchema: z.ZodObject<{
+export declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     order: z.ZodNumber;
@@ -61,7 +71,7 @@ declare const layoutSchema: z.ZodObject<{
     order?: number;
     parentId?: string;
 }>;
-declare const buttonSchema: z.ZodEffects<z.ZodObject<{
+export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodNullable<z.ZodString>;
     path: z.ZodString;
@@ -112,4 +122,3 @@ declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     order?: number;
     parentId?: string;
 }>;
-export { activateSchema, profileSchema, avatarSchema, layoutSchema, buttonSchema };
