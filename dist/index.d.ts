@@ -17,6 +17,10 @@ export interface ActivationForm {
     passwordTwo: string;
     activationKey: string;
 }
+export interface ClientWithActivity extends ClientDto {
+    isActive: boolean;
+    isConnected: boolean;
+}
 declare class BaseDto {
     id: string;
     createDate: Date;

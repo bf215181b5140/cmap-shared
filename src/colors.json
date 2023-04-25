@@ -31,5 +31,41 @@
   "success": "#99ff55",
   "error": "#ff5555",
   "warning": "#ffbb55",
-  "info": "#3355ff"
+  "info": "#3355ff",
+
+
+  "titleBar-bg": "#15191dEE",
+  "app-bg": "#15191dEE",
+  "app-bg-opaque": "#15191d",
+  "app-border": "#1b2024",
+  "content-bg": "#292c37",
+
+  "menu-bg": "#23303c",
+
+  "input-bg": "#152128",
+  "input-border": "#004047",
+  "input-hover-bg": "#153236",
+  "input-hover-border": "#008485",
+
+  "button-bg": "#163136",
+  "button-border": "#1f4147",
+  "button-hover-bg": "#204952",
+  "button-hover-border": "#2b5f69",
+  "button-active-bg": "#1c6286",
+  "button-active-border": "#4aaec2",
+
+  "font-text-1": "#b2b2b2",
+  "font-text-2": "#4f777f",
+
+  "font-header-1": "#6ae3f9",
+  "font-header-2": "#387c86",
+
+  "font-icon-1": "#2bacc2",
+
+  "nav-bg": "#051012EE",
+  "nav-icon": "#166472EE",
+  "nav-hover-bg": "#045b66EE",
+  "nav-hover-icon": "#54bed1",
+  "nav-active-bg": "#10888d",
+  "nav-active-icon": "#6ce6fc"
 }

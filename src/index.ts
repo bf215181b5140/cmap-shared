@@ -22,6 +22,11 @@ export interface ActivationForm {
     activationKey: string;
 }
 
+export interface ClientWithActivity extends ClientDto {
+    isActive: boolean;
+    isConnected: boolean;
+}
+
 // -- Classes -- //
 class BaseDto {
     id: string = null;
