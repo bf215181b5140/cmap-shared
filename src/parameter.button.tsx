@@ -4,8 +4,8 @@ import { ButtonDto } from './index';
 
 interface ParameterButtonProps {
     button: ButtonDto;
-    active: boolean;
-    disabled: boolean;
+    active?: boolean;
+    disabled?: boolean;
     onClick?: (id: string) => void;
     flexBasis?: string;
 }
@@ -32,6 +32,7 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }
   border: 2px solid ${colors['ui-primary-1']};
   padding: 0;
   align-self: flex-start;
+  min-height: 4.5em;
   
   ${props => props.active ? activeParamStyle : regularParamStyle};
 `;
