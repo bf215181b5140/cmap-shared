@@ -54,5 +54,8 @@
     "nav-hover-bg": "#045b66EE",
     "nav-hover-icon": "#54bed1",
     "nav-active-bg": "#10888d",
-    "nav-active-icon": "#6ce6fc"
+    "nav-active-icon": "#6ce6fc",
+    "tier-basic": "#30b95d",
+    "tier-standard": "#7b55e2",
+    "tier-premium": "#fcda16"
 }
