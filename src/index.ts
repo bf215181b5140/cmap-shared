@@ -62,11 +62,11 @@ export class LayoutDto extends BaseParentDto {
 
 export class ButtonDto extends BaseParentDto {
     label: string;
-    path: string;
+    path: string = '/avatar/parameters/';
     value: string;
     valueAlt: string;
-    valueType: ValueType;
-    buttonType: ButtonType;
+    valueType: ValueType = ValueType.Int;
+    buttonType: ButtonType = ButtonType.Button;
     image: string | null;
     order: number;
 }
@@ -102,9 +102,8 @@ export class FieldOption {
 // -- Enums -- //
 export enum ClientTier {
     Basic = 'basic',
-    Advance = 'advance',
-    Premium = 'premium',
-    Unlocked = 'unlocked',
+    Standard = 'standard',
+    Premium = 'premium'
 }
 
 export enum ParameterRole {

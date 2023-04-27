@@ -57,7 +57,11 @@ exports.LayoutDto = LayoutDto;
 var ButtonDto = /** @class */ (function (_super) {
     __extends(ButtonDto, _super);
     function ButtonDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.path = '/avatar/parameters/';
+        _this.valueType = ValueType.Int;
+        _this.buttonType = ButtonType.Button;
+        return _this;
     }
     return ButtonDto;
 }(BaseParentDto));
@@ -94,9 +98,8 @@ exports.FieldOption = FieldOption;
 var ClientTier;
 (function (ClientTier) {
     ClientTier["Basic"] = "basic";
-    ClientTier["Advance"] = "advance";
+    ClientTier["Standard"] = "standard";
     ClientTier["Premium"] = "premium";
-    ClientTier["Unlocked"] = "unlocked";
 })(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
 var ParameterRole;
 (function (ParameterRole) {
