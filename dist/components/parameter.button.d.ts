@@ -1,4 +1,4 @@
-import { ButtonDto } from './index';
+import { ButtonDto } from '../index';
 interface ParameterButtonProps {
     button: ButtonDto;
     active?: boolean;

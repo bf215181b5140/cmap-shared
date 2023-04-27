@@ -43,7 +43,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_components_1 = __importStar(require("styled-components"));
-var colors_json_1 = __importDefault(require("./colors.json"));
+var colors_json_1 = __importDefault(require("../colors.json"));
 function ParameterButton(props) {
     function onClick(id) {
         if (!props.active && props.onClick)

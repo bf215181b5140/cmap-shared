@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import colors from './colors.json';
-import { ButtonDto } from './index';
+import colors from '../colors.json';
+import { ButtonDto } from '../index';
 
 interface ParameterButtonProps {
     button: ButtonDto;
