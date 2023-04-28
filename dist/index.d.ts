@@ -29,12 +29,34 @@ declare class BaseDto {
 declare class BaseParentDto extends BaseDto {
     parentId?: string;
 }
+export declare class TierDto extends BaseDto {
+    rank: number;
+    tier: ClientTier;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+    exp: boolean;
+    hp: boolean;
+}
+export declare class BackgroundDto extends BaseDto {
+    Label: string;
+    className: string;
+    tier: TierDto;
+}
+export declare class ButtonStyleDto extends BaseDto {
+    Label: string;
+    className: string;
+    tier: TierDto;
+}
 export declare class ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
     picture: string | null;
     hidden: boolean;
+    tier: TierDto;
+    background: BackgroundDto;
+    buttonStyle: ButtonStyleDto;
     avatars: AvatarDto[];
 }
 export declare class AvatarDto extends BaseParentDto {
@@ -64,14 +86,6 @@ export declare class ParameterDto extends BaseParentDto {
     path: string;
     value: string;
     valueType: ValueType;
-}
-export declare class TierDto extends BaseDto {
-    tier: ClientTier;
-    avatars: number;
-    layouts: number;
-    buttons: number;
-    exp: boolean;
-    hp: boolean;
 }
 export declare class FileUploadDto {
     parentType: string;

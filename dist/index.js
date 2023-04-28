@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = void 0;
+exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
@@ -30,6 +30,30 @@ var BaseParentDto = /** @class */ (function (_super) {
     }
     return BaseParentDto;
 }(BaseDto));
+var TierDto = /** @class */ (function (_super) {
+    __extends(TierDto, _super);
+    function TierDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return TierDto;
+}(BaseDto));
+exports.TierDto = TierDto;
+var BackgroundDto = /** @class */ (function (_super) {
+    __extends(BackgroundDto, _super);
+    function BackgroundDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return BackgroundDto;
+}(BaseDto));
+exports.BackgroundDto = BackgroundDto;
+var ButtonStyleDto = /** @class */ (function (_super) {
+    __extends(ButtonStyleDto, _super);
+    function ButtonStyleDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ButtonStyleDto;
+}(BaseDto));
+exports.ButtonStyleDto = ButtonStyleDto;
 var ClientDto = /** @class */ (function (_super) {
     __extends(ClientDto, _super);
     function ClientDto() {
@@ -74,14 +98,6 @@ var ParameterDto = /** @class */ (function (_super) {
     return ParameterDto;
 }(BaseParentDto));
 exports.ParameterDto = ParameterDto;
-var TierDto = /** @class */ (function (_super) {
-    __extends(TierDto, _super);
-    function TierDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return TierDto;
-}(BaseDto));
-exports.TierDto = TierDto;
 var FileUploadDto = /** @class */ (function () {
     function FileUploadDto() {
     }
