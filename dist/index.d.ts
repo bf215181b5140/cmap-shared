@@ -4,8 +4,9 @@ export interface OscMessage {
     args: [boolean | number | string];
 }
 export interface Profile {
-    tier: TierDto;
     client: ClientDto;
+    backgrounds: BackgroundDto[];
+    buttonStyles: ButtonStyleDto[];
 }
 export interface Avatars {
     tier: TierDto;

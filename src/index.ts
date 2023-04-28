@@ -6,8 +6,9 @@ export interface OscMessage {
 }
 
 export interface Profile {
-    tier: TierDto;
     client: ClientDto;
+    backgrounds: BackgroundDto[];
+    buttonStyles: ButtonStyleDto[];
 }
 
 export interface Avatars {
