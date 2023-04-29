@@ -33,15 +33,28 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }
   cursor: pointer;
   
   &.buttonStyle-1 {
-  background: ${colors['ui-primary-1']};
-  border: 2px solid ${colors['ui-primary-1']};
+  background: ${colors['button-bg']};
+  border: 2px solid ${colors['button-border']};
   border-radius: 8px;
   transition: 0.2s linear;
     
       :hover {
         transform: scale(1.02) perspective(1px);
-        background: ${colors['ui-primary-3']};
-        border: 2px solid ${colors['ui-primary-4']};
+        background: ${colors['button-hover-bg']};
+        border: 2px solid ${colors['button-hover-border']};
+      }
+  }
+    
+  &.buttonStyle-2 {
+  background: ${colors['button-2-bg']};
+  border: 2px solid ${colors['button-2-border']};
+  border-radius: 8px;
+  transition: 0.2s linear;
+    
+      :hover {
+        transform: scale(1.02) perspective(1px);
+        background: ${colors['button-2-hover-bg']};
+        border: 2px solid ${colors['button-2-hover-border']};
       }
   }
     

@@ -1,6 +1,7 @@
-import { ButtonDto } from '../index';
+import { ButtonDto, ButtonStyleDto } from '../index';
 interface ParameterButtonProps {
     button: ButtonDto;
+    buttonStyle: ButtonStyleDto;
     active?: boolean;
     disabled?: boolean;
     onClick?: (id: string) => void;

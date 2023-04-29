@@ -71,5 +71,10 @@
 
   "tier-basic": "#30b95d",
   "tier-standard": "#7b55e2",
-  "tier-premium": "#fcda16"
+  "tier-premium": "#fcda16",
+
+  "button-2-bg": "#23303c",
+  "button-2-border": "#23303c",
+  "button-2-hover-bg": "#374451",
+  "button-2-hover-border": "#4aaec2"
 }
