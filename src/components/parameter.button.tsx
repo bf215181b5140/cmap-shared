@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components';
 import colors from '../colors.json';
-import { ButtonDto } from '../index';
+import { ButtonDto, ButtonStyleDto } from '../index';
 
 interface ParameterButtonProps {
     button: ButtonDto;
+    buttonStyle: ButtonStyleDto;
     active?: boolean;
     disabled?: boolean;
     onClick?: (id: string) => void;
     flexBasis?: string;
 }
-
 
 export default function ParameterButton(props: ParameterButtonProps) {
 
@@ -17,7 +17,8 @@ export default function ParameterButton(props: ParameterButtonProps) {
         if (!props.active && props.onClick) props.onClick(id);
     }
 
-    return (<ParameterButtonStyled onClick={() => onClick(props.button.id)} flexBasis={props.flexBasis} active={props.active || props.disabled} >
+    return (<ParameterButtonStyled flexBasis={props.flexBasis} active={props.active || props.disabled} className={props.buttonStyle.className}
+                                   onClick={() => onClick(props.button.id)} >
         {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} />}
         {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
     </ParameterButtonStyled>);
@@ -25,30 +26,32 @@ export default function ParameterButton(props: ParameterButtonProps) {
 
 const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }>`
   flex-basis: ${props => props.flexBasis ? props.flexBasis : '100%'};
-  background: ${colors['ui-primary-1']};
-  border-radius: 8px;
-  text-align: center;
-  transition: 0.2s linear;
-  border: 2px solid ${colors['ui-primary-1']};
-  padding: 0;
   align-self: flex-start;
+  text-align: center;
+  padding: 0;
   min-height: 4.5em;
+  cursor: pointer;
   
-  ${props => props.active ? activeParamStyle : regularParamStyle};
+  &.buttonStyle-1 {
+  background: ${colors['ui-primary-1']};
+  border: 2px solid ${colors['ui-primary-1']};
+  border-radius: 8px;
+  transition: 0.2s linear;
+    
+      :hover {
+        transform: scale(1.02) perspective(1px);
+        background: ${colors['ui-primary-3']};
+        border: 2px solid ${colors['ui-primary-4']};
+      }
+  }
+    
+  ${props => props.active ? activeParamStyle : null};
 `;
 
 const activeParamStyle = css`
+  pointer-events: none;
+  cursor: initial;
   filter: saturate(0.5%);
-`;
-
-const regularParamStyle = css`
-  cursor: pointer;
-
-  :hover {
-    transform: scale(1.02) perspective(1px);
-    background: ${colors['ui-primary-3']};
-    border: 2px solid ${colors['ui-primary-4']};
-  }
 `;
 
 const ParameterButtonLabel = styled.div`
