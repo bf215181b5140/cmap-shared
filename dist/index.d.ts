@@ -10,6 +10,7 @@ export interface Profile {
 }
 export interface Avatars {
     tier: TierDto;
+    buttonStyle: ButtonStyleDto;
     avatars: AvatarDto[];
 }
 export interface ActivationForm {
