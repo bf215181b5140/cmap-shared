@@ -43,6 +43,7 @@ class BaseParentDto extends BaseDto {
 export class TierDto extends BaseDto {
     rank: number;
     tier: ClientTier;
+    color: string;
     avatars: number;
     layouts: number;
     buttons: number;
