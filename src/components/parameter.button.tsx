@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 import colors from '../colors.json';
 import { ButtonDto, ButtonStyleDto } from '../index';
 
+export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.win' : 'http://localhost:8080';
+
 interface ParameterButtonProps {
     button: ButtonDto;
     buttonStyle: ButtonStyleDto;

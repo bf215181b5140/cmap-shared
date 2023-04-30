@@ -41,15 +41,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.URL = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_components_1 = __importStar(require("styled-components"));
 var colors_json_1 = __importDefault(require("../colors.json"));
+exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.win' : 'http://localhost:8080';
 function ParameterButton(props) {
     function onClick(id) {
         if (!props.active && props.onClick)
             props.onClick(id);
     }
-    return ((0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ flexBasis: props.flexBasis, active: props.active || props.disabled, className: props.buttonStyle.className, onClick: function () { return onClick(props.button.id); } }, { children: [props.button.image && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: URL + '/' + props.button.image }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label })] })));
+    return ((0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ flexBasis: props.flexBasis, active: props.active || props.disabled, className: props.buttonStyle.className, onClick: function () { return onClick(props.button.id); } }, { children: [props.button.image && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: exports.URL + '/' + props.button.image }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label })] })));
 }
 exports.default = ParameterButton;
 var ParameterButtonStyled = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  flex-basis: ", ";\n  align-self: flex-start;\n  text-align: center;\n  padding: 0;\n  min-height: 4.5em;\n  cursor: pointer;\n  \n  &.buttonStyle-1 {\n  background: ", ";\n  border: 2px solid ", ";\n  border-radius: 8px;\n  transition: 0.2s linear;\n    \n      :hover {\n        transform: scale(1.02) perspective(1px);\n        background: ", ";\n        border: 2px solid ", ";\n      }\n  }\n    \n  &.buttonStyle-2 {\n  background: ", ";\n  border: 2px solid ", ";\n  border-radius: 8px;\n  transition: 0.2s linear;\n    \n      :hover {\n        transform: scale(1.02) perspective(1px);\n        background: ", ";\n        border: 2px solid ", ";\n      }\n  }\n    \n  ", ";\n"], ["\n  flex-basis: ", ";\n  align-self: flex-start;\n  text-align: center;\n  padding: 0;\n  min-height: 4.5em;\n  cursor: pointer;\n  \n  &.buttonStyle-1 {\n  background: ", ";\n  border: 2px solid ", ";\n  border-radius: 8px;\n  transition: 0.2s linear;\n    \n      :hover {\n        transform: scale(1.02) perspective(1px);\n        background: ", ";\n        border: 2px solid ", ";\n      }\n  }\n    \n  &.buttonStyle-2 {\n  background: ", ";\n  border: 2px solid ", ";\n  border-radius: 8px;\n  transition: 0.2s linear;\n    \n      :hover {\n        transform: scale(1.02) perspective(1px);\n        background: ", ";\n        border: 2px solid ", ";\n      }\n  }\n    \n  ", ";\n"])), function (props) { return props.flexBasis ? props.flexBasis : '100%'; }, colors_json_1.default['button-bg'], colors_json_1.default['button-border'], colors_json_1.default['button-hover-bg'], colors_json_1.default['button-hover-border'], colors_json_1.default['button-2-bg'], colors_json_1.default['button-2-border'], colors_json_1.default['button-2-hover-bg'], colors_json_1.default['button-2-hover-border'], function (props) { return props.active ? activeParamStyle : null; });

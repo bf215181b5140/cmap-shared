@@ -1,4 +1,5 @@
 import { ButtonDto, ButtonStyleDto } from '../index';
+export declare const URL: string;
 interface ParameterButtonProps {
     button: ButtonDto;
     buttonStyle: ButtonStyleDto;
