@@ -32,6 +32,7 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }
   text-align: center;
   padding: 0;
   min-height: 4.5em;
+  min-width: 180px;
   cursor: pointer;
   
   &.buttonStyle-1 {

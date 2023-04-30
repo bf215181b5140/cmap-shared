@@ -17,6 +17,11 @@ export interface Avatars {
     avatars: AvatarDto[];
 }
 
+export interface Tiers {
+    tiers: TierDto[];
+    clientTier: TierDto;
+}
+
 export interface ActivationForm {
     username: string;
     passwordOne: string;
