@@ -36,34 +36,34 @@ declare class BaseParentDto extends BaseDto {
     parentId: string | undefined | null;
 }
 export declare class TierDto extends BaseDto {
-    rank: number | undefined | null;
-    tier: ClientTier | undefined | null;
-    color: string | undefined | null;
-    avatars: number | undefined | null;
-    layouts: number | undefined | null;
-    buttons: number | undefined | null;
-    exp: boolean | undefined | null;
-    hp: boolean | undefined | null;
+    rank: number;
+    tier: ClientTier;
+    color: string;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+    exp: boolean;
+    hp: boolean;
 }
 export declare class BackgroundDto extends BaseDto {
-    Label: string | undefined | null;
-    className: string | undefined | null;
-    tier: TierDto | undefined | null;
+    Label: string;
+    className: string;
+    tier: TierDto;
 }
 export declare class ButtonStyleDto extends BaseDto {
-    Label: string | undefined | null;
-    className: string | undefined | null;
-    tier: TierDto | undefined | null;
+    Label: string;
+    className: string;
+    tier: TierDto;
 }
 export declare class ClientDto extends BaseDto {
-    username: string | undefined | null;
+    username: string;
     displayName: string | undefined | null;
     bio: string | undefined | null;
-    picture: string | undefined | null;
-    hidden: boolean | undefined | null;
-    tier: TierDto | undefined | null;
-    background: BackgroundDto | undefined | null;
-    buttonStyle: ButtonStyleDto | undefined | null;
+    picture: string;
+    hidden: boolean;
+    tier: TierDto;
+    background: BackgroundDto;
+    buttonStyle: ButtonStyleDto;
     avatars: AvatarDto[] | undefined | null;
 }
 export declare class AvatarDto extends BaseParentDto {
@@ -95,13 +95,13 @@ export declare class ParameterDto extends BaseParentDto {
     valueType: ValueType | undefined | null;
 }
 export declare class FileUploadDto {
-    parentType: string | undefined | null;
-    parentId: string | undefined | null;
-    file: File | undefined | null;
+    parentType: string;
+    parentId: string;
+    file: File;
 }
 export declare class FieldOption {
-    key: string | undefined | null;
-    value: string | undefined | null;
+    key: string;
+    value: string;
 }
 export declare enum ClientTier {
     Basic = "Basic",
