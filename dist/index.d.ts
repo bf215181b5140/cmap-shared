@@ -28,9 +28,9 @@ export interface ClientWithActivity extends ClientDto {
     isConnected: boolean;
 }
 declare class BaseDto {
-    id: string | undefined | null;
-    createDate: Date | undefined | null;
-    updateDate: Date | undefined | null;
+    id: string;
+    createDate: Date;
+    updateDate: Date;
 }
 declare class BaseParentDto extends BaseDto {
     parentId: string | undefined | null;
@@ -69,7 +69,7 @@ export declare class ClientDto extends BaseDto {
 export declare class AvatarDto extends BaseParentDto {
     vrcId: string | undefined | null;
     label: string | undefined | null;
-    default: boolean | undefined | null;
+    default: boolean;
     layouts: LayoutDto[] | undefined | null;
 }
 export declare class LayoutDto extends BaseParentDto {
