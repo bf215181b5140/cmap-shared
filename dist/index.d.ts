@@ -33,7 +33,7 @@ declare class BaseDto {
     updateDate: Date;
 }
 declare class BaseParentDto extends BaseDto {
-    parentId?: string | undefined | null;
+    parentId?: string;
 }
 export declare class TierDto extends BaseDto {
     rank: number;
@@ -57,9 +57,9 @@ export declare class ButtonStyleDto extends BaseDto {
 }
 export declare class ClientDto extends BaseDto {
     username: string;
-    displayName: string | undefined | null;
-    bio: string | undefined | null;
-    picture: string;
+    displayName: string;
+    bio: string | null;
+    picture: string | null;
     hidden: boolean;
     tier: TierDto;
     background: BackgroundDto;
@@ -67,32 +67,32 @@ export declare class ClientDto extends BaseDto {
     avatars: AvatarDto[] | undefined | null;
 }
 export declare class AvatarDto extends BaseParentDto {
-    vrcId: string | undefined | null;
-    label: string | undefined | null;
+    vrcId: string;
+    label: string;
     default: boolean;
     layouts: LayoutDto[] | undefined | null;
 }
 export declare class LayoutDto extends BaseParentDto {
-    label: string | undefined | null;
-    order: number | undefined | null;
+    label: string;
+    order: number;
     buttons: ButtonDto[] | undefined | null;
 }
 export declare class ButtonDto extends BaseParentDto {
-    label: string | undefined | null;
-    path: string | undefined | null;
-    value: string | undefined | null;
-    valueAlt: string | undefined | null;
-    valueType: ValueType | undefined | null;
-    buttonType: ButtonType | undefined | null;
-    image: string | undefined | null;
-    order: number | undefined | null;
+    label: string;
+    path: string;
+    value: string;
+    valueAlt: string;
+    valueType: ValueType;
+    buttonType: ButtonType;
+    image: string | null;
+    order: number;
 }
 export declare class ParameterDto extends BaseParentDto {
-    label: string | undefined | null;
-    role: ParameterRole | undefined | null;
-    path: string | undefined | null;
-    value: string | undefined | null;
-    valueType: ValueType | undefined | null;
+    label: string;
+    role: ParameterRole;
+    path: string;
+    value: string;
+    valueType: ValueType;
 }
 export declare class FileUploadDto {
     parentType: string;

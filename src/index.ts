@@ -36,13 +36,13 @@ export interface ClientWithActivity extends ClientDto {
 
 // -- Classes -- //
 class BaseDto {
-    id: string;
+    id: string = null;
     createDate: Date;
     updateDate: Date;
 }
 
 class BaseParentDto extends BaseDto {
-    parentId?: string | undefined | null;
+    parentId?: string;
 }
 
 export class TierDto extends BaseDto {
@@ -70,9 +70,9 @@ export class ButtonStyleDto extends BaseDto {
 
 export class ClientDto extends BaseDto {
     username: string;
-    displayName: string | undefined | null;
-    bio: string | undefined | null;
-    picture: string;
+    displayName: string;
+    bio: string | null;
+    picture: string | null;
     hidden: boolean;
     tier: TierDto;
     background: BackgroundDto;
@@ -81,35 +81,35 @@ export class ClientDto extends BaseDto {
 }
 
 export class AvatarDto extends BaseParentDto {
-    vrcId: string | undefined | null;
-    label: string | undefined | null;
+    vrcId: string;
+    label: string;
     default: boolean;
     layouts: LayoutDto[] | undefined | null;
 }
 
 export class LayoutDto extends BaseParentDto {
-    label: string | undefined | null;
-    order: number | undefined | null;
+    label: string;
+    order: number;
     buttons: ButtonDto[] | undefined | null;
 }
 
 export class ButtonDto extends BaseParentDto {
-    label: string | undefined | null;
-    path: string | undefined | null = '/avatar/parameters/';
-    value: string | undefined | null;
-    valueAlt: string | undefined | null;
-    valueType: ValueType | undefined | null = ValueType.Int;
-    buttonType: ButtonType | undefined | null = ButtonType.Button;
-    image: string | undefined | null;
-    order: number | undefined | null;
+    label: string;
+    path: string = '/avatar/parameters/';
+    value: string;
+    valueAlt: string;
+    valueType: ValueType = ValueType.Int;
+    buttonType: ButtonType = ButtonType.Button;
+    image: string | null;
+    order: number;
 }
 
 export class ParameterDto extends BaseParentDto {
-    label: string | undefined | null;
-    role: ParameterRole | undefined | null;
-    path: string | undefined | null;
-    value: string | undefined | null;
-    valueType: ValueType | undefined | null;
+    label: string;
+    role: ParameterRole;
+    path: string;
+    value: string;
+    valueType: ValueType;
 }
 
 export class FileUploadDto {
