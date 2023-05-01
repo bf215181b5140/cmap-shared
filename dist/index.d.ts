@@ -28,80 +28,80 @@ export interface ClientWithActivity extends ClientDto {
     isConnected: boolean;
 }
 declare class BaseDto {
-    id: string;
-    createDate: Date;
-    updateDate: Date;
+    id: string | undefined | null;
+    createDate: Date | undefined | null;
+    updateDate: Date | undefined | null;
 }
 declare class BaseParentDto extends BaseDto {
-    parentId?: string;
+    parentId: string | undefined | null;
 }
 export declare class TierDto extends BaseDto {
-    rank: number;
-    tier: ClientTier;
-    color: string;
-    avatars: number;
-    layouts: number;
-    buttons: number;
-    exp: boolean;
-    hp: boolean;
+    rank: number | undefined | null;
+    tier: ClientTier | undefined | null;
+    color: string | undefined | null;
+    avatars: number | undefined | null;
+    layouts: number | undefined | null;
+    buttons: number | undefined | null;
+    exp: boolean | undefined | null;
+    hp: boolean | undefined | null;
 }
 export declare class BackgroundDto extends BaseDto {
-    Label: string;
-    className: string;
-    tier: TierDto;
+    Label: string | undefined | null;
+    className: string | undefined | null;
+    tier: TierDto | undefined | null;
 }
 export declare class ButtonStyleDto extends BaseDto {
-    Label: string;
-    className: string;
-    tier: TierDto;
+    Label: string | undefined | null;
+    className: string | undefined | null;
+    tier: TierDto | undefined | null;
 }
 export declare class ClientDto extends BaseDto {
-    username: string;
-    displayName: string;
-    bio: string | null;
-    picture: string | null;
-    hidden: boolean;
-    tier: TierDto;
-    background: BackgroundDto;
-    buttonStyle: ButtonStyleDto;
-    avatars: AvatarDto[];
+    username: string | undefined | null;
+    displayName: string | undefined | null;
+    bio: string | undefined | null;
+    picture: string | undefined | null;
+    hidden: boolean | undefined | null;
+    tier: TierDto | undefined | null;
+    background: BackgroundDto | undefined | null;
+    buttonStyle: ButtonStyleDto | undefined | null;
+    avatars: AvatarDto[] | undefined | null;
 }
 export declare class AvatarDto extends BaseParentDto {
-    vrcId: string;
-    label: string;
-    default: boolean;
-    layouts: LayoutDto[];
+    vrcId: string | undefined | null;
+    label: string | undefined | null;
+    default: boolean | undefined | null;
+    layouts: LayoutDto[] | undefined | null;
 }
 export declare class LayoutDto extends BaseParentDto {
-    label: string;
-    order: number;
-    buttons: ButtonDto[];
+    label: string | undefined | null;
+    order: number | undefined | null;
+    buttons: ButtonDto[] | undefined | null;
 }
 export declare class ButtonDto extends BaseParentDto {
-    label: string;
-    path: string;
-    value: string;
-    valueAlt: string;
-    valueType: ValueType;
-    buttonType: ButtonType;
-    image: string | null;
-    order: number;
+    label: string | undefined | null;
+    path: string | undefined | null;
+    value: string | undefined | null;
+    valueAlt: string | undefined | null;
+    valueType: ValueType | undefined | null;
+    buttonType: ButtonType | undefined | null;
+    image: string | undefined | null;
+    order: number | undefined | null;
 }
 export declare class ParameterDto extends BaseParentDto {
-    label: string;
-    role: ParameterRole;
-    path: string;
-    value: string;
-    valueType: ValueType;
+    label: string | undefined | null;
+    role: ParameterRole | undefined | null;
+    path: string | undefined | null;
+    value: string | undefined | null;
+    valueType: ValueType | undefined | null;
 }
 export declare class FileUploadDto {
-    parentType: string;
-    parentId: string;
-    file: File;
+    parentType: string | undefined | null;
+    parentId: string | undefined | null;
+    file: File | undefined | null;
 }
 export declare class FieldOption {
-    key: string;
-    value: string;
+    key: string | undefined | null;
+    value: string | undefined | null;
 }
 export declare enum ClientTier {
     Basic = "Basic",

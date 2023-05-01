@@ -19,7 +19,6 @@ exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRo
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
-        this.id = null;
     }
     return BaseDto;
 }());
