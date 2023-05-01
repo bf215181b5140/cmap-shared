@@ -33,7 +33,7 @@ declare class BaseDto {
     updateDate: Date;
 }
 declare class BaseParentDto extends BaseDto {
-    parentId: string | undefined | null;
+    parentId?: string | undefined | null;
 }
 export declare class TierDto extends BaseDto {
     rank: number;
