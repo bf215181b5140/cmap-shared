@@ -125,9 +125,9 @@ export class FieldOption {
 
 // -- Enums -- //
 export enum ClientTier {
-    Basic = 'basic',
-    Standard = 'standard',
-    Premium = 'premium'
+    Basic = 'Basic',
+    Standard = 'Standard',
+    Premium = 'Premium'
 }
 
 export enum ParameterRole {

@@ -113,9 +113,9 @@ exports.FieldOption = FieldOption;
 // -- Enums -- //
 var ClientTier;
 (function (ClientTier) {
-    ClientTier["Basic"] = "basic";
-    ClientTier["Standard"] = "standard";
-    ClientTier["Premium"] = "premium";
+    ClientTier["Basic"] = "Basic";
+    ClientTier["Standard"] = "Standard";
+    ClientTier["Premium"] = "Premium";
 })(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
 var ParameterRole;
 (function (ParameterRole) {

@@ -104,9 +104,9 @@ export declare class FieldOption {
     value: string;
 }
 export declare enum ClientTier {
-    Basic = "basic",
-    Standard = "standard",
-    Premium = "premium"
+    Basic = "Basic",
+    Standard = "Standard",
+    Premium = "Premium"
 }
 export declare enum ParameterRole {
     Exp = "exp",
