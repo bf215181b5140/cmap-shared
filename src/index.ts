@@ -42,7 +42,7 @@ class BaseDto {
 }
 
 class BaseParentDto extends BaseDto {
-    parentId: string | undefined | null;
+    parentId?: string | undefined | null;
 }
 
 export class TierDto extends BaseDto {
