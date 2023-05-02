@@ -46,6 +46,7 @@
     "button-active-border": "#4aaec2",
     "font-text-1": "#b2b2b2",
     "font-text-2": "#4f777f",
+    "font-text-disabled": "#616161",
     "font-header-1": "#6ae3f9",
     "font-header-2": "#387c86",
     "font-icon-1": "#2bacc2",
