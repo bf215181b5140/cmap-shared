@@ -34,6 +34,7 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }
   min-height: 4.5em;
   min-width: 180px;
   cursor: pointer;
+  overflow: hidden;
   
   &.buttonStyle-1 {
   background: ${colors['button-bg']};
@@ -85,5 +86,4 @@ const ParameterButtonPicture = styled.div<{ src: string }>`
   padding: 0;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
-  border-radius: 8px;
 `;
