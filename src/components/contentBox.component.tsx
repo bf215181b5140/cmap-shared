@@ -34,14 +34,14 @@ export function ContentBox(props: ContentBoxProps) {
 
     const [shown, setShown] = useState<boolean>(true);
 
-    return (<ContentBoxWrapper>
+    return (<ContentBoxWrapper flexGrow={props.flexGrow} flexBasis={props.flexBasis}>
         {props.title && <ContentBoxTitle onClick={() => setShown(prevState => !prevState)}>
             <h2>
                 <Icon icon={shown ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'} color={colors['font-header-2']} />
                 {props.title}
             </h2>
         </ContentBoxTitle>}
-        {shown && <ContentBoxStyled flexGrow={props.flexGrow} flexBasis={props.flexBasis}>
+        {shown && <ContentBoxStyled>
             {props.loading !== true ? props.children : <ContentLoading>
                 <div className={'loader'} />
             </ContentLoading>}
