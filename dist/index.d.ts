@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 export interface OscMessage {
     oscType: string;
     address: string;
@@ -26,6 +27,9 @@ export interface ActivationForm {
 export interface ClientWithActivity extends ClientDto {
     isActive: boolean;
     isConnected: boolean;
+}
+export interface ReactProps {
+    children?: ReactNode;
 }
 declare class BaseDto {
     id: string;

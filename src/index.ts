@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 // -- Interfaces -- //
 export interface OscMessage {
     oscType: string;
@@ -32,6 +34,10 @@ export interface ActivationForm {
 export interface ClientWithActivity extends ClientDto {
     isActive: boolean;
     isConnected: boolean;
+}
+
+export interface ReactProps {
+    children?: ReactNode;
 }
 
 // -- Classes -- //
