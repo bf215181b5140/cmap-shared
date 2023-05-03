@@ -1,8 +1,8 @@
-import { ReactProps } from '../index';
+import { ContentBoxWidth, ReactProps } from '../index';
 import styled from 'styled-components';
-import colors from '../colors.json'
-import { useState } from "react";
-import Icon from "./icon.component";
+import colors from '../colors.json';
+import { useState } from 'react';
+import Icon from './icon.component';
 
 interface ContentProps extends ReactProps {
     flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
@@ -10,23 +10,25 @@ interface ContentProps extends ReactProps {
 
 export function Content(props: ContentProps) {
 
-    return(<ContentStyled flexDirection={props.flexDirection}>
+    return (<ContentStyled flexDirection={props.flexDirection}>
         {props.children}
-    </ContentStyled>)
+    </ContentStyled>);
 }
+
+const CONTENT_GAP: string = '20px';
 
 const ContentStyled = styled.div<{ flexDirection?: string }>`
   margin: 20px;
   display: flex;
   flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};
   flex-wrap: wrap;
-  gap: 20px;
+  gap: ${CONTENT_GAP};
 `;
 
 interface ContentBoxProps extends ReactProps {
     title?: string;
     flexGrow?: number | string;
-    flexBasis?: string;
+    flexBasis?: string | ContentBoxWidth;
     loading?: boolean;
 }
 
@@ -34,10 +36,26 @@ export function ContentBox(props: ContentBoxProps) {
 
     const [shown, setShown] = useState<boolean>(true);
 
-    return (<ContentBoxWrapper flexGrow={props.flexGrow} flexBasis={props.flexBasis}>
-        {props.title && <ContentBoxTitle onClick={() => setShown(prevState => !prevState)}>
-            <h2>
-                <Icon icon={shown ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'} color={colors['font-header-2']} />
+    function getFlexBasis(): string {
+        if (!props.flexBasis) return undefined;
+        switch(props.flexBasis) {
+            case ContentBoxWidth.None:
+                return '0';
+            case ContentBoxWidth.Third:
+                return `calc(100% * (1 / 3) - ${CONTENT_GAP})`;
+            case ContentBoxWidth.Half:
+                return `calc(100% * (1 / 2) - ${CONTENT_GAP})`;
+            case ContentBoxWidth.Full:
+                return `calc(100%)`;
+            default:
+                return props.flexBasis;
+        }
+    }
+
+    return (<ContentBoxWrapper flexGrow={props.flexGrow} flexBasis={getFlexBasis()}>
+        {props.title && <ContentBoxTitle shown={shown}>
+            <h2 onClick={() => setShown(prevState => !prevState)}>
+                <i className={'ri-arrow-down-s-line'} />
                 {props.title}
             </h2>
         </ContentBoxTitle>}
@@ -50,20 +68,26 @@ export function ContentBox(props: ContentBoxProps) {
 }
 
 const ContentBoxWrapper = styled.div<{ flexGrow?: number | string, flexBasis?: string }>`
-  flex-grow: ${props => props.flex || 2};
-  flex-basis: ${props => props.flexBasis || 'auto'};
-
-  h2 {
-    font-size: 1.4em;
-    color: ${colors['font-header-2']};
-    padding: 0;
-    margin: 5px;
-  }
+  flex-grow: ${props => props.flexGrow || 2};
+  flex-basis: ${props => props.flexBasis || '0'};
 `;
 
-const ContentBoxTitle = styled.div<{ flexGrow?: number | string, flexBasis?: string }>`
-  flex-grow: ${props => props.flex || 2};
-  flex-basis: ${props => props.flexBasis || 'auto'};
+const ContentBoxTitle = styled.div<{ shown: boolean }>`
+  color: ${colors['font-header-2']};
+
+  h2 {
+    display: inline-block;
+    font-size: 1.4em;
+    padding: 0;
+    margin: 5px;
+    cursor: pointer;
+
+    i {
+      display: inline-block;
+      transition: transform 0.1s linear;
+      transform: rotate(${props => !props.shown ? '0' : '-90deg'});
+    }
+  }
 `;
 
 const ContentBoxStyled = styled.div`

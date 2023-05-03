@@ -147,4 +147,10 @@ export declare enum InputType {
     Select = "select",
     Textarea = "textarea"
 }
+export declare enum ContentBoxWidth {
+    None = "none",
+    Third = "third",
+    Half = "half",
+    Full = "full"
+}
 export {};

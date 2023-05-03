@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
@@ -156,3 +156,10 @@ var InputType;
     InputType["Select"] = "select";
     InputType["Textarea"] = "textarea";
 })(InputType = exports.InputType || (exports.InputType = {}));
+var ContentBoxWidth;
+(function (ContentBoxWidth) {
+    ContentBoxWidth["None"] = "none";
+    ContentBoxWidth["Third"] = "third";
+    ContentBoxWidth["Half"] = "half";
+    ContentBoxWidth["Full"] = "full";
+})(ContentBoxWidth = exports.ContentBoxWidth || (exports.ContentBoxWidth = {}));
