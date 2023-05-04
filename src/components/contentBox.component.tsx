@@ -85,7 +85,7 @@ const ContentBoxTitle = styled.div<{ shown: boolean }>`
     i {
       display: inline-block;
       transition: transform 0.1s linear;
-      transform: rotate(${props => !props.shown ? '0' : '-90deg'});
+      transform: rotate(${props => props.shown ? '0' : '-90deg'});
     }
   }
 `;
