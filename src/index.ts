@@ -19,6 +19,11 @@ export interface Avatars {
     avatars: AvatarDto[];
 }
 
+export interface Parameters {
+    avatarId: string;
+    parameters: ParameterDto[];
+}
+
 export interface Tiers {
     tiers: TierDto[];
     clientTier: TierDto;
@@ -92,7 +97,7 @@ export class AvatarDto extends BaseParentDto {
     default: boolean;
     layouts: LayoutDto[] | undefined | null;
     parameters: ParameterDto[] | undefined | null;
-    trackedParameter: TrackedParameterDto[] | undefined | null;
+    trackedParameters: TrackedParameterDto[] | undefined | null;
 }
 
 export class ParameterDto extends BaseParentDto {
