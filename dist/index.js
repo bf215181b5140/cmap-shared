@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ParameterDto = exports.ButtonDto = exports.LayoutDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ButtonDto = exports.LayoutDto = exports.TrackedParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
@@ -70,6 +70,22 @@ var AvatarDto = /** @class */ (function (_super) {
     return AvatarDto;
 }(BaseParentDto));
 exports.AvatarDto = AvatarDto;
+var ParameterDto = /** @class */ (function (_super) {
+    __extends(ParameterDto, _super);
+    function ParameterDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ParameterDto;
+}(BaseParentDto));
+exports.ParameterDto = ParameterDto;
+var TrackedParameterDto = /** @class */ (function (_super) {
+    __extends(TrackedParameterDto, _super);
+    function TrackedParameterDto() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return TrackedParameterDto;
+}(BaseParentDto));
+exports.TrackedParameterDto = TrackedParameterDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
     function LayoutDto() {
@@ -85,19 +101,12 @@ var ButtonDto = /** @class */ (function (_super) {
         _this.path = '/avatar/parameters/';
         _this.valueType = ValueType.Int;
         _this.buttonType = ButtonType.Button;
+        _this.imageOrientation = ButtonImageOrientation.Horizontal;
         return _this;
     }
     return ButtonDto;
 }(BaseParentDto));
 exports.ButtonDto = ButtonDto;
-var ParameterDto = /** @class */ (function (_super) {
-    __extends(ParameterDto, _super);
-    function ParameterDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return ParameterDto;
-}(BaseParentDto));
-exports.ParameterDto = ParameterDto;
 var FileUploadDto = /** @class */ (function () {
     function FileUploadDto() {
     }
@@ -134,6 +143,12 @@ var ButtonType;
     ButtonType["Slider"] = "slider";
     ButtonType["Toggle"] = "toggle";
 })(ButtonType = exports.ButtonType || (exports.ButtonType = {}));
+var ButtonImageOrientation;
+(function (ButtonImageOrientation) {
+    ButtonImageOrientation["Horizontal"] = "Horizontal";
+    ButtonImageOrientation["Vertical"] = "Vertical";
+    ButtonImageOrientation["Square"] = "Square";
+})(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
 var InputType;
 (function (InputType) {
     InputType["Text"] = "text";

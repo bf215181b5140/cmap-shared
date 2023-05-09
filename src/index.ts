@@ -78,7 +78,7 @@ export class ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
-    picture: string | null;
+    image: string | null;
     hidden: boolean;
     tier: TierDto;
     background: BackgroundDto;
@@ -91,6 +91,23 @@ export class AvatarDto extends BaseParentDto {
     label: string;
     default: boolean;
     layouts: LayoutDto[] | undefined | null;
+    parameters: ParameterDto[] | undefined | null;
+    trackedParameter: TrackedParameterDto[] | undefined | null;
+}
+
+export class ParameterDto extends BaseParentDto {
+    label: string;
+    path: string;
+    valueType: ValueType;
+}
+
+export class TrackedParameterDto extends BaseParentDto {
+    label: string;
+    role: ParameterRole;
+    path: string;
+    value: string;
+    valueAlt: string;
+    valueType: ValueType;
 }
 
 export class LayoutDto extends BaseParentDto {
@@ -107,15 +124,9 @@ export class ButtonDto extends BaseParentDto {
     valueType: ValueType = ValueType.Int;
     buttonType: ButtonType = ButtonType.Button;
     image: string | null;
+    imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Horizontal;
     order: number;
-}
-
-export class ParameterDto extends BaseParentDto {
-    label: string;
-    role: ParameterRole;
-    path: string;
-    value: string;
-    valueType: ValueType;
+    useCost: number | null;
 }
 
 export class FileUploadDto {
@@ -151,6 +162,12 @@ export enum ButtonType {
     Button = 'button',
     Slider = 'slider',
     Toggle = 'toggle',
+}
+
+export enum ButtonImageOrientation {
+    Horizontal = 'Horizontal',
+    Vertical = 'Vertical',
+    Square = 'Square',
 }
 
 export enum InputType {

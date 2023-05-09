@@ -45,7 +45,7 @@ exports.URL = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_components_1 = __importStar(require("styled-components"));
 var colors_json_1 = __importDefault(require("../colors.json"));
-exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.win' : 'http://localhost:8080';
+exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 function ParameterButton(props) {
     function onClick(id) {
         if (!props.active && props.onClick)
