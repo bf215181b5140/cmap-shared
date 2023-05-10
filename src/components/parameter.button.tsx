@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import colors from '../colors.json';
-import { ButtonDto, ButtonStyleDto } from '../index';
+import { ButtonDto, ButtonImageOrientation, ButtonStyleDto } from '../index';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 
@@ -21,9 +21,21 @@ export default function ParameterButton(props: ParameterButtonProps) {
 
     return (<ParameterButtonStyled flexBasis={props.flexBasis} active={props.active || props.disabled} className={props.buttonStyle.className}
                                    onClick={() => onClick(props.button.id)} >
-        {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} />}
+        {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} imageOrientation={props.button.imageOrientation} />}
         {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
     </ParameterButtonStyled>);
+}
+
+function imageOrientationToAspectRatio(imageOrientation: ButtonImageOrientation): string {
+    switch(imageOrientation) {
+        case ButtonImageOrientation.Square:
+            return '4/3'
+        case ButtonImageOrientation.Vertical:
+            return '9/16'
+        case ButtonImageOrientation.Horizontal:
+        default:
+            return '16/9'
+    }
 }
 
 const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }>`
@@ -79,9 +91,9 @@ const ParameterButtonLabel = styled.div`
   align-items: center;
 `;
 
-const ParameterButtonPicture = styled.div<{ src: string }>`
+const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: ButtonImageOrientation }>`
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: ${props => imageOrientationToAspectRatio(props.imageOrientation)};
   margin: 0;
   padding: 0;
   background: url(${props => props.src}) no-repeat center;

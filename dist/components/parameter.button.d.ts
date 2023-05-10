@@ -8,5 +8,5 @@ interface ParameterButtonProps {
     onClick?: (id: string) => void;
     flexBasis?: string;
 }
-export default function ParameterButton(props: ParameterButtonProps): any;
+export default function ParameterButton(props: ParameterButtonProps): import("react/jsx-runtime").JSX.Element;
 export {};
