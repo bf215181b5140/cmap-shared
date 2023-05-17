@@ -15,7 +15,10 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ButtonDto = exports.LayoutDto = exports.TrackedParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.AvatarsPageDto = exports.ProfilePageDto = void 0;
+var dtos_1 = require("./dtos");
+Object.defineProperty(exports, "AvatarsPageDto", { enumerable: true, get: function () { return dtos_1.AvatarsPageDto; } });
+Object.defineProperty(exports, "ProfilePageDto", { enumerable: true, get: function () { return dtos_1.ProfilePageDto; } });
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
@@ -78,14 +81,14 @@ var ParameterDto = /** @class */ (function (_super) {
     return ParameterDto;
 }(BaseParentDto));
 exports.ParameterDto = ParameterDto;
-var TrackedParameterDto = /** @class */ (function (_super) {
-    __extends(TrackedParameterDto, _super);
-    function TrackedParameterDto() {
+var ControlParameterDto = /** @class */ (function (_super) {
+    __extends(ControlParameterDto, _super);
+    function ControlParameterDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return TrackedParameterDto;
+    return ControlParameterDto;
 }(BaseParentDto));
-exports.TrackedParameterDto = TrackedParameterDto;
+exports.ControlParameterDto = ControlParameterDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
     function LayoutDto() {

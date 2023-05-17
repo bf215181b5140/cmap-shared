@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { AvatarsPageDto, ProfilePageDto } from './dtos';
+export { ProfilePageDto, AvatarsPageDto };
 export interface OscMessage {
     oscType: string;
     address: string;
@@ -80,14 +82,14 @@ export declare class AvatarDto extends BaseParentDto {
     default: boolean;
     layouts: LayoutDto[] | undefined | null;
     parameters: ParameterDto[] | undefined | null;
-    trackedParameters: TrackedParameterDto[] | undefined | null;
+    controlParameters: ControlParameterDto[] | undefined | null;
 }
 export declare class ParameterDto extends BaseParentDto {
     label: string;
     path: string;
     valueType: ValueType;
 }
-export declare class TrackedParameterDto extends BaseParentDto {
+export declare class ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string;
@@ -172,4 +174,3 @@ export declare enum ContentBoxWidth {
     Half = "half",
     Full = "full"
 }
-export {};
