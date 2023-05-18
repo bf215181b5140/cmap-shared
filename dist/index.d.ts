@@ -133,9 +133,9 @@ export declare enum ParameterRole {
     HP = "hp"
 }
 export declare enum ValueType {
-    Int = "int",
-    Float = "float",
-    Boolean = "boolean"
+    Int = "Int",
+    Float = "Float",
+    Bool = "Bool"
 }
 export declare enum ButtonType {
     Button = "button",

@@ -136,9 +136,9 @@ var ParameterRole;
 })(ParameterRole = exports.ParameterRole || (exports.ParameterRole = {}));
 var ValueType;
 (function (ValueType) {
-    ValueType["Int"] = "int";
-    ValueType["Float"] = "float";
-    ValueType["Boolean"] = "boolean";
+    ValueType["Int"] = "Int";
+    ValueType["Float"] = "Float";
+    ValueType["Bool"] = "Bool";
 })(ValueType = exports.ValueType || (exports.ValueType = {}));
 var ButtonType;
 (function (ButtonType) {

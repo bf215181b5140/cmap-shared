@@ -161,9 +161,9 @@ export enum ParameterRole {
 }
 
 export enum ValueType {
-    Int = 'int',
-    Float = 'float',
-    Boolean = 'boolean',
+    Int = 'Int',
+    Float = 'Float',
+    Bool = 'Bool',
 }
 
 export enum ButtonType {

@@ -12,7 +12,7 @@ export function convertParameterValue(valueType: ValueType, value: string): stri
                 tempValue = parseFloat(value);
                 if (isNaN(tempValue)) tempValue = null;
                 break;
-            case ValueType.Boolean:
+            case ValueType.Bool:
                 if (value === 'true') {
                     tempValue = true;
                 } else if (value === 'false') {

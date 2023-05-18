@@ -54,7 +54,7 @@ export const buttonSchema = z.object({
             path: ['valueType']
         });
     }
-    if (val.valueType === ValueType.Boolean && (val.value !== 'true' && val.value !== 'false')) {
+    if (val.valueType === ValueType.Bool && (val.value !== 'true' && val.value !== 'false')) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: 'Bad input for boolean (true or false)',

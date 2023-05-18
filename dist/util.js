@@ -16,7 +16,7 @@ function convertParameterValue(valueType, value) {
                 if (isNaN(tempValue))
                     tempValue = null;
                 break;
-            case index_1.ValueType.Boolean:
+            case index_1.ValueType.Bool:
                 if (value === 'true') {
                     tempValue = true;
                 }

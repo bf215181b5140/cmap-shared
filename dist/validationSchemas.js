@@ -52,7 +52,7 @@ exports.buttonSchema = zod_1.z.object({
             path: ['valueType']
         });
     }
-    if (val.valueType === index_1.ValueType.Boolean && (val.value !== 'true' && val.value !== 'false')) {
+    if (val.valueType === index_1.ValueType.Bool && (val.value !== 'true' && val.value !== 'false')) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
             message: 'Bad input for boolean (true or false)',
