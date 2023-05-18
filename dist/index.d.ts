@@ -46,8 +46,8 @@ declare class BaseParentDto extends BaseDto {
     parentId?: string;
 }
 export declare class TierDto {
-    rank: number;
     tier: ClientTier;
+    rank: number;
     color: string;
     avatars: number;
     layouts: number;
@@ -56,13 +56,13 @@ export declare class TierDto {
     hp: boolean;
 }
 export declare class BackgroundDto {
-    Label: string;
     className: string;
+    Label: string;
     tier: TierDto;
 }
 export declare class ButtonStyleDto {
-    Label: string;
     className: string;
+    Label: string;
     tier: TierDto;
 }
 export declare class ClientDto extends BaseDto {

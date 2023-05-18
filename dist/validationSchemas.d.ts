@@ -4,27 +4,27 @@ export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
     passwordTwo: z.ZodString;
-    activationKey: z.ZodString;
+    registrationKey: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    activationKey?: string;
+    registrationKey?: string;
 }, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    activationKey?: string;
+    registrationKey?: string;
 }>, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    activationKey?: string;
+    registrationKey?: string;
 }, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    activationKey?: string;
+    registrationKey?: string;
 }>;
 export declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;

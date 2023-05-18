@@ -7,7 +7,7 @@ exports.registrationSchema = zod_1.z.object({
     username: zod_1.z.string().max(50),
     passwordOne: zod_1.z.string().max(50),
     passwordTwo: zod_1.z.string().max(50),
-    activationKey: zod_1.z.string().max(50)
+    registrationKey: zod_1.z.string().max(50)
 }).superRefine(function (val, ctx) {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
