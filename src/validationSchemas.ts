@@ -5,7 +5,7 @@ export const registrationSchema = z.object({
     username: z.string().max(50),
     passwordOne: z.string().max(50),
     passwordTwo: z.string().max(50),
-    activationKey: z.string().max(50)
+    registrationKey: z.string().max(50)
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
