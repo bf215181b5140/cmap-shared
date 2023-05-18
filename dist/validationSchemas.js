@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.activateSchema = void 0;
+exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("./index");
-exports.activateSchema = zod_1.z.object({
+exports.registrationSchema = zod_1.z.object({
     username: zod_1.z.string().max(50),
     passwordOne: zod_1.z.string().max(50),
     passwordTwo: zod_1.z.string().max(50),

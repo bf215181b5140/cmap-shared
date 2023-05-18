@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { ButtonType, ValueType } from './index';
-export declare const activateSchema: z.ZodEffects<z.ZodObject<{
+export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
     passwordTwo: z.ZodString;

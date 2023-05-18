@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { ButtonType, ValueType } from './index';
 
-export const activateSchema = z.object({
+export const registrationSchema = z.object({
     username: z.string().max(50),
     passwordOne: z.string().max(50),
     passwordTwo: z.string().max(50),

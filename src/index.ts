@@ -32,13 +32,6 @@ export interface Tiers {
     clientTier: TierDto;
 }
 
-export interface ActivationForm {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    activationKey: string;
-}
-
 export interface ClientWithActivity extends ClientDto {
     isActive: boolean;
     isConnected: boolean;
@@ -49,6 +42,13 @@ export interface ReactProps {
 }
 
 // -- Classes -- //
+export class RegistrationFormDto {
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    registrationKey: string;
+}
+
 class BaseDto {
     id: string = null;
     createDate: Date;

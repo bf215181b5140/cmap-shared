@@ -24,18 +24,18 @@ export interface Tiers {
     tiers: TierDto[];
     clientTier: TierDto;
 }
-export interface ActivationForm {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    activationKey: string;
-}
 export interface ClientWithActivity extends ClientDto {
     isActive: boolean;
     isConnected: boolean;
 }
 export interface ReactProps {
     children?: ReactNode;
+}
+export declare class RegistrationFormDto {
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    registrationKey: string;
 }
 declare class BaseDto {
     id: string;
