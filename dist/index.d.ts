@@ -45,7 +45,7 @@ declare class BaseDto {
 declare class BaseParentDto extends BaseDto {
     parentId?: string;
 }
-export declare class TierDto extends BaseDto {
+export declare class TierDto {
     rank: number;
     tier: ClientTier;
     color: string;
@@ -55,12 +55,12 @@ export declare class TierDto extends BaseDto {
     exp: boolean;
     hp: boolean;
 }
-export declare class BackgroundDto extends BaseDto {
+export declare class BackgroundDto {
     Label: string;
     className: string;
     tier: TierDto;
 }
-export declare class ButtonStyleDto extends BaseDto {
+export declare class ButtonStyleDto {
     Label: string;
     className: string;
     tier: TierDto;

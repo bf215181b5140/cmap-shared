@@ -39,29 +39,23 @@ var BaseParentDto = /** @class */ (function (_super) {
     }
     return BaseParentDto;
 }(BaseDto));
-var TierDto = /** @class */ (function (_super) {
-    __extends(TierDto, _super);
+var TierDto = /** @class */ (function () {
     function TierDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     return TierDto;
-}(BaseDto));
+}());
 exports.TierDto = TierDto;
-var BackgroundDto = /** @class */ (function (_super) {
-    __extends(BackgroundDto, _super);
+var BackgroundDto = /** @class */ (function () {
     function BackgroundDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     return BackgroundDto;
-}(BaseDto));
+}());
 exports.BackgroundDto = BackgroundDto;
-var ButtonStyleDto = /** @class */ (function (_super) {
-    __extends(ButtonStyleDto, _super);
+var ButtonStyleDto = /** @class */ (function () {
     function ButtonStyleDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     return ButtonStyleDto;
-}(BaseDto));
+}());
 exports.ButtonStyleDto = ButtonStyleDto;
 var ClientDto = /** @class */ (function (_super) {
     __extends(ClientDto, _super);

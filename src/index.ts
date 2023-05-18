@@ -59,9 +59,9 @@ class BaseParentDto extends BaseDto {
     parentId?: string;
 }
 
-export class TierDto extends BaseDto {
-    rank: number;
+export class TierDto {
     tier: ClientTier;
+    rank: number;
     color: string;
     avatars: number;
     layouts: number;
@@ -70,15 +70,15 @@ export class TierDto extends BaseDto {
     hp: boolean;
 }
 
-export class BackgroundDto extends BaseDto {
-    Label: string;
+export class BackgroundDto {
     className: string;
+    Label: string;
     tier: TierDto;
 }
 
-export class ButtonStyleDto extends BaseDto {
-    Label: string;
+export class ButtonStyleDto {
     className: string;
+    Label: string;
     tier: TierDto;
 }
 
