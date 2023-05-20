@@ -74,7 +74,7 @@ export const parametersSchema = z.object({
     avatarId: z.string().min(1).max(32),
     parameters: z.array(z.object({
         id: z.string().max(32).nullable(),
-        label: z.string().max(16),
+        label: z.string().min(3).max(16),
         path: z.string().min(1, 'Path required').max(50),
         valueType: z.nativeEnum(ValueType),
     })).optional()

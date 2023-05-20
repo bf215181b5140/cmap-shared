@@ -25,7 +25,7 @@ var colors_json_1 = __importDefault(require("../../../colors.json"));
 var react_1 = require("react");
 var content_component_1 = require("./content.component");
 function ContentBox(props) {
-    var _a = (0, react_1.useState)(true), shown = _a[0], setShown = _a[1];
+    var _a = (0, react_1.useState)(props.hidden), shown = _a[0], setShown = _a[1];
     function getFlexBasis() {
         if (!props.flexBasis)
             return undefined;

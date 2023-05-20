@@ -71,7 +71,7 @@ exports.parametersSchema = zod_1.z.object({
     avatarId: zod_1.z.string().min(1).max(32),
     parameters: zod_1.z.array(zod_1.z.object({
         id: zod_1.z.string().max(32).nullable(),
-        label: zod_1.z.string().max(16),
+        label: zod_1.z.string().min(3).max(16),
         path: zod_1.z.string().min(1, 'Path required').max(50),
         valueType: zod_1.z.nativeEnum(index_1.ValueType),
     })).optional()
