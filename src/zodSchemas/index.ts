@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ParameterRole, ValueType } from './index';
+import { ButtonType, ParameterRole, ValueType } from '../index';
 
 export const registrationSchema = z.object({
     username: z.string().min(3).max(16),

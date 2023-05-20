@@ -1,12 +1,6 @@
 import { ReactNode } from "react";
 import { AvatarsPageDto, ProfilePageDto } from './dtos';
-import Content from './components/content/content.component';
-import ContentBox from './components/content/contentBox.component';
-import Background from './components/background.component';
-import Icon from './components/icon.component';
-import ParameterButton from './components/parameter.button';
 export { ProfilePageDto, AvatarsPageDto };
-export { Content, ContentBox, Background, Icon, ParameterButton };
 export interface OscMessage {
     oscType: string;
     address: string;
