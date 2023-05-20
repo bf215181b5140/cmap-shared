@@ -14,7 +14,7 @@ interface ContentBoxProps extends ReactProps {
 
 export default function ContentBox(props: ContentBoxProps) {
 
-    const [shown, setShown] = useState<boolean>(props.hidden);
+    const [shown, setShown] = useState<boolean>(!props.hidden);
 
     function getFlexBasis(): string {
         if (!props.flexBasis) return undefined;
