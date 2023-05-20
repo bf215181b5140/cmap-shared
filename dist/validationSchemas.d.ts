@@ -124,7 +124,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export declare const parametersSchema: z.ZodObject<{
     avatarId: z.ZodString;
-    parameters: z.ZodArray<z.ZodObject<{
+    parameters: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         label: z.ZodString;
         path: z.ZodString;
@@ -139,7 +139,7 @@ export declare const parametersSchema: z.ZodObject<{
         label?: string;
         path?: string;
         valueType?: ValueType;
-    }>, "many">;
+    }>, "many">>;
 }, "strip", z.ZodTypeAny, {
     avatarId?: string;
     parameters?: {
@@ -159,73 +159,73 @@ export declare const parametersSchema: z.ZodObject<{
 }>;
 export declare const controlParametersSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
-    parameters: z.ZodArray<z.ZodObject<{
+    controlParameters: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         label: z.ZodString;
         role: z.ZodNativeEnum<typeof ParameterRole>;
         path: z.ZodString;
-        value: z.ZodString;
-        valueAlt: z.ZodNullable<z.ZodString>;
+        valuePrimary: z.ZodString;
+        valueSecondary: z.ZodNullable<z.ZodString>;
         valueType: z.ZodNativeEnum<typeof ValueType>;
     }, "strip", z.ZodTypeAny, {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
     }, {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
-    }>, "many">;
+    }>, "many">>;
 }, "strip", z.ZodTypeAny, {
     avatarId?: string;
-    parameters?: {
+    controlParameters?: {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
     }[];
 }, {
     avatarId?: string;
-    parameters?: {
+    controlParameters?: {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
     }[];
 }>, {
     avatarId?: string;
-    parameters?: {
+    controlParameters?: {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
     }[];
 }, {
     avatarId?: string;
-    parameters?: {
+    controlParameters?: {
         id?: string;
         label?: string;
         role?: ParameterRole;
         path?: string;
-        value?: string;
-        valueAlt?: string;
+        valuePrimary?: string;
+        valueSecondary?: string;
         valueType?: ValueType;
     }[];
 }>;

@@ -119,8 +119,8 @@ export class ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string = '/avatar/parameters/';
-    value: string;
-    valueAlt: string;
+    valuePrimary: string;
+    valueSecondary: string;
     valueType: ValueType;
 }
 

@@ -99,8 +99,8 @@ export declare class ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string;
-    value: string;
-    valueAlt: string;
+    valuePrimary: string;
+    valueSecondary: string;
     valueType: ValueType;
 }
 export declare class LayoutDto extends BaseParentDto {
