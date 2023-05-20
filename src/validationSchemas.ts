@@ -70,7 +70,7 @@ export const buttonSchema = z.object({
     }
 });
 
-const parametersSchema = z.object({
+export const parametersSchema = z.object({
     avatarId: z.string(),
     parameters: z.array(z.object({
         id: z.string().nullable(),
@@ -80,7 +80,7 @@ const parametersSchema = z.object({
     }))
 });
 
-const controlParametersSchema = z.object({
+export const controlParametersSchema = z.object({
     avatarId: z.string(),
     parameters: z.array(z.object({
         id: z.string().nullable(),

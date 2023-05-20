@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = void 0;
+exports.controlParametersSchema = exports.parametersSchema = exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("./index");
 exports.registrationSchema = zod_1.z.object({
@@ -67,7 +67,7 @@ exports.buttonSchema = zod_1.z.object({
         });
     }
 });
-var parametersSchema = zod_1.z.object({
+exports.parametersSchema = zod_1.z.object({
     avatarId: zod_1.z.string(),
     parameters: zod_1.z.array(zod_1.z.object({
         id: zod_1.z.string().nullable(),
@@ -76,7 +76,7 @@ var parametersSchema = zod_1.z.object({
         valueType: zod_1.z.nativeEnum(index_1.ValueType),
     }))
 });
-var controlParametersSchema = zod_1.z.object({
+exports.controlParametersSchema = zod_1.z.object({
     avatarId: zod_1.z.string(),
     parameters: zod_1.z.array(zod_1.z.object({
         id: zod_1.z.string().nullable(),

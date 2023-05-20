@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ValueType } from './index';
+import { ButtonType, ParameterRole, ValueType } from './index';
 export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
@@ -121,4 +121,111 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     buttonType?: ButtonType;
     order?: number;
     parentId?: string;
+}>;
+export declare const parametersSchema: z.ZodObject<{
+    avatarId: z.ZodString;
+    parameters: z.ZodArray<z.ZodObject<{
+        id: z.ZodNullable<z.ZodString>;
+        label: z.ZodString;
+        path: z.ZodString;
+        valueType: z.ZodNativeEnum<typeof ValueType>;
+    }, "strip", z.ZodTypeAny, {
+        id?: string;
+        label?: string;
+        path?: string;
+        valueType?: ValueType;
+    }, {
+        id?: string;
+        label?: string;
+        path?: string;
+        valueType?: ValueType;
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        path?: string;
+        valueType?: ValueType;
+    }[];
+}, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        path?: string;
+        valueType?: ValueType;
+    }[];
+}>;
+export declare const controlParametersSchema: z.ZodEffects<z.ZodObject<{
+    avatarId: z.ZodString;
+    parameters: z.ZodArray<z.ZodObject<{
+        id: z.ZodNullable<z.ZodString>;
+        label: z.ZodString;
+        role: z.ZodNativeEnum<typeof ParameterRole>;
+        path: z.ZodString;
+        value: z.ZodString;
+        valueAlt: z.ZodNullable<z.ZodString>;
+        valueType: z.ZodNativeEnum<typeof ValueType>;
+    }, "strip", z.ZodTypeAny, {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }, {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }[];
+}, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }[];
+}>, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }[];
+}, {
+    avatarId?: string;
+    parameters?: {
+        id?: string;
+        label?: string;
+        role?: ParameterRole;
+        path?: string;
+        value?: string;
+        valueAlt?: string;
+        valueType?: ValueType;
+    }[];
 }>;
