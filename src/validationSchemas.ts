@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ValueType } from './index';
+import { ButtonType, ParameterRole, ValueType } from './index';
 
 export const registrationSchema = z.object({
     username: z.string().max(50),
@@ -57,7 +57,7 @@ export const buttonSchema = z.object({
     if (val.valueType === ValueType.Bool && (val.value !== 'true' && val.value !== 'false')) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: 'Bad input for boolean (true or false)',
+            message: 'Bad input for Bool (true or false)',
             path: ['value']
         });
     }
@@ -67,5 +67,45 @@ export const buttonSchema = z.object({
             message: 'Secondary value required for slider or toggle button',
             path: ['valueAlt']
         });
+    }
+});
+
+const parametersSchema = z.object({
+    avatarId: z.string(),
+    parameters: z.array(z.object({
+        id: z.string().nullable(),
+        label: z.string().max(20),
+        path: z.string().max(100),
+        valueType: z.nativeEnum(ValueType),
+    }))
+});
+
+const controlParametersSchema = z.object({
+    avatarId: z.string(),
+    parameters: z.array(z.object({
+        id: z.string().nullable(),
+        label: z.string().max(20),
+        role: z.nativeEnum(ParameterRole),
+        path: z.string().max(100),
+        value: z.string().max(5),
+        valueAlt: z.string().max(5).nullable(),
+        valueType: z.nativeEnum(ValueType),
+    }))
+}).superRefine((val, ctx) => {
+    for(let i = 0; i <= val.parameters.length; i++) {
+        if (val.parameters[i].role === ParameterRole.Callback && (!val.parameters[i].valueAlt || val.parameters[i].valueAlt === '')) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Seconds value required for time until callback triggers',
+                path: [`parameters.${i}.valueAlt`]
+            });
+        }
+        if (val.parameters[i].valueType === ValueType.Bool && (val.parameters[i].value !== 'true' && val.parameters[i].value !== 'false')) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Bad input for Bool (true or false)',
+                path: [`parameters.${i}.valueType`]
+            });
+        }
     }
 });

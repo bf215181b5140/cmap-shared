@@ -89,7 +89,9 @@ exports.AvatarDto = AvatarDto;
 var ParameterDto = /** @class */ (function (_super) {
     __extends(ParameterDto, _super);
     function ParameterDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.path = '/avatar/parameters/';
+        return _this;
     }
     return ParameterDto;
 }(BaseParentDto));
@@ -97,7 +99,9 @@ exports.ParameterDto = ParameterDto;
 var ControlParameterDto = /** @class */ (function (_super) {
     __extends(ControlParameterDto, _super);
     function ControlParameterDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.path = '/avatar/parameters/';
+        return _this;
     }
     return ControlParameterDto;
 }(BaseParentDto));

@@ -111,14 +111,14 @@ export class AvatarDto extends BaseParentDto {
 
 export class ParameterDto extends BaseParentDto {
     label: string;
-    path: string;
+    path: string = '/avatar/parameters/';
     valueType: ValueType;
 }
 
 export class ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
-    path: string;
+    path: string = '/avatar/parameters/';
     value: string;
     valueAlt: string;
     valueType: ValueType;

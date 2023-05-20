@@ -55,7 +55,7 @@ exports.buttonSchema = zod_1.z.object({
     if (val.valueType === index_1.ValueType.Bool && (val.value !== 'true' && val.value !== 'false')) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
-            message: 'Bad input for boolean (true or false)',
+            message: 'Bad input for Bool (true or false)',
             path: ['value']
         });
     }
@@ -65,5 +65,43 @@ exports.buttonSchema = zod_1.z.object({
             message: 'Secondary value required for slider or toggle button',
             path: ['valueAlt']
         });
+    }
+});
+var parametersSchema = zod_1.z.object({
+    avatarId: zod_1.z.string(),
+    parameters: zod_1.z.array(zod_1.z.object({
+        id: zod_1.z.string().nullable(),
+        label: zod_1.z.string().max(20),
+        path: zod_1.z.string().max(100),
+        valueType: zod_1.z.nativeEnum(index_1.ValueType),
+    }))
+});
+var controlParametersSchema = zod_1.z.object({
+    avatarId: zod_1.z.string(),
+    parameters: zod_1.z.array(zod_1.z.object({
+        id: zod_1.z.string().nullable(),
+        label: zod_1.z.string().max(20),
+        role: zod_1.z.nativeEnum(index_1.ParameterRole),
+        path: zod_1.z.string().max(100),
+        value: zod_1.z.string().max(5),
+        valueAlt: zod_1.z.string().max(5).nullable(),
+        valueType: zod_1.z.nativeEnum(index_1.ValueType),
+    }))
+}).superRefine(function (val, ctx) {
+    for (var i = 0; i <= val.parameters.length; i++) {
+        if (val.parameters[i].role === index_1.ParameterRole.Callback && (!val.parameters[i].valueAlt || val.parameters[i].valueAlt === '')) {
+            ctx.addIssue({
+                code: zod_1.z.ZodIssueCode.custom,
+                message: 'Seconds value required for time until callback triggers',
+                path: ["parameters.".concat(i, ".valueAlt")]
+            });
+        }
+        if (val.parameters[i].valueType === index_1.ValueType.Bool && (val.parameters[i].value !== 'true' && val.parameters[i].value !== 'false')) {
+            ctx.addIssue({
+                code: zod_1.z.ZodIssueCode.custom,
+                message: 'Bad input for Bool (true or false)',
+                path: ["parameters.".concat(i, ".valueType")]
+            });
+        }
     }
 });
