@@ -1,6 +1,6 @@
-import { ContentBoxWidth, ReactProps } from '../../../index';
+import { ContentBoxWidth, ReactProps } from '../../index';
 import styled from 'styled-components';
-import colors from '../../../colors.json';
+import colors from '../../colors.json';
 import { useState } from 'react';
 import { CONTENT_GAP } from './content.component';
 

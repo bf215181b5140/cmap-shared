@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BackgroundDto } from '../../index';
+import { BackgroundDto } from '../index';
 
 interface BackgroundProps {
     background: BackgroundDto;
