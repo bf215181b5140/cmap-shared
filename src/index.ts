@@ -22,9 +22,14 @@ export interface Avatars {
     avatars: AvatarDto[];
 }
 
-export interface Parameters {
+export interface ParametersForm {
     avatarId: string;
     parameters: ParameterDto[];
+}
+
+export interface ControlParametersForm {
+    avatarId: string;
+    controlParameters: ControlParameterDto[];
 }
 
 export interface Tiers {
