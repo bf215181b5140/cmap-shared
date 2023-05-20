@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import colors from '../colors.json';
-import { ButtonDto, ButtonImageOrientation, ButtonStyleDto } from '../index';
+import colors from '../../colors.json';
+import { ButtonDto, ButtonImageOrientation, ButtonStyleDto } from '../../index';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 

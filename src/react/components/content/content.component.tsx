@@ -1,4 +1,4 @@
-import { ReactProps } from '../../index';
+import { ReactProps } from '../../../index';
 import styled from 'styled-components';
 
 interface ContentProps extends ReactProps {
