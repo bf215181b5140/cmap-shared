@@ -14,11 +14,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.RegistrationFormDto = exports.AvatarsPageDto = exports.ProfilePageDto = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.RegistrationFormDto = exports.ParameterButton = exports.Icon = exports.Background = exports.ContentBox = exports.Content = exports.AvatarsPageDto = exports.ProfilePageDto = void 0;
 var dtos_1 = require("./dtos");
 Object.defineProperty(exports, "AvatarsPageDto", { enumerable: true, get: function () { return dtos_1.AvatarsPageDto; } });
 Object.defineProperty(exports, "ProfilePageDto", { enumerable: true, get: function () { return dtos_1.ProfilePageDto; } });
+var content_component_1 = __importDefault(require("./components/content/content.component"));
+exports.Content = content_component_1.default;
+var contentBox_component_1 = __importDefault(require("./components/content/contentBox.component"));
+exports.ContentBox = contentBox_component_1.default;
+var background_component_1 = __importDefault(require("./components/background.component"));
+exports.Background = background_component_1.default;
+var icon_component_1 = __importDefault(require("./components/icon.component"));
+exports.Icon = icon_component_1.default;
+var parameter_button_1 = __importDefault(require("./components/parameter.button"));
+exports.ParameterButton = parameter_button_1.default;
 // -- Classes -- //
 var RegistrationFormDto = /** @class */ (function () {
     function RegistrationFormDto() {
