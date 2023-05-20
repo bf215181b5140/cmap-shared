@@ -4,7 +4,6 @@ interface ContentBoxProps extends ReactProps {
     flexGrow?: number | string;
     flexBasis?: string | ContentBoxWidth;
     loading?: boolean;
-    hidden?: boolean;
 }
 export default function ContentBox(props: ContentBoxProps): import("react/jsx-runtime").JSX.Element;
 export {};

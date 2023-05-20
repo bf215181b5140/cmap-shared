@@ -9,12 +9,11 @@ interface ContentBoxProps extends ReactProps {
     flexGrow?: number | string;
     flexBasis?: string | ContentBoxWidth;
     loading?: boolean;
-    hidden?: boolean;
 }
 
 export default function ContentBox(props: ContentBoxProps) {
 
-    const [shown, setShown] = useState<boolean>(!props.hidden);
+    const [shown, setShown] = useState<boolean>(true);
 
     function getFlexBasis(): string {
         if (!props.flexBasis) return undefined;
