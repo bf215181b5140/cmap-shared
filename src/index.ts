@@ -156,8 +156,9 @@ export enum ClientTier {
 }
 
 export enum ParameterRole {
-    Exp = 'exp',
-    HP = 'hp',
+    Exp = 'Exp',
+    HP = 'HP',
+    Callback = 'Callback',
 }
 
 export enum ValueType {

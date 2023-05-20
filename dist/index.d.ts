@@ -129,8 +129,9 @@ export declare enum ClientTier {
     Premium = "Premium"
 }
 export declare enum ParameterRole {
-    Exp = "exp",
-    HP = "hp"
+    Exp = "Exp",
+    HP = "HP",
+    Callback = "Callback"
 }
 export declare enum ValueType {
     Int = "Int",

@@ -131,8 +131,9 @@ var ClientTier;
 })(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
 var ParameterRole;
 (function (ParameterRole) {
-    ParameterRole["Exp"] = "exp";
-    ParameterRole["HP"] = "hp";
+    ParameterRole["Exp"] = "Exp";
+    ParameterRole["HP"] = "HP";
+    ParameterRole["Callback"] = "Callback";
 })(ParameterRole = exports.ParameterRole || (exports.ParameterRole = {}));
 var ValueType;
 (function (ValueType) {

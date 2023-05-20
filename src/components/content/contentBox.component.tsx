@@ -1,29 +1,8 @@
-import { ContentBoxWidth, ReactProps } from '../index';
+import { ContentBoxWidth, ReactProps } from '../../index';
 import styled from 'styled-components';
-import colors from '../colors.json';
+import colors from '../../colors.json';
 import { useState } from 'react';
-import Icon from './icon.component';
-
-interface ContentProps extends ReactProps {
-    flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-}
-
-export function Content(props: ContentProps) {
-
-    return (<ContentStyled flexDirection={props.flexDirection}>
-        {props.children}
-    </ContentStyled>);
-}
-
-const CONTENT_GAP: string = '20px';
-
-const ContentStyled = styled.div<{ flexDirection?: string }>`
-  margin: 20px;
-  display: flex;
-  flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};
-  flex-wrap: wrap;
-  gap: ${CONTENT_GAP};
-`;
+import { CONTENT_GAP } from './content.component';
 
 interface ContentBoxProps extends ReactProps {
     title?: string;
@@ -32,7 +11,7 @@ interface ContentBoxProps extends ReactProps {
     loading?: boolean;
 }
 
-export function ContentBox(props: ContentBoxProps) {
+export default function ContentBox(props: ContentBoxProps) {
 
     const [shown, setShown] = useState<boolean>(true);
 
