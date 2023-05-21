@@ -43,6 +43,7 @@ exports.buttonSchema = zod_1.z.object({
     valueAlt: zod_1.z.string().max(5).nullable(),
     valueType: zod_1.z.nativeEnum(index_1.ValueType),
     buttonType: zod_1.z.nativeEnum(index_1.ButtonType),
+    imageOrientation: zod_1.z.nativeEnum(index_1.ButtonImageOrientation),
     order: zod_1.z.number(),
     controlParameterId: zod_1.z.string().max(32).nullable(),
     parentId: zod_1.z.string().max(32)

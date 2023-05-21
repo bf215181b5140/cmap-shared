@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { ButtonImageOrientation, ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 
 export const registrationSchema = z.object({
     username: z.string().min(3).max(16),
@@ -45,6 +45,7 @@ export const buttonSchema = z.object({
     valueAlt: z.string().max(5).nullable(),
     valueType: z.nativeEnum(ValueType),
     buttonType: z.nativeEnum(ButtonType),
+    imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     controlParameterId: z.string().max(32).nullable(),
     parentId: z.string().max(32)

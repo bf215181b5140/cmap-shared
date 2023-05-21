@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { ButtonImageOrientation, ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
@@ -82,6 +82,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: z.ZodNullable<z.ZodString>;
     valueType: z.ZodNativeEnum<typeof ValueType>;
     buttonType: z.ZodNativeEnum<typeof ButtonType>;
+    imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
     order: z.ZodNumber;
     controlParameterId: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
@@ -93,6 +94,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueAlt?: string;
     valueType?: ValueType;
     buttonType?: ButtonType;
+    imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
     parentId?: string;
@@ -104,6 +106,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueAlt?: string;
     valueType?: ValueType;
     buttonType?: ButtonType;
+    imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
     parentId?: string;
@@ -115,6 +118,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueAlt?: string;
     valueType?: ValueType;
     buttonType?: ButtonType;
+    imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
     parentId?: string;
@@ -126,6 +130,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueAlt?: string;
     valueType?: ValueType;
     buttonType?: ButtonType;
+    imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
     parentId?: string;
