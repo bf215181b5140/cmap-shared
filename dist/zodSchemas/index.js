@@ -47,26 +47,72 @@ exports.buttonSchema = zod_1.z.object({
     controlParameterId: zod_1.z.string().max(32).nullable(),
     parentId: zod_1.z.string().max(32)
 }).superRefine(function (val, ctx) {
-    if (val.buttonType === index_1.ButtonType.Slider && val.valueType !== index_1.ValueType.Float) {
+    // Check valueType
+    if (val.buttonType === index_1.ButtonType.Slider && val.valueType === index_1.ValueType.Bool) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
-            message: 'Slider can only be float type',
+            message: 'Slider can\'t be of type Bool',
             path: ['valueType']
         });
     }
-    if (val.valueType === index_1.ValueType.Bool && (val.value !== 'true' && val.value !== 'false')) {
-        ctx.addIssue({
-            code: zod_1.z.ZodIssueCode.custom,
-            message: 'Bad input for Bool (true or false)',
-            path: ['value']
-        });
-    }
+    // Check value requirement
     if ((val.buttonType === index_1.ButtonType.Slider || val.buttonType === index_1.ButtonType.Toggle) && (!val.valueAlt || val.valueAlt === '')) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
             message: 'Secondary value required for slider or toggle button',
             path: ['valueAlt']
         });
+    }
+    // Check value type
+    switch (val.valueType) {
+        case index_1.ValueType.Bool:
+            if ((val.value !== 'true' && val.value !== 'false')) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Bad input for Bool (true or false)',
+                    path: ["value"]
+                });
+            }
+            if ((val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Bad input for Bool (true or false)',
+                    path: ["valueAlt"]
+                });
+            }
+            break;
+        case index_1.ValueType.Float:
+            if (Number.isNaN(Number(val.value))) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Invalid number',
+                    path: ["value"]
+                });
+            }
+            if (Number.isNaN(Number(val.valueAlt))) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Invalid number',
+                    path: ["valueAlt"]
+                });
+            }
+            break;
+        case index_1.ValueType.Int:
+            if (!Number.isInteger(Number(val.value))) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Invalid number',
+                    path: ["value"]
+                });
+            }
+            if (!Number.isInteger(Number(val.valueAlt))) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Invalid number',
+                    path: ["valueAlt"]
+                });
+            }
+            break;
     }
 });
 exports.parametersSchema = zod_1.z.object({
