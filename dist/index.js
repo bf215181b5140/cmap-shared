@@ -96,7 +96,9 @@ exports.ControlParameterDto = ControlParameterDto;
 var LayoutDto = /** @class */ (function (_super) {
     __extends(LayoutDto, _super);
     function LayoutDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.width = ContentBoxWidth.Full;
+        return _this;
     }
     return LayoutDto;
 }(BaseParentDto));
