@@ -93,6 +93,20 @@ export const controlParametersSchema = z.object({
     })).optional()
 }).superRefine((val, ctx) => {
     if (val.controlParameters?.length) {
+        if (val.controlParameters.filter(cp => cp.role === ParameterRole.HP)?.length || 0 > 1) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Only one parameter with HP role is allowed',
+                path: [`controlParameters`]
+            });
+        }
+        if (val.controlParameters.filter(cp => cp.role === ParameterRole.Exp)?.length || 0 > 1) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Only one parameter with Exp role is allowed',
+                path: [`controlParameters`]
+            });
+        }
         for (let i = 0; i < val.controlParameters.length; i++) {
             if (val.controlParameters[i].role === ParameterRole.Callback) {
                 if (!Number.isInteger(Number(val.controlParameters[i].valueSecondary))) {
