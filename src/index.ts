@@ -126,6 +126,7 @@ export class ControlParameterDto extends BaseParentDto {
 export class LayoutDto extends BaseParentDto {
     label: string;
     order: number;
+    width: ContentBoxWidth;
     buttons: ButtonDto[] | undefined | null;
 }
 
