@@ -85,6 +85,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
     order: z.ZodNumber;
     controlParameterId: z.ZodNullable<z.ZodString>;
+    expCost: z.ZodOptional<z.ZodNumber>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id?: string;
@@ -97,6 +98,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
+    expCost?: number;
     parentId?: string;
 }, {
     id?: string;
@@ -109,6 +111,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
+    expCost?: number;
     parentId?: string;
 }>, {
     id?: string;
@@ -121,6 +124,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
+    expCost?: number;
     parentId?: string;
 }, {
     id?: string;
@@ -133,6 +137,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation?: ButtonImageOrientation;
     order?: number;
     controlParameterId?: string;
+    expCost?: number;
     parentId?: string;
 }>;
 export declare const parametersSchema: z.ZodObject<{

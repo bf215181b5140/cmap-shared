@@ -140,7 +140,7 @@ export class ButtonDto extends BaseParentDto {
     image: string | null;
     imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Horizontal;
     order: number;
-    useCost: number | null;
+    expCost: number | null;
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
 }

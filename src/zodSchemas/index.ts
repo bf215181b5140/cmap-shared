@@ -48,6 +48,7 @@ export const buttonSchema = z.object({
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     controlParameterId: z.string().max(32).nullable(),
+    expCost: z.number().optional(),
     parentId: z.string().max(32)
 }).superRefine((val, ctx) => {
     // Check valueType

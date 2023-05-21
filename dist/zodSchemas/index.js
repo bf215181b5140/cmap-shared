@@ -46,6 +46,7 @@ exports.buttonSchema = zod_1.z.object({
     imageOrientation: zod_1.z.nativeEnum(index_1.ButtonImageOrientation),
     order: zod_1.z.number(),
     controlParameterId: zod_1.z.string().max(32).nullable(),
+    expCost: zod_1.z.number().optional(),
     parentId: zod_1.z.string().max(32)
 }).superRefine(function (val, ctx) {
     // Check valueType
