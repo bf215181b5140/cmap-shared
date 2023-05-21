@@ -141,6 +141,8 @@ export class ButtonDto extends BaseParentDto {
     imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Horizontal;
     order: number;
     useCost: number | null;
+    controlParameter: ControlParameterDto | null;
+    controlParameterId: string | undefined | null;
 }
 
 export class FileUploadDto {

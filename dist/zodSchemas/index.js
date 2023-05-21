@@ -32,6 +32,7 @@ exports.layoutSchema = zod_1.z.object({
     id: zod_1.z.string().max(32).nullable(),
     label: zod_1.z.string().max(32),
     order: zod_1.z.number(),
+    width: zod_1.z.nativeEnum(index_1.ContentBoxWidth),
     parentId: zod_1.z.string().max(32)
 });
 exports.buttonSchema = zod_1.z.object({
@@ -43,6 +44,7 @@ exports.buttonSchema = zod_1.z.object({
     valueType: zod_1.z.nativeEnum(index_1.ValueType),
     buttonType: zod_1.z.nativeEnum(index_1.ButtonType),
     order: zod_1.z.number(),
+    controlParameterId: zod_1.z.string().max(32).nullable(),
     parentId: zod_1.z.string().max(32)
 }).superRefine(function (val, ctx) {
     if (val.buttonType === index_1.ButtonType.Slider && val.valueType !== index_1.ValueType.Float) {

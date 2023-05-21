@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ParameterRole, ValueType } from '../index';
+import { ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 
 export const registrationSchema = z.object({
     username: z.string().min(3).max(16),
@@ -33,6 +33,7 @@ export const layoutSchema = z.object({
     id: z.string().max(32).nullable(),
     label: z.string().max(32),
     order: z.number(),
+    width: z.nativeEnum(ContentBoxWidth),
     parentId: z.string().max(32)
 });
 
@@ -45,6 +46,7 @@ export const buttonSchema = z.object({
     valueType: z.nativeEnum(ValueType),
     buttonType: z.nativeEnum(ButtonType),
     order: z.number(),
+    controlParameterId: z.string().max(32).nullable(),
     parentId: z.string().max(32)
 }).superRefine((val, ctx) => {
     if (val.buttonType === ButtonType.Slider && val.valueType !== ValueType.Float) {

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ButtonType, ParameterRole, ValueType } from '../index';
+import { ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
@@ -59,16 +59,19 @@ export declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     order: z.ZodNumber;
+    width: z.ZodNativeEnum<typeof ContentBoxWidth>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id?: string;
     label?: string;
     order?: number;
+    width?: ContentBoxWidth;
     parentId?: string;
 }, {
     id?: string;
     label?: string;
     order?: number;
+    width?: ContentBoxWidth;
     parentId?: string;
 }>;
 export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
@@ -80,6 +83,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueType: z.ZodNativeEnum<typeof ValueType>;
     buttonType: z.ZodNativeEnum<typeof ButtonType>;
     order: z.ZodNumber;
+    controlParameterId: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id?: string;
@@ -90,6 +94,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueType?: ValueType;
     buttonType?: ButtonType;
     order?: number;
+    controlParameterId?: string;
     parentId?: string;
 }, {
     id?: string;
@@ -100,6 +105,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueType?: ValueType;
     buttonType?: ButtonType;
     order?: number;
+    controlParameterId?: string;
     parentId?: string;
 }>, {
     id?: string;
@@ -110,6 +116,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueType?: ValueType;
     buttonType?: ButtonType;
     order?: number;
+    controlParameterId?: string;
     parentId?: string;
 }, {
     id?: string;
@@ -120,6 +127,7 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     valueType?: ValueType;
     buttonType?: ButtonType;
     order?: number;
+    controlParameterId?: string;
     parentId?: string;
 }>;
 export declare const parametersSchema: z.ZodObject<{

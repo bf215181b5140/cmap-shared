@@ -118,6 +118,8 @@ export declare class ButtonDto extends BaseParentDto {
     imageOrientation: ButtonImageOrientation;
     order: number;
     useCost: number | null;
+    controlParameter: ControlParameterDto | null;
+    controlParameterId: string | undefined | null;
 }
 export declare class FileUploadDto {
     parentType: string;
