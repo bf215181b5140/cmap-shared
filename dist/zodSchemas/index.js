@@ -69,30 +69,32 @@ exports.buttonSchema = zod_1.z.object({
             if ((val.value !== 'true' && val.value !== 'false')) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Bad input for Bool (true or false)',
+                    message: 'Invalid Bool (true or false)',
                     path: ["value"]
                 });
             }
             if ((val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Bad input for Bool (true or false)',
+                    message: 'Invalid Bool (true or false)',
                     path: ["valueAlt"]
                 });
             }
             break;
         case index_1.ValueType.Float:
-            if (Number.isNaN(Number(val.value))) {
+            var valueNumber = Number(val.value);
+            if (Number.isNaN(valueNumber) || valueNumber < 0 || valueNumber > 1) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Invalid number',
+                    message: 'Invalid Float number',
                     path: ["value"]
                 });
             }
-            if (Number.isNaN(Number(val.valueAlt))) {
+            var valueAltNumber = Number(val.valueAlt);
+            if (Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Invalid number',
+                    message: 'Invalid Float number',
                     path: ["valueAlt"]
                 });
             }
@@ -101,14 +103,14 @@ exports.buttonSchema = zod_1.z.object({
             if (!Number.isInteger(Number(val.value))) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Invalid number',
+                    message: 'Invalid Int number',
                     path: ["value"]
                 });
             }
             if (!Number.isInteger(Number(val.valueAlt))) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Invalid number',
+                    message: 'Invalid Int number',
                     path: ["valueAlt"]
                 });
             }
@@ -168,26 +170,35 @@ exports.controlParametersSchema = zod_1.z.object({
                         path: ["controlParameters.".concat(i, ".valueSecondary")]
                     });
                 }
-                if (val.controlParameters[i].valueType === index_1.ValueType.Bool && (val.controlParameters[i].valuePrimary !== 'true' && val.controlParameters[i].valuePrimary !== 'false')) {
-                    ctx.addIssue({
-                        code: zod_1.z.ZodIssueCode.custom,
-                        message: 'Bad input for Bool (true or false)',
-                        path: ["controlParameters.".concat(i, ".valuePrimary")]
-                    });
-                }
-                if (val.controlParameters[i].valueType === index_1.ValueType.Int && !Number.isInteger(Number(val.controlParameters[i].valuePrimary))) {
-                    ctx.addIssue({
-                        code: zod_1.z.ZodIssueCode.custom,
-                        message: 'Invalid number',
-                        path: ["controlParameters.".concat(i, ".valuePrimary")]
-                    });
-                }
-                if (val.controlParameters[i].valueType === index_1.ValueType.Float && Number.isNaN(Number(val.controlParameters[i].valuePrimary))) {
-                    ctx.addIssue({
-                        code: zod_1.z.ZodIssueCode.custom,
-                        message: 'Invalid number',
-                        path: ["controlParameters.".concat(i, ".valuePrimary")]
-                    });
+                switch (val.controlParameters[i].valueType) {
+                    case index_1.ValueType.Bool:
+                        if (val.controlParameters[i].valuePrimary !== 'true' && val.controlParameters[i].valuePrimary !== 'false') {
+                            ctx.addIssue({
+                                code: zod_1.z.ZodIssueCode.custom,
+                                message: 'Invalid Bool (true or false)',
+                                path: ["controlParameters.".concat(i, ".valuePrimary")]
+                            });
+                        }
+                        break;
+                    case index_1.ValueType.Int:
+                        if (!Number.isInteger(Number(val.controlParameters[i].valuePrimary))) {
+                            ctx.addIssue({
+                                code: zod_1.z.ZodIssueCode.custom,
+                                message: 'Invalid Int number',
+                                path: ["controlParameters.".concat(i, ".valuePrimary")]
+                            });
+                        }
+                        break;
+                    case index_1.ValueType.Float:
+                        var valuePrimaryNumber = Number(val.controlParameters[i].valuePrimary);
+                        if (Number.isNaN(valuePrimaryNumber) || valuePrimaryNumber < 0 || valuePrimaryNumber > 1) {
+                            ctx.addIssue({
+                                code: zod_1.z.ZodIssueCode.custom,
+                                message: 'Invalid Float number',
+                                path: ["controlParameters.".concat(i, ".valuePrimary")]
+                            });
+                        }
+                        break;
                 }
             }
             else {
@@ -201,14 +212,14 @@ exports.controlParametersSchema = zod_1.z.object({
                 if (!Number.isInteger(Number(val.controlParameters[i].valuePrimary))) {
                     ctx.addIssue({
                         code: zod_1.z.ZodIssueCode.custom,
-                        message: 'Invalid number',
+                        message: 'Invalid Int number',
                         path: ["controlParameters.".concat(i, ".valuePrimary")]
                     });
                 }
                 if (!Number.isInteger(Number(val.controlParameters[i].valueSecondary))) {
                     ctx.addIssue({
                         code: zod_1.z.ZodIssueCode.custom,
-                        message: 'Invalid number',
+                        message: 'Invalid Int number',
                         path: ["controlParameters.".concat(i, ".valueSecondary")]
                     });
                 }
