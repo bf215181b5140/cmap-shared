@@ -134,7 +134,7 @@ const ActiveOverlay = styled.div<{ active: boolean }>`
           right: 0;
 
           background: linear-gradient(10deg, transparent 0%, transparent 50%, rgba(144, 160, 164, 0.16) 50%, transparent 70%, transparent 100%) 0px 0px / 400% 400%;
-          animation: 1s overlayAfter 3s linear infinite;
+          animation: 3s overlayAfter 3s linear infinite;
 
           @keyframes overlayAfter {
             from {
