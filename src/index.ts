@@ -4,10 +4,9 @@ import { AvatarsPageDto, ProfilePageDto } from './dtos';
 export { ProfilePageDto, AvatarsPageDto };
 
 // -- Interfaces -- //
-export interface OscMessage {
-    oscType: string;
-    address: string;
-    args: [boolean | number | string];
+export interface VrcParameter {
+    path: string;
+    value: boolean | number | string;
 }
 
 export interface Profile {
