@@ -107,19 +107,16 @@ const ActiveOverlay = styled.div<{ active: boolean }>`
   ${props => {
     if (props.active) {
       return css`
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent, rgba(255, 255, 255, 0.05), transparent);
-        background-size: 800% 800%;
-        animation: overlay 6s linear infinite;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), transparent, rgba(255, 255, 255, 0.15), transparent);
+        background-size: 200% 200%;
+        animation: overlay 8s linear infinite;
 
         @keyframes overlay {
-          0% {
+          from {
             background-position: 100% 0
           }
-          50% {
+          to {
             background-position: 0 100%
-          }
-          100% {
-            background-position: 100% 0
           }
         }
       `;
