@@ -39,10 +39,9 @@ export default function ParameterButton(props: ParameterButtonProps) {
     }
 
     return (<ParameterButtonStyled flexBasis={props.flexBasis} disabled={!!props.disabled} className={props.buttonStyle.className} onClick={() => onClick()}>
-        <ActiveOverlay active={!!props.active}>
-            {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} imageOrientation={props.button.imageOrientation} />}
-            {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
-        </ActiveOverlay>
+        {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} imageOrientation={props.button.imageOrientation} />}
+        {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
+        <ActiveOverlay active={!!props.active} />
     </ParameterButtonStyled>);
 }
 
@@ -67,6 +66,7 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, disabled: boolean
   min-width: 180px;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
 
   &.buttonStyle-1 {
     background: ${colors['button-bg']};
@@ -104,12 +104,17 @@ const disabledParamStyle = css`
 `;
 
 const ActiveOverlay = styled.div<{ active: boolean }>`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
   ${props => {
     if (props.active) {
       return css`
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), transparent, rgba(255, 255, 255, 0.15), transparent);
-        background-size: 200% 200%;
-        animation: overlay 8s linear infinite;
+        background: linear-gradient(45deg, transparent 0%, transparent 25%, rgba(144, 160, 164, 0.20) 50%, transparent 50%, transparent 100%) 0 0 / 400% 400%;
+        animation: overlay 3s linear infinite;
 
         @keyframes overlay {
           from {
@@ -117,6 +122,27 @@ const ActiveOverlay = styled.div<{ active: boolean }>`
           }
           to {
             background-position: 0 100%
+          }
+        }
+        
+        :after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          background: linear-gradient(10deg, transparent 0%, transparent 50%, rgba(144, 160, 164, 0.16) 50%, transparent 70%, transparent 100%) 0px 0px / 400% 400%
+          animation: 1s overlay 3s linear infinite;
+
+          @keyframes overlay {
+            from {
+              background-position: 0 100%
+            }
+            to {
+              background-position: 100% 0
+            }
           }
         }
       `;
