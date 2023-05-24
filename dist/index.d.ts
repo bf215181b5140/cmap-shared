@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { AvatarsPageDto, ProfilePageDto } from './dtos';
+import { IgnoredParams } from './const';
+export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
 export interface VrcParameter {
     path: string;

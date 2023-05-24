@@ -142,14 +142,14 @@ exports.controlParametersSchema = zod_1.z.object({
 }).superRefine(function (val, ctx) {
     var _a, _b, _c;
     if ((_a = val.controlParameters) === null || _a === void 0 ? void 0 : _a.length) {
-        if (((_b = val.controlParameters.filter(function (cp) { return cp.role === index_1.ParameterRole.HP; })) === null || _b === void 0 ? void 0 : _b.length) || 0 > 1) {
+        if ((((_b = val.controlParameters.filter(function (cp) { return cp.role === index_1.ParameterRole.HP; })) === null || _b === void 0 ? void 0 : _b.length) || 0) > 1) {
             ctx.addIssue({
                 code: zod_1.z.ZodIssueCode.custom,
                 message: 'Only one parameter with HP role is allowed',
                 path: ["controlParameters"]
             });
         }
-        if (((_c = val.controlParameters.filter(function (cp) { return cp.role === index_1.ParameterRole.Exp; })) === null || _c === void 0 ? void 0 : _c.length) || 0 > 1) {
+        if ((((_c = val.controlParameters.filter(function (cp) { return cp.role === index_1.ParameterRole.Exp; })) === null || _c === void 0 ? void 0 : _c.length) || 0) > 1) {
             ctx.addIssue({
                 code: zod_1.z.ZodIssueCode.custom,
                 message: 'Only one parameter with Exp role is allowed',
