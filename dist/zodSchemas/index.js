@@ -126,7 +126,7 @@ exports.parametersSchema = zod_1.z.object({
         label: zod_1.z.string().min(3).max(16),
         path: zod_1.z.string().min(1, 'Path required').max(50),
         valueType: zod_1.z.nativeEnum(index_1.ValueType),
-    })).max(20).optional()
+    })).max(16).optional()
 });
 exports.controlParametersSchema = zod_1.z.object({
     avatarId: zod_1.z.string().min(1).max(32),
@@ -138,7 +138,7 @@ exports.controlParametersSchema = zod_1.z.object({
         valuePrimary: zod_1.z.string().min(1, 'Value required').max(5),
         valueSecondary: zod_1.z.string().min(1, 'Value required').max(5).nullable(),
         valueType: zod_1.z.nativeEnum(index_1.ValueType),
-    })).max(16).optional()
+    })).max(8).optional()
 }).superRefine(function (val, ctx) {
     var _a, _b, _c;
     if ((_a = val.controlParameters) === null || _a === void 0 ? void 0 : _a.length) {

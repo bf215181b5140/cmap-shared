@@ -129,7 +129,7 @@ export const parametersSchema = z.object({
         label: z.string().min(3).max(16),
         path: z.string().min(1, 'Path required').max(50),
         valueType: z.nativeEnum(ValueType),
-    })).max(20).optional()
+    })).max(16).optional()
 });
 
 export const controlParametersSchema = z.object({
@@ -142,7 +142,7 @@ export const controlParametersSchema = z.object({
         valuePrimary: z.string().min(1, 'Value required').max(5),
         valueSecondary: z.string().min(1, 'Value required').max(5).nullable(),
         valueType: z.nativeEnum(ValueType),
-    })).max(16).optional()
+    })).max(8).optional()
 }).superRefine((val, ctx) => {
     if (val.controlParameters?.length) {
         if (val.controlParameters.filter(cp => cp.role === ParameterRole.HP)?.length || 0 > 1) {

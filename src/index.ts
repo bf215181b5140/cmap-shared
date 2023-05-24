@@ -71,6 +71,7 @@ export class TierDto {
     avatars: number;
     layouts: number;
     buttons: number;
+    controlParameters: number;
     exp: boolean;
     hp: boolean;
 }
