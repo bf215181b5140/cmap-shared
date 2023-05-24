@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
-import { ButtonDto, ButtonImageOrientation, ButtonStyleDto, ButtonType, ValueType } from '../../index';
+import { ButtonDto, ButtonImageOrientation, ButtonStyleDto, ButtonType, UsedButton, ValueType } from '../../index';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 
@@ -9,27 +9,40 @@ interface ParameterButtonProps {
     buttonStyle: ButtonStyleDto;
     active?: boolean;
     disabled?: boolean;
-    onClick?: (id: string) => void;
+    onClick?: (usedParameter: UsedButton) => void;
     flexBasis?: string;
 }
 
 export default function ParameterButton(props: ParameterButtonProps) {
 
-    function onClick(id: string, value?: string) {
-        if (!props.active && props.onClick) props.onClick(id);
+    function onClick(value?: number) {
+        if (props.onClick) {
+            switch (props.button.buttonType) {
+                case ButtonType.Button:
+                    if (!props.active) props.onClick({buttonId: props.button.id, value: props.button.value});
+                    break;
+                case ButtonType.Toggle:
+                    props.onClick({buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value});
+                    break;
+                case ButtonType.Slider:
+                    props.onClick({buttonId: props.button.id, value: value});
+                    break;
+            }
+        }
     }
 
     if (props.button.buttonType === ButtonType.Slider) {
-        return (<ParameterSliderStyled type="range" step={1} className={props.buttonStyle.className} flexBasis={props.flexBasis}
-                                       onClick={(e: any) => onClick(props.button.id, e.target.value)}
+        return (<ParameterSliderStyled type="range" step={1} flexBasis={props.flexBasis} disabled={!!props.disabled} className={props.buttonStyle.className}
+                                       onClick={(e: any) => onClick(e.target.value)}
                                        min={props.button.valueType === ValueType.Float ? (Number(props.button.value) * 100) : props.button.value}
                                        max={props.button.valueType === ValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt} />);
     }
 
-    return (<ParameterButtonStyled flexBasis={props.flexBasis} active={!!props.active || !!props.disabled} className={props.buttonStyle.className}
-                                   onClick={() => onClick(props.button.id)}>
-        {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} imageOrientation={props.button.imageOrientation} />}
-        {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
+    return (<ParameterButtonStyled flexBasis={props.flexBasis} disabled={!!props.disabled} className={props.buttonStyle.className} onClick={() => onClick()}>
+        <ActiveOverlay active={!!props.active}>
+            {props.button.image && <ParameterButtonPicture src={URL + '/' + props.button.image} imageOrientation={props.button.imageOrientation} />}
+            {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
+        </ActiveOverlay>
     </ParameterButtonStyled>);
 }
 
@@ -38,14 +51,14 @@ function imageOrientationToAspectRatio(imageOrientation: ButtonImageOrientation)
         case ButtonImageOrientation.Square:
             return '4/3';
         case ButtonImageOrientation.Vertical:
-            return '9/16';
+            return '3/4';
         case ButtonImageOrientation.Horizontal:
         default:
             return '16/9';
     }
 }
 
-const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }>`
+const ParameterButtonStyled = styled.div<{ flexBasis?: string, disabled: boolean }>`
   flex-basis: ${props => props.flexBasis ? props.flexBasis : '100%'};
   align-self: flex-start;
   text-align: center;
@@ -81,13 +94,37 @@ const ParameterButtonStyled = styled.div<{ flexBasis?: string, active: boolean }
     }
   }
 
-  ${props => props.active ? activeParamStyle : null};
+  ${props => props.disabled ? disabledParamStyle : null};
 `;
 
-const activeParamStyle = css`
+const disabledParamStyle = css`
   pointer-events: none;
   cursor: initial;
   filter: saturate(0.5%);
+`;
+
+const ActiveOverlay = styled.div<{ active: boolean }>`
+  ${props => {
+    if (props.active) {
+      return css`
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent, rgba(255, 255, 255, 0.05), transparent);
+        background-size: 800% 800%;
+        animation: overlay 6s linear infinite;
+
+        @keyframes overlay {
+          0% {
+            background-position: 100% 0
+          }
+          50% {
+            background-position: 0 100%
+          }
+          100% {
+            background-position: 100% 0
+          }
+        }
+      `;
+    }
+  }}
 `;
 
 const ParameterButtonLabel = styled.div`
@@ -107,7 +144,7 @@ const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: Butto
   background-size: cover;
 `;
 
-const ParameterSliderStyled = styled.input<{ flexBasis?: string }>`
+const ParameterSliderStyled = styled.input<{ flexBasis?: string, disabled: boolean }>`
   flex-basis: ${props => props.flexBasis ? props.flexBasis : '100%'};
   align-self: flex-start;
   padding: 4px;
@@ -154,4 +191,6 @@ const ParameterSliderStyled = styled.input<{ flexBasis?: string }>`
       }
     }
   }
+
+  ${props => props.disabled ? disabledParamStyle : null};
 `;

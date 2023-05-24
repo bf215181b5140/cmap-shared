@@ -11,6 +11,11 @@ export interface VrcParameter {
     value: boolean | number | string;
 }
 
+export interface UsedButton {
+    buttonId: string;
+    value: string | number;
+}
+
 export interface Profile {
     client: ClientDto;
     backgrounds: BackgroundDto[];
