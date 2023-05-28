@@ -78,7 +78,7 @@ export class TierDto {
     layouts: number;
     buttons: number;
     controlParameters: number;
-    exp: boolean;
+    useCost: boolean;
     hp: boolean;
 }
 
@@ -147,7 +147,7 @@ export class ButtonDto extends BaseParentDto {
     image: string | null;
     imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Horizontal;
     order: number;
-    expCost: number | null;
+    useCost: number | null;
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
 }
@@ -171,7 +171,7 @@ export enum ClientTier {
 }
 
 export enum ParameterRole {
-    Exp = 'Exp',
+    UseCost = 'Use cost',
     HP = 'HP',
     Callback = 'Callback',
 }

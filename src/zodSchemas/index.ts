@@ -48,7 +48,7 @@ export const buttonSchema = z.object({
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     controlParameterId: z.string().max(32).nullable(),
-    expCost: z.number().optional(),
+    useCost: z.number().optional(),
     parentId: z.string().max(32)
 }).superRefine((val, ctx) => {
     // Check valueType
@@ -152,10 +152,10 @@ export const controlParametersSchema = z.object({
                 path: [`controlParameters`]
             });
         }
-        if ((val.controlParameters.filter(cp => cp.role === ParameterRole.Exp)?.length || 0) > 1) {
+        if ((val.controlParameters.filter(cp => cp.role === ParameterRole.UseCost)?.length || 0) > 1) {
             ctx.addIssue({
                 code: z.ZodIssueCode.custom,
-                message: 'Only one parameter with Exp role is allowed',
+                message: 'Only one parameter with Use cost role is allowed',
                 path: [`controlParameters`]
             });
         }
@@ -208,7 +208,7 @@ export const controlParametersSchema = z.object({
                 if (val.controlParameters[i].valueType !== ValueType.Int) {
                     ctx.addIssue({
                         code: z.ZodIssueCode.custom,
-                        message: 'Exp and HP only support Int',
+                        message: 'Use cost and HP only support Int',
                         path: [`controlParameters.${i}.valueType`]
                     });
                 }

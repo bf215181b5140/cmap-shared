@@ -62,7 +62,7 @@ export declare class TierDto {
     layouts: number;
     buttons: number;
     controlParameters: number;
-    exp: boolean;
+    useCost: boolean;
     hp: boolean;
 }
 export declare class BackgroundDto {
@@ -123,7 +123,7 @@ export declare class ButtonDto extends BaseParentDto {
     image: string | null;
     imageOrientation: ButtonImageOrientation;
     order: number;
-    expCost: number | null;
+    useCost: number | null;
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
 }
@@ -142,7 +142,7 @@ export declare enum ClientTier {
     Premium = "Premium"
 }
 export declare enum ParameterRole {
-    Exp = "Exp",
+    UseCost = "Use cost",
     HP = "HP",
     Callback = "Callback"
 }

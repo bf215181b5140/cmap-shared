@@ -139,7 +139,7 @@ var ClientTier;
 })(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
 var ParameterRole;
 (function (ParameterRole) {
-    ParameterRole["Exp"] = "Exp";
+    ParameterRole["UseCost"] = "Use cost";
     ParameterRole["HP"] = "HP";
     ParameterRole["Callback"] = "Callback";
 })(ParameterRole = exports.ParameterRole || (exports.ParameterRole = {}));
