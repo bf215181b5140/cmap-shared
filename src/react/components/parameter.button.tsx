@@ -12,7 +12,7 @@ interface ParameterButtonProps {
     onClick?: (usedParameter: UsedButton) => void;
     flexBasis?: string;
 }
-
+ // todo paste from frontend
 export default function ParameterButton(props: ParameterButtonProps) {
 
     function onClick(value?: number) {
@@ -25,7 +25,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
                     props.onClick({buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value});
                     break;
                 case ButtonType.Slider:
-                    props.onClick({buttonId: props.button.id, value: value});
+                    props.onClick({buttonId: props.button.id, value: 'value'});
                     break;
             }
         }

@@ -13,7 +13,7 @@ export interface VrcParameter {
 
 export interface UsedButton {
     buttonId: string;
-    value: string | number;
+    value: string;
 }
 
 export interface Profile {

@@ -47,6 +47,7 @@ var styled_components_1 = __importStar(require("styled-components"));
 var colors_json_1 = __importDefault(require("../../colors.json"));
 var index_1 = require("../../index");
 exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
+// todo paste from frontend
 function ParameterButton(props) {
     function onClick(value) {
         if (props.onClick) {
@@ -59,7 +60,7 @@ function ParameterButton(props) {
                     props.onClick({ buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value });
                     break;
                 case index_1.ButtonType.Slider:
-                    props.onClick({ buttonId: props.button.id, value: value });
+                    props.onClick({ buttonId: props.button.id, value: 'value' });
                     break;
             }
         }
