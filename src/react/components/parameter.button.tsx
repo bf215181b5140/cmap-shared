@@ -15,7 +15,7 @@ interface ParameterButtonProps {
     onClick?: (usedParameter: UsedButton) => void;
 }
 
-export default function ParameterButtonTesting(props: ParameterButtonProps) {
+export default function ParameterButton(props: ParameterButtonProps) {
 
     function onClick(value?: string) {
         if (props.onClick) {

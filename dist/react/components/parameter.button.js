@@ -48,7 +48,7 @@ var colors_json_1 = __importDefault(require("../../colors.json"));
 var index_1 = require("../../index");
 var expOrb_png_1 = __importDefault(require("../images/expOrb.png"));
 exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
-function ParameterButtonTesting(props) {
+function ParameterButton(props) {
     function onClick(value) {
         if (props.onClick) {
             switch (props.button.buttonType) {
@@ -78,7 +78,7 @@ function ParameterButtonTesting(props) {
     }
     return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ disabled: !!props.disabled || !useCostUsable(), className: "".concat(props.buttonStyle.className, " ").concat(props.active ? 'active' : ''), onClick: function () { return onClick(); } }, { children: [props.button.image && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: exports.URL + '/' + props.button.image, imageOrientation: props.button.imageOrientation }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] })), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "bottom", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
 }
-exports.default = ParameterButtonTesting;
+exports.default = ParameterButton;
 function imageOrientationToAspectRatio(imageOrientation) {
     switch (imageOrientation) {
         case index_1.ButtonImageOrientation.Square:

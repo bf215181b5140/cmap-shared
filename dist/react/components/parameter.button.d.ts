@@ -12,5 +12,5 @@ interface ParameterButtonProps {
     };
     onClick?: (usedParameter: UsedButton) => void;
 }
-export default function ParameterButtonTesting(props: ParameterButtonProps): import("react/jsx-runtime").JSX.Element;
+export default function ParameterButton(props: ParameterButtonProps): import("react/jsx-runtime").JSX.Element;
 export {};
