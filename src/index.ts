@@ -154,7 +154,7 @@ export class ButtonDto extends BaseParentDto {
 
 export class TierKeyDto {
     key: string;
-    Tier: ClientTier;
+    tier: ClientTier;
     used: boolean;
 }
 

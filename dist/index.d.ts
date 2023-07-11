@@ -129,7 +129,7 @@ export declare class ButtonDto extends BaseParentDto {
 }
 export declare class TierKeyDto {
     key: string;
-    Tier: ClientTier;
+    tier: ClientTier;
     used: boolean;
 }
 export declare class FileUploadDto {
