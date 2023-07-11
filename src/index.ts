@@ -58,7 +58,7 @@ export class RegistrationFormDto {
     username: string;
     passwordOne: string;
     passwordTwo: string;
-    registrationKey: string;
+    fingerprint: string;
 }
 
 class BaseDto {

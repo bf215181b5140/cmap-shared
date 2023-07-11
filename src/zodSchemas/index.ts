@@ -4,7 +4,8 @@ import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, Parame
 export const registrationSchema = z.object({
     username: z.string().min(3).max(16),
     passwordOne: z.string().min(6).max(32),
-    passwordTwo: z.string().min(6).max(32)
+    passwordTwo: z.string().min(6).max(32),
+    fingerprint: z.string().max(256)
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({

@@ -6,7 +6,8 @@ var index_1 = require("../index");
 exports.registrationSchema = zod_1.z.object({
     username: zod_1.z.string().min(3).max(16),
     passwordOne: zod_1.z.string().min(6).max(32),
-    passwordTwo: zod_1.z.string().min(6).max(32)
+    passwordTwo: zod_1.z.string().min(6).max(32),
+    fingerprint: zod_1.z.string().max(256)
 }).superRefine(function (val, ctx) {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({

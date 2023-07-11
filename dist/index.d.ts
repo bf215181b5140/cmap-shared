@@ -45,7 +45,7 @@ export declare class RegistrationFormDto {
     username: string;
     passwordOne: string;
     passwordTwo: string;
-    registrationKey: string;
+    fingerprint: string;
 }
 declare class BaseDto {
     id: string;
