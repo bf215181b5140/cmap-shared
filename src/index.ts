@@ -152,6 +152,12 @@ export class ButtonDto extends BaseParentDto {
     controlParameterId: string | undefined | null;
 }
 
+export class TierKeyDto {
+    key: string;
+    Tier: ClientTier;
+    used: boolean;
+}
+
 export class FileUploadDto {
     parentType: string;
     parentId: string;
