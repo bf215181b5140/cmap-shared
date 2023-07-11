@@ -1,11 +1,10 @@
 import { z } from 'zod';
-import { ButtonImageOrientation, ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 
 export const registrationSchema = z.object({
     username: z.string().min(3).max(16),
     passwordOne: z.string().min(6).max(32),
-    passwordTwo: z.string().min(6).max(32),
-    registrationKey: z.string().max(32)
+    passwordTwo: z.string().min(6).max(32)
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
@@ -230,3 +229,12 @@ export const controlParametersSchema = z.object({
         }
     }
 });
+
+export const generateTierKeySchema = z.object({
+    tier: z.nativeEnum(ClientTier)
+})
+
+export const activateTierKeySchema = z.object({
+    key: z.string().max(32)
+})
+
