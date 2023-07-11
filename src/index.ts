@@ -41,6 +41,7 @@ export interface ControlParametersForm {
 export interface Tiers {
     tiers: TierDto[];
     clientTier: TierDto;
+    tierKeys: TierKeyDto[];
 }
 
 export interface ClientWithActivity extends ClientDto {
