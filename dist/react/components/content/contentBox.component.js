@@ -26,6 +26,11 @@ var react_1 = require("react");
 var content_component_1 = require("./content.component");
 function ContentBox(props) {
     var _a = (0, react_1.useState)(true), shown = _a[0], setShown = _a[1];
+    (0, react_1.useEffect)(function () {
+        if (typeof props.show === 'boolean') {
+            setShown(props.show);
+        }
+    }, [props.show]);
     function getFlexBasis() {
         if (!props.flexBasis)
             return undefined;

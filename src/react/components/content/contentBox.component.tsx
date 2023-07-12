@@ -1,7 +1,7 @@
 import { ContentBoxWidth, ReactProps } from '../../../index';
 import styled from 'styled-components';
 import colors from '../../../colors.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CONTENT_GAP } from './content.component';
 
 interface ContentBoxProps extends ReactProps {
@@ -9,11 +9,18 @@ interface ContentBoxProps extends ReactProps {
     flexGrow?: number | string;
     flexBasis?: string | ContentBoxWidth;
     loading?: boolean;
+    show?: boolean;
 }
 
 export default function ContentBox(props: ContentBoxProps) {
 
     const [shown, setShown] = useState<boolean>(true);
+
+    useEffect(() => {
+        if (typeof props.show === 'boolean') {
+            setShown(props.show);
+        }
+    }, [props.show]);
 
     function getFlexBasis(): string {
         if (!props.flexBasis) return undefined;
