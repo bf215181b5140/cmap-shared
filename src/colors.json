@@ -14,7 +14,7 @@
   "ui-primary-8": "#313131",
   "ui-primary-9": "#0e131c",
 
-  "ui-navBar-7": "#181f24DD",
+  "ui-navBar-7": "#181f24ee",
   "ui-navBar-8": "#025b66",
   "ui-navBar-9": "#10888e",
   "ui-navBar-10": "#156472",
@@ -35,7 +35,7 @@
 
 
   "titleBar-bg": "#15191dEE",
-  "app-bg": "#15191dEE",
+  "app-bg": "#15191df7",
   "app-bg-opaque": "#15191d",
   "app-border": "#1b2024",
   "content-bg": "#292c37",
@@ -63,7 +63,7 @@
 
   "font-icon-1": "#2bacc2",
 
-  "nav-bg": "#051012EE",
+  "nav-bg": "#181f24ee",
   "nav-icon": "#166472EE",
   "nav-hover-bg": "#045b66EE",
   "nav-hover-icon": "#54bed1",
