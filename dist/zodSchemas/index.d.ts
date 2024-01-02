@@ -1,30 +1,30 @@
 import { z } from 'zod';
-import { ButtonImageOrientation, ButtonType, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;
     passwordTwo: z.ZodString;
-    registrationKey: z.ZodString;
+    fingerprint: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    registrationKey?: string;
+    fingerprint?: string;
 }, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    registrationKey?: string;
+    fingerprint?: string;
 }>, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    registrationKey?: string;
+    fingerprint?: string;
 }, {
     username?: string;
     passwordOne?: string;
     passwordTwo?: string;
-    registrationKey?: string;
+    fingerprint?: string;
 }>;
 export declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
@@ -246,4 +246,18 @@ export declare const controlParametersSchema: z.ZodEffects<z.ZodObject<{
         valueSecondary?: string;
         valueType?: ValueType;
     }[];
+}>;
+export declare const generateTierKeySchema: z.ZodObject<{
+    tier: z.ZodNativeEnum<typeof ClientTier>;
+}, "strip", z.ZodTypeAny, {
+    tier?: ClientTier;
+}, {
+    tier?: ClientTier;
+}>;
+export declare const activateTierKeySchema: z.ZodObject<{
+    key: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    key?: string;
+}, {
+    key?: string;
 }>;

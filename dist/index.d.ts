@@ -32,6 +32,7 @@ export interface ControlParametersForm {
 export interface Tiers {
     tiers: TierDto[];
     clientTier: TierDto;
+    tierKeys: TierKeyDto[];
 }
 export interface ClientWithActivity extends ClientDto {
     isActive: boolean;
@@ -44,7 +45,7 @@ export declare class RegistrationFormDto {
     username: string;
     passwordOne: string;
     passwordTwo: string;
-    registrationKey: string;
+    fingerprint: string;
 }
 declare class BaseDto {
     id: string;
@@ -126,6 +127,11 @@ export declare class ButtonDto extends BaseParentDto {
     useCost: number | null;
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
+}
+export declare class TierKeyDto {
+    key: string;
+    tier: ClientTier;
+    used: boolean;
 }
 export declare class FileUploadDto {
     parentType: string;
