@@ -80,4 +80,3 @@ export declare const theme: {
         h1: string;
     };
 };
-export type ThemeType = typeof theme;

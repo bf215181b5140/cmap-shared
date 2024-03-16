@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { AvatarsPageDto, ProfilePageDto } from './dtos';
 import { IgnoredParams } from './const';
-import { theme, ThemeType } from './react/theme';
+import { theme } from './react/theme';
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
-export { theme, ThemeType };
+export { theme };
 export interface VrcParameter {
     path: string;
     value: boolean | number | string;

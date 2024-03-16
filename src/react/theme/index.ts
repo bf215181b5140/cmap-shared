@@ -82,5 +82,3 @@ export const theme = {
         h1: '20px',
     }
 };
-
-export type ThemeType = typeof theme;
