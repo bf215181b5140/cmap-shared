@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierKeyDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.RegistrationFormDto = exports.theme = exports.AvatarsPageDto = exports.ProfilePageDto = exports.IgnoredParams = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierKeyDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.RegistrationFormDto = exports.RegistrationInfoDto = exports.theme = exports.AvatarsPageDto = exports.ProfilePageDto = exports.IgnoredParams = void 0;
 var dtos_1 = require("./dtos");
 Object.defineProperty(exports, "AvatarsPageDto", { enumerable: true, get: function () { return dtos_1.AvatarsPageDto; } });
 Object.defineProperty(exports, "ProfilePageDto", { enumerable: true, get: function () { return dtos_1.ProfilePageDto; } });
@@ -24,6 +24,12 @@ Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: functio
 var theme_1 = require("./react/theme");
 Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return theme_1.theme; } });
 // -- Classes -- //
+var RegistrationInfoDto = /** @class */ (function () {
+    function RegistrationInfoDto() {
+    }
+    return RegistrationInfoDto;
+}());
+exports.RegistrationInfoDto = RegistrationInfoDto;
 var RegistrationFormDto = /** @class */ (function () {
     function RegistrationFormDto() {
     }

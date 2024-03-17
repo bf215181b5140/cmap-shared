@@ -43,6 +43,10 @@ export interface ClientWithActivity extends ClientDto {
 export interface ReactProps {
     children?: ReactNode;
 }
+export declare class RegistrationInfoDto {
+    available: boolean;
+    keyRequired: boolean;
+}
 export declare class RegistrationFormDto {
     username: string;
     passwordOne: string;

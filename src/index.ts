@@ -56,6 +56,11 @@ export interface ReactProps {
 }
 
 // -- Classes -- //
+export class RegistrationInfoDto {
+    available: boolean;
+    keyRequired: boolean;
+}
+
 export class RegistrationFormDto {
     username: string;
     passwordOne: string;
