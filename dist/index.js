@@ -1,12 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.theme = exports.IgnoredParams = exports.LoginFormSchema = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.theme = exports.IgnoredParams = exports.RegisterWithKeySchema = exports.RegisterSchema = exports.LoginFormSchema = void 0;
 var const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 var theme_1 = require("./react/theme");
 Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return theme_1.theme; } });
 var login_1 = require("./types/api/login");
 Object.defineProperty(exports, "LoginFormSchema", { enumerable: true, get: function () { return login_1.LoginFormSchema; } });
+var register_1 = require("./types/api/register");
+Object.defineProperty(exports, "RegisterSchema", { enumerable: true, get: function () { return register_1.RegisterSchema; } });
+Object.defineProperty(exports, "RegisterWithKeySchema", { enumerable: true, get: function () { return register_1.RegisterWithKeySchema; } });
 // -- Enums -- //
 var ClientTier;
 (function (ClientTier) {

@@ -1,36 +1,5 @@
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
-export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
-    username: z.ZodString;
-    passwordOne: z.ZodString;
-    passwordTwo: z.ZodString;
-    fingerprint: z.ZodString;
-    registrationKey: z.ZodOptional<z.ZodString>;
-}, "strip", z.ZodTypeAny, {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    fingerprint: string;
-    registrationKey?: string | undefined;
-}, {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    fingerprint: string;
-    registrationKey?: string | undefined;
-}>, {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    fingerprint: string;
-    registrationKey?: string | undefined;
-}, {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    fingerprint: string;
-    registrationKey?: string | undefined;
-}>;
 export declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;

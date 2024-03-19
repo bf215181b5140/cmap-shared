@@ -1,21 +1,6 @@
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
 
-export const registrationSchema = z.object({
-    username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
-    passwordOne: z.string().min(6).max(32),
-    passwordTwo: z.string().min(6).max(32),
-    fingerprint: z.string().max(256),
-    registrationKey: z.string().optional(),
-}).superRefine((val, ctx) => {
-    if (val.passwordOne !== val.passwordTwo) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Passwords don\'t match',
-            path: ['passwordOne', 'passwordTwo']
-        });
-    }
-});
 
 export const profileSchema = z.object({
     displayName: z.string().min(3).max(32),

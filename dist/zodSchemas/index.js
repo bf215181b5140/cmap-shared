@@ -1,23 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.activateTierKeySchema = exports.generateTierKeySchema = exports.controlParametersSchema = exports.parametersSchema = exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = void 0;
+exports.activateTierKeySchema = exports.generateTierKeySchema = exports.controlParametersSchema = exports.parametersSchema = exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("../index");
-exports.registrationSchema = zod_1.z.object({
-    username: zod_1.z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
-    passwordOne: zod_1.z.string().min(6).max(32),
-    passwordTwo: zod_1.z.string().min(6).max(32),
-    fingerprint: zod_1.z.string().max(256),
-    registrationKey: zod_1.z.string().optional(),
-}).superRefine(function (val, ctx) {
-    if (val.passwordOne !== val.passwordTwo) {
-        ctx.addIssue({
-            code: zod_1.z.ZodIssueCode.custom,
-            message: 'Passwords don\'t match',
-            path: ['passwordOne', 'passwordTwo']
-        });
-    }
-});
 exports.profileSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(32),
     bio: zod_1.z.string().max(1000),
