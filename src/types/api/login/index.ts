@@ -6,4 +6,9 @@ export const LoginFormSchema = z.object({
     password: z.string().max(256).transform<string>(val => createHash('sha256').update(val).digest().toString()),
 });
 
-export type LoginForm = z.infer<typeof LoginFormSchema>
+export type LoginForm = z.infer<typeof LoginFormSchema>;
+
+export interface LoginTokenDTO {
+    apiToken: string;
+    displayName: string;
+}
