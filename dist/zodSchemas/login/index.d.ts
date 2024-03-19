@@ -3,10 +3,10 @@ export declare const LoginFormSchema: z.ZodObject<{
     username: z.ZodString;
     password: z.ZodEffects<z.ZodString, string, string>;
 }, "strip", z.ZodTypeAny, {
-    username?: string;
-    password?: string;
+    password: string;
+    username: string;
 }, {
-    username?: string;
-    password?: string;
+    password: string;
+    username: string;
 }>;
 export type LoginForm = z.infer<typeof LoginFormSchema>;

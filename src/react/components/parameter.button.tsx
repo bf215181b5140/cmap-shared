@@ -21,14 +21,14 @@ export default function ParameterButton(props: ParameterButtonProps) {
         if (props.onClick) {
             switch (props.button.buttonType) {
                 case ButtonType.Button:
-                    if (!props.active) props.onClick({buttonId: props.button.id, value: props.button.value});
+                    if (!props.active) props.onClick({buttonId: props.button.id!, value: props.button.value});
                     break;
                 case ButtonType.Toggle:
-                    props.onClick({buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value});
+                    props.onClick({buttonId: props.button.id!, value: props.active ? props.button.valueAlt : props.button.value});
                     break;
                 case ButtonType.Slider:
                     if (value === undefined) return;
-                    props.onClick({buttonId: props.button.id, value: value});
+                    props.onClick({buttonId: props.button.id!, value: value});
                     break;
             }
         }

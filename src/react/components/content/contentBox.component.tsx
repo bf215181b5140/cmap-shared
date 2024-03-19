@@ -22,7 +22,7 @@ export default function ContentBox(props: ContentBoxProps) {
         }
     }, [props.show]);
 
-    function getFlexBasis(): string {
+    function getFlexBasis(): string | undefined {
         if (!props.flexBasis) return undefined;
         switch(props.flexBasis) {
             case ContentBoxWidth.None:

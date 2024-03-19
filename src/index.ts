@@ -56,12 +56,12 @@ export interface ReactProps {
 }
 
 // -- Classes -- //
-export class RegistrationInfoDto {
+export interface RegistrationInfoDto {
     available: boolean;
     keyRequired: boolean;
 }
 
-export class RegistrationFormDto {
+export interface RegistrationFormDto {
     username: string;
     passwordOne: string;
     passwordTwo: string;
@@ -69,17 +69,17 @@ export class RegistrationFormDto {
     fingerprint: string;
 }
 
-class BaseDto {
-    id: string = null;
+interface BaseDto {
+    id: string | undefined | null;
     createDate: Date;
     updateDate: Date;
 }
 
-class BaseParentDto extends BaseDto {
+interface BaseParentDto extends BaseDto {
     parentId?: string;
 }
 
-export class TierDto {
+export interface TierDto {
     tier: ClientTier;
     rank: number;
     color: string;
@@ -91,19 +91,19 @@ export class TierDto {
     hp: boolean;
 }
 
-export class BackgroundDto {
+export interface BackgroundDto {
     className: string;
     Label: string;
     tier: TierDto;
 }
 
-export class ButtonStyleDto {
+export interface ButtonStyleDto {
     className: string;
     Label: string;
     tier: TierDto;
 }
 
-export class ClientDto extends BaseDto {
+export interface ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
@@ -115,7 +115,7 @@ export class ClientDto extends BaseDto {
     avatars: AvatarDto[] | undefined | null;
 }
 
-export class AvatarDto extends BaseParentDto {
+export interface AvatarDto extends BaseParentDto {
     vrcId: string;
     label: string;
     default: boolean;
@@ -124,56 +124,56 @@ export class AvatarDto extends BaseParentDto {
     controlParameters: ControlParameterDto[] | undefined | null;
 }
 
-export class ParameterDto extends BaseParentDto {
+export interface ParameterDto extends BaseParentDto {
     label: string;
-    path: string = '/avatar/parameters/';
+    path: string;
     valueType: ValueType;
 }
 
-export class ControlParameterDto extends BaseParentDto {
+export interface ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
-    path: string = '/avatar/parameters/';
+    path: string;
     valuePrimary: string;
     valueSecondary: string;
     valueType: ValueType;
 }
 
-export class LayoutDto extends BaseParentDto {
+export interface LayoutDto extends BaseParentDto {
     label: string;
     order: number;
-    width: ContentBoxWidth = ContentBoxWidth.Full;
+    width: ContentBoxWidth;
     buttons: ButtonDto[] | undefined | null;
 }
 
-export class ButtonDto extends BaseParentDto {
+export interface ButtonDto extends BaseParentDto {
     label: string;
-    path: string = '/avatar/parameters/';
+    path: string;
     value: string;
     valueAlt: string;
-    valueType: ValueType = ValueType.Int;
-    buttonType: ButtonType = ButtonType.Button;
+    valueType: ValueType;
+    buttonType: ButtonType;
     image: string | null;
-    imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Horizontal;
+    imageOrientation: ButtonImageOrientation;
     order: number;
     useCost: number | null;
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
 }
 
-export class TierKeyDto {
+export interface TierKeyDto {
     key: string;
     tier: ClientTier;
     used: boolean;
 }
 
-export class FileUploadDto {
+export interface FileUploadDto {
     parentType: string;
     parentId: string;
     file: File;
 }
 
-export class FieldOption {
+export interface FieldOption {
     key: string;
     value: string;
 }

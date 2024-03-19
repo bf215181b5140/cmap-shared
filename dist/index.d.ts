@@ -42,26 +42,26 @@ export interface ClientWithActivity extends ClientDto {
 export interface ReactProps {
     children?: ReactNode;
 }
-export declare class RegistrationInfoDto {
+export interface RegistrationInfoDto {
     available: boolean;
     keyRequired: boolean;
 }
-export declare class RegistrationFormDto {
+export interface RegistrationFormDto {
     username: string;
     passwordOne: string;
     passwordTwo: string;
     registrationKey: string;
     fingerprint: string;
 }
-declare class BaseDto {
-    id: string;
+interface BaseDto {
+    id: string | undefined | null;
     createDate: Date;
     updateDate: Date;
 }
-declare class BaseParentDto extends BaseDto {
+interface BaseParentDto extends BaseDto {
     parentId?: string;
 }
-export declare class TierDto {
+export interface TierDto {
     tier: ClientTier;
     rank: number;
     color: string;
@@ -72,17 +72,17 @@ export declare class TierDto {
     useCost: boolean;
     hp: boolean;
 }
-export declare class BackgroundDto {
+export interface BackgroundDto {
     className: string;
     Label: string;
     tier: TierDto;
 }
-export declare class ButtonStyleDto {
+export interface ButtonStyleDto {
     className: string;
     Label: string;
     tier: TierDto;
 }
-export declare class ClientDto extends BaseDto {
+export interface ClientDto extends BaseDto {
     username: string;
     displayName: string;
     bio: string | null;
@@ -93,7 +93,7 @@ export declare class ClientDto extends BaseDto {
     buttonStyle: ButtonStyleDto;
     avatars: AvatarDto[] | undefined | null;
 }
-export declare class AvatarDto extends BaseParentDto {
+export interface AvatarDto extends BaseParentDto {
     vrcId: string;
     label: string;
     default: boolean;
@@ -101,12 +101,12 @@ export declare class AvatarDto extends BaseParentDto {
     parameters: ParameterDto[] | undefined | null;
     controlParameters: ControlParameterDto[] | undefined | null;
 }
-export declare class ParameterDto extends BaseParentDto {
+export interface ParameterDto extends BaseParentDto {
     label: string;
     path: string;
     valueType: ValueType;
 }
-export declare class ControlParameterDto extends BaseParentDto {
+export interface ControlParameterDto extends BaseParentDto {
     label: string;
     role: ParameterRole;
     path: string;
@@ -114,13 +114,13 @@ export declare class ControlParameterDto extends BaseParentDto {
     valueSecondary: string;
     valueType: ValueType;
 }
-export declare class LayoutDto extends BaseParentDto {
+export interface LayoutDto extends BaseParentDto {
     label: string;
     order: number;
     width: ContentBoxWidth;
     buttons: ButtonDto[] | undefined | null;
 }
-export declare class ButtonDto extends BaseParentDto {
+export interface ButtonDto extends BaseParentDto {
     label: string;
     path: string;
     value: string;
@@ -134,17 +134,17 @@ export declare class ButtonDto extends BaseParentDto {
     controlParameter: ControlParameterDto | null;
     controlParameterId: string | undefined | null;
 }
-export declare class TierKeyDto {
+export interface TierKeyDto {
     key: string;
     tier: ClientTier;
     used: boolean;
 }
-export declare class FileUploadDto {
+export interface FileUploadDto {
     parentType: string;
     parentId: string;
     file: File;
 }
-export declare class FieldOption {
+export interface FieldOption {
     key: string;
     value: string;
 }

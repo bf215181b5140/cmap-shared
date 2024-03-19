@@ -9,42 +9,42 @@ export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     fingerprint: z.ZodString;
     registrationKey: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    username?: string;
-    passwordOne?: string;
-    passwordTwo?: string;
-    fingerprint?: string;
-    registrationKey?: string;
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    fingerprint: string;
+    registrationKey?: string | undefined;
 }, {
-    username?: string;
-    passwordOne?: string;
-    passwordTwo?: string;
-    fingerprint?: string;
-    registrationKey?: string;
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    fingerprint: string;
+    registrationKey?: string | undefined;
 }>, {
-    username?: string;
-    passwordOne?: string;
-    passwordTwo?: string;
-    fingerprint?: string;
-    registrationKey?: string;
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    fingerprint: string;
+    registrationKey?: string | undefined;
 }, {
-    username?: string;
-    passwordOne?: string;
-    passwordTwo?: string;
-    fingerprint?: string;
-    registrationKey?: string;
+    username: string;
+    passwordOne: string;
+    passwordTwo: string;
+    fingerprint: string;
+    registrationKey?: string | undefined;
 }>;
 export declare const profileSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
     hidden: z.ZodBoolean;
 }, "strip", z.ZodTypeAny, {
-    displayName?: string;
-    bio?: string;
-    hidden?: boolean;
+    hidden: boolean;
+    displayName: string;
+    bio: string;
 }, {
-    displayName?: string;
-    bio?: string;
-    hidden?: boolean;
+    hidden: boolean;
+    displayName: string;
+    bio: string;
 }>;
 export declare const avatarSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
@@ -52,15 +52,15 @@ export declare const avatarSchema: z.ZodObject<{
     label: z.ZodString;
     default: z.ZodBoolean;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    vrcId?: string;
-    label?: string;
-    default?: boolean;
+    default: boolean;
+    id: string | null;
+    label: string;
+    vrcId: string;
 }, {
-    id?: string;
-    vrcId?: string;
-    label?: string;
-    default?: boolean;
+    default: boolean;
+    id: string | null;
+    label: string;
+    vrcId: string;
 }>;
 export declare const layoutSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
@@ -69,17 +69,17 @@ export declare const layoutSchema: z.ZodObject<{
     width: z.ZodNativeEnum<typeof ContentBoxWidth>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    label?: string;
-    order?: number;
-    width?: ContentBoxWidth;
-    parentId?: string;
+    id: string | null;
+    width: ContentBoxWidth;
+    order: number;
+    label: string;
+    parentId: string;
 }, {
-    id?: string;
-    label?: string;
-    order?: number;
-    width?: ContentBoxWidth;
-    parentId?: string;
+    id: string | null;
+    width: ContentBoxWidth;
+    order: number;
+    label: string;
+    parentId: string;
 }>;
 export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
@@ -95,57 +95,57 @@ export declare const buttonSchema: z.ZodEffects<z.ZodObject<{
     useCost: z.ZodOptional<z.ZodNumber>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    imageOrientation?: ButtonImageOrientation;
-    order?: number;
-    controlParameterId?: string;
-    useCost?: number;
-    parentId?: string;
+    id: string | null;
+    imageOrientation: ButtonImageOrientation;
+    order: number;
+    value: string;
+    label: string | null;
+    path: string;
+    valueType: ValueType;
+    parentId: string;
+    valueAlt: string | null;
+    buttonType: ButtonType;
+    controlParameterId: string | null;
+    useCost?: number | undefined;
 }, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    imageOrientation?: ButtonImageOrientation;
-    order?: number;
-    controlParameterId?: string;
-    useCost?: number;
-    parentId?: string;
+    id: string | null;
+    imageOrientation: ButtonImageOrientation;
+    order: number;
+    value: string;
+    label: string | null;
+    path: string;
+    valueType: ValueType;
+    parentId: string;
+    valueAlt: string | null;
+    buttonType: ButtonType;
+    controlParameterId: string | null;
+    useCost?: number | undefined;
 }>, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    imageOrientation?: ButtonImageOrientation;
-    order?: number;
-    controlParameterId?: string;
-    useCost?: number;
-    parentId?: string;
+    id: string | null;
+    imageOrientation: ButtonImageOrientation;
+    order: number;
+    value: string;
+    label: string | null;
+    path: string;
+    valueType: ValueType;
+    parentId: string;
+    valueAlt: string | null;
+    buttonType: ButtonType;
+    controlParameterId: string | null;
+    useCost?: number | undefined;
 }, {
-    id?: string;
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ValueType;
-    buttonType?: ButtonType;
-    imageOrientation?: ButtonImageOrientation;
-    order?: number;
-    controlParameterId?: string;
-    useCost?: number;
-    parentId?: string;
+    id: string | null;
+    imageOrientation: ButtonImageOrientation;
+    order: number;
+    value: string;
+    label: string | null;
+    path: string;
+    valueType: ValueType;
+    parentId: string;
+    valueAlt: string | null;
+    buttonType: ButtonType;
+    controlParameterId: string | null;
+    useCost?: number | undefined;
 }>;
 export declare const parametersSchema: z.ZodObject<{
     avatarId: z.ZodString;
@@ -155,32 +155,32 @@ export declare const parametersSchema: z.ZodObject<{
         path: z.ZodString;
         valueType: z.ZodNativeEnum<typeof ValueType>;
     }, "strip", z.ZodTypeAny, {
-        id?: string;
-        label?: string;
-        path?: string;
-        valueType?: ValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        valueType: ValueType;
     }, {
-        id?: string;
-        label?: string;
-        path?: string;
-        valueType?: ValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        valueType: ValueType;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
-    avatarId?: string;
+    avatarId: string;
     parameters?: {
-        id?: string;
-        label?: string;
-        path?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        valueType: ValueType;
+    }[] | undefined;
 }, {
-    avatarId?: string;
+    avatarId: string;
     parameters?: {
-        id?: string;
-        label?: string;
-        path?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        valueType: ValueType;
+    }[] | undefined;
 }>;
 export declare const controlParametersSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
@@ -193,78 +193,78 @@ export declare const controlParametersSchema: z.ZodEffects<z.ZodObject<{
         valueSecondary: z.ZodNullable<z.ZodString>;
         valueType: z.ZodNativeEnum<typeof ValueType>;
     }, "strip", z.ZodTypeAny, {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
     }, {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }>, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ParameterRole;
+        valueType: ValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }>;
 export declare const generateTierKeySchema: z.ZodObject<{
     tier: z.ZodNativeEnum<typeof ClientTier>;
 }, "strip", z.ZodTypeAny, {
-    tier?: ClientTier;
+    tier: ClientTier;
 }, {
-    tier?: ClientTier;
+    tier: ClientTier;
 }>;
 export declare const activateTierKeySchema: z.ZodObject<{
     key: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    key?: string;
+    key: string;
 }, {
-    key?: string;
+    key: string;
 }>;
