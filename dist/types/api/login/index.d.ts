@@ -9,7 +9,7 @@ export declare const LoginFormSchema: z.ZodObject<{
     password: string;
     username: string;
 }>;
-export type LoginForm = z.infer<typeof LoginFormSchema>;
+export type LoginFormDTO = z.infer<typeof LoginFormSchema>;
 export interface LoginTokenDTO {
     apiToken: string;
     displayName: string;

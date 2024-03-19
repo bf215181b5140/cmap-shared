@@ -44,4 +44,4 @@ export declare const RegisterWithKeySchema: z.ZodObject<{
     fingerprint: string;
     registrationKey: string;
 }>;
-export type RegisterForm = z.infer<typeof RegisterWithKeySchema>;
+export type RegisterFormDTO = z.infer<typeof RegisterWithKeySchema>;

@@ -2,12 +2,12 @@ import { ReactNode } from "react";
 import { AvatarsPageDto, ProfilePageDto } from './dtos';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
-import { LoginForm, LoginFormSchema, LoginTokenDTO } from './types/api/login';
-import { RegisterForm, RegisterSchema, RegisterWithKeySchema } from './types/api/register';
+import { LoginFormDTO, LoginFormSchema, LoginTokenDTO } from './types/api/login';
+import { RegisterFormDTO, RegisterSchema, RegisterWithKeySchema } from './types/api/register';
 
 
-export { LoginFormSchema, LoginForm, LoginTokenDTO };
-export { RegisterSchema, RegisterWithKeySchema, RegisterForm } ;
+export { LoginFormSchema, LoginFormDTO, LoginTokenDTO };
+export { RegisterSchema, RegisterWithKeySchema, RegisterFormDTO } ;
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
 export { theme };
