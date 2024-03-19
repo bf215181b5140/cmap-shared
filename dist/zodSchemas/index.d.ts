@@ -1,5 +1,7 @@
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { LoginForm, LoginFormSchema } from './login';
+export { LoginFormSchema, LoginForm };
 export declare const registrationSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;

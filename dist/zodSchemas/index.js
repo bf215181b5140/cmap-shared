@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.activateTierKeySchema = exports.generateTierKeySchema = exports.controlParametersSchema = exports.parametersSchema = exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = void 0;
+exports.activateTierKeySchema = exports.generateTierKeySchema = exports.controlParametersSchema = exports.parametersSchema = exports.buttonSchema = exports.layoutSchema = exports.avatarSchema = exports.profileSchema = exports.registrationSchema = exports.LoginFormSchema = void 0;
 var zod_1 = require("zod");
 var index_1 = require("../index");
+var login_1 = require("./login");
+Object.defineProperty(exports, "LoginFormSchema", { enumerable: true, get: function () { return login_1.LoginFormSchema; } });
 exports.registrationSchema = zod_1.z.object({
     username: zod_1.z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
     passwordOne: zod_1.z.string().min(6).max(32),

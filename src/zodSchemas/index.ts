@@ -1,5 +1,9 @@
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType, ClientTier, ContentBoxWidth, ParameterRole, ValueType } from '../index';
+import { LoginForm, LoginFormSchema } from './login';
+
+
+export { LoginFormSchema, LoginForm };
 
 export const registrationSchema = z.object({
     username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
