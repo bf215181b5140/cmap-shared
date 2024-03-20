@@ -31,11 +31,16 @@ var CmapApiError = /** @class */ (function (_super) {
 }(Error));
 exports.CmapApiError = CmapApiError;
 var CmapApiErrorDTO = /** @class */ (function () {
-    function CmapApiErrorDTO(name, message, code) {
+    function CmapApiErrorDTO(name, message, code, id) {
         this.code = code;
         this.name = name;
         this.message = message;
+        this.id = id;
     }
+    CmapApiErrorDTO.prototype.setId = function (id) {
+        this.id = id;
+        return this;
+    };
     return CmapApiErrorDTO;
 }());
 exports.CmapApiErrorDTO = CmapApiErrorDTO;

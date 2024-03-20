@@ -7,5 +7,7 @@ export declare class CmapApiErrorDTO {
     code?: number;
     name: string;
     message: string;
-    constructor(name: string, message: string, code?: number);
+    id?: string;
+    constructor(name: string, message: string, code?: number, id?: string);
+    setId(id: string): this;
 }
