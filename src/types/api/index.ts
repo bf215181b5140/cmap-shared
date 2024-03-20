@@ -24,6 +24,7 @@ export class CmapApiErrorDTO {
         this.name = name;
         this.message = message;
         this.id = id;
+        Object.setPrototypeOf(this, CmapApiErrorDTO.prototype);
     }
 
     public setId(id: string): this {

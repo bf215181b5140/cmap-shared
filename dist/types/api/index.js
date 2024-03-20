@@ -37,6 +37,7 @@ var CmapApiErrorDTO = /** @class */ (function () {
         this.name = name;
         this.message = message;
         this.id = id;
+        Object.setPrototypeOf(this, CmapApiErrorDTO.prototype);
     }
     CmapApiErrorDTO.prototype.setId = function (id) {
         this.id = id;
