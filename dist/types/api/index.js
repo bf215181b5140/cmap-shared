@@ -22,6 +22,7 @@ var CmapApiError = /** @class */ (function (_super) {
         var _this = _super.call(this, message) || this;
         _this.code = code;
         _this.name = 'CmapApiError';
+        Object.setPrototypeOf(_this, CmapApiError.prototype);
         return _this;
     }
     CmapApiError.prototype.dto = function () {

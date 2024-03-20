@@ -5,6 +5,7 @@ export class CmapApiError extends Error {
         super(message);
         this.code = code;
         this.name = 'CmapApiError';
+        Object.setPrototypeOf(this, CmapApiError.prototype);
     }
 
     public dto(): CmapApiErrorDTO {
