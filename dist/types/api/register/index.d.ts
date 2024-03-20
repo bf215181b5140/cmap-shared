@@ -1,4 +1,11 @@
 import { z } from 'zod';
+export interface RegisterRequestDTO {
+    fingerprint: string;
+}
+export interface RegisterInfoDTO {
+    available: boolean;
+    keyRequired: boolean;
+}
 export declare const RegisterFormSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodString;
     passwordOne: z.ZodString;

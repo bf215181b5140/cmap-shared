@@ -3,11 +3,11 @@ import { AvatarsPageDto, ProfilePageDto } from './dtos';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
 import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
-import { RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
+import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
 import { CmapApiError, CmapApiErrorDTO } from './types/api';
 export { CmapApiError, CmapApiErrorDTO };
 export { LoginSchema, LoginDTO, LoginTokenDTO };
-export { RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
+export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
 export { theme };
@@ -47,17 +47,6 @@ export interface ClientWithActivity extends ClientDto {
 }
 export interface ReactProps {
     children?: ReactNode;
-}
-export interface RegistrationInfoDto {
-    available: boolean;
-    keyRequired: boolean;
-}
-export interface RegistrationFormDto {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    registrationKey: string;
-    fingerprint: string;
 }
 interface BaseDto {
     id: string | undefined | null;

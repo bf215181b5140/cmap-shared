@@ -1,5 +1,14 @@
 import { z } from 'zod';
 
+export interface RegisterRequestDTO {
+    fingerprint: string;
+}
+
+export interface RegisterInfoDTO {
+    available: boolean;
+    keyRequired: boolean;
+}
+
 export const RegisterFormSchema = z.object({
     username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
     passwordOne: z.string().min(6).max(32),
