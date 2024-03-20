@@ -16,7 +16,7 @@ export const RegisterFormSchema = z.object({
 });
 
 export const RegisterSchema = RegisterFormSchema.innerType().extend({
-    password: z.string().min(6).max(64),
+    password: z.string().min(6).max(32),
 }).omit({
     passwordOne: true,
     passwordTwo: true,

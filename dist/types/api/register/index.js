@@ -17,7 +17,7 @@ exports.RegisterFormSchema = zod_1.z.object({
     }
 });
 exports.RegisterSchema = exports.RegisterFormSchema.innerType().extend({
-    password: zod_1.z.string().min(6).max(64),
+    password: zod_1.z.string().min(6).max(32),
 }).omit({
     passwordOne: true,
     passwordTwo: true,
