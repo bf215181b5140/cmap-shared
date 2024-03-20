@@ -7,7 +7,7 @@ export const LoginFormSchema = z.object({
 
 export const LoginSchema = z.object({
     username: z.string().max(16),
-    password: z.string().max(256),
+    password: z.string().length(256),
 });
 
 export type LoginDTO = z.infer<typeof LoginSchema>;

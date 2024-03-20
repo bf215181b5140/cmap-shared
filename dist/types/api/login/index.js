@@ -8,5 +8,5 @@ exports.LoginFormSchema = zod_1.z.object({
 });
 exports.LoginSchema = zod_1.z.object({
     username: zod_1.z.string().max(16),
-    password: zod_1.z.string().max(256),
+    password: zod_1.z.string().length(256),
 });
