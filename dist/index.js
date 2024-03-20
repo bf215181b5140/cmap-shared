@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.theme = exports.IgnoredParams = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = exports.LoginFormSchema = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.theme = exports.IgnoredParams = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = exports.LoginFormSchema = exports.CmapApiErrorDTO = exports.CmapApiError = void 0;
 var const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 var theme_1 = require("./react/theme");
@@ -12,6 +12,9 @@ var register_1 = require("./types/api/register");
 Object.defineProperty(exports, "RegisterFormSchema", { enumerable: true, get: function () { return register_1.RegisterFormSchema; } });
 Object.defineProperty(exports, "RegisterSchema", { enumerable: true, get: function () { return register_1.RegisterSchema; } });
 Object.defineProperty(exports, "RegisterKeySchema", { enumerable: true, get: function () { return register_1.RegisterKeySchema; } });
+var api_1 = require("./types/api");
+Object.defineProperty(exports, "CmapApiError", { enumerable: true, get: function () { return api_1.CmapApiError; } });
+Object.defineProperty(exports, "CmapApiErrorDTO", { enumerable: true, get: function () { return api_1.CmapApiErrorDTO; } });
 // -- Enums -- //
 var ClientTier;
 (function (ClientTier) {

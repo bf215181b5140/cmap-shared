@@ -4,6 +4,8 @@ import { IgnoredParams } from './const';
 import { theme } from './react/theme';
 import { LoginFormSchema, LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
 import { RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
+import { CmapApiError, CmapApiErrorDTO } from './types/api';
+export { CmapApiError, CmapApiErrorDTO };
 export { LoginFormSchema, LoginSchema, LoginDTO, LoginTokenDTO };
 export { RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 export { IgnoredParams };
