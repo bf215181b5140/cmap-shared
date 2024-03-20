@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
-export const RegisterSchema = z.object({
+export const RegisterFormSchema = z.object({
     username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
     passwordOne: z.string().min(6).max(32),
     passwordTwo: z.string().min(6).max(32),
-    fingerprint: z.string().max(256),
+    fingerprint: z.string().length(256),
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
@@ -15,8 +15,19 @@ export const RegisterSchema = z.object({
     }
 });
 
-export const RegisterWithKeySchema = RegisterSchema.innerType().extend({
+export const RegisterSchema = RegisterFormSchema.innerType().extend({
+    password: z.string().length(256),
+}).omit({
+    passwordOne: true,
+    passwordTwo: true,
+});
+
+export const RegisterKeySchema = z.object({
     registrationKey: z.string().max(16),
 })
 
-export type RegisterFormDTO = z.infer<typeof RegisterWithKeySchema>;
+export type RegisterFormDTO = z.infer<typeof RegisterFormSchema>;
+
+export type RegisterDTO = z.infer<typeof RegisterSchema> | {
+    registrationKey?: string;
+};
