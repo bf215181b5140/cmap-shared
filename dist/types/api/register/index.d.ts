@@ -47,7 +47,9 @@ export declare const RegisterKeySchema: z.ZodObject<{
 }, {
     registrationKey: string;
 }>;
-export type RegisterFormDTO = z.infer<typeof RegisterFormSchema>;
+export type RegisterFormDTO = z.infer<typeof RegisterFormSchema> | {
+    registrationKey?: string;
+};
 export type RegisterDTO = z.infer<typeof RegisterSchema> | {
     registrationKey?: string;
 };
