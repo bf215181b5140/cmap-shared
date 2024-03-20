@@ -23,5 +23,5 @@ exports.RegisterSchema = exports.RegisterFormSchema.innerType().extend({
     passwordTwo: true,
 });
 exports.RegisterKeySchema = zod_1.z.object({
-    registrationKey: zod_1.z.string().max(16),
+    registrationKey: zod_1.z.string().max(32),
 });
