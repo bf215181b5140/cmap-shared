@@ -6,7 +6,7 @@ exports.RegisterFormSchema = zod_1.z.object({
     username: zod_1.z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
     passwordOne: zod_1.z.string().min(6).max(32),
     passwordTwo: zod_1.z.string().min(6).max(32),
-    fingerprint: zod_1.z.string().length(256),
+    fingerprint: zod_1.z.string().length(64),
 }).superRefine(function (val, ctx) {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
@@ -17,7 +17,7 @@ exports.RegisterFormSchema = zod_1.z.object({
     }
 });
 exports.RegisterSchema = exports.RegisterFormSchema.innerType().extend({
-    password: zod_1.z.string().length(256),
+    password: zod_1.z.string().min(6).max(64),
 }).omit({
     passwordOne: true,
     passwordTwo: true,

@@ -4,7 +4,7 @@ export const RegisterFormSchema = z.object({
     username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
     passwordOne: z.string().min(6).max(32),
     passwordTwo: z.string().min(6).max(32),
-    fingerprint: z.string().length(256),
+    fingerprint: z.string().length(64),
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
         ctx.addIssue({
@@ -16,7 +16,7 @@ export const RegisterFormSchema = z.object({
 });
 
 export const RegisterSchema = RegisterFormSchema.innerType().extend({
-    password: z.string().length(256),
+    password: z.string().min(6).max(64),
 }).omit({
     passwordOne: true,
     passwordTwo: true,
