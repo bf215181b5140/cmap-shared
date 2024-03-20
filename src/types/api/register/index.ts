@@ -26,10 +26,10 @@ export const RegisterKeySchema = z.object({
     registrationKey: z.string().max(16),
 })
 
-export type RegisterFormDTO = z.infer<typeof RegisterFormSchema> | {
+export type RegisterFormDTO = z.infer<typeof RegisterFormSchema> & {
     registrationKey?: string;
 };
 
-export type RegisterDTO = z.infer<typeof RegisterSchema> | {
+export type RegisterDTO = z.infer<typeof RegisterSchema> & {
     registrationKey?: string;
 };
