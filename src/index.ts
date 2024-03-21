@@ -66,113 +66,113 @@ export interface ReactProps {
 }
 
 // -- Classes -- //
-interface BaseDto {
+class BaseDto {
     id: string | undefined | null;
-    createDate: Date;
-    updateDate: Date;
+    createDate: Date = new Date();
+    updateDate: Date = new Date();
 }
 
-interface BaseParentDto extends BaseDto {
+class BaseParentDto extends BaseDto {
     parentId?: string;
 }
 
-export interface TierDto {
-    tier: ClientTier;
-    rank: number;
-    color: string;
-    avatars: number;
-    layouts: number;
-    buttons: number;
-    controlParameters: number;
-    useCost: boolean;
-    hp: boolean;
+export class TierDto {
+    tier: ClientTier = ClientTier.Basic;
+    rank: number = 0;
+    color: string = '';
+    avatars: number = 0;
+    layouts: number = 0;
+    buttons: number = 0;
+    controlParameters: number = 0;
+    useCost: boolean = false;
+    hp: boolean = false;
 }
 
-export interface BackgroundDto {
-    className: string;
-    Label: string;
-    tier: TierDto;
+export class BackgroundDto {
+    className: string = '';
+    Label: string = '';
+    tier: TierDto = new TierDto();
 }
 
-export interface ButtonStyleDto {
-    className: string;
-    Label: string;
-    tier: TierDto;
+export class ButtonStyleDto {
+    className: string = '';
+    Label: string = '';
+    tier: TierDto = new TierDto();
 }
 
-export interface ClientDto extends BaseDto {
-    username: string;
-    displayName: string;
-    bio: string | null;
-    image: string | null;
-    hidden: boolean;
-    tier: TierDto;
-    background: BackgroundDto;
-    buttonStyle: ButtonStyleDto;
+export class ClientDto extends BaseDto {
+    username: string = '';
+    displayName: string = '';
+    bio: string | null = '';
+    image: string | null = null;
+    hidden: boolean = false;
+    tier: TierDto = new TierDto();
+    background: BackgroundDto = new BackgroundDto();
+    buttonStyle: ButtonStyleDto = new ButtonStyleDto();
     avatars: AvatarDto[] | undefined | null;
 }
 
-export interface AvatarDto extends BaseParentDto {
-    vrcId: string;
-    label: string;
-    default: boolean;
+export class AvatarDto extends BaseParentDto {
+    vrcId: string = '';
+    label: string = '';
+    default: boolean = false;
     layouts: LayoutDto[] | undefined | null;
     parameters: ParameterDto[] | undefined | null;
     controlParameters: ControlParameterDto[] | undefined | null;
 }
 
-export interface ParameterDto extends BaseParentDto {
-    label: string;
-    path: string;
-    valueType: ValueType;
+export class ParameterDto extends BaseParentDto {
+    label: string = '';
+    path: string = '';
+    valueType: ValueType = ValueType.Int;
 }
 
-export interface ControlParameterDto extends BaseParentDto {
-    label: string;
-    role: ParameterRole;
-    path: string;
-    valuePrimary: string;
-    valueSecondary: string;
-    valueType: ValueType;
+export class ControlParameterDto extends BaseParentDto {
+    label: string = '';
+    role: ParameterRole = ParameterRole.Callback;
+    path: string = '';
+    valuePrimary: string = '';
+    valueSecondary: string = '';
+    valueType: ValueType = ValueType.Int;
 }
 
-export interface LayoutDto extends BaseParentDto {
-    label: string;
-    order: number;
-    width: ContentBoxWidth;
+export class LayoutDto extends BaseParentDto {
+    label: string = '';
+    order: number = 0;
+    width: ContentBoxWidth = ContentBoxWidth.None;
     buttons: ButtonDto[] | undefined | null;
 }
 
-export interface ButtonDto extends BaseParentDto {
-    label: string;
-    path: string;
-    value: string;
-    valueAlt: string;
-    valueType: ValueType;
-    buttonType: ButtonType;
-    image: string | null;
-    imageOrientation: ButtonImageOrientation;
-    order: number;
-    useCost: number | null;
-    controlParameter: ControlParameterDto | null;
+export class ButtonDto extends BaseParentDto {
+    label: string = '';
+    path: string = '';
+    value: string = '';
+    valueAlt: string = '';
+    valueType: ValueType = ValueType.Int;
+    buttonType: ButtonType = ButtonType.Button;
+    image: string | null = null;
+    imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Square;
+    order: number = 0;
+    useCost: number | null = null;
+    controlParameter: ControlParameterDto | null = null;
     controlParameterId: string | undefined | null;
 }
 
-export interface TierKeyDto {
-    key: string;
-    tier: ClientTier;
-    used: boolean;
+export class TierKeyDto {
+    key: string = '';
+    tier: ClientTier = ClientTier.Basic;
+    used: boolean = false;
 }
 
-export interface FileUploadDto {
-    parentType: string;
-    parentId: string;
-    file: File;
+export class FileUploadDto {
+    parentType: string = '';
+    parentId: string = '';
+    file: File | null = null;
 }
 
-export interface FieldOption {
-    key: string;
-    value: string;
+export class FieldOption {
+    key: string = '';
+    value: string = '';
 }
 
 // -- Enums -- //

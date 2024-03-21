@@ -1,13 +1,13 @@
 import { AvatarDto, BackgroundDto, ButtonStyleDto, ClientDto, TierDto } from './index';
 
-export interface ProfilePageDto {
-    client: ClientDto;
-    backgrounds: BackgroundDto[];
-    buttonStyles: ButtonStyleDto[];
+export class ProfilePageDto {
+    client: ClientDto = new ClientDto();
+    backgrounds: BackgroundDto[] = [];
+    buttonStyles: ButtonStyleDto[] = [];
 }
 
-export interface AvatarsPageDto {
-    tier: TierDto;
-    buttonStyle: ButtonStyleDto;
-    avatars: AvatarDto[];
+export class AvatarsPageDto {
+    tier: TierDto = new TierDto();
+    buttonStyle: ButtonStyleDto = new ButtonStyleDto();
+    avatars: AvatarDto[] = [];
 }
