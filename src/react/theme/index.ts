@@ -1,6 +1,6 @@
 export const theme = {
     colors: {
-        success: 'forestgreen',
+        success: 'seagreen',
         info: 'cornflowerblue',
         warning: 'orange',
         error: 'indianred',

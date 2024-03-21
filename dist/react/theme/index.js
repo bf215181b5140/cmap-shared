@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.theme = void 0;
 exports.theme = {
     colors: {
-        success: 'forestgreen',
+        success: 'seagreen',
         info: 'cornflowerblue',
         warning: 'orange',
         error: 'indianred',
