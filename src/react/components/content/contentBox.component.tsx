@@ -67,6 +67,7 @@ const ContentBoxTitle = styled.div<{ shown: boolean }>`
     padding: 0;
     margin: 5px;
     cursor: pointer;
+    text-shadow: 0 0 3px black;
 
     i {
       display: inline-block;
@@ -86,12 +87,17 @@ const ContentBoxStyled = styled.div`
     margin: 0.5em 0 1em 0;
     padding: 0;
   }
+  
+  h1 {
+    text-shadow: 0 0 3px black;
+  }
 
   h2 {
     font-size: 1.4em;
     color: ${colors['font-header-2']};
     padding: 0;
     margin: 0.5em 0;
+    text-shadow: 0 0 3px black;
   }
 
   h3 {
