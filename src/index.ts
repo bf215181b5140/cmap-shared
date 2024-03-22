@@ -5,6 +5,7 @@ import { theme } from './react/theme';
 import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
 import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
 import { CmapApiError, CmapApiErrorDTO } from './types/api';
+import { UploadedFileDTO } from './types/api/files';
 
 // API
 export { CmapApiError, CmapApiErrorDTO };
@@ -12,6 +13,8 @@ export { CmapApiError, CmapApiErrorDTO };
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
+// Files
+export { UploadedFileDTO };
 
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
