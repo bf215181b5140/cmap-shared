@@ -7,16 +7,18 @@ export enum ControlParameterRole {
     Callback = 'Callback',
 }
 
+export const ControlParameterSchema = BaseIdSchema.extend({
+    label: z.string().min(3).max(16),
+    role: z.nativeEnum(ControlParameterRole),
+    path: z.string().min(1, 'Path required').max(50),
+    valuePrimary: z.string().min(1, 'Value required').max(5),
+    valueSecondary: z.string().min(1, 'Value required').max(5).nullable(),
+    valueType: z.nativeEnum(ParameterValueType),
+});
+
 export const ControlParametersFormSchema = z.object({
     avatarId: z.string().min(1).max(20),
-    controlParameters: z.array(BaseIdSchema.extend({
-        label: z.string().min(3).max(16),
-        role: z.nativeEnum(ControlParameterRole),
-        path: z.string().min(1, 'Path required').max(50),
-        valuePrimary: z.string().min(1, 'Value required').max(5),
-        valueSecondary: z.string().min(1, 'Value required').max(5).nullable(),
-        valueType: z.nativeEnum(ParameterValueType),
-    })).max(8).optional()
+    controlParameters: z.array(ControlParameterSchema).max(8).optional()
 }).superRefine((val, ctx) => {
     if (val.controlParameters?.length) {
         if ((val.controlParameters.filter(cp => cp.role === ControlParameterRole.HP)?.length || 0) > 1) {

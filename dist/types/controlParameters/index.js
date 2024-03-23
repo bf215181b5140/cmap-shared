@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ControlParametersFormSchema = exports.ControlParameterRole = void 0;
+exports.ControlParametersFormSchema = exports.ControlParameterSchema = exports.ControlParameterRole = void 0;
 var zod_1 = require("zod");
 var shared_1 = require("../shared");
 var ControlParameterRole;
@@ -9,16 +9,17 @@ var ControlParameterRole;
     ControlParameterRole["HP"] = "HP";
     ControlParameterRole["Callback"] = "Callback";
 })(ControlParameterRole = exports.ControlParameterRole || (exports.ControlParameterRole = {}));
+exports.ControlParameterSchema = shared_1.BaseIdSchema.extend({
+    label: zod_1.z.string().min(3).max(16),
+    role: zod_1.z.nativeEnum(ControlParameterRole),
+    path: zod_1.z.string().min(1, 'Path required').max(50),
+    valuePrimary: zod_1.z.string().min(1, 'Value required').max(5),
+    valueSecondary: zod_1.z.string().min(1, 'Value required').max(5).nullable(),
+    valueType: zod_1.z.nativeEnum(shared_1.ParameterValueType),
+});
 exports.ControlParametersFormSchema = zod_1.z.object({
     avatarId: zod_1.z.string().min(1).max(20),
-    controlParameters: zod_1.z.array(shared_1.BaseIdSchema.extend({
-        label: zod_1.z.string().min(3).max(16),
-        role: zod_1.z.nativeEnum(ControlParameterRole),
-        path: zod_1.z.string().min(1, 'Path required').max(50),
-        valuePrimary: zod_1.z.string().min(1, 'Value required').max(5),
-        valueSecondary: zod_1.z.string().min(1, 'Value required').max(5).nullable(),
-        valueType: zod_1.z.nativeEnum(shared_1.ParameterValueType),
-    })).max(8).optional()
+    controlParameters: zod_1.z.array(exports.ControlParameterSchema).max(8).optional()
 }).superRefine(function (val, ctx) {
     var _a, _b, _c;
     if ((_a = val.controlParameters) === null || _a === void 0 ? void 0 : _a.length) {
