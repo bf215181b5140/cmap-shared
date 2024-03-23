@@ -2,7 +2,6 @@
   "name": "cmap2-shared",
   "version": "2.0.0",
   "description": "Change my avatar params shared library",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bf215181b5140/cmap-shared.git"
