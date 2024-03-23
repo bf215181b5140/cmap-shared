@@ -24,7 +24,7 @@ export interface UsedButton {
     value: string;
 }
 export interface Profile {
-    client: ClientDto;
+    client: ClientDTO;
     backgrounds: BackgroundDto[];
     buttonStyles: ButtonStyleDto[];
 }

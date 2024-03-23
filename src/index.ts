@@ -35,7 +35,7 @@ export interface UsedButton {
 }
 
 export interface Profile {
-    client: ClientDto;
+    client: ClientDTO;
     backgrounds: BackgroundDto[];
     buttonStyles: ButtonStyleDto[];
 }
