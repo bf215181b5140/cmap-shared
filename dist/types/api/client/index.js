@@ -15,13 +15,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UploadedFileDTO = void 0;
+exports.ClientDTO = void 0;
 var index_1 = require("../index");
-var UploadedFileDTO = /** @class */ (function (_super) {
-    __extends(UploadedFileDTO, _super);
-    function UploadedFileDTO() {
+var ClientDTO = /** @class */ (function (_super) {
+    __extends(ClientDTO, _super);
+    function ClientDTO() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return UploadedFileDTO;
-}(index_1.BaseDTO));
-exports.UploadedFileDTO = UploadedFileDTO;
+    return ClientDTO;
+}(index_1.BaseParentDTO));
+exports.ClientDTO = ClientDTO;

@@ -6,6 +6,7 @@ import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
 import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
 import { CmapApiError, CmapApiErrorDTO } from './types/api';
 import { UploadedFileDTO } from './types/api/files';
+import { ClientDTO } from './types/api/client';
 
 // API
 export { CmapApiError, CmapApiErrorDTO };
@@ -15,6 +16,8 @@ export { LoginSchema, LoginDTO, LoginTokenDTO };
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 // Files
 export { UploadedFileDTO };
+// Client
+export { ClientDTO };
 
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
@@ -107,7 +110,7 @@ export class ClientDto extends BaseDto {
     username: string = '';
     displayName: string = '';
     bio: string | null = '';
-    image: string | null = null;
+    image: typeof UploadedFileDTO | null = null;
     hidden: boolean = false;
     tier: TierDto = new TierDto();
     background: BackgroundDto = new BackgroundDto();

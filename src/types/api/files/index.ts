@@ -1,16 +1,6 @@
-import { Maybe } from '../../index';
+import { BaseDTO } from '../index';
 
-export class UploadedFileDTO<T extends UploadedFileDTO<T>> {
-    id: Maybe<string>;
-    fileName: Maybe<string>;
-    urlPath: Maybe<string>;
-
-    constructor(object?: T | null) {
-        this.id = object?.id;
-        this.fileName = object?.fileName;
-        this.urlPath = object?.urlPath;
-    }
+export class UploadedFileDTO extends BaseDTO<UploadedFileDTO> {
+    fileName?: string;
+    urlPath?: string;
 }
-
-
-const test = new UploadedFileDTO();

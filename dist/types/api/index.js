@@ -15,7 +15,22 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmapApiErrorDTO = exports.CmapApiError = void 0;
+exports.CmapApiErrorDTO = exports.CmapApiError = exports.BaseParentDTO = exports.BaseDTO = void 0;
+var BaseDTO = /** @class */ (function () {
+    function BaseDTO(props) {
+        Object.assign(this, props);
+    }
+    return BaseDTO;
+}());
+exports.BaseDTO = BaseDTO;
+var BaseParentDTO = /** @class */ (function (_super) {
+    __extends(BaseParentDTO, _super);
+    function BaseParentDTO() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return BaseParentDTO;
+}(BaseDTO));
+exports.BaseParentDTO = BaseParentDTO;
 var CmapApiError = /** @class */ (function (_super) {
     __extends(CmapApiError, _super);
     function CmapApiError(message, code) {
