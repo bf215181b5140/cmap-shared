@@ -1,71 +1,49 @@
 import { ReactNode } from 'react';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
-import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
-import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
-import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema } from './types/api/shared';
-import { UploadedFileDTO, FileUploadDTO } from './types/dto/files';
-import { ClientDTO } from './types/dto/client';
-import { ButtonDTO, ButtonImageOrientation, ButtonType } from './types/dto/button';
-import { AvatarDTO } from './types/dto/avatar';
-import { BackgroundDTO } from './types/dto/background';
-import { ButtonStyleDTO } from './types/dto/buttonStyle';
-import { ControlParameterDTO, ControlParameterRole } from './types/dto/controlParameter';
-import { LayoutDTO } from './types/dto/layout';
-import { ParameterValueType } from './types/dto/shared';
-import { TierDTO, TierType } from './types/dto/tier';
-import { ProfileDTO, ProfileFormDTO, ProfileFormSchema } from './types/api/profile';
-import { TiersDTO } from './types/api/tiers';
-import { AvatarFormDTO, AvatarFormSchema } from './types/api/avatar';
-import { ButtonFormDTO, ButtonFormSchema } from './types/api/button';
-import { ControlParametersFormDTO, ControlParametersFormSchema } from './types/api/controlParameters';
-import { LayoutFormDTO, LayoutFormSchema } from './types/api/layout';
+import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/login';
+import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/register';
+import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema, ParameterValueType } from './types/shared';
+import { ClientDTO } from './types/client';
+import { BackgroundDTO } from './types/background';
+import { ButtonStyleDTO } from './types/buttonStyle';
+import { ProfileDTO, ProfileFormDTO, ProfileFormSchema } from './types/profile';
+import { TiersDTO, TierDTO, TierType } from './types/tier';
+import { AvatarFormDTO, AvatarFormSchema, AvatarPageDTO, AvatarDTO } from './types/avatar';
+import { ButtonFormDTO, ButtonFormSchema, ButtonDTO, ButtonImageOrientation, ButtonType } from './types/button';
+import { ControlParametersFormDTO, ControlParametersFormSchema, ControlParameterDTO, ControlParameterRole } from './types/controlParameters';
+import { LayoutFormDTO, LayoutFormSchema, LayoutDTO } from './types/layout';
+import { FileUploadDTO, UploadedFileDTO } from './types/files';
 
 /* ------------------------------------------------------------ */
-// API
+// Types
 /* ------------------------------------------------------------ */
 // Login
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
-// Profile
-export { ProfileFormSchema, ProfileFormDTO, ProfileDTO };
-// Tiers
-export { TiersDTO };
-// Avatar
-export { AvatarFormSchema, AvatarFormDTO };
-// Control parameters
-export { ControlParametersFormSchema, ControlParametersFormDTO };
-// Layout
-export { LayoutFormSchema, LayoutFormDTO };
-// Button
-export { ButtonFormSchema, ButtonFormDTO };
-// Shared
-export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema };
-
-/* ------------------------------------------------------------ */
-// DTO
-/* ------------------------------------------------------------ */
 // Client
 export { ClientDTO };
-// Background
-export { TierDTO, TierType };
+// Profile
+export { ProfileFormSchema, ProfileFormDTO, ProfileDTO };
 // Background
 export { BackgroundDTO };
 // ButtonStyle
 export { ButtonStyleDTO };
+// Tiers
+export { TiersDTO, TierDTO, TierType };
 // Avatar
-export { AvatarDTO };
-// ControlParameter
-export { ControlParameterDTO, ControlParameterRole };
-// Avatar
-export { LayoutDTO };
+export { AvatarFormSchema, AvatarFormDTO, AvatarPageDTO, AvatarDTO };
+// Control parameters
+export { ControlParametersFormSchema, ControlParametersFormDTO, ControlParameterDTO, ControlParameterRole };
+// Layout
+export { LayoutDTO, LayoutFormSchema, LayoutFormDTO };
 // Button
-export { ButtonDTO, ButtonType, ButtonImageOrientation };
+export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrientation };
 // Files
 export { UploadedFileDTO, FileUploadDTO };
 // Shared
-export { ParameterValueType };
+export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType };
 
 /* ------------------------------------------------------------ */
 // Other
