@@ -4,23 +4,56 @@ import { IgnoredParams } from './const';
 import { theme } from './react/theme';
 import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
 import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
-import { CmapApiError, CmapApiErrorDTO } from './types/api';
-import { UploadedFileDTO } from './types/api/files';
-import { ClientDTO } from './types/api/client';
-import { ButtonDTO } from './types/api/button';
+import { CmapApiError, CmapApiErrorDTO } from './types/api/shared';
+import { UploadedFileDTO, FileUploadDTO } from './types/dto/files';
+import { ClientDTO } from './types/dto/client';
+import { ButtonDTO } from './types/dto/button';
+import { AvatarDTO } from './types/dto/avatar';
+import { BackgroundDTO } from './types/dto/background';
+import { ButtonStyleDTO } from './types/dto/buttonStyle';
+import { ControlParameterDTO, ControlParameterRole } from './types/dto/controlParameter';
+import { LayoutDTO } from './types/dto/layout';
+import { ParameterValueType } from './types/dto/shared';
+import { TierDTO, TierType } from './types/dto/tier';
 
+// ------------------------------------------------------------ //
 // API
+// ------------------------------------------------------------ //
 export { CmapApiError, CmapApiErrorDTO };
 // Login
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
-// Files
-export { UploadedFileDTO };
+
+// ------------------------------------------------------------ //
+// DTO
+// ------------------------------------------------------------ //
 // Client
 export { ClientDTO };
+// Background
+export { TierDTO, TierType };
+// Background
+export { BackgroundDTO };
+// ButtonStyle
+export { ButtonStyleDTO };
+// Avatar
+export { AvatarDTO };
+// ControlParameter
+export { ControlParameterDTO, ControlParameterRole };
+// Avatar
+export { LayoutDTO };
 // Button
 export { ButtonDTO };
+// Files
+export { UploadedFileDTO, FileUploadDTO };
+// Shared
+export { ParameterValueType };
+
+
+
+
+
+
 
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };

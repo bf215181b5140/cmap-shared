@@ -1,16 +1,3 @@
-export class BaseDTO<T> {
-    id?: string;
-
-    constructor(props?: Required<T> & Record<string, any>) {
-        Object.assign(this, props);
-    }
-}
-
-export class BaseParentDTO<T> extends BaseDTO<BaseParentDTO<T>> {
-    parentId?: string;
-}
-
-
 export class CmapApiError extends Error {
     code: number | undefined;
 
