@@ -1,18 +1,18 @@
-import { ButtonDto, ValueType } from './index';
+import { ParameterValueType } from './index';
 
-export function convertParameterValue(valueType: ValueType, value: string): string | number | boolean | null {
+export function convertParameterValue(valueType: ParameterValueType, value: string): string | number | boolean | null {
     try {
         let tempValue;
         switch (valueType) {
-            case ValueType.Int:
+            case ParameterValueType.Int:
                 tempValue = parseInt(value, 10);
                 if (isNaN(tempValue)) tempValue = null;
                 break;
-            case ValueType.Float:
+            case ParameterValueType.Float:
                 tempValue = parseFloat(value);
                 if (isNaN(tempValue)) tempValue = null;
                 break;
-            case ValueType.Bool:
+            case ParameterValueType.Bool:
                 if (value === 'true') {
                     tempValue = true;
                 } else if (value === 'false') {

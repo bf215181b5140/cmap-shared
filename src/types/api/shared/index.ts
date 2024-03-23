@@ -1,3 +1,18 @@
+import { z } from 'zod';
+
+export const BaseIdSchema = z.object({
+    id: z.string().min(1).max(20).nullable()
+});
+
+export const RequiredIdSchema = z.object({
+    id: z.string().min(1).max(20),
+});
+
+export const BaseParentIdSchema = BaseIdSchema.extend({
+    parentId: z.string().min(1).max(20)
+});
+
+
 export class CmapApiError extends Error {
     code: number | undefined;
 

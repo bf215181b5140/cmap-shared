@@ -1,4 +1,7 @@
 import { z } from 'zod';
+import { ClientDTO } from '../../dto/client';
+import { BackgroundDTO } from '../../dto/background';
+import { ButtonStyleDTO } from '../../dto/buttonStyle';
 
 export const ProfileFormSchema = z.object({
     displayName: z.string().min(3).max(32),
@@ -7,4 +10,10 @@ export const ProfileFormSchema = z.object({
     image: z.any().optional().nullable(),
 });
 
-type ProfileFormDTO = z.infer<typeof ProfileFormSchema>;
+export type ProfileFormDTO = z.infer<typeof ProfileFormSchema>;
+
+export interface ProfileDTO {
+    client?: ClientDTO;
+    backgrounds?: BackgroundDTO[];
+    buttonStyles?: ButtonStyleDTO[];
+}

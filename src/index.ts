@@ -1,13 +1,12 @@
 import { ReactNode } from 'react';
-import { AvatarsPageDto, ProfilePageDto } from './dtos';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
 import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/api/login';
 import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/api/register';
-import { CmapApiError, CmapApiErrorDTO } from './types/api/shared';
+import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema } from './types/api/shared';
 import { UploadedFileDTO, FileUploadDTO } from './types/dto/files';
 import { ClientDTO } from './types/dto/client';
-import { ButtonDTO } from './types/dto/button';
+import { ButtonDTO, ButtonImageOrientation, ButtonType } from './types/dto/button';
 import { AvatarDTO } from './types/dto/avatar';
 import { BackgroundDTO } from './types/dto/background';
 import { ButtonStyleDTO } from './types/dto/buttonStyle';
@@ -15,19 +14,38 @@ import { ControlParameterDTO, ControlParameterRole } from './types/dto/controlPa
 import { LayoutDTO } from './types/dto/layout';
 import { ParameterValueType } from './types/dto/shared';
 import { TierDTO, TierType } from './types/dto/tier';
+import { ProfileDTO, ProfileFormDTO, ProfileFormSchema } from './types/api/profile';
+import { TiersDTO } from './types/api/tiers';
+import { AvatarFormDTO, AvatarFormSchema } from './types/api/avatar';
+import { ButtonFormDTO, ButtonFormSchema } from './types/api/button';
+import { ControlParametersFormDTO, ControlParametersFormSchema } from './types/api/controlParameters';
+import { LayoutFormDTO, LayoutFormSchema } from './types/api/layout';
 
-// ------------------------------------------------------------ //
+/* ------------------------------------------------------------ */
 // API
-// ------------------------------------------------------------ //
-export { CmapApiError, CmapApiErrorDTO };
+/* ------------------------------------------------------------ */
 // Login
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
+// Profile
+export { ProfileFormSchema, ProfileFormDTO, ProfileDTO };
+// Tiers
+export { TiersDTO };
+// Avatar
+export { AvatarFormSchema, AvatarFormDTO };
+// Control parameters
+export { ControlParametersFormSchema, ControlParametersFormDTO };
+// Layout
+export { LayoutFormSchema, LayoutFormDTO };
+// Button
+export { ButtonFormSchema, ButtonFormDTO };
+// Shared
+export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema };
 
-// ------------------------------------------------------------ //
+/* ------------------------------------------------------------ */
 // DTO
-// ------------------------------------------------------------ //
+/* ------------------------------------------------------------ */
 // Client
 export { ClientDTO };
 // Background
@@ -43,23 +61,21 @@ export { ControlParameterDTO, ControlParameterRole };
 // Avatar
 export { LayoutDTO };
 // Button
-export { ButtonDTO };
+export { ButtonDTO, ButtonType, ButtonImageOrientation };
 // Files
 export { UploadedFileDTO, FileUploadDTO };
 // Shared
 export { ParameterValueType };
 
-
-
-
-
-
-
+/* ------------------------------------------------------------ */
+// Other
+/* ------------------------------------------------------------ */
 export { IgnoredParams };
-export { ProfilePageDto, AvatarsPageDto };
 export { theme };
 
-// -- Interfaces -- //
+/* ------------------------------------------------------------ */
+// Temp
+/* ------------------------------------------------------------ */
 export interface VrcParameter {
     path: string;
     value: boolean | number | string;
@@ -70,204 +86,13 @@ export interface UsedButton {
     value: string;
 }
 
-export interface Profile {
-    client: ClientDTO;
-    backgrounds: BackgroundDto[];
-    buttonStyles: ButtonStyleDto[];
-}
-
-export interface Avatars {
-    tier: TierDto;
-    buttonStyle: ButtonStyleDto;
-    avatars: AvatarDto[];
-}
-
-export interface ParametersForm {
-    avatarId: string;
-    parameters: ParameterDto[];
-}
-
-export interface ControlParametersForm {
-    avatarId: string;
-    controlParameters: ControlParameterDto[];
-}
-
-export interface Tiers {
-    tiers: TierDto[];
-    clientTier: TierDto;
-    // tierKeys: TierKeyDto[];
-}
-
-export interface ClientWithActivity extends ClientDto {
-    isActive: boolean;
-    isConnected: boolean;
-}
-
 export interface ReactProps {
     children?: ReactNode;
-}
-
-// -- Classes -- //
-class BaseDto {
-    id: string | undefined | null;
-    createDate: Date = new Date();
-    updateDate: Date = new Date();
-}
-
-class BaseParentDto extends BaseDto {
-    parentId?: string;
-}
-
-export class TierDto {
-    tier: ClientTier = ClientTier.Basic;
-    rank: number = 0;
-    color: string = '';
-    avatars: number = 0;
-    layouts: number = 0;
-    buttons: number = 0;
-    controlParameters: number = 0;
-    useCost: boolean = false;
-    hp: boolean = false;
-}
-
-export class BackgroundDto {
-    className: string = '';
-    Label: string = '';
-    tier: TierDto = new TierDto();
-}
-
-export class ButtonStyleDto {
-    className: string = '';
-    Label: string = '';
-    tier: TierDto = new TierDto();
-}
-
-export class ClientDto extends BaseDto {
-    username: string = '';
-    displayName: string = '';
-    bio: string | null = '';
-    image: typeof UploadedFileDTO | null = null;
-    hidden: boolean = false;
-    tier: TierDto = new TierDto();
-    background: BackgroundDto = new BackgroundDto();
-    buttonStyle: ButtonStyleDto = new ButtonStyleDto();
-    avatars: AvatarDto[] | undefined | null;
-}
-
-export class AvatarDto extends BaseParentDto {
-    vrcId: string = '';
-    label: string = '';
-    default: boolean = false;
-    layouts: LayoutDto[] | undefined | null;
-    parameters: ParameterDto[] | undefined | null;
-    controlParameters: ControlParameterDto[] | undefined | null;
-}
-
-export class ParameterDto extends BaseParentDto {
-    label: string = '';
-    path: string = '';
-    valueType: ValueType = ValueType.Int;
-}
-
-export class ControlParameterDto extends BaseParentDto {
-    label: string = '';
-    role: ParameterRole = ParameterRole.Callback;
-    path: string = '';
-    valuePrimary: string = '';
-    valueSecondary: string = '';
-    valueType: ValueType = ValueType.Int;
-}
-
-export class LayoutDto extends BaseParentDto {
-    label: string = '';
-    order: number = 0;
-    width: ContentBoxWidth = ContentBoxWidth.None;
-    buttons: ButtonDto[] | undefined | null;
-}
-
-export class ButtonDto extends BaseParentDto {
-    label: string = '';
-    path: string = '';
-    value: string = '';
-    valueAlt: string = '';
-    valueType: ValueType = ValueType.Int;
-    buttonType: ButtonType = ButtonType.Button;
-    image: string | null = null;
-    imageOrientation: ButtonImageOrientation = ButtonImageOrientation.Square;
-    order: number = 0;
-    useCost: number | null = null;
-    controlParameter: ControlParameterDto | null = null;
-    controlParameterId: string | undefined | null;
-}
-
-export class TierKeyDto {
-    key: string = '';
-    tier: ClientTier = ClientTier.Basic;
-    used: boolean = false;
-}
-
-export class FileUploadDto {
-    parentType: string = '';
-    parentId: string = '';
-    file: File | null = null;
 }
 
 export class FieldOption {
     key: string = '';
     value: string = '';
-}
-
-// -- Enums -- //
-export enum ClientTier {
-    Basic = 'Basic',
-    Standard = 'Standard',
-    Premium = 'Premium'
-}
-
-export enum ParameterRole {
-    UseCost = 'Use cost',
-    HP = 'HP',
-    Callback = 'Callback',
-}
-
-export enum ValueType {
-    Int = 'Int',
-    Float = 'Float',
-    Bool = 'Bool',
-}
-
-export enum ButtonType {
-    Button = 'button',
-    Slider = 'slider',
-    Toggle = 'toggle',
-}
-
-export enum ButtonImageOrientation {
-    Horizontal = 'Horizontal',
-    Vertical = 'Vertical',
-    Square = 'Square',
-}
-
-export enum InputType {
-    Text = 'text',
-    Button = 'button',
-    Checkbox = 'checkbox',
-    Date = 'date',
-    Email = 'email',
-    File = 'file',
-    Hidden = 'hidden',
-    Number = 'number',
-    Password = 'password',
-    Radio = 'radio',
-    Range = 'range',
-    Reset = 'reset',
-    Submit = 'submit',
-    Time = 'time',
-    Url = 'url',
-    Label = 'label',
-    Boolean = 'boolean',
-    Select = 'select',
-    Textarea = 'textarea',
 }
 
 export enum ContentBoxWidth {

@@ -1,12 +1,8 @@
-export class BaseDTO<T> {
+export interface BaseDTO<T> {
     id?: string;
-
-    constructor(props?: Required<T> & Record<string, any>) {
-        Object.assign(this, props);
-    }
 }
 
-export class BaseParentDTO<T> extends BaseDTO<BaseParentDTO<T>> {
+export interface BaseParentDTO<T> extends BaseDTO<BaseParentDTO<T>> {
     parentId?: string;
 }
 

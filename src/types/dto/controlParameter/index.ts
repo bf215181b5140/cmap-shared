@@ -6,7 +6,7 @@ export enum ControlParameterRole {
     Callback = 'Callback',
 }
 
-export class ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> {
+export interface ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> {
     label?: string;
     role?: ControlParameterRole;
     path?: string;

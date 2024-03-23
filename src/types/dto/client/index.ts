@@ -5,7 +5,7 @@ import { ButtonStyleDTO } from '../buttonStyle';
 import { AvatarDTO } from '../avatar';
 import { UploadedFileDTO } from '../files';
 
-export class ClientDTO extends BaseParentDTO<ClientDTO> {
+export interface ClientDTO extends BaseParentDTO<ClientDTO> {
     username?: string;
     displayName?: string;
     bio?: string;

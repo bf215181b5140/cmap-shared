@@ -14,7 +14,7 @@ export enum ButtonImageOrientation {
     Square = 'Square',
 }
 
-export class ButtonDTO extends BaseParentDTO<ButtonDTO> {
+export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
     label?: string;
     path?: string;
     value?: string;

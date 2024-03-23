@@ -6,17 +6,17 @@ function convertParameterValue(valueType, value) {
     try {
         var tempValue = void 0;
         switch (valueType) {
-            case index_1.ValueType.Int:
+            case index_1.ParameterValueType.Int:
                 tempValue = parseInt(value, 10);
                 if (isNaN(tempValue))
                     tempValue = null;
                 break;
-            case index_1.ValueType.Float:
+            case index_1.ParameterValueType.Float:
                 tempValue = parseFloat(value);
                 if (isNaN(tempValue))
                     tempValue = null;
                 break;
-            case index_1.ValueType.Bool:
+            case index_1.ParameterValueType.Bool:
                 if (value === 'true') {
                     tempValue = true;
                 }

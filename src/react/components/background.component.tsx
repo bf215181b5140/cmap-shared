@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { BackgroundDto } from '../../index';
+import { BackgroundDTO } from '../../index';
 
 interface BackgroundProps {
-    background: BackgroundDto;
+    background: BackgroundDTO;
 }
 
 export default function Background({background}: BackgroundProps) {

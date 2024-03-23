@@ -1,11 +1,11 @@
 import { BaseDTO } from '../shared';
 
-export class UploadedFileDTO extends BaseDTO<UploadedFileDTO> {
+export interface UploadedFileDTO extends BaseDTO<UploadedFileDTO> {
     fileName?: string;
     urlPath?: string;
 }
 
-export class FileUploadDTO {
+export interface FileUploadDTO {
     parentType?: string;
     parentId?: string;
     file?: File;

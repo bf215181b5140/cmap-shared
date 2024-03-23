@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../colors.json';
+import { theme } from '../theme';
 
 interface IconProps {
     icon: string;
@@ -13,5 +13,5 @@ export default function Icon({icon, color}: IconProps) {
 const IconStyled = styled.i<{ color?: string }>`
   vertical-align: text-bottom;
   margin-right: 2px;
-  color: ${props => props.color ? props.color : colors['font-icon-1']};
+  color: ${props => props.color ? props.color : theme.colors.font.icon};
 `;

@@ -1,2 +1,2 @@
-import { ValueType } from './index';
-export declare function convertParameterValue(valueType: ValueType, value: string): string | number | boolean | null;
+import { ParameterValueType } from './index';
+export declare function convertParameterValue(valueType: ParameterValueType, value: string): string | number | boolean | null;

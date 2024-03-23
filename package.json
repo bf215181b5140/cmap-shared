@@ -1,18 +1,12 @@
 {
-  "main": "dist/index.js",
-  "name": "cmap2-shared",
-  "version": "1.0.4",
-  "description": "",
+  "name": "cmap-shared",
+  "version": "2.0.0",
+  "description": "Change my avatar params shared library",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bf215181b5140/cmap-shared.git"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bf215181b5140/cmap-shared/issues"
-  },
-  "homepage": "https://github.com/bf215181b5140/cmap-shared#readme",
   "dependencies": {
     "@types/node": "^18.11.17",
     "@types/react": "^18.0.26",
@@ -20,6 +14,6 @@
     "typescript": "^4.9.5",
     "react": "^18.2.0",
     "styled-components": "^5.3.6",
-    "zod": "^3.21.4"
+    "zod": "^3.22.4"
   }
 }

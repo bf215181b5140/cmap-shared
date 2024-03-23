@@ -1,17 +1,17 @@
 import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
-import { ButtonDTO, ButtonImageOrientation, ButtonStyleDto, ButtonType, ControlParameterDto, UsedButton, ValueType } from '../../index';
+import { ButtonDTO, ButtonImageOrientation, ButtonStyleDTO, ButtonType, ControlParameterDTO, UsedButton, ParameterValueType } from '../../index';
 import expOrb from '../images/expOrb.png';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 
 interface ParameterButtonProps {
     button: ButtonDTO;
-    buttonStyle: ButtonStyleDto;
+    buttonStyle: ButtonStyleDTO;
     active?: boolean;
     disabled?: boolean;
     value?: string | number | boolean | undefined;
-    useCostParameter?: { controlParameter: ControlParameterDto, value: number };
+    useCostParameter?: { controlParameter: ControlParameterDTO, value: number };
     onClick?: (usedParameter: UsedButton) => void;
 }
 
@@ -49,8 +49,8 @@ export default function ParameterButton(props: ParameterButtonProps) {
                                        className={props.buttonStyle.className}
                                        onClick={(e: any) => onClick(e.target.value)}
                                        defaultValue={typeof props.value === 'number' ? props.value : undefined}
-                                       min={props.button.valueType === ValueType.Float ? (Number(props.button.value) * 100) : props.button.value}
-                                       max={props.button.valueType === ValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt} />
+                                       min={props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value}
+                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt} />
             </SliderWrapper>
             {props.button.useCost && <UseCostIcon position="top" background={expOrb} usable={useCostUsable()}>{props.button.useCost.toString()}</UseCostIcon>}
         </UseCostWrapper>);

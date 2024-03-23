@@ -6,7 +6,7 @@ export enum TierType {
     Premium = 'Premium'
 }
 
-export class TierDTO extends BaseDTO<TierDTO> {
+export interface TierDTO extends BaseDTO<TierDTO> {
     tier?: TierType;
     rank?: number;
     color?: string;
