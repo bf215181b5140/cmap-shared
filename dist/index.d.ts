@@ -7,11 +7,13 @@ import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema
 import { CmapApiError, CmapApiErrorDTO } from './types/api';
 import { UploadedFileDTO } from './types/api/files';
 import { ClientDTO } from './types/api/client';
+import { ButtonDTO } from './types/api/button';
 export { CmapApiError, CmapApiErrorDTO };
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 export { UploadedFileDTO };
 export { ClientDTO };
+export { ButtonDTO };
 export { IgnoredParams };
 export { ProfilePageDto, AvatarsPageDto };
 export { theme };

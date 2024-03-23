@@ -1,7 +1,7 @@
-import { ButtonDto, ButtonStyleDto, ControlParameterDto, UsedButton } from '../../index';
+import { ButtonDTO, ButtonStyleDto, ControlParameterDto, UsedButton } from '../../index';
 export declare const URL: string;
 interface ParameterButtonProps {
-    button: ButtonDto;
+    button: ButtonDTO;
     buttonStyle: ButtonStyleDto;
     active?: boolean;
     disabled?: boolean;

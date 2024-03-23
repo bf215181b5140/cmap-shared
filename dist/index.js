@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierKeyDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.theme = exports.AvatarsPageDto = exports.ProfilePageDto = exports.IgnoredParams = exports.ClientDTO = exports.UploadedFileDTO = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = exports.CmapApiErrorDTO = exports.CmapApiError = void 0;
+exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierKeyDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.theme = exports.AvatarsPageDto = exports.ProfilePageDto = exports.IgnoredParams = exports.ButtonDTO = exports.ClientDTO = exports.UploadedFileDTO = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = exports.CmapApiErrorDTO = exports.CmapApiError = void 0;
 var dtos_1 = require("./dtos");
 Object.defineProperty(exports, "AvatarsPageDto", { enumerable: true, get: function () { return dtos_1.AvatarsPageDto; } });
 Object.defineProperty(exports, "ProfilePageDto", { enumerable: true, get: function () { return dtos_1.ProfilePageDto; } });
@@ -36,6 +36,8 @@ var files_1 = require("./types/api/files");
 Object.defineProperty(exports, "UploadedFileDTO", { enumerable: true, get: function () { return files_1.UploadedFileDTO; } });
 var client_1 = require("./types/api/client");
 Object.defineProperty(exports, "ClientDTO", { enumerable: true, get: function () { return client_1.ClientDTO; } });
+var button_1 = require("./types/api/button");
+Object.defineProperty(exports, "ButtonDTO", { enumerable: true, get: function () { return button_1.ButtonDTO; } });
 // -- Classes -- //
 var BaseDto = /** @class */ (function () {
     function BaseDto() {
