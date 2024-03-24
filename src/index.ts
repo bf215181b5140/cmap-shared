@@ -11,7 +11,7 @@ import { TiersDTO, TierDTO, TierType } from './types/tier';
 import { AvatarFormDTO, AvatarFormSchema, AvatarPageDTO, AvatarDTO } from './types/avatar';
 import { ButtonFormDTO, ButtonFormSchema, ButtonDTO, ButtonImageOrientation, ButtonType } from './types/button';
 import { ControlParametersFormDTO, ControlParametersFormSchema, ControlParameterDTO, ControlParameterRole } from './types/controlParameters';
-import { LayoutFormDTO, LayoutFormSchema, LayoutDTO } from './types/layout';
+import { LayoutFormDTO, LayoutFormSchema, LayoutDTO, LayoutWidth } from './types/layout';
 import { FileUploadDTO, UploadedFileDTO } from './types/files';
 
 /* ------------------------------------------------------------ */
@@ -34,7 +34,7 @@ export { AvatarFormSchema, AvatarFormDTO, AvatarPageDTO, AvatarDTO };
 // Control parameters
 export { ControlParametersFormSchema, ControlParametersFormDTO, ControlParameterDTO, ControlParameterRole };
 // Layout
-export { LayoutDTO, LayoutFormSchema, LayoutFormDTO };
+export { LayoutDTO, LayoutFormSchema, LayoutFormDTO, LayoutWidth };
 // Button
 export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrientation };
 // Files

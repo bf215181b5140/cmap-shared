@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 var const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 var theme_1 = require("./react/theme");
@@ -33,6 +33,7 @@ Object.defineProperty(exports, "ControlParametersFormSchema", { enumerable: true
 Object.defineProperty(exports, "ControlParameterRole", { enumerable: true, get: function () { return controlParameters_1.ControlParameterRole; } });
 var layout_1 = require("./types/layout");
 Object.defineProperty(exports, "LayoutFormSchema", { enumerable: true, get: function () { return layout_1.LayoutFormSchema; } });
+Object.defineProperty(exports, "LayoutWidth", { enumerable: true, get: function () { return layout_1.LayoutWidth; } });
 var FieldOption = /** @class */ (function () {
     function FieldOption() {
         this.key = '';
