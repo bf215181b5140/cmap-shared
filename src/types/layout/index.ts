@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { BaseParentDTO, BaseParentIdSchema } from '../shared';
 import { ButtonDTO } from '../button';
 
-export enum ContentBoxWidth {
+export enum LayoutWidth {
     None = 'none',
     Third = 'third',
     Half = 'half',
@@ -12,7 +12,7 @@ export enum ContentBoxWidth {
 export const LayoutFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32),
     order: z.number(),
-    width: z.nativeEnum(ContentBoxWidth),
+    width: z.nativeEnum(LayoutWidth),
 });
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
@@ -20,6 +20,6 @@ export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
 export interface LayoutDTO extends BaseParentDTO<LayoutDTO> {
     label: string;
     order: number;
-    width: ContentBoxWidth;
+    width: LayoutWidth;
     buttons?: ButtonDTO[] | null;
 }
