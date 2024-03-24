@@ -16,7 +16,7 @@ var ButtonImageOrientation;
     ButtonImageOrientation["Square"] = "Square";
 })(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
 exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
-    label: zod_1.z.string().max(32),
+    label: zod_1.z.string().max(32).nullable(),
     path: zod_1.z.string().min(1, 'Path required').max(50),
     value: zod_1.z.string().min(1, 'Value required').max(5),
     valueAlt: zod_1.z.string().max(5).nullable(),
@@ -24,8 +24,8 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     buttonType: zod_1.z.nativeEnum(ButtonType),
     imageOrientation: zod_1.z.nativeEnum(ButtonImageOrientation),
     order: zod_1.z.number(),
-    controlParameterId: zod_1.z.string().min(1).max(20).nullable(),
     useCost: zod_1.z.number().nullable(),
+    controlParameterId: zod_1.z.string().min(1).max(20).nullable(),
 }).superRefine(function (val, ctx) {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === shared_1.ParameterValueType.Bool) {

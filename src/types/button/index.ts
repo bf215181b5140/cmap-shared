@@ -15,7 +15,7 @@ export enum ButtonImageOrientation {
 }
 
 export const ButtonFormSchema = BaseParentIdSchema.extend({
-    label: z.string().max(32),
+    label: z.string().max(32).nullable(),
     path: z.string().min(1, 'Path required').max(50),
     value: z.string().min(1, 'Value required').max(5),
     valueAlt: z.string().max(5).nullable(),
@@ -23,8 +23,8 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
     buttonType: z.nativeEnum(ButtonType),
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
-    controlParameterId: z.string().min(1).max(20).nullable(),
     useCost: z.number().nullable(),
+    controlParameterId: z.string().min(1).max(20).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === ParameterValueType.Bool) {

@@ -14,7 +14,7 @@ export declare enum ButtonImageOrientation {
 export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
-    label: z.ZodString;
+    label: z.ZodNullable<z.ZodString>;
     path: z.ZodString;
     value: z.ZodString;
     valueAlt: z.ZodNullable<z.ZodString>;
@@ -22,14 +22,14 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     buttonType: z.ZodNativeEnum<typeof ButtonType>;
     imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
     order: z.ZodNumber;
-    controlParameterId: z.ZodNullable<z.ZodString>;
     useCost: z.ZodNullable<z.ZodNumber>;
+    controlParameterId: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
-    label: string;
+    label: string | null;
     path: string;
     valueType: ParameterValueType;
     parentId: string;
@@ -42,7 +42,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
-    label: string;
+    label: string | null;
     path: string;
     valueType: ParameterValueType;
     parentId: string;
@@ -55,7 +55,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
-    label: string;
+    label: string | null;
     path: string;
     valueType: ParameterValueType;
     parentId: string;
@@ -68,7 +68,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
-    label: string;
+    label: string | null;
     path: string;
     valueType: ParameterValueType;
     parentId: string;
