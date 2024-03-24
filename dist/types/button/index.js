@@ -25,7 +25,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     imageOrientation: zod_1.z.nativeEnum(ButtonImageOrientation),
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
-    controlParameterId: zod_1.z.string().min(1).max(20).nullable(),
+    controlParameterId: zod_1.z.string().max(20).nullable(),
 }).superRefine(function (val, ctx) {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === shared_1.ParameterValueType.Bool) {

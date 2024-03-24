@@ -24,7 +24,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     useCost: z.number().nullable(),
-    controlParameterId: z.string().min(1).max(20).nullable(),
+    controlParameterId: z.string().max(20).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === ParameterValueType.Bool) {
