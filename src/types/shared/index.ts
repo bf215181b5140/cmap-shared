@@ -7,7 +7,7 @@ export enum ParameterValueType {
 }
 
 export const BaseIdSchema = z.object({
-    id: z.string().min(1).max(20).nullable()
+    id: z.string().max(20).nullable()
 });
 
 export const RequiredIdSchema = z.object({

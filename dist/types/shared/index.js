@@ -24,7 +24,7 @@ var ParameterValueType;
     ParameterValueType["Bool"] = "Bool";
 })(ParameterValueType = exports.ParameterValueType || (exports.ParameterValueType = {}));
 exports.BaseIdSchema = zod_1.z.object({
-    id: zod_1.z.string().min(1).max(20).nullable()
+    id: zod_1.z.string().max(20).nullable()
 });
 exports.RequiredIdSchema = zod_1.z.object({
     id: zod_1.z.string().min(1).max(20),
