@@ -7,6 +7,6 @@ export interface FileUploadDTO {
 }
 
 export interface UploadedFileDTO extends BaseDTO<UploadedFileDTO> {
-    fileName?: string;
-    urlPath?: string;
+    fileName: string;
+    urlPath: string;
 }

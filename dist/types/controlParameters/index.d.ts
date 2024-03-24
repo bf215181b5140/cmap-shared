@@ -104,10 +104,10 @@ export declare const ControlParametersFormSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export type ControlParametersFormDTO = z.infer<typeof ControlParametersFormSchema>;
 export interface ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> {
-    label?: string;
-    role?: ControlParameterRole;
-    path?: string;
-    valuePrimary?: string | null;
-    valueSecondary?: string | null;
-    valueType?: ParameterValueType;
+    label: string;
+    role: ControlParameterRole;
+    path: string;
+    valuePrimary: string | null;
+    valueSecondary: string | null;
+    valueType: ParameterValueType;
 }

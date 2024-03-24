@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import { BaseParentDTO, ParameterValueType } from '../shared';
 import { UploadedFileDTO } from '../files';
-import { ControlParameterDTO } from '../controlParameters';
 export declare enum ButtonType {
     Button = "Button",
     Slider = "Slider",
@@ -80,16 +79,15 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
 export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
-    label?: string;
-    path?: string;
-    value?: string;
-    valueAlt?: string;
-    valueType?: ParameterValueType;
-    buttonType?: ButtonType;
-    image?: UploadedFileDTO;
-    imageOrientation?: ButtonImageOrientation;
-    order?: number;
-    useCost?: number;
-    controlParameter?: ControlParameterDTO | null;
+    label: string | null;
+    path: string;
+    value: string;
+    valueAlt: string | null;
+    valueType: ParameterValueType;
+    buttonType: ButtonType;
+    imageOrientation: ButtonImageOrientation;
+    order: number;
+    useCost: number | null;
+    image: UploadedFileDTO | null;
     controlParameterId?: string | null;
 }

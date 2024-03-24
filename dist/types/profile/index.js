@@ -6,5 +6,4 @@ exports.ProfileFormSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(32),
     bio: zod_1.z.string().max(1000),
     hidden: zod_1.z.boolean(),
-    image: zod_1.z.any().optional().nullable(),
 });

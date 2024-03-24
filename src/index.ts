@@ -4,10 +4,9 @@ import { theme } from './react/theme';
 import { LoginSchema, LoginDTO, LoginTokenDTO } from './types/login';
 import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/register';
 import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema, ParameterValueType } from './types/shared';
-import { ClientDTO } from './types/client';
 import { BackgroundDTO } from './types/background';
 import { ButtonStyleDTO } from './types/buttonStyle';
-import { ProfileDTO, ProfileFormDTO, ProfileFormSchema } from './types/profile';
+import { ProfileDTO, ProfileFormDTO, ProfileFormSchema, ClientDTO } from './types/profile';
 import { TiersDTO, TierDTO, TierType } from './types/tier';
 import { AvatarFormDTO, AvatarFormSchema, AvatarPageDTO, AvatarDTO } from './types/avatar';
 import { ButtonFormDTO, ButtonFormSchema, ButtonDTO, ButtonImageOrientation, ButtonType } from './types/button';
@@ -22,10 +21,8 @@ import { FileUploadDTO, UploadedFileDTO } from './types/files';
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
-// Client
-export { ClientDTO };
 // Profile
-export { ProfileFormSchema, ProfileFormDTO, ProfileDTO };
+export { ProfileFormSchema, ProfileFormDTO, ProfileDTO, ClientDTO };
 // Background
 export { BackgroundDTO };
 // ButtonStyle

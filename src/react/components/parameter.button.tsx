@@ -50,7 +50,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
                                        onClick={(e: any) => onClick(e.target.value)}
                                        defaultValue={typeof props.value === 'number' ? props.value : undefined}
                                        min={props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value}
-                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt} />
+                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt || undefined} />
             </SliderWrapper>
             {props.button.useCost && <UseCostIcon position="top" background={expOrb} usable={useCostUsable()}>{props.button.useCost.toString()}</UseCostIcon>}
         </UseCostWrapper>);

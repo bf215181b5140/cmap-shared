@@ -12,8 +12,8 @@ export const LayoutFormSchema = BaseParentIdSchema.extend({
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
 
 export interface LayoutDTO extends BaseParentDTO<LayoutDTO> {
-    label?: string;
-    order?: number;
-    width?: ContentBoxWidth;
-    buttons?: ButtonDTO[];
+    label: string;
+    order: number;
+    width: ContentBoxWidth;
+    buttons?: ButtonDTO[] | null;
 }

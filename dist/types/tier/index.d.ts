@@ -5,17 +5,17 @@ export declare enum TierType {
     Premium = "Premium"
 }
 export interface TiersDTO {
-    tiers?: TierDTO[];
-    clientTier?: TierDTO;
+    tiers: TierDTO[];
+    clientTier: TierDTO;
 }
 export interface TierDTO extends BaseDTO<TierDTO> {
-    tier?: TierType;
-    rank?: number;
-    color?: string;
-    avatars?: number;
-    layouts?: number;
-    buttons?: number;
-    controlParameters?: number;
-    useCost?: boolean;
-    hp?: boolean;
+    tier: TierType;
+    rank: number;
+    color: string;
+    avatars: number;
+    layouts: number;
+    buttons: number;
+    controlParameters: number;
+    useCost: boolean;
+    hp: boolean;
 }

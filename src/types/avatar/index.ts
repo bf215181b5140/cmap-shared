@@ -21,9 +21,9 @@ export interface AvatarPageDTO {
 }
 
 export interface AvatarDTO extends BaseParentDTO<AvatarDTO> {
-    vrcId?: string;
-    label?: string;
-    default?: boolean;
-    layouts?: LayoutDTO[];
-    controlParameters?: ControlParameterDTO[];
+    vrcId: string;
+    label: string;
+    default: boolean;
+    layouts?: LayoutDTO[] | null;
+    controlParameters?: ControlParameterDTO[] | null;
 }
