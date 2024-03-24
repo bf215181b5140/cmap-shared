@@ -1,7 +1,13 @@
 import { z } from 'zod';
-import { ContentBoxWidth } from '../../index';
 import { BaseParentDTO, BaseParentIdSchema } from '../shared';
 import { ButtonDTO } from '../button';
+
+export enum ContentBoxWidth {
+    None = 'none',
+    Third = 'third',
+    Half = 'half',
+    Full = 'full'
+}
 
 export const LayoutFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32),

@@ -1,7 +1,12 @@
 import { z } from 'zod';
-import { ContentBoxWidth } from '../../index';
 import { BaseParentDTO } from '../shared';
 import { ButtonDTO } from '../button';
+export declare enum ContentBoxWidth {
+    None = "none",
+    Third = "third",
+    Half = "half",
+    Full = "full"
+}
 export declare const LayoutFormSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
