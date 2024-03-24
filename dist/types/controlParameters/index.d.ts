@@ -107,7 +107,7 @@ export interface ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> 
     label: string;
     role: ControlParameterRole;
     path: string;
-    valuePrimary: string | null;
+    valuePrimary: string;
     valueSecondary: string | null;
     valueType: ParameterValueType;
 }
