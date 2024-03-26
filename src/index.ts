@@ -13,6 +13,7 @@ import { ButtonFormDTO, ButtonFormSchema, ButtonDTO, ButtonImageOrientation, But
 import { ControlParametersFormDTO, ControlParametersFormSchema, ControlParameterDTO, ControlParameterRole } from './types/controlParameters';
 import { LayoutFormDTO, LayoutFormSchema, LayoutDTO, LayoutWidth } from './types/layout';
 import { FileUploadDTO, UploadedFileDTO } from './types/files';
+import { WebsitePageDTO } from './types/websitePage';
 
 /* ------------------------------------------------------------ */
 // Types
@@ -21,6 +22,8 @@ import { FileUploadDTO, UploadedFileDTO } from './types/files';
 export { LoginSchema, LoginDTO, LoginTokenDTO };
 // Register
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
+// WebsitePage
+export { WebsitePageDTO };
 // Profile
 export { ProfileFormSchema, ProfileFormDTO, ProfileDTO, ClientDTO };
 // Background
