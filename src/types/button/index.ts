@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { BaseParentDTO, BaseParentIdSchema, ParameterValueType } from '../shared';
 import { UploadedFileDTO } from '../files';
+import { ControlParameterDTO } from '../controlParameters';
 
 export enum ButtonType {
     Button = 'Button',
@@ -111,6 +112,6 @@ export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
     order: number;
     useCost: number | null;
     image: UploadedFileDTO | null;
-    controlParameterId?: string | null;
+    controlParameter: ControlParameterDTO | null;
 }
 
