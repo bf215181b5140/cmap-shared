@@ -14,6 +14,7 @@ import { ControlParametersFormDTO, ControlParametersFormSchema, ControlParameter
 import { LayoutFormDTO, LayoutFormSchema, LayoutDTO, LayoutWidth } from './types/layout';
 import { FileUploadDTO, UploadedFileDTO } from './types/files';
 import { WebsitePageDTO } from './types/websitePage';
+import { ApproveFilesDTO } from './types/approveFiles';
 
 /* ------------------------------------------------------------ */
 // Types
@@ -24,6 +25,8 @@ export { LoginSchema, LoginDTO, LoginTokenDTO };
 export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 // WebsitePage
 export { WebsitePageDTO };
+// Admin approve files
+export { ApproveFilesDTO };
 // Profile
 export { ProfileFormSchema, ProfileFormDTO, ProfileDTO, ClientDTO };
 // Background
