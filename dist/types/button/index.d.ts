@@ -23,11 +23,11 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
-    file: z.ZodNullable<z.ZodType<File, z.ZodTypeDef, File>>;
+    file: z.ZodType<File, z.ZodTypeDef, File>;
     controlParameterId: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
-    file: File | null;
+    file: File;
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
@@ -41,7 +41,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     controlParameterId: string | null;
 }, {
     id: string | null;
-    file: File | null;
+    file: File;
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
@@ -55,7 +55,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     controlParameterId: string | null;
 }>, {
     id: string | null;
-    file: File | null;
+    file: File;
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;
@@ -69,7 +69,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     controlParameterId: string | null;
 }, {
     id: string | null;
-    file: File | null;
+    file: File;
     imageOrientation: ButtonImageOrientation;
     order: number;
     value: string;

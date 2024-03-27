@@ -24,7 +24,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     useCost: z.number().nullable(),
-    file: z.custom<File>((v) => v instanceof File).nullable(),
+    file: z.custom<File>((value) => !value || value instanceof File),
     controlParameterId: z.string().max(20).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueType
