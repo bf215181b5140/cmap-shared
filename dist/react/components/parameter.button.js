@@ -49,7 +49,7 @@ var index_1 = require("../../index");
 var expOrb_png_1 = __importDefault(require("../images/expOrb.png"));
 exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 function ParameterButton(props) {
-    var _a, _b;
+    var _a;
     function onClick(value) {
         if (props.onClick) {
             switch (props.button.buttonType) {
@@ -74,10 +74,19 @@ function ParameterButton(props) {
         }
         return true;
     }
+    function imageUrl() {
+        var _a, _b, _c;
+        if (((_a = props.button.image) === null || _a === void 0 ? void 0 : _a.urlPath.indexOf('blob:')) === 0) {
+            return (_b = props.button.image) === null || _b === void 0 ? void 0 : _b.urlPath;
+        }
+        else {
+            return exports.URL + '/' + ((_c = props.button.image) === null || _c === void 0 ? void 0 : _c.urlPath);
+        }
+    }
     if (props.button.buttonType === index_1.ButtonType.Slider) {
         return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(SliderWrapper, { children: [props.button.label && (0, jsx_runtime_1.jsx)(ParameterSliderLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ParameterSliderStyled, { type: "range", step: 1, disabled: !!props.disabled || !useCostUsable(), className: props.buttonStyle.className, onClick: function (e) { return onClick(e.target.value); }, defaultValue: typeof props.value === 'number' ? props.value : undefined, min: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value, max: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt || undefined })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "top", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
     }
-    return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ disabled: !!props.disabled || !useCostUsable(), className: "".concat(props.buttonStyle.className, " ").concat(props.active ? 'active' : ''), onClick: function () { return onClick(); } }, { children: [((_a = props.button.image) === null || _a === void 0 ? void 0 : _a.urlPath) && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: exports.URL + '/' + ((_b = props.button.image) === null || _b === void 0 ? void 0 : _b.urlPath), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] })), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "bottom", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
+    return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ disabled: !!props.disabled || !useCostUsable(), className: "".concat(props.buttonStyle.className, " ").concat(props.active ? 'active' : ''), onClick: function () { return onClick(); } }, { children: [((_a = props.button.image) === null || _a === void 0 ? void 0 : _a.urlPath) && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] })), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "bottom", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
 }
 exports.default = ParameterButton;
 function imageOrientationToAspectRatio(imageOrientation) {

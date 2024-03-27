@@ -41,6 +41,14 @@ export default function ParameterButton(props: ParameterButtonProps) {
         return true;
     }
 
+    function imageUrl() {
+        if (props.button.image?.urlPath.indexOf('blob:') === 0) {
+            return props.button.image?.urlPath;
+        } else {
+            return URL + '/' + props.button.image?.urlPath;
+        }
+    }
+
     if (props.button.buttonType === ButtonType.Slider) {
         return (<UseCostWrapper>
             <SliderWrapper>
@@ -59,7 +67,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
     return (<UseCostWrapper>
         <ParameterButtonStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.buttonStyle.className} ${props.active ? 'active' : ''}`}
                                onClick={() => onClick()}>
-            {props.button.image?.urlPath && <ParameterButtonPicture src={URL + '/' + props.button.image?.urlPath} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
+            {props.button.image?.urlPath && <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
             {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
             <ActiveOverlay active={!!props.active} />
         </ParameterButtonStyled>
