@@ -25,6 +25,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     imageOrientation: zod_1.z.nativeEnum(ButtonImageOrientation),
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
+    image: zod_1.z.any().nullable(),
     controlParameterId: zod_1.z.string().max(20).nullable(),
 }).superRefine(function (val, ctx) {
     // Check valueType
