@@ -10,13 +10,13 @@ export declare const ProfileFormSchema: z.ZodObject<{
     bio: z.ZodString;
     hidden: z.ZodBoolean;
 }, "strip", z.ZodTypeAny, {
-    hidden: boolean;
-    displayName: string;
-    bio: string;
+    displayName?: string;
+    bio?: string;
+    hidden?: boolean;
 }, {
-    hidden: boolean;
-    displayName: string;
-    bio: string;
+    displayName?: string;
+    bio?: string;
+    hidden?: boolean;
 }>;
 export type ProfileFormDTO = z.infer<typeof ProfileFormSchema>;
 export interface ProfileDTO {

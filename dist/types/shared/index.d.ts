@@ -7,26 +7,26 @@ export declare enum ParameterValueType {
 export declare const BaseIdSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    id: string | null;
+    id?: string;
 }, {
-    id: string | null;
+    id?: string;
 }>;
 export declare const RequiredIdSchema: z.ZodObject<{
     id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id: string;
+    id?: string;
 }, {
-    id: string;
+    id?: string;
 }>;
 export declare const BaseParentIdSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id: string | null;
-    parentId: string;
+    id?: string;
+    parentId?: string;
 }, {
-    id: string | null;
-    parentId: string;
+    id?: string;
+    parentId?: string;
 }>;
 export interface BaseDTO<T> {
     id?: string;

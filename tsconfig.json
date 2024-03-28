@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
+    "module": "commonjs",
+    "target": "es5",
     "outDir": "dist",
     "esModuleInterop": true,
-    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "declaration": true,
-    "jsx": "react-jsx",
-    "strict": true
+    "jsx": "react-jsx"
   },
   "include": [
     "src/**/*"

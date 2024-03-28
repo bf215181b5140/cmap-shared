@@ -1,4 +1,7 @@
-export const IgnoredParams = ['/avatar/parameters/VelocityZ', '/avatar/parameters/VelocityY', '/avatar/parameters/VelocityX',
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IgnoredParams = void 0;
+exports.IgnoredParams = ['/avatar/parameters/VelocityZ', '/avatar/parameters/VelocityY', '/avatar/parameters/VelocityX',
     '/avatar/parameters/InStation', '/avatar/parameters/Seated', '/avatar/parameters/Upright',
     '/avatar/parameters/AngularY', '/avatar/parameters/Grounded', '/avatar/parameters/Face',
     '/avatar/parameters/GestureRightWeight', '/avatar/parameters/GestureRight',
