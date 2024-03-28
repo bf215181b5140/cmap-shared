@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
+    "module": "ESNext",
+    "target": "ESNext",
     "outDir": "dist",
     "esModuleInterop": true,
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "declaration": true,
     "jsx": "react-jsx",

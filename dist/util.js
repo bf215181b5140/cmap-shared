@@ -1,22 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertParameterValue = void 0;
-var index_1 = require("./index");
-function convertParameterValue(valueType, value) {
+import { ParameterValueType } from './index';
+export function convertParameterValue(valueType, value) {
     try {
-        var tempValue = void 0;
+        let tempValue;
         switch (valueType) {
-            case index_1.ParameterValueType.Int:
+            case ParameterValueType.Int:
                 tempValue = parseInt(value, 10);
                 if (isNaN(tempValue))
                     tempValue = null;
                 break;
-            case index_1.ParameterValueType.Float:
+            case ParameterValueType.Float:
                 tempValue = parseFloat(value);
                 if (isNaN(tempValue))
                     tempValue = null;
                 break;
-            case index_1.ParameterValueType.Bool:
+            case ParameterValueType.Bool:
                 if (value === 'true') {
                     tempValue = true;
                 }
@@ -37,4 +34,3 @@ function convertParameterValue(valueType, value) {
         return null;
     }
 }
-exports.convertParameterValue = convertParameterValue;

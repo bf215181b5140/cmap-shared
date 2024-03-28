@@ -1,66 +1,21 @@
-"use strict";
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.URL = void 0;
-var jsx_runtime_1 = require("react/jsx-runtime");
-var styled_components_1 = __importStar(require("styled-components"));
-var colors_json_1 = __importDefault(require("../../colors.json"));
-var index_1 = require("../../index");
-var expOrb_png_1 = __importDefault(require("../images/expOrb.png"));
-exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
-function ParameterButton(props) {
-    var _a;
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import styled, { css } from 'styled-components';
+import colors from '../../colors.json';
+import { ButtonImageOrientation, ButtonType, ParameterValueType } from '../../index';
+import expOrb from '../images/expOrb.png';
+export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
+export default function ParameterButton(props) {
     function onClick(value) {
         if (props.onClick) {
             switch (props.button.buttonType) {
-                case index_1.ButtonType.Button:
+                case ButtonType.Button:
                     if (!props.active)
                         props.onClick({ buttonId: props.button.id, value: props.button.value });
                     break;
-                case index_1.ButtonType.Toggle:
+                case ButtonType.Toggle:
                     props.onClick({ buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value });
                     break;
-                case index_1.ButtonType.Slider:
+                case ButtonType.Slider:
                     if (value === undefined)
                         return;
                     props.onClick({ buttonId: props.button.id, value: value });
@@ -75,43 +30,201 @@ function ParameterButton(props) {
         return true;
     }
     function imageUrl() {
-        var _a, _b, _c;
-        if (((_a = props.button.image) === null || _a === void 0 ? void 0 : _a.urlPath.indexOf('blob:')) === 0) {
-            return (_b = props.button.image) === null || _b === void 0 ? void 0 : _b.urlPath;
+        if (props.button.image?.urlPath.indexOf('blob:') === 0) {
+            return props.button.image?.urlPath;
         }
         else {
-            return exports.URL + '/' + ((_c = props.button.image) === null || _c === void 0 ? void 0 : _c.urlPath);
+            return URL + '/' + props.button.image?.urlPath;
         }
     }
-    if (props.button.buttonType === index_1.ButtonType.Slider) {
-        return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(SliderWrapper, { children: [props.button.label && (0, jsx_runtime_1.jsx)(ParameterSliderLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ParameterSliderStyled, { type: "range", step: 1, disabled: !!props.disabled || !useCostUsable(), className: props.buttonStyle.className, onClick: function (e) { return onClick(e.target.value); }, defaultValue: typeof props.value === 'number' ? props.value : undefined, min: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value, max: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt || undefined })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "top", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
+    if (props.button.buttonType === ButtonType.Slider) {
+        return (_jsxs(UseCostWrapper, { children: [_jsxs(SliderWrapper, { children: [props.button.label && _jsx(ParameterSliderLabel, { children: props.button.label }), _jsx(ParameterSliderStyled, { type: "range", step: 1, disabled: !!props.disabled || !useCostUsable(), className: props.buttonStyle.className, onClick: (e) => onClick(e.target.value), defaultValue: typeof props.value === 'number' ? props.value : undefined, min: props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value, max: props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt || undefined })] }), props.button.useCost && _jsx(UseCostIcon, { position: "top", background: expOrb, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
     }
-    return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, __assign({ disabled: !!props.disabled || !useCostUsable(), className: "".concat(props.buttonStyle.className, " ").concat(props.active ? 'active' : ''), onClick: function () { return onClick(); } }, { children: [((_a = props.button.image) === null || _a === void 0 ? void 0 : _a.urlPath) && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] })), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, __assign({ position: "bottom", background: expOrb_png_1.default, usable: useCostUsable() }, { children: props.button.useCost.toString() }))] }));
+    return (_jsxs(UseCostWrapper, { children: [_jsxs(ParameterButtonStyled, { disabled: !!props.disabled || !useCostUsable(), className: `${props.buttonStyle.className} ${props.active ? 'active' : ''}`, onClick: () => onClick(), children: [props.button.image?.urlPath && _jsx(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || ButtonImageOrientation.Square }), props.button.label && _jsx(ParameterButtonLabel, { children: props.button.label }), _jsx(ActiveOverlay, { active: !!props.active })] }), props.button.useCost && _jsx(UseCostIcon, { position: "bottom", background: expOrb, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
 }
-exports.default = ParameterButton;
 function imageOrientationToAspectRatio(imageOrientation) {
     switch (imageOrientation) {
-        case index_1.ButtonImageOrientation.Square:
+        case ButtonImageOrientation.Square:
             return '4/3';
-        case index_1.ButtonImageOrientation.Vertical:
+        case ButtonImageOrientation.Vertical:
             return '3/4';
-        case index_1.ButtonImageOrientation.Horizontal:
+        case ButtonImageOrientation.Horizontal:
         default:
             return '16/9';
     }
 }
-var ParameterButtonStyled = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  text-align: center;\n  padding: 0;\n  min-height: 4.5em;\n  min-width: 180px;\n  cursor: pointer;\n  overflow: hidden;\n  position: relative;\n\n  &.buttonStyle-1 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n    transition: 0.2s linear;\n\n    :hover, &.active {\n      transform: scale(1.02) perspective(1px);\n      background: ", ";\n      border: 2px solid ", ";\n    }\n  }\n\n  &.buttonStyle-2 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n    transition: 0.2s linear;\n\n    :hover, &.active {\n      transform: scale(1.02) perspective(1px);\n      background: ", ";\n      border: 2px solid ", ";\n    }\n  }\n\n  ", ";\n"], ["\n  text-align: center;\n  padding: 0;\n  min-height: 4.5em;\n  min-width: 180px;\n  cursor: pointer;\n  overflow: hidden;\n  position: relative;\n\n  &.buttonStyle-1 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n    transition: 0.2s linear;\n\n    :hover, &.active {\n      transform: scale(1.02) perspective(1px);\n      background: ", ";\n      border: 2px solid ", ";\n    }\n  }\n\n  &.buttonStyle-2 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n    transition: 0.2s linear;\n\n    :hover, &.active {\n      transform: scale(1.02) perspective(1px);\n      background: ", ";\n      border: 2px solid ", ";\n    }\n  }\n\n  ", ";\n"])), colors_json_1.default['button-bg'], colors_json_1.default['button-border'], colors_json_1.default['button-hover-bg'], colors_json_1.default['button-hover-border'], colors_json_1.default['button-2-bg'], colors_json_1.default['button-2-border'], colors_json_1.default['button-2-hover-bg'], colors_json_1.default['button-2-hover-border'], function (props) { return props.disabled ? disabledParamStyle : null; });
-var disabledParamStyle = (0, styled_components_1.css)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  pointer-events: none;\n  cursor: initial;\n  filter: saturate(0.5%);\n"], ["\n  pointer-events: none;\n  cursor: initial;\n  filter: saturate(0.5%);\n"])));
-var ActiveOverlay = styled_components_1.default.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n\n  ", "\n"], ["\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n\n  ", "\n"])), function (props) {
-    if (props.active) {
-        return (0, styled_components_1.css)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n        background: linear-gradient(45deg, transparent 0%, transparent 25%, rgba(144, 160, 164, 0.20) 50%, transparent 50%, transparent 100%) 0 0 / 400% 400%;\n        animation: overlay 3s linear infinite;\n\n        @keyframes overlay {\n          from {\n            background-position: 100% 0\n          }\n          to {\n            background-position: 0 100%\n          }\n        }\n\n        :after {\n          content: '';\n          position: absolute;\n          top: 0;\n          bottom: 0;\n          left: 0;\n          right: 0;\n\n          background: linear-gradient(10deg, transparent 0%, transparent 50%, rgba(144, 160, 164, 0.06) 50%, transparent 80%, transparent 100%) 0px 0px / 400% 400%;\n          animation: 3s overlayAfter 2.4s linear infinite;\n\n          @keyframes overlayAfter {\n            from {\n              background-position: 0 100%\n            }\n            to {\n              background-position: 100% 0\n            }\n          }\n        }\n      "], ["\n        background: linear-gradient(45deg, transparent 0%, transparent 25%, rgba(144, 160, 164, 0.20) 50%, transparent 50%, transparent 100%) 0 0 / 400% 400%;\n        animation: overlay 3s linear infinite;\n\n        @keyframes overlay {\n          from {\n            background-position: 100% 0\n          }\n          to {\n            background-position: 0 100%\n          }\n        }\n\n        :after {\n          content: '';\n          position: absolute;\n          top: 0;\n          bottom: 0;\n          left: 0;\n          right: 0;\n\n          background: linear-gradient(10deg, transparent 0%, transparent 50%, rgba(144, 160, 164, 0.06) 50%, transparent 80%, transparent 100%) 0px 0px / 400% 400%;\n          animation: 3s overlayAfter 2.4s linear infinite;\n\n          @keyframes overlayAfter {\n            from {\n              background-position: 0 100%\n            }\n            to {\n              background-position: 100% 0\n            }\n          }\n        }\n      "])));
+const ParameterButtonStyled = styled.div `
+  text-align: center;
+  padding: 0;
+  min-height: 4.5em;
+  min-width: 180px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  &.buttonStyle-1 {
+    background: ${colors['button-bg']};
+    border: 2px solid ${colors['button-border']};
+    border-radius: 8px;
+    transition: 0.2s linear;
+
+    :hover, &.active {
+      transform: scale(1.02) perspective(1px);
+      background: ${colors['button-hover-bg']};
+      border: 2px solid ${colors['button-hover-border']};
     }
-});
-var ParameterButtonLabel = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  padding: 1.5em;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"], ["\n  padding: 1.5em;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
-var ParameterButtonPicture = styled_components_1.default.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n  aspect-ratio: ", ";\n  margin: 0;\n  padding: 0;\n  background: url(", ") no-repeat center;\n  background-size: cover;\n"], ["\n  width: 100%;\n  aspect-ratio: ", ";\n  margin: 0;\n  padding: 0;\n  background: url(", ") no-repeat center;\n  background-size: cover;\n"])), function (props) { return imageOrientationToAspectRatio(props.imageOrientation); }, function (props) { return props.src; });
-var SliderWrapper = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: inline-flex;\n  flex-direction: column;\n  width: 100%;\n"], ["\n  display: inline-flex;\n  flex-direction: column;\n  width: 100%;\n"])));
-var ParameterSliderLabel = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  padding: 5px;\n  margin: 0;\n  align-items: center;\n"], ["\n  padding: 5px;\n  margin: 0;\n  align-items: center;\n"])));
-var ParameterSliderStyled = styled_components_1.default.input(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  padding: 4px;\n  height: 36px;\n  min-width: 180px;\n  width: 100%;\n  border-radius: 8px;\n  cursor: pointer;\n  -webkit-appearance: none;\n  background: ", ";\n\n\n  // todo style thumb\n  ::-webkit-slider-thumb {\n    height: 30px;\n    width: 30px;\n    border-radius: 4px;\n  }\n\n  &.buttonStyle-1 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n\n    &::-webkit-slider-thumb {\n      background: ", ";\n\n      :hover {\n        background: ", ";\n      }\n    }\n  }\n\n  &.buttonStyle-2 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n\n    &::-webkit-slider-thumb {\n      background: ", ";\n\n      :hover {\n        background: ", ";\n      }\n    }\n  }\n\n  ", ";\n"], ["\n  padding: 4px;\n  height: 36px;\n  min-width: 180px;\n  width: 100%;\n  border-radius: 8px;\n  cursor: pointer;\n  -webkit-appearance: none;\n  background: ", ";\n\n\n  // todo style thumb\n  ::-webkit-slider-thumb {\n    height: 30px;\n    width: 30px;\n    border-radius: 4px;\n  }\n\n  &.buttonStyle-1 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n\n    &::-webkit-slider-thumb {\n      background: ", ";\n\n      :hover {\n        background: ", ";\n      }\n    }\n  }\n\n  &.buttonStyle-2 {\n    background: ", ";\n    border: 2px solid ", ";\n    border-radius: 8px;\n\n    &::-webkit-slider-thumb {\n      background: ", ";\n\n      :hover {\n        background: ", ";\n      }\n    }\n  }\n\n  ", ";\n"])), colors_json_1.default['input-bg'], colors_json_1.default['button-bg'], colors_json_1.default['button-border'], colors_json_1.default['button-border'], colors_json_1.default['button-hover-border'], colors_json_1.default['button-2-bg'], colors_json_1.default['button-2-border'], colors_json_1.default['button-2-hover-bg'], colors_json_1.default['button-2-hover-border'], function (props) { return props.disabled ? disabledParamStyle : null; });
-var UseCostWrapper = styled_components_1.default.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var UseCostIcon = styled_components_1.default.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: absolute;\n  ", ";\n  right: 10px;\n  padding-right: 18px;\n  background: url(", ") center right no-repeat;\n  background-size: 14px;\n  color: ", ";\n  text-shadow: 0 0 3px black;\n  pointer-events: none;\n"], ["\n  position: absolute;\n  ", ";\n  right: 10px;\n  padding-right: 18px;\n  background: url(", ") center right no-repeat;\n  background-size: 14px;\n  color: ", ";\n  text-shadow: 0 0 3px black;\n  pointer-events: none;\n"])), function (props) { return props.position === 'top' ? (0, styled_components_1.css)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["top: 10px;"], ["top: 10px;"]))) : (0, styled_components_1.css)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["bottom: 5px;"], ["bottom: 5px;"]))); }, function (props) { return props.background; }, function (props) { return props.usable ? '#2ec92e' : '#dd3322'; });
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
+  }
+
+  &.buttonStyle-2 {
+    background: ${colors['button-2-bg']};
+    border: 2px solid ${colors['button-2-border']};
+    border-radius: 8px;
+    transition: 0.2s linear;
+
+    :hover, &.active {
+      transform: scale(1.02) perspective(1px);
+      background: ${colors['button-2-hover-bg']};
+      border: 2px solid ${colors['button-2-hover-border']};
+    }
+  }
+
+  ${props => props.disabled ? disabledParamStyle : null};
+`;
+const disabledParamStyle = css `
+  pointer-events: none;
+  cursor: initial;
+  filter: saturate(0.5%);
+`;
+const ActiveOverlay = styled.div `
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  ${props => {
+    if (props.active) {
+        return css `
+        background: linear-gradient(45deg, transparent 0%, transparent 25%, rgba(144, 160, 164, 0.20) 50%, transparent 50%, transparent 100%) 0 0 / 400% 400%;
+        animation: overlay 3s linear infinite;
+
+        @keyframes overlay {
+          from {
+            background-position: 100% 0
+          }
+          to {
+            background-position: 0 100%
+          }
+        }
+
+        :after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          background: linear-gradient(10deg, transparent 0%, transparent 50%, rgba(144, 160, 164, 0.06) 50%, transparent 80%, transparent 100%) 0px 0px / 400% 400%;
+          animation: 3s overlayAfter 2.4s linear infinite;
+
+          @keyframes overlayAfter {
+            from {
+              background-position: 0 100%
+            }
+            to {
+              background-position: 100% 0
+            }
+          }
+        }
+      `;
+    }
+}}
+`;
+const ParameterButtonLabel = styled.div `
+  padding: 1.5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const ParameterButtonPicture = styled.div `
+  width: 100%;
+  aspect-ratio: ${props => imageOrientationToAspectRatio(props.imageOrientation)};
+  margin: 0;
+  padding: 0;
+  background: url(${props => props.src}) no-repeat center;
+  background-size: cover;
+`;
+const SliderWrapper = styled.div `
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+`;
+const ParameterSliderLabel = styled.div `
+  padding: 5px;
+  margin: 0;
+  align-items: center;
+`;
+const ParameterSliderStyled = styled.input `
+  padding: 4px;
+  height: 36px;
+  min-width: 180px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: ${colors['input-bg']};
+
+
+  // todo style thumb
+  ::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+  }
+
+  &.buttonStyle-1 {
+    background: ${colors['button-bg']};
+    border: 2px solid ${colors['button-border']};
+    border-radius: 8px;
+
+    &::-webkit-slider-thumb {
+      background: ${colors['button-border']};
+
+      :hover {
+        background: ${colors['button-hover-border']};
+      }
+    }
+  }
+
+  &.buttonStyle-2 {
+    background: ${colors['button-2-bg']};
+    border: 2px solid ${colors['button-2-border']};
+    border-radius: 8px;
+
+    &::-webkit-slider-thumb {
+      background: ${colors['button-2-hover-bg']};
+
+      :hover {
+        background: ${colors['button-2-hover-border']};
+      }
+    }
+  }
+
+  ${props => props.disabled ? disabledParamStyle : null};
+`;
+const UseCostWrapper = styled.div `
+  position: relative;
+`;
+const UseCostIcon = styled.div `
+  position: absolute;
+  ${props => props.position === 'top' ? css `top: 10px;` : css `bottom: 5px;`};
+  right: 10px;
+  padding-right: 18px;
+  background: url(${props => props.background}) center right no-repeat;
+  background-size: 14px;
+  color: ${props => props.usable ? '#2ec92e' : '#dd3322'};
+  text-shadow: 0 0 3px black;
+  pointer-events: none;
+`;
