@@ -10,15 +10,15 @@ export declare const AvatarFormSchema: z.ZodObject<{
     label: z.ZodString;
     default: z.ZodBoolean;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    vrcId?: string;
-    label?: string;
-    default?: boolean;
+    default: boolean;
+    id: string | null;
+    label: string;
+    vrcId: string;
 }, {
-    id?: string;
-    vrcId?: string;
-    label?: string;
-    default?: boolean;
+    default: boolean;
+    id: string | null;
+    label: string;
+    vrcId: string;
 }>;
 export type AvatarFormDTO = z.infer<typeof AvatarFormSchema>;
 export interface AvatarPageDTO {

@@ -14,21 +14,21 @@ export declare const ControlParameterSchema: z.ZodObject<{
     valueSecondary: z.ZodNullable<z.ZodString>;
     valueType: z.ZodNativeEnum<typeof ParameterValueType>;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    label?: string;
-    role?: ControlParameterRole;
-    path?: string;
-    valuePrimary?: string;
-    valueSecondary?: string;
-    valueType?: ParameterValueType;
+    id: string | null;
+    label: string;
+    path: string;
+    role: ControlParameterRole;
+    valueType: ParameterValueType;
+    valuePrimary: string;
+    valueSecondary: string | null;
 }, {
-    id?: string;
-    label?: string;
-    role?: ControlParameterRole;
-    path?: string;
-    valuePrimary?: string;
-    valueSecondary?: string;
-    valueType?: ParameterValueType;
+    id: string | null;
+    label: string;
+    path: string;
+    role: ControlParameterRole;
+    valueType: ParameterValueType;
+    valuePrimary: string;
+    valueSecondary: string | null;
 }>;
 export declare const ControlParametersFormSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
@@ -41,66 +41,66 @@ export declare const ControlParametersFormSchema: z.ZodEffects<z.ZodObject<{
         valueSecondary: z.ZodNullable<z.ZodString>;
         valueType: z.ZodNativeEnum<typeof ParameterValueType>;
     }, "strip", z.ZodTypeAny, {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
     }, {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }>, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }, {
-    avatarId?: string;
+    avatarId: string;
     controlParameters?: {
-        id?: string;
-        label?: string;
-        role?: ControlParameterRole;
-        path?: string;
-        valuePrimary?: string;
-        valueSecondary?: string;
-        valueType?: ParameterValueType;
-    }[];
+        id: string | null;
+        label: string;
+        path: string;
+        role: ControlParameterRole;
+        valueType: ParameterValueType;
+        valuePrimary: string;
+        valueSecondary: string | null;
+    }[] | undefined;
 }>;
 export type ControlParametersFormDTO = z.infer<typeof ControlParametersFormSchema>;
 export interface ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> {
