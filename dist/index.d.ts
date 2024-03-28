@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
-import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/register';
+export { LoginSchema, LoginDTO, LoginTokenDTO } from './types/login';
+export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/register';
 import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema, ParameterValueType } from './types/shared';
 import { BackgroundDTO } from './types/background';
 import { ButtonStyleDTO } from './types/buttonStyle';
@@ -14,8 +15,6 @@ import { LayoutFormDTO, LayoutFormSchema, LayoutDTO, LayoutWidth } from './types
 import { FileUploadDTO, UploadedFileDTO } from './types/files';
 import { WebsitePageDTO } from './types/websitePage';
 import { ApproveFilesDTO } from './types/approveFiles';
-export { LoginSchema, LoginDTO, LoginTokenDTO } from './types/login';
-export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
 export { WebsitePageDTO };
 export { ApproveFilesDTO };
 export { ProfileFormSchema, ProfileFormDTO, ProfileDTO, ClientDTO };

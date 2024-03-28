@@ -5,6 +5,10 @@ var const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 var theme_1 = require("./react/theme");
 Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return theme_1.theme; } });
+// Login
+var login_1 = require("./types/login");
+Object.defineProperty(exports, "LoginSchema", { enumerable: true, get: function () { return login_1.LoginSchema; } });
+// Register
 var register_1 = require("./types/register");
 Object.defineProperty(exports, "RegisterFormSchema", { enumerable: true, get: function () { return register_1.RegisterFormSchema; } });
 Object.defineProperty(exports, "RegisterSchema", { enumerable: true, get: function () { return register_1.RegisterSchema; } });
@@ -32,12 +36,6 @@ Object.defineProperty(exports, "ControlParameterRole", { enumerable: true, get: 
 var layout_1 = require("./types/layout");
 Object.defineProperty(exports, "LayoutFormSchema", { enumerable: true, get: function () { return layout_1.LayoutFormSchema; } });
 Object.defineProperty(exports, "LayoutWidth", { enumerable: true, get: function () { return layout_1.LayoutWidth; } });
-/* ------------------------------------------------------------ */
-// Types
-/* ------------------------------------------------------------ */
-// Login
-var login_1 = require("./types/login");
-Object.defineProperty(exports, "LoginSchema", { enumerable: true, get: function () { return login_1.LoginSchema; } });
 var FieldOption = /** @class */ (function () {
     function FieldOption() {
         this.key = '';
