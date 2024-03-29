@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LayoutFormSchema = exports.LayoutWidth = void 0;
-var zod_1 = require("zod");
-var shared_1 = require("../shared");
+const zod_1 = require("zod");
+const shared_1 = require("../shared");
 var LayoutWidth;
 (function (LayoutWidth) {
     LayoutWidth["None"] = "none";

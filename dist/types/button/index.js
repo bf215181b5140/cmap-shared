@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonFormSchema = exports.ButtonImageOrientation = exports.ButtonType = void 0;
-var zod_1 = require("zod");
-var shared_1 = require("../shared");
+const zod_1 = require("zod");
+const shared_1 = require("../shared");
 var ButtonType;
 (function (ButtonType) {
     ButtonType["Button"] = "Button";
@@ -25,9 +25,9 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     imageOrientation: zod_1.z.nativeEnum(ButtonImageOrientation),
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
-    file: zod_1.z.custom(function (value) { return !value || value instanceof File; }),
+    file: zod_1.z.custom((value) => !value || value instanceof File),
     controlParameterId: zod_1.z.string().max(20).nullable(),
-}).superRefine(function (val, ctx) {
+}).superRefine((val, ctx) => {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === shared_1.ParameterValueType.Bool) {
         ctx.addIssue({
@@ -51,32 +51,32 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Bool (true or false)',
-                    path: ["value"]
+                    path: [`value`]
                 });
             }
             if ((val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Bool (true or false)',
-                    path: ["valueAlt"]
+                    path: [`valueAlt`]
                 });
             }
             break;
         case shared_1.ParameterValueType.Float:
-            var valueNumber = Number(val.value);
+            const valueNumber = Number(val.value);
             if (Number.isNaN(valueNumber) || valueNumber < 0 || valueNumber > 1) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Float number',
-                    path: ["value"]
+                    path: [`value`]
                 });
             }
-            var valueAltNumber = Number(val.valueAlt);
+            const valueAltNumber = Number(val.valueAlt);
             if (Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Float number',
-                    path: ["valueAlt"]
+                    path: [`valueAlt`]
                 });
             }
             break;
@@ -85,14 +85,14 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Int number',
-                    path: ["value"]
+                    path: [`value`]
                 });
             }
             if (!Number.isInteger(Number(val.valueAlt))) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Int number',
-                    path: ["valueAlt"]
+                    path: [`valueAlt`]
                 });
             }
             break;

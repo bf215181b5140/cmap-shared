@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.convertParameterValue = void 0;
-var index_1 = require("./index");
+const index_1 = require("./index");
 function convertParameterValue(valueType, value) {
     try {
-        var tempValue = void 0;
+        let tempValue;
         switch (valueType) {
             case index_1.ParameterValueType.Int:
                 tempValue = parseInt(value, 10);

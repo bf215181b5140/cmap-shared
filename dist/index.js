@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
-var const_1 = require("./const");
+const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
-var theme_1 = require("./react/theme");
+const theme_1 = require("./react/theme");
 Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return theme_1.theme; } });
 // Login
 var login_1 = require("./types/login");
@@ -43,13 +43,10 @@ Object.defineProperty(exports, "BaseIdSchema", { enumerable: true, get: function
 Object.defineProperty(exports, "RequiredIdSchema", { enumerable: true, get: function () { return shared_1.RequiredIdSchema; } });
 Object.defineProperty(exports, "BaseParentIdSchema", { enumerable: true, get: function () { return shared_1.BaseParentIdSchema; } });
 Object.defineProperty(exports, "ParameterValueType", { enumerable: true, get: function () { return shared_1.ParameterValueType; } });
-var FieldOption = /** @class */ (function () {
-    function FieldOption() {
-        this.key = '';
-        this.value = '';
-    }
-    return FieldOption;
-}());
+class FieldOption {
+    key = '';
+    value = '';
+}
 exports.FieldOption = FieldOption;
 var ContentBoxWidth;
 (function (ContentBoxWidth) {
