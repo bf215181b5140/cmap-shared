@@ -19,11 +19,11 @@ export const BaseParentIdSchema = BaseIdSchema.extend({
 });
 
 
-export interface BaseDTO<T> {
+export interface BaseDTO {
     id?: string;
 }
 
-export interface BaseParentDTO<T> extends BaseDTO<BaseParentDTO<T>> {
+export interface BaseParentDTO extends BaseDTO {
     parentId?: string;
 }
 

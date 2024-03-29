@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { BaseParentDTO, BaseParentIdSchema } from '../shared';
 import { ButtonDTO } from '../button';
+import { InteractionKeyDTO } from '../InteractionKey';
 
 export enum LayoutWidth {
     None = 'none',
@@ -17,9 +18,10 @@ export const LayoutFormSchema = BaseParentIdSchema.extend({
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
 
-export interface LayoutDTO extends BaseParentDTO<LayoutDTO> {
+export interface LayoutDTO extends BaseParentDTO {
     label: string;
     order: number;
     width: LayoutWidth;
     buttons?: ButtonDTO[] | null;
+    interactionKey?: InteractionKeyDTO[] | null;
 }

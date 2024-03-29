@@ -26,7 +26,7 @@ export interface AvatarPageDTO {
     tier: TierDTO;
     buttonStyle: ButtonStyleDTO;
 }
-export interface AvatarDTO extends BaseParentDTO<AvatarDTO> {
+export interface AvatarDTO extends BaseParentDTO {
     vrcId: string;
     label: string;
     default: boolean;

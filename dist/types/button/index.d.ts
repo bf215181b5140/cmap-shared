@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { BaseParentDTO, ParameterValueType } from '../shared';
 import { UploadedFileDTO } from '../files';
 import { ControlParameterDTO } from '../controlParameters';
+import { InteractionKeyDTO } from '../InteractionKey';
 export declare enum ButtonType {
     Button = "Button",
     Slider = "Slider",
@@ -26,6 +27,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     useCost: z.ZodNullable<z.ZodNumber>;
     file: z.ZodType<File, z.ZodTypeDef, File>;
     controlParameterId: z.ZodNullable<z.ZodString>;
+    interactionKeyId: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     file: File;
@@ -40,6 +42,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | null;
     buttonType: ButtonType;
     controlParameterId: string | null;
+    interactionKeyId: string | null;
 }, {
     id: string | null;
     file: File;
@@ -54,6 +57,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | null;
     buttonType: ButtonType;
     controlParameterId: string | null;
+    interactionKeyId: string | null;
 }>, {
     id: string | null;
     file: File;
@@ -68,6 +72,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | null;
     buttonType: ButtonType;
     controlParameterId: string | null;
+    interactionKeyId: string | null;
 }, {
     id: string | null;
     file: File;
@@ -82,9 +87,10 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | null;
     buttonType: ButtonType;
     controlParameterId: string | null;
+    interactionKeyId: string | null;
 }>;
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
-export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
+export interface ButtonDTO extends BaseParentDTO {
     label: string | null;
     path: string;
     value: string;
@@ -96,4 +102,5 @@ export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
     useCost: number | null;
     image: UploadedFileDTO | null;
     controlParameter: ControlParameterDTO | null;
+    interactionKey?: InteractionKeyDTO[] | null;
 }

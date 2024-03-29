@@ -27,6 +27,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     useCost: zod_1.z.number().nullable(),
     file: zod_1.z.custom((value) => !value || value instanceof File),
     controlParameterId: zod_1.z.string().max(20).nullable(),
+    interactionKeyId: zod_1.z.string().max(20).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === shared_1.ParameterValueType.Bool) {

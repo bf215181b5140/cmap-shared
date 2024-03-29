@@ -109,7 +109,7 @@ export const ControlParametersFormSchema = z.object({
 
 export type ControlParametersFormDTO = z.infer<typeof ControlParametersFormSchema>;
 
-export interface ControlParameterDTO extends BaseParentDTO<ControlParameterDTO> {
+export interface ControlParameterDTO extends BaseParentDTO {
     label: string;
     role: ControlParameterRole;
     path: string;

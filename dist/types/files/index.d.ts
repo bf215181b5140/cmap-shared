@@ -4,7 +4,7 @@ export interface FileUploadDTO {
     parentId?: string;
     file?: File;
 }
-export interface UploadedFileDTO extends BaseDTO<UploadedFileDTO> {
+export interface UploadedFileDTO extends BaseDTO {
     fileName: string;
     urlPath: string;
 }

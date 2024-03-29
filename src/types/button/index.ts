@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { BaseParentDTO, BaseParentIdSchema, ParameterValueType } from '../shared';
 import { UploadedFileDTO } from '../files';
 import { ControlParameterDTO } from '../controlParameters';
+import { InteractionKeyDTO } from '../InteractionKey';
 
 export enum ButtonType {
     Button = 'Button',
@@ -27,6 +28,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
     useCost: z.number().nullable(),
     file: z.custom<File>((value) => !value || value instanceof File),
     controlParameterId: z.string().max(20).nullable(),
+    interactionKeyId: z.string().max(20).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueType
     if (val.buttonType === ButtonType.Slider && val.valueType === ParameterValueType.Bool) {
@@ -101,7 +103,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
 
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
 
-export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
+export interface ButtonDTO extends BaseParentDTO {
     label: string | null;
     path: string;
     value: string;
@@ -113,5 +115,6 @@ export interface ButtonDTO extends BaseParentDTO<ButtonDTO> {
     useCost: number | null;
     image: UploadedFileDTO | null;
     controlParameter: ControlParameterDTO | null;
+    interactionKey?: InteractionKeyDTO[] | null;
 }
 

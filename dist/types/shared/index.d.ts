@@ -28,10 +28,10 @@ export declare const BaseParentIdSchema: z.ZodObject<{
     id: string | null;
     parentId: string;
 }>;
-export interface BaseDTO<T> {
+export interface BaseDTO {
     id?: string;
 }
-export interface BaseParentDTO<T> extends BaseDTO<BaseParentDTO<T>> {
+export interface BaseParentDTO extends BaseDTO {
     parentId?: string;
 }
 export declare class CmapApiError extends Error {

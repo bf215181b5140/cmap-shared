@@ -5,6 +5,7 @@ import { BaseParentDTO } from '../shared';
 import { UploadedFileDTO } from '../files';
 import { TierDTO } from '../tier';
 import { AvatarDTO } from '../avatar';
+import { InteractionKeyDTO } from '../InteractionKey';
 export declare const ProfileFormSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
@@ -24,7 +25,7 @@ export interface ProfileDTO {
     backgrounds: BackgroundDTO[];
     buttonStyles: ButtonStyleDTO[];
 }
-export interface ClientDTO extends BaseParentDTO<ClientDTO> {
+export interface ClientDTO extends BaseParentDTO {
     username: string;
     displayName: string;
     bio: string;
@@ -34,4 +35,5 @@ export interface ClientDTO extends BaseParentDTO<ClientDTO> {
     background: BackgroundDTO;
     buttonStyle: ButtonStyleDTO;
     avatars: AvatarDTO[] | null;
+    interactionKeys?: InteractionKeyDTO[] | null;
 }

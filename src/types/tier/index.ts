@@ -11,7 +11,7 @@ export interface TiersDTO {
     clientTier: TierDTO;
 }
 
-export interface TierDTO extends BaseDTO<TierDTO> {
+export interface TierDTO extends BaseDTO {
     tier: TierType;
     rank: number;
     color: string;
