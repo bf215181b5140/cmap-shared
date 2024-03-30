@@ -15,6 +15,7 @@ export interface TierDTO extends BaseDTO {
     tier: TierType;
     rank: number;
     color: string;
+    interactionKeys: number;
     avatars: number;
     layouts: number;
     buttons: number;

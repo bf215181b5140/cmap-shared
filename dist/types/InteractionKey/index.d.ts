@@ -30,19 +30,19 @@ export declare const InteractionKeyFormSchema: z.ZodObject<{
         label: string;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    clientId: string;
     interactionKeys: {
         key: string;
         id: string | null;
         label: string;
     }[];
+    clientId: string;
 }, {
-    clientId: string;
     interactionKeys: {
         key: string;
         id: string | null;
         label: string;
     }[];
+    clientId: string;
 }>;
 export type InteractionKeyFormDTO = z.infer<typeof InteractionKeyFormSchema>;
 export interface InteractionKeyDTO extends BaseDTO {
