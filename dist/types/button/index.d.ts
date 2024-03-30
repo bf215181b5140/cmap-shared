@@ -102,5 +102,5 @@ export interface ButtonDTO extends BaseParentDTO {
     useCost: number | null;
     image: UploadedFileDTO | null;
     controlParameter: ControlParameterDTO | null;
-    interactionKey?: InteractionKeyDTO[] | null;
+    interactionKey?: InteractionKeyDTO | null;
 }

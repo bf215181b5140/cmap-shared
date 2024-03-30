@@ -24,5 +24,5 @@ export interface LayoutDTO extends BaseParentDTO {
     order: number;
     width: LayoutWidth;
     buttons?: ButtonDTO[] | null;
-    interactionKey?: InteractionKeyDTO[] | null;
+    interactionKey?: InteractionKeyDTO | null;
 }
