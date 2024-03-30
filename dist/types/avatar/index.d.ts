@@ -4,6 +4,7 @@ import { ButtonStyleDTO } from '../buttonStyle';
 import { TierDTO } from '../tier';
 import { LayoutDTO } from '../layout';
 import { ControlParameterDTO } from '../controlParameters';
+import { InteractionKeyDTO } from '../InteractionKey';
 export declare const AvatarFormSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     vrcId: z.ZodString;
@@ -25,6 +26,7 @@ export interface AvatarPageDTO {
     avatars: AvatarDTO[];
     tier: TierDTO;
     buttonStyle: ButtonStyleDTO;
+    interactionKeys: InteractionKeyDTO[];
 }
 export interface AvatarDTO extends BaseParentDTO {
     vrcId: string;

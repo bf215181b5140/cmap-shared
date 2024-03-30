@@ -14,4 +14,5 @@ exports.LayoutFormSchema = shared_1.BaseParentIdSchema.extend({
     label: zod_1.z.string().max(32),
     order: zod_1.z.number(),
     width: zod_1.z.nativeEnum(LayoutWidth),
+    interactionKeyId: zod_1.z.string().max(20).nullable(),
 });

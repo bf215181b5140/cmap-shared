@@ -14,18 +14,21 @@ export declare const LayoutFormSchema: z.ZodObject<{
     label: z.ZodString;
     order: z.ZodNumber;
     width: z.ZodNativeEnum<typeof LayoutWidth>;
+    interactionKeyId: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     width: LayoutWidth;
     order: number;
     label: string;
     parentId: string;
+    interactionKeyId: string | null;
 }, {
     id: string | null;
     width: LayoutWidth;
     order: number;
     label: string;
     parentId: string;
+    interactionKeyId: string | null;
 }>;
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
 export interface LayoutDTO extends BaseParentDTO {

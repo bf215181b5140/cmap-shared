@@ -14,6 +14,7 @@ export const LayoutFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32),
     order: z.number(),
     width: z.nativeEnum(LayoutWidth),
+    interactionKeyId: z.string().max(20).nullable(),
 });
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
