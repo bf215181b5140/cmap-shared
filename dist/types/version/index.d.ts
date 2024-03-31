@@ -40,6 +40,9 @@ export declare const ClientVersionFormSchema: z.ZodObject<{
     }[];
 }>;
 export type ClientVersionFormDTO = z.infer<typeof ClientVersionFormSchema>;
-export type ClientVersionDTO = z.infer<typeof ClientVersionSchema> & {
+export type ClientVersionDTO = z.infer<typeof ClientVersionSchema>;
+export interface VersionDTO {
     serverVersion: string;
-};
+    clientVersion: string;
+    clientDownload: string;
+}

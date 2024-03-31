@@ -10,3 +10,4 @@ exports.ClientVersionSchema = shared_1.BaseIdSchema.extend({
 exports.ClientVersionFormSchema = zod_1.z.object({
     versions: zod_1.z.array(exports.ClientVersionSchema),
 });
+;

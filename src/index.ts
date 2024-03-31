@@ -45,7 +45,7 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrie
 // Files
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
 // Version
-export { ClientVersionSchema, ClientVersionFormSchema, ClientVersionFormDTO, ClientVersionDTO } from './types/version';
+export { ClientVersionSchema, ClientVersionFormSchema, ClientVersionFormDTO, ClientVersionDTO, VersionDTO } from './types/version';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 
