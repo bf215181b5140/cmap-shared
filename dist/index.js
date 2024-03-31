@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ClientVersionFormSchema = exports.ClientVersionSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 const theme_1 = require("./react/theme");
@@ -35,6 +35,10 @@ var button_1 = require("./types/button");
 Object.defineProperty(exports, "ButtonFormSchema", { enumerable: true, get: function () { return button_1.ButtonFormSchema; } });
 Object.defineProperty(exports, "ButtonType", { enumerable: true, get: function () { return button_1.ButtonType; } });
 Object.defineProperty(exports, "ButtonImageOrientation", { enumerable: true, get: function () { return button_1.ButtonImageOrientation; } });
+// Version
+var version_1 = require("./types/version");
+Object.defineProperty(exports, "ClientVersionSchema", { enumerable: true, get: function () { return version_1.ClientVersionSchema; } });
+Object.defineProperty(exports, "ClientVersionFormSchema", { enumerable: true, get: function () { return version_1.ClientVersionFormSchema; } });
 // Shared
 var shared_1 = require("./types/shared");
 Object.defineProperty(exports, "CmapApiError", { enumerable: true, get: function () { return shared_1.CmapApiError; } });
