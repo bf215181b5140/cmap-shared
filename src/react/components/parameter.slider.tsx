@@ -14,23 +14,7 @@ interface ParameterSliderProps {
 export default function ParameterSlider({ value, step, min, max, disabled, className, onClick }: ParameterSliderProps) {
 
     const inputRef = useRef<any>(null);
-    const [dragging, setDragging] = useState(false);
     const width = ((value - min) / (max - min)) * 100;
-
-    useEffect(() => {
-        if (dragging) {
-            document.addEventListener('mousemove', calculateInputRange);
-            document.addEventListener('mouseup', handleMouseUp);
-        } else {
-            document.removeEventListener('mousemove', calculateInputRange);
-            document.removeEventListener('mouseup', handleMouseUp);
-        }
-
-        return () => {
-            document.removeEventListener('mousemove', calculateInputRange);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [dragging]);
 
     const calculateInputRange = useCallback((event: any) => {
         const input = inputRef?.current;
@@ -46,14 +30,8 @@ export default function ParameterSlider({ value, step, min, max, disabled, class
         onClick(newValue.toString());
     }, []);
 
-    const handleMouseUp = useCallback((event: any) => {
-        calculateInputRange(event);
-        setDragging(false);
-    }, []);
-
     const handleMouseDown = useCallback((event: any) => {
         calculateInputRange(event);
-        setDragging(true);
     }, []);
 
     return (<>
