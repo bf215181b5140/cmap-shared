@@ -68,7 +68,7 @@ function ParameterButton(props) {
         }
     }
     if (props.button.buttonType === index_1.ButtonType.Slider) {
-        return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(SliderWrapper, { children: [props.button.label && (0, jsx_runtime_1.jsx)(ParameterSliderLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(parameter_slider_1.default, { disabled: !!props.disabled || !useCostUsable(), className: props.buttonStyle.className, onClick: (value) => onClick(value), value: typeof props.value === 'number' ? props.value : 0, min: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.value) * 100) : Number(props.button.value), max: props.button.valueType === index_1.ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : Number(props.button.valueAlt) || 256 })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "top", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
+        return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(SliderWrapper, { children: [props.button.label && (0, jsx_runtime_1.jsx)(ParameterSliderLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(parameter_slider_1.default, { disabled: !!props.disabled || !useCostUsable(), className: props.buttonStyle.className, onClick: (value) => onClick(value), value: typeof props.value === 'number' ? props.value : 0.33, step: props.button.valueType === index_1.ParameterValueType.Float ? 0.01 : 1, min: Number(props.button.value), max: Number(props.button.valueAlt) })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "top", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
     }
     return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, { disabled: !!props.disabled || !useCostUsable(), className: `${props.buttonStyle.className} ${props.active ? 'active' : ''}`, onClick: () => onClick(), children: [props.button.image?.urlPath && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "bottom", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
 }
@@ -190,60 +190,13 @@ const ParameterButtonPicture = styled_components_1.default.div `
 const SliderWrapper = styled_components_1.default.div `
   display: inline-flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 const ParameterSliderLabel = styled_components_1.default.div `
   padding: 5px;
   margin: 0;
   align-items: center;
-`;
-const ParameterSliderStyled = styled_components_1.default.input `
-  padding: 4px;
-  height: 36px;
-  min-width: 180px;
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  background: ${colors_json_1.default['input-bg']};
-
-
-  // todo style thumb
-  ::-webkit-slider-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 4px;
-  }
-
-  &.buttonStyle-1 {
-    background: ${colors_json_1.default['button-bg']};
-    border: 2px solid ${colors_json_1.default['button-border']};
-    border-radius: 8px;
-
-    &::-webkit-slider-thumb {
-      background: ${colors_json_1.default['button-border']};
-
-      :hover {
-        background: ${colors_json_1.default['button-hover-border']};
-      }
-    }
-  }
-
-  &.buttonStyle-2 {
-    background: ${colors_json_1.default['button-2-bg']};
-    border: 2px solid ${colors_json_1.default['button-2-border']};
-    border-radius: 8px;
-
-    &::-webkit-slider-thumb {
-      background: ${colors_json_1.default['button-2-hover-bg']};
-
-      :hover {
-        background: ${colors_json_1.default['button-2-hover-border']};
-      }
-    }
-  }
-
-  ${props => props.disabled ? disabledParamStyle : null};
 `;
 const UseCostWrapper = styled_components_1.default.div `
   position: relative;

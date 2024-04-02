@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface ParameterSliderProps {
     value: number;
+    step: number;
     min: number;
     max: number;
     disabled: boolean;
@@ -10,10 +11,11 @@ interface ParameterSliderProps {
     onClick: (value: string) => void;
 }
 
-export default function ParameterSlider({ value, min, max, disabled, className, onClick }: ParameterSliderProps) {
+export default function ParameterSlider({ value, step, min, max, disabled, className, onClick }: ParameterSliderProps) {
 
     const inputRef = useRef<any>(null);
     const [dragging, setDragging] = useState(false);
+    const width = ((value - min) / (max - min)) * 100;
 
     useEffect(() => {
         if (dragging) {
@@ -36,7 +38,11 @@ export default function ParameterSlider({ value, min, max, disabled, className, 
         const progressBarRect = input.getBoundingClientRect();
         const clickX = event.clientX - (progressBarRect.left + 6);
         const percentage = ((clickX / (progressBarRect.width - 12)) * 100);
-        const newValue = Math.round(Math.min(100, Math.max(0, percentage)));
+        let newValue = min + (percentage * ((max - min) / 100));
+        // round to int
+        if (step === 1) {
+            newValue = Math.round(newValue);
+        }
         onClick(newValue.toString());
     }, []);
 
@@ -50,30 +56,32 @@ export default function ParameterSlider({ value, min, max, disabled, className, 
         setDragging(true);
     }, []);
 
-    return (<div>
-        <input type="range" min={min} max={max} step="1" defaultValue={value} style={{ display: 'none' }} />
-        <ParameterSliderStyled onMouseDown={handleMouseDown} ref={inputRef} className={className + (disabled ? 'readOnly' : undefined)}>
-            <div style={{ width: `${value}%` }}></div>
+    console.log(min, max, step, value);
+
+    return (<>
+        <input type="range" min={min} max={max} step={step} defaultValue={value} style={{ display: 'none' }} />
+        <ParameterSliderStyled onMouseDown={handleMouseDown} ref={inputRef} className={className + (disabled ? 'readOnly' : '')}>
+            <div style={{ width: `${width}%` }}></div>
         </ParameterSliderStyled>
-    </div>);
+    </>);
 };
 
 const ParameterSliderStyled = styled.div`
   border-radius: 7px;
   transition: 0.1s linear;
   height: 44px;
-  display: inline-flex;
-  align-items: center;
+  min-width: 180px;
+  display: block;
   padding: 4px;
   position: relative;
   cursor: pointer;
   user-select: none;
-  justify-content: flex-start;
+  width: 100%;
 
   > div {
     background: ${props => props.theme.colors.buttonPrimary.hoverBg};
     border-radius: 7px;
-    height: 30px;
+    height: 100%;
   }
 
   :hover {

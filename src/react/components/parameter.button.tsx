@@ -55,11 +55,12 @@ export default function ParameterButton(props: ParameterButtonProps) {
             <SliderWrapper>
                 {props.button.label && <ParameterSliderLabel>{props.button.label}</ParameterSliderLabel>}
                 <ParameterSlider disabled={!!props.disabled || !useCostUsable()}
-                                       className={props.buttonStyle.className}
-                                       onClick={(value: string) => onClick(value)}
-                                       value={typeof props.value === 'number' ? props.value : 0}
-                                       min={props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : Number(props.button.value)}
-                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : Number(props.button.valueAlt) || 256} />
+                                 className={props.buttonStyle.className}
+                                 onClick={(value: string) => onClick(value)}
+                                 value={typeof props.value === 'number' ? props.value : 0.33}
+                                 step={props.button.valueType === ParameterValueType.Float ? 0.01 : 1}
+                                 min={Number(props.button.value)}
+                                 max={Number(props.button.valueAlt)} />
             </SliderWrapper>
             {props.button.useCost && <UseCostIcon position="top" background={expOrb} usable={useCostUsable()}>{props.button.useCost.toString()}</UseCostIcon>}
         </UseCostWrapper>);
@@ -199,6 +200,7 @@ const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: Butto
 const SliderWrapper = styled.div`
   display: inline-flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 
@@ -206,55 +208,6 @@ const ParameterSliderLabel = styled.div`
   padding: 5px;
   margin: 0;
   align-items: center;
-`;
-
-const ParameterSliderStyled = styled.input<{ disabled: boolean }>`
-  padding: 4px;
-  height: 36px;
-  min-width: 180px;
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  background: ${colors['input-bg']};
-
-
-  // todo style thumb
-  ::-webkit-slider-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 4px;
-  }
-
-  &.buttonStyle-1 {
-    background: ${colors['button-bg']};
-    border: 2px solid ${colors['button-border']};
-    border-radius: 8px;
-
-    &::-webkit-slider-thumb {
-      background: ${colors['button-border']};
-
-      :hover {
-        background: ${colors['button-hover-border']};
-      }
-    }
-  }
-
-  &.buttonStyle-2 {
-    background: ${colors['button-2-bg']};
-    border: 2px solid ${colors['button-2-border']};
-    border-radius: 8px;
-
-    &::-webkit-slider-thumb {
-      background: ${colors['button-2-hover-bg']};
-
-      :hover {
-        background: ${colors['button-2-hover-border']};
-      }
-    }
-  }
-
-  ${props => props.disabled ? disabledParamStyle : null};
 `;
 
 const UseCostWrapper = styled.div`
