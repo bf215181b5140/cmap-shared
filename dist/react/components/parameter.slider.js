@@ -46,7 +46,6 @@ function ParameterSlider({ value, step, min, max, disabled, className, onClick }
         calculateInputRange(event);
         setDragging(true);
     }, []);
-    console.log(min, max, step, value);
     return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)("input", { type: "range", min: min, max: max, step: step, defaultValue: value, style: { display: 'none' } }), (0, jsx_runtime_1.jsx)(ParameterSliderStyled, { onMouseDown: handleMouseDown, ref: inputRef, className: className + (disabled ? 'readOnly' : ''), children: (0, jsx_runtime_1.jsx)("div", { style: { width: `${width}%` } }) })] }));
 }
 exports.default = ParameterSlider;

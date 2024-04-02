@@ -56,8 +56,6 @@ export default function ParameterSlider({ value, step, min, max, disabled, class
         setDragging(true);
     }, []);
 
-    console.log(min, max, step, value);
-
     return (<>
         <input type="range" min={min} max={max} step={step} defaultValue={value} style={{ display: 'none' }} />
         <ParameterSliderStyled onMouseDown={handleMouseDown} ref={inputRef} className={className + (disabled ? 'readOnly' : '')}>

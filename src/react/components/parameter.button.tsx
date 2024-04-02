@@ -57,7 +57,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
                 <ParameterSlider disabled={!!props.disabled || !useCostUsable()}
                                  className={props.buttonStyle.className}
                                  onClick={(value: string) => onClick(value)}
-                                 value={typeof props.value === 'number' ? props.value : 0.33}
+                                 value={typeof props.value === 'number' ? props.value : 0}
                                  step={props.button.valueType === ParameterValueType.Float ? 0.01 : 1}
                                  min={Number(props.button.value)}
                                  max={Number(props.button.valueAlt)} />
