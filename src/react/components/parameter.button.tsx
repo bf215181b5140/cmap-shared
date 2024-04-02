@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
 import { ButtonDTO, ButtonImageOrientation, ButtonStyleDTO, ButtonType, ControlParameterDTO, UsedButton, ParameterValueType } from '../../index';
 import expOrb from '../images/expOrb.png';
+import ParameterSlider from './parameter.slider';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 
@@ -53,12 +54,12 @@ export default function ParameterButton(props: ParameterButtonProps) {
         return (<UseCostWrapper>
             <SliderWrapper>
                 {props.button.label && <ParameterSliderLabel>{props.button.label}</ParameterSliderLabel>}
-                <ParameterSliderStyled type="range" step={1} disabled={!!props.disabled || !useCostUsable()}
+                <ParameterSlider disabled={!!props.disabled || !useCostUsable()}
                                        className={props.buttonStyle.className}
-                                       onClick={(e: any) => onClick(e.target.value)}
-                                       defaultValue={typeof props.value === 'number' ? props.value : undefined}
-                                       min={props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : props.button.value}
-                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : props.button.valueAlt || undefined} />
+                                       onClick={(value: string) => onClick(value)}
+                                       value={typeof props.value === 'number' ? props.value : 0}
+                                       min={props.button.valueType === ParameterValueType.Float ? (Number(props.button.value) * 100) : Number(props.button.value)}
+                                       max={props.button.valueType === ParameterValueType.Float ? (Number(props.button.valueAlt) * 100) : Number(props.button.valueAlt) || 256} />
             </SliderWrapper>
             {props.button.useCost && <UseCostIcon position="top" background={expOrb} usable={useCostUsable()}>{props.button.useCost.toString()}</UseCostIcon>}
         </UseCostWrapper>);
