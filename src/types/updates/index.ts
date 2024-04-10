@@ -6,5 +6,5 @@ export interface UpdateDTO extends ClientVersionDTO {
 }
 
 export interface UpdatesDTO {
-    updates: UpdateDTO;
+    updates: UpdateDTO[];
 }

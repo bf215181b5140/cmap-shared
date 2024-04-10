@@ -4,5 +4,5 @@ export interface UpdateDTO extends ClientVersionDTO {
     createDate: Date;
 }
 export interface UpdatesDTO {
-    updates: UpdateDTO;
+    updates: UpdateDTO[];
 }
