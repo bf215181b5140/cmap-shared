@@ -5,6 +5,7 @@ import { z } from 'zod';
 export const ClientVersionSchema = BaseIdSchema.extend({
     version: z.string().min(5).max(16),
     download: z.string().min(1).max(512),
+    description: z.string().max(2048),
 });
 
 export const ClientVersionFormSchema = z.object({
@@ -14,10 +15,4 @@ export const ClientVersionFormSchema = z.object({
 export type ClientVersionFormDTO = z.infer<typeof ClientVersionFormSchema>;
 
 export type ClientVersionDTO = z.infer<typeof ClientVersionSchema>;
-
-export interface VersionDTO {
-    serverVersion: string;
-    clientVersion: string;
-    clientDownload: string;
-};
 

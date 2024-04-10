@@ -35,10 +35,10 @@ var button_1 = require("./types/button");
 Object.defineProperty(exports, "ButtonFormSchema", { enumerable: true, get: function () { return button_1.ButtonFormSchema; } });
 Object.defineProperty(exports, "ButtonType", { enumerable: true, get: function () { return button_1.ButtonType; } });
 Object.defineProperty(exports, "ButtonImageOrientation", { enumerable: true, get: function () { return button_1.ButtonImageOrientation; } });
-// Version
-var version_1 = require("./types/version");
-Object.defineProperty(exports, "ClientVersionSchema", { enumerable: true, get: function () { return version_1.ClientVersionSchema; } });
-Object.defineProperty(exports, "ClientVersionFormSchema", { enumerable: true, get: function () { return version_1.ClientVersionFormSchema; } });
+// Client versions
+var clientVersions_1 = require("./types/clientVersions");
+Object.defineProperty(exports, "ClientVersionSchema", { enumerable: true, get: function () { return clientVersions_1.ClientVersionSchema; } });
+Object.defineProperty(exports, "ClientVersionFormSchema", { enumerable: true, get: function () { return clientVersions_1.ClientVersionFormSchema; } });
 // Shared
 var shared_1 = require("./types/shared");
 Object.defineProperty(exports, "CmapApiError", { enumerable: true, get: function () { return shared_1.CmapApiError; } });
