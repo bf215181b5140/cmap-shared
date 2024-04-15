@@ -47,7 +47,7 @@ export { UploadedFileDTO, FileUploadDTO } from './types/files';
 // Client versions
 export { ClientVersionSchema, ClientVersionFormSchema, ClientVersionFormDTO, ClientVersionDTO } from './types/clientVersions';
 // Updates
-export { UpdatesDTO, UpdateDTO } from './types/updates';
+export { UpdateDTO } from './types/updates';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 

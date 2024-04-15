@@ -4,16 +4,19 @@ export declare const ClientVersionSchema: z.ZodObject<{
     version: z.ZodString;
     download: z.ZodString;
     description: z.ZodString;
+    date: z.ZodDate;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     description: string;
     download: string;
     version: string;
+    date: Date;
 }, {
     id: string | null;
     description: string;
     download: string;
     version: string;
+    date: Date;
 }>;
 export declare const ClientVersionFormSchema: z.ZodObject<{
     versions: z.ZodArray<z.ZodObject<{
@@ -21,16 +24,19 @@ export declare const ClientVersionFormSchema: z.ZodObject<{
         version: z.ZodString;
         download: z.ZodString;
         description: z.ZodString;
+        date: z.ZodDate;
     }, "strip", z.ZodTypeAny, {
         id: string | null;
         description: string;
         download: string;
         version: string;
+        date: Date;
     }, {
         id: string | null;
         description: string;
         download: string;
         version: string;
+        date: Date;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     versions: {
@@ -38,6 +44,7 @@ export declare const ClientVersionFormSchema: z.ZodObject<{
         description: string;
         download: string;
         version: string;
+        date: Date;
     }[];
 }, {
     versions: {
@@ -45,6 +52,7 @@ export declare const ClientVersionFormSchema: z.ZodObject<{
         description: string;
         download: string;
         version: string;
+        date: Date;
     }[];
 }>;
 export type ClientVersionFormDTO = z.infer<typeof ClientVersionFormSchema>;

@@ -6,6 +6,7 @@ export const ClientVersionSchema = BaseIdSchema.extend({
     version: z.string().min(5).max(16),
     download: z.string().min(1).max(512),
     description: z.string().max(2048),
+    date: z.date(),
 });
 
 export const ClientVersionFormSchema = z.object({
