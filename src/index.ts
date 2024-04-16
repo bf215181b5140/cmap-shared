@@ -1,19 +1,6 @@
 import { ReactNode } from 'react';
 import { IgnoredParams } from './const';
 import { theme } from './react/theme';
-// import { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO };
-// import { BaseIdSchema, BaseParentIdSchema, CmapApiError, CmapApiErrorDTO, RequiredIdSchema, ParameterValueType };
-// import { BackgroundDTO };
-// import { ButtonStyleDTO };
-// import { ProfileDTO, ProfileFormDTO, ProfileFormSchema, ClientDTO } from;
-// import { TiersDTO, TierDTO, TierType };
-// import { AvatarFormDTO, AvatarFormSchema, AvatarPageDTO, AvatarDTO };
-// import { ButtonFormDTO, ButtonFormSchema, ButtonDTO, ButtonImageOrientation, ButtonType };
-// import { ControlParametersFormDTO, ControlParametersFormSchema, ControlParameterDTO, ControlParameterRole };
-// import { LayoutFormDTO, LayoutFormSchema, LayoutDTO, LayoutWidth };
-// import { FileUploadDTO, UploadedFileDTO };
-// import { WebsitePageDTO };
-// import { ApproveFilesDTO };
 
 /* ------------------------------------------------------------ */
 // Types
@@ -46,8 +33,6 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrie
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
 // Client versions
 export { ClientVersionSchema, ClientVersionFormSchema, ClientVersionFormDTO, ClientVersionDTO } from './types/clientVersions';
-// Updates
-export { UpdateDTO } from './types/updates';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 
