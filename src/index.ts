@@ -25,6 +25,8 @@ export { TiersDTO, TierDTO, TierType } from './types/tier';
 export { AvatarFormSchema, AvatarFormDTO, AvatarPageDTO, AvatarDTO } from './types/avatar';
 // Control parameters
 export { ControlParametersFormSchema, ControlParametersFormDTO, ControlParameterDTO, ControlParameterRole } from './types/controlParameters';
+// State badges
+export { StateBadgeKey, StateBadgeSchema, StateBadgesSchema, StateBadgeDTO, StateBadgesDTO } from './types/stateBadge';
 // Layout
 export { LayoutDTO, LayoutFormSchema, LayoutFormDTO, LayoutWidth } from './types/layout';
 // Button

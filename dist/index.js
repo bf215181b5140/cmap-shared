@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 const theme_1 = require("./react/theme");
@@ -26,6 +26,11 @@ Object.defineProperty(exports, "AvatarFormSchema", { enumerable: true, get: func
 var controlParameters_1 = require("./types/controlParameters");
 Object.defineProperty(exports, "ControlParametersFormSchema", { enumerable: true, get: function () { return controlParameters_1.ControlParametersFormSchema; } });
 Object.defineProperty(exports, "ControlParameterRole", { enumerable: true, get: function () { return controlParameters_1.ControlParameterRole; } });
+// State badges
+var stateBadge_1 = require("./types/stateBadge");
+Object.defineProperty(exports, "StateBadgeKey", { enumerable: true, get: function () { return stateBadge_1.StateBadgeKey; } });
+Object.defineProperty(exports, "StateBadgeSchema", { enumerable: true, get: function () { return stateBadge_1.StateBadgeSchema; } });
+Object.defineProperty(exports, "StateBadgesSchema", { enumerable: true, get: function () { return stateBadge_1.StateBadgesSchema; } });
 // Layout
 var layout_1 = require("./types/layout");
 Object.defineProperty(exports, "LayoutFormSchema", { enumerable: true, get: function () { return layout_1.LayoutFormSchema; } });

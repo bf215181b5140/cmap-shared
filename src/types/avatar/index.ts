@@ -5,6 +5,7 @@ import { TierDTO } from '../tier';
 import { LayoutDTO } from '../layout';
 import { ControlParameterDTO } from '../controlParameters';
 import { InteractionKeyDTO } from '../InteractionKey';
+import { StateBadgeDTO } from '../stateBadge';
 
 export const AvatarFormSchema = BaseIdSchema.extend({
     vrcId: z.string().min(1, 'Avatar ID required').max(100),
@@ -28,4 +29,5 @@ export interface AvatarDTO extends BaseParentDTO {
     default: boolean;
     layouts?: LayoutDTO[] | null;
     controlParameters?: ControlParameterDTO[] | null;
+    stateBadges?: StateBadgeDTO[] | null;
 }

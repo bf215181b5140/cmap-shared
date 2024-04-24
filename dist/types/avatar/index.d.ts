@@ -5,6 +5,7 @@ import { TierDTO } from '../tier';
 import { LayoutDTO } from '../layout';
 import { ControlParameterDTO } from '../controlParameters';
 import { InteractionKeyDTO } from '../InteractionKey';
+import { StateBadgeDTO } from '../stateBadge';
 export declare const AvatarFormSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     vrcId: z.ZodString;
@@ -34,4 +35,5 @@ export interface AvatarDTO extends BaseParentDTO {
     default: boolean;
     layouts?: LayoutDTO[] | null;
     controlParameters?: ControlParameterDTO[] | null;
+    stateBadges?: StateBadgeDTO[] | null;
 }

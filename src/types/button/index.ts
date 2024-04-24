@@ -18,7 +18,7 @@ export enum ButtonImageOrientation {
 
 export const ButtonFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32).nullable(),
-    path: z.string().min(1, 'Path required').max(50),
+    path: z.string().min(1, 'Path required').max(100),
     value: z.string().min(1, 'Value required').max(5),
     valueAlt: z.string().max(5).nullable(),
     valueType: z.nativeEnum(ParameterValueType),

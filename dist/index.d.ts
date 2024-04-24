@@ -11,6 +11,7 @@ export { ButtonStyleDTO } from './types/buttonStyle';
 export { TiersDTO, TierDTO, TierType } from './types/tier';
 export { AvatarFormSchema, AvatarFormDTO, AvatarPageDTO, AvatarDTO } from './types/avatar';
 export { ControlParametersFormSchema, ControlParametersFormDTO, ControlParameterDTO, ControlParameterRole } from './types/controlParameters';
+export { StateBadgeKey, StateBadgeSchema, StateBadgesSchema, StateBadgeDTO, StateBadgesDTO } from './types/stateBadge';
 export { LayoutDTO, LayoutFormSchema, LayoutFormDTO, LayoutWidth } from './types/layout';
 export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrientation } from './types/button';
 export { UploadedFileDTO, FileUploadDTO } from './types/files';

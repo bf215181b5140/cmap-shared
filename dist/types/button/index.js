@@ -17,7 +17,7 @@ var ButtonImageOrientation;
 })(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
 exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     label: zod_1.z.string().max(32).nullable(),
-    path: zod_1.z.string().min(1, 'Path required').max(50),
+    path: zod_1.z.string().min(1, 'Path required').max(100),
     value: zod_1.z.string().min(1, 'Value required').max(5),
     valueAlt: zod_1.z.string().max(5).nullable(),
     valueType: zod_1.z.nativeEnum(shared_1.ParameterValueType),
