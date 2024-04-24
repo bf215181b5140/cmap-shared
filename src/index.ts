@@ -31,8 +31,8 @@ export { LayoutDTO, LayoutFormSchema, LayoutFormDTO, LayoutWidth } from './types
 export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrientation } from './types/button';
 // Files
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
-// Client versions
-export { ClientVersionSchema, ClientVersionFormSchema, ClientVersionFormDTO, ClientVersionDTO } from './types/clientVersions';
+// Update
+export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './types/update';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 

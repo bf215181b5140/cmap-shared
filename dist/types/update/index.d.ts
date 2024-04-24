@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const ClientVersionSchema: z.ZodObject<{
+export declare const UpdateSchema: z.ZodObject<{
     id: z.ZodNullable<z.ZodString>;
     version: z.ZodString;
     download: z.ZodString;
@@ -18,7 +18,7 @@ export declare const ClientVersionSchema: z.ZodObject<{
     version: string;
     date: Date;
 }>;
-export declare const ClientVersionFormSchema: z.ZodObject<{
+export declare const UpdatesFormSchema: z.ZodObject<{
     versions: z.ZodArray<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         version: z.ZodString;
@@ -55,5 +55,5 @@ export declare const ClientVersionFormSchema: z.ZodObject<{
         date: Date;
     }[];
 }>;
-export type ClientVersionFormDTO = z.infer<typeof ClientVersionFormSchema>;
-export type ClientVersionDTO = z.infer<typeof ClientVersionSchema>;
+export type UpdateDTO = z.infer<typeof UpdateSchema>;
+export type UpdatesFormDTO = z.infer<typeof UpdatesFormSchema>;
