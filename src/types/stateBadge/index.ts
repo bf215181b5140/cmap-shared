@@ -14,15 +14,22 @@ export const StateBadgeSchema = BaseIdSchema.extend({
     parameter: z.string().min(1).max(100),
     value: z.string().max(5),
     icon: z.string().max(30),
-}).superRefine((val, ctx) => {
-    // Check value if custom badge
-    if (val.key === StateBadgeKey.Custom && (!val.value || val.value === '')) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Value required for custom badge',
-            path: ['value']
-        });
+}).transform((val, ctx) => {
+    if (val.key === StateBadgeKey.Custom) {
+        // Check value if custom badge
+        if (!val.value || val.value === '') {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Value required for custom badge',
+                path: ['value']
+            });
+        }
+    } else {
+        // clear values if it's not custom badge
+        val.value = '';
+        val.icon = '';
     }
+    return val;
 });
 
 export const StateBadgesSchema = z.object({
