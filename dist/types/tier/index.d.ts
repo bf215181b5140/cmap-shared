@@ -17,6 +17,7 @@ export interface TierDTO extends BaseDTO {
     layouts: number;
     buttons: number;
     controlParameters: number;
+    stateBadges: number;
     useCost: boolean;
     hp: boolean;
 }
