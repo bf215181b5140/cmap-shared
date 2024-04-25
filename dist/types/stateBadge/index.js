@@ -26,6 +26,16 @@ exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
                 path: ['value']
             });
         }
+        else {
+            // Check that value is valid (boolean or number)
+            if (val.value !== 'true' && val.value !== 'false' && Number.isNaN(Number(val.value))) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Invalid value',
+                    path: ['value']
+                });
+            }
+        }
     }
     else {
         // clear values if it's not custom badge
@@ -37,4 +47,17 @@ exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
 exports.StateBadgesSchema = zod_1.z.object({
     avatarId: zod_1.z.string().min(1).max(20),
     badges: zod_1.z.array(exports.StateBadgeSchema).max(10),
+}).superRefine((val, ctx) => {
+    val.badges.forEach(badge => {
+        if (badge.key !== StateBadgeKey.Custom) {
+            const count = val.badges.filter(b => b.key === badge.key).length;
+            if (count > 1) {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: `Duplicate badges are not allowed: ${badge.key}`,
+                    path: ['badges'],
+                });
+            }
+        }
+    });
 });

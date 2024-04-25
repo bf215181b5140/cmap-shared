@@ -23,6 +23,15 @@ export const StateBadgeSchema = BaseIdSchema.extend({
                 message: 'Value required for custom badge',
                 path: ['value']
             });
+        } else {
+            // Check that value is valid (boolean or number)
+            if (val.value !== 'true' && val.value !== 'false' && Number.isNaN(Number(val.value))) {
+                ctx.addIssue({
+                    code: z.ZodIssueCode.custom,
+                    message: 'Invalid value',
+                    path: ['value']
+                });
+            }
         }
     } else {
         // clear values if it's not custom badge
@@ -35,6 +44,19 @@ export const StateBadgeSchema = BaseIdSchema.extend({
 export const StateBadgesSchema = z.object({
     avatarId: z.string().min(1).max(20),
     badges: z.array(StateBadgeSchema).max(10),
+}).superRefine((val, ctx) => {
+    val.badges.forEach(badge => {
+        if (badge.key !== StateBadgeKey.Custom) {
+            const count = val.badges.filter(b => b.key === badge.key).length;
+            if (count > 1) {
+                ctx.addIssue({
+                    code: z.ZodIssueCode.custom,
+                    message: `Duplicate badges are not allowed: ${badge.key}`,
+                    path: ['badges'],
+                });
+            }
+        }
+    })
 });
 
 export type StateBadgeDTO = z.infer<typeof StateBadgeSchema>;
