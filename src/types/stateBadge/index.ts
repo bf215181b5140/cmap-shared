@@ -13,6 +13,7 @@ export const StateBadgeSchema = BaseIdSchema.extend({
     key: z.nativeEnum(StateBadgeKey),
     parameter: z.string().min(1).max(100),
     value: z.string().max(5),
+    label: z.string().max(20),
     icon: z.string().max(30),
 }).transform((val, ctx) => {
     if (val.key === StateBadgeKey.Custom) {
@@ -34,8 +35,9 @@ export const StateBadgeSchema = BaseIdSchema.extend({
             }
         }
     } else {
-        // clear values if it's not custom badge
+        // clear unneeded values if it's not custom badge
         val.value = '';
+        val.label = '';
         val.icon = '';
     }
     return val;

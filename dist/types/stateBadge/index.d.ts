@@ -11,62 +11,72 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
     key: z.ZodNativeEnum<typeof StateBadgeKey>;
     parameter: z.ZodString;
     value: z.ZodString;
+    label: z.ZodString;
     icon: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     key: StateBadgeKey;
     id: string | null;
     value: string;
+    label: string;
     icon: string;
     parameter: string;
 }, {
     key: StateBadgeKey;
     id: string | null;
     value: string;
+    label: string;
     icon: string;
     parameter: string;
 }>, {
     key: StateBadgeKey;
     id: string | null;
     value: string;
+    label: string;
     icon: string;
     parameter: string;
 }, {
     key: StateBadgeKey;
     id: string | null;
     value: string;
+    label: string;
     icon: string;
     parameter: string;
 }>;
-export declare const StateBadgesSchema: z.ZodObject<{
+export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
     badges: z.ZodArray<z.ZodEffects<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         key: z.ZodNativeEnum<typeof StateBadgeKey>;
         parameter: z.ZodString;
         value: z.ZodString;
+        label: z.ZodString;
         icon: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
         icon: string;
         parameter: string;
     }, {
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
         icon: string;
         parameter: string;
     }>, {
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
         icon: string;
         parameter: string;
     }, {
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
         icon: string;
         parameter: string;
     }>, "many">;
@@ -76,6 +86,7 @@ export declare const StateBadgesSchema: z.ZodObject<{
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
         icon: string;
         parameter: string;
     }[];
@@ -85,6 +96,27 @@ export declare const StateBadgesSchema: z.ZodObject<{
         key: StateBadgeKey;
         id: string | null;
         value: string;
+        label: string;
+        icon: string;
+        parameter: string;
+    }[];
+}>, {
+    avatarId: string;
+    badges: {
+        key: StateBadgeKey;
+        id: string | null;
+        value: string;
+        label: string;
+        icon: string;
+        parameter: string;
+    }[];
+}, {
+    avatarId: string;
+    badges: {
+        key: StateBadgeKey;
+        id: string | null;
+        value: string;
+        label: string;
         icon: string;
         parameter: string;
     }[];

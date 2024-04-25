@@ -15,6 +15,7 @@ exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
     key: zod_1.z.nativeEnum(StateBadgeKey),
     parameter: zod_1.z.string().min(1).max(100),
     value: zod_1.z.string().max(5),
+    label: zod_1.z.string().max(20),
     icon: zod_1.z.string().max(30),
 }).transform((val, ctx) => {
     if (val.key === StateBadgeKey.Custom) {
@@ -38,8 +39,9 @@ exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
         }
     }
     else {
-        // clear values if it's not custom badge
+        // clear unneeded values if it's not custom badge
         val.value = '';
+        val.label = '';
         val.icon = '';
     }
     return val;
