@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertParameterValue = void 0;
+exports.convertParameterValueFromString = exports.convertParameterValue = void 0;
 const index_1 = require("./index");
 function convertParameterValue(valueType, value) {
     try {
@@ -38,3 +38,17 @@ function convertParameterValue(valueType, value) {
     }
 }
 exports.convertParameterValue = convertParameterValue;
+function convertParameterValueFromString(value) {
+    // boolean
+    if (value === 'true')
+        return true;
+    if (value === 'false')
+        return false;
+    // number
+    const numValue = Number(value);
+    if (!isNaN(numValue))
+        return numValue;
+    // failed to convert
+    return undefined;
+}
+exports.convertParameterValueFromString = convertParameterValueFromString;
