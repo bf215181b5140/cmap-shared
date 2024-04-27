@@ -18,7 +18,7 @@ export enum ButtonImageOrientation {
 
 export const ButtonFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32).nullable(),
-    path: z.string().min(1, 'Path required').max(100),
+    path: z.string().min(1, 'Parameter required').max(100),
     value: z.string().min(1, 'Value required').max(5),
     valueAlt: z.string().max(5).nullable(),
     valueType: z.nativeEnum(ParameterValueType),
@@ -56,7 +56,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
                     path: [`value`]
                 });
             }
-            if ((val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
+            if ((val.valueAlt !== '' && val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
                 ctx.addIssue({
                     code: z.ZodIssueCode.custom,
                     message: 'Invalid Bool (true or false)',
@@ -74,7 +74,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
                 });
             }
             const valueAltNumber = Number(val.valueAlt);
-            if (Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
+            if (val.valueAlt !== '' && Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
                 ctx.addIssue({
                     code: z.ZodIssueCode.custom,
                     message: 'Invalid Float number',
@@ -90,7 +90,7 @@ export const ButtonFormSchema = BaseParentIdSchema.extend({
                     path: [`value`]
                 });
             }
-            if (!Number.isInteger(Number(val.valueAlt))) {
+            if (val.valueAlt !== '' && !Number.isInteger(Number(val.valueAlt))) {
                 ctx.addIssue({
                     code: z.ZodIssueCode.custom,
                     message: 'Invalid Int number',

@@ -17,7 +17,7 @@ var ButtonImageOrientation;
 })(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
 exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     label: zod_1.z.string().max(32).nullable(),
-    path: zod_1.z.string().min(1, 'Path required').max(100),
+    path: zod_1.z.string().min(1, 'Parameter required').max(100),
     value: zod_1.z.string().min(1, 'Value required').max(5),
     valueAlt: zod_1.z.string().max(5).nullable(),
     valueType: zod_1.z.nativeEnum(shared_1.ParameterValueType),
@@ -55,7 +55,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
                     path: [`value`]
                 });
             }
-            if ((val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
+            if ((val.valueAlt !== '' && val.valueAlt !== 'true' && val.valueAlt !== 'false')) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Bool (true or false)',
@@ -73,7 +73,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
                 });
             }
             const valueAltNumber = Number(val.valueAlt);
-            if (Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
+            if (val.valueAlt !== '' && Number.isNaN(valueAltNumber) || valueAltNumber < 0 || valueAltNumber > 1) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Float number',
@@ -89,7 +89,7 @@ exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
                     path: [`value`]
                 });
             }
-            if (!Number.isInteger(Number(val.valueAlt))) {
+            if (val.valueAlt !== '' && !Number.isInteger(Number(val.valueAlt))) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Invalid Int number',
