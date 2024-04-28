@@ -35,6 +35,8 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrie
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
 // Update
 export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './types/update';
+// Order
+export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/order';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 

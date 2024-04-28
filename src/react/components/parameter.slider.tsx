@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useCallback } from 'react';
 import styled from 'styled-components';
 
 interface ParameterSliderProps {
