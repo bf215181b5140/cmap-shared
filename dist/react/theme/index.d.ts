@@ -56,19 +56,57 @@ export declare const theme: {
             hoverBorder: string;
             textDisabled: string;
         };
-        buttonPrimary: {
-            bg: string;
-            border: string;
-            hoverBg: string;
-            hoverBorder: string;
-            activeBg: string;
-            activeBorder: string;
-        };
-        buttonSecondary: {
-            bg: string;
-            border: string;
-            hoverBg: string;
-            hoverBorder: string;
+        buttons: {
+            primary: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+                activeBg: string;
+                activeBorder: string;
+            };
+            secondary: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            add: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            delete: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            edit: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            save: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            info: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
+            reset: {
+                bg: string;
+                border: string;
+                hoverBg: string;
+                hoverBorder: string;
+            };
         };
         vrchat: {
             parameterInput: string;
