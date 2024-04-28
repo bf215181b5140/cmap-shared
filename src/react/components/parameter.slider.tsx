@@ -55,7 +55,7 @@ const ParameterSliderStyled = styled.div`
   width: 100%;
 
   > div {
-    background: ${props => props.theme.colors.buttonPrimary.hoverBg};
+    background: ${props => props.theme.colors.buttons.primary.hoverBg};
     border-radius: 7px;
     height: 100%;
   }
@@ -70,25 +70,25 @@ const ParameterSliderStyled = styled.div`
   }
 
   &.buttonStyle-1 {
-    background: ${props => props.theme.colors.buttonPrimary.bg};
-    border: 2px solid ${props => props.theme.colors.buttonPrimary.border};
+    background: ${props => props.theme.colors.buttons.primary.bg};
+    border: 2px solid ${props => props.theme.colors.buttons.primary.border};
     border-radius: 8px;
 
     :hover {
       > div {
-        background: ${props => props.theme.colors.buttonPrimary.hoverBorder};
+        background: ${props => props.theme.colors.buttons.primary.hoverBorder};
       }
     }
   }
 
   &.buttonStyle-2 {
-    background: ${props => props.theme.colors.buttonSecondary.bg};
-    border: 2px solid ${props => props.theme.colors.buttonSecondary.border};
+    background: ${props => props.theme.colors.buttons.secondary.bg};
+    border: 2px solid ${props => props.theme.colors.buttons.secondary.border};
     border-radius: 8px;
 
     :hover {
       > div {
-        background: ${props => props.theme.colors.buttonSecondary.hoverBorder};
+        background: ${props => props.theme.colors.buttons.secondary.hoverBorder};
       }
     }
   }
