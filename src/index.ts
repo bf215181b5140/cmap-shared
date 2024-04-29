@@ -34,7 +34,7 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrie
 // Files
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
 // Update
-export { UpdateSchema, UpdatesFormSchema, UpdateClientInfoSchema, UpdatesFormDTO, UpdateDTO, UpdateClientInfoDTO } from './types/update';
+export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './types/update';
 // Order
 export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/order';
 // Shared
