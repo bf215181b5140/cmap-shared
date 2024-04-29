@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.OrderListSchema = exports.OrderSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.OrderListSchema = exports.OrderSchema = exports.UpdateClientInfoSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 const theme_1 = require("./react/theme");
@@ -44,6 +44,7 @@ Object.defineProperty(exports, "ButtonImageOrientation", { enumerable: true, get
 var update_1 = require("./types/update");
 Object.defineProperty(exports, "UpdateSchema", { enumerable: true, get: function () { return update_1.UpdateSchema; } });
 Object.defineProperty(exports, "UpdatesFormSchema", { enumerable: true, get: function () { return update_1.UpdatesFormSchema; } });
+Object.defineProperty(exports, "UpdateClientInfoSchema", { enumerable: true, get: function () { return update_1.UpdateClientInfoSchema; } });
 // Order
 var order_1 = require("./types/order");
 Object.defineProperty(exports, "OrderSchema", { enumerable: true, get: function () { return order_1.OrderSchema; } });
