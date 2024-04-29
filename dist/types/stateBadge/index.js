@@ -17,6 +17,7 @@ exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
     value: zod_1.z.string().max(5),
     label: zod_1.z.string().max(12),
     icon: zod_1.z.string().max(30),
+    order: zod_1.z.number(),
 }).transform((val, ctx) => {
     if (val.key === StateBadgeKey.Custom) {
         // Check value if custom badge

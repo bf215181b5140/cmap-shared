@@ -13,9 +13,11 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
     value: z.ZodString;
     label: z.ZodString;
     icon: z.ZodString;
+    order: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
     key: StateBadgeKey;
     id: string | null;
+    order: number;
     value: string;
     label: string;
     icon: string;
@@ -23,6 +25,7 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
 }, {
     key: StateBadgeKey;
     id: string | null;
+    order: number;
     value: string;
     label: string;
     icon: string;
@@ -30,6 +33,7 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
 }>, {
     key: StateBadgeKey;
     id: string | null;
+    order: number;
     value: string;
     label: string;
     icon: string;
@@ -37,6 +41,7 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
 }, {
     key: StateBadgeKey;
     id: string | null;
+    order: number;
     value: string;
     label: string;
     icon: string;
@@ -51,9 +56,11 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
         value: z.ZodString;
         label: z.ZodString;
         icon: z.ZodString;
+        order: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -61,6 +68,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     }, {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -68,6 +76,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     }>, {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -75,6 +84,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     }, {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -85,6 +95,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     badges: {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -95,6 +106,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     badges: {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -105,6 +117,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     badges: {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;
@@ -115,6 +128,7 @@ export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     badges: {
         key: StateBadgeKey;
         id: string | null;
+        order: number;
         value: string;
         label: string;
         icon: string;

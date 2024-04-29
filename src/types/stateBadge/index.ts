@@ -15,6 +15,7 @@ export const StateBadgeSchema = BaseIdSchema.extend({
     value: z.string().max(5),
     label: z.string().max(12),
     icon: z.string().max(30),
+    order: z.number(),
 }).transform((val, ctx) => {
     if (val.key === StateBadgeKey.Custom) {
         // Check value if custom badge
