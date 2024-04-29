@@ -55,5 +55,16 @@ export declare const UpdatesFormSchema: z.ZodObject<{
         date: Date;
     }[];
 }>;
+export declare const UpdateClientInfoSchema: z.ZodObject<{
+    version: z.ZodString;
+    username: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    version: string;
+    username?: string | undefined;
+}, {
+    version: string;
+    username?: string | undefined;
+}>;
 export type UpdateDTO = z.infer<typeof UpdateSchema>;
 export type UpdatesFormDTO = z.infer<typeof UpdatesFormSchema>;
+export type UpdateClientInfoDTO = z.infer<typeof UpdateClientInfoSchema>;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdatesFormSchema = exports.UpdateSchema = void 0;
+exports.UpdateClientInfoSchema = exports.UpdatesFormSchema = exports.UpdateSchema = void 0;
 const shared_1 = require("../shared");
 const zod_1 = require("zod");
 exports.UpdateSchema = shared_1.BaseIdSchema.extend({
@@ -11,4 +11,8 @@ exports.UpdateSchema = shared_1.BaseIdSchema.extend({
 });
 exports.UpdatesFormSchema = zod_1.z.object({
     versions: zod_1.z.array(exports.UpdateSchema),
+});
+exports.UpdateClientInfoSchema = zod_1.z.object({
+    version: zod_1.z.string().min(5).max(16),
+    username: zod_1.z.string().max(16).optional(),
 });
