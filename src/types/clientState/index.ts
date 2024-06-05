@@ -13,6 +13,8 @@ export const ClientStateParamSchema = z.object({
 
 export type ClientStateParamsDTO = z.infer<typeof ClientStateParamsSchema>;
 
+export type ClientStateParamDTO = z.infer<typeof ClientStateParamSchema>;
+
 export interface ClientStateDTO {
     isConnected: boolean;
     isOnVrchat: boolean | null;

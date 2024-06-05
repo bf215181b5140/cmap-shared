@@ -11,6 +11,7 @@ export declare const ClientStateParamSchema: z.ZodObject<{
     parameter: string;
 }>;
 export type ClientStateParamsDTO = z.infer<typeof ClientStateParamsSchema>;
+export type ClientStateParamDTO = z.infer<typeof ClientStateParamSchema>;
 export interface ClientStateDTO {
     isConnected: boolean;
     isOnVrchat: boolean | null;
