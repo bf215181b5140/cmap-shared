@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = void 0;
 const zod_1 = require("zod");
+const shared_1 = require("../shared");
 exports.RegisterFormSchema = zod_1.z.object({
-    username: zod_1.z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
-    passwordOne: zod_1.z.string().min(6).max(32),
-    passwordTwo: zod_1.z.string().min(6).max(32),
+    username: shared_1.usernameSchema,
+    passwordOne: shared_1.passwordSchema,
+    passwordTwo: shared_1.passwordSchema,
     fingerprint: zod_1.z.string().length(64),
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
@@ -17,7 +18,7 @@ exports.RegisterFormSchema = zod_1.z.object({
     }
 });
 exports.RegisterSchema = exports.RegisterFormSchema.innerType().extend({
-    password: zod_1.z.string().min(6).max(32),
+    password: shared_1.passwordSchema,
 }).omit({
     passwordOne: true,
     passwordTwo: true,

@@ -28,6 +28,11 @@ export declare const BaseParentIdSchema: z.ZodObject<{
     id: string | null;
     parentId: string;
 }>;
+export declare const usernameSchema: z.ZodString;
+export declare const passwordSchema: z.ZodString;
+export declare const parameterSchema: z.ZodString;
+export declare const parameterValueSchema: z.ZodEffects<z.ZodString, string, string>;
+export declare const parameterValueOrAvtrSchema: z.ZodEffects<z.ZodString, string, string>;
 export interface BaseDTO {
     id?: string;
 }

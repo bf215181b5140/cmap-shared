@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmapApiErrorDTO = exports.CmapApiError = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.ParameterValueType = void 0;
+exports.CmapApiErrorDTO = exports.CmapApiError = exports.parameterValueOrAvtrSchema = exports.parameterValueSchema = exports.parameterSchema = exports.passwordSchema = exports.usernameSchema = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.ParameterValueType = void 0;
 const zod_1 = require("zod");
+const util_1 = require("../../util");
 var ParameterValueType;
 (function (ParameterValueType) {
     ParameterValueType["Int"] = "Int";
@@ -16,6 +17,40 @@ exports.RequiredIdSchema = zod_1.z.object({
 });
 exports.BaseParentIdSchema = exports.BaseIdSchema.extend({
     parentId: zod_1.z.string().min(1).max(20)
+});
+exports.usernameSchema = zod_1.z.string().regex(/^[a-zA-Z0-9]+$/, { message: 'Only letters and numbers allowed' }).min(3).max(16);
+exports.passwordSchema = zod_1.z.string().min(6).max(32);
+exports.parameterSchema = zod_1.z.string().min(1, 'Parameter required').max(100);
+exports.parameterValueSchema = zod_1.z.string().min(1, 'Value required').max(5).superRefine((val, ctx) => {
+    if ((0, util_1.convertParameterValueFromString)(val) === undefined) {
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Invalid value',
+            path: [`value`]
+        });
+    }
+});
+exports.parameterValueOrAvtrSchema = zod_1.z.string().min(1, 'Value required').max(50).superRefine((val, ctx) => {
+    // vrc avatar id
+    if (val.startsWith('avtr_'))
+        return;
+    // number or boolean
+    if (val.length > 5) {
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Invalid value, number or bool must be 5 or less characters',
+            fatal: true,
+        });
+        return zod_1.z.NEVER;
+    }
+    if ((0, util_1.convertParameterValueFromString)(val) === undefined) {
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Invalid value, must be either VRChat avatar ID, number or bool',
+            fatal: true,
+        });
+        return zod_1.z.NEVER;
+    }
 });
 class CmapApiError extends Error {
     code;

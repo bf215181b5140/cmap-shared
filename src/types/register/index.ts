@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { passwordSchema, usernameSchema } from '../shared';
 
 export interface RegisterRequestDTO {
     fingerprint: string;
@@ -10,9 +11,9 @@ export interface RegisterInfoDTO {
 }
 
 export const RegisterFormSchema = z.object({
-    username: z.string().regex(/^[a-zA-Z0-9]+$/).min(3).max(16),
-    passwordOne: z.string().min(6).max(32),
-    passwordTwo: z.string().min(6).max(32),
+    username: usernameSchema,
+    passwordOne: passwordSchema,
+    passwordTwo: passwordSchema,
     fingerprint: z.string().length(64),
 }).superRefine((val, ctx) => {
     if (val.passwordOne !== val.passwordTwo) {
@@ -25,7 +26,7 @@ export const RegisterFormSchema = z.object({
 });
 
 export const RegisterSchema = RegisterFormSchema.innerType().extend({
-    password: z.string().min(6).max(32),
+    password: passwordSchema,
 }).omit({
     passwordOne: true,
     passwordTwo: true,

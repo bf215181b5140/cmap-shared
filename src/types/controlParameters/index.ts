@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { BaseIdSchema, BaseParentDTO, ParameterValueType } from '../shared';
+import { BaseIdSchema, BaseParentDTO, parameterSchema, ParameterValueType } from '../shared';
 
 export enum ControlParameterRole {
     UseCost = 'Use cost',
@@ -10,7 +10,7 @@ export enum ControlParameterRole {
 export const ControlParameterSchema = BaseIdSchema.extend({
     label: z.string().min(3).max(16),
     role: z.nativeEnum(ControlParameterRole),
-    path: z.string().min(1, 'Path required').max(50),
+    path: parameterSchema,
     valuePrimary: z.string().min(1, 'Value required').max(5),
     valueSecondary: z.string().min(1, 'Value required').max(5).nullable(),
     valueType: z.nativeEnum(ParameterValueType),

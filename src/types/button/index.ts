@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { BaseParentDTO, BaseParentIdSchema, ParameterValueType } from '../shared';
+import { BaseParentDTO, BaseParentIdSchema, parameterSchema, ParameterValueType } from '../shared';
 import { UploadedFileDTO } from '../files';
 import { ControlParameterDTO } from '../controlParameters';
 import { InteractionKeyDTO } from '../InteractionKey';
@@ -18,7 +18,7 @@ export enum ButtonImageOrientation {
 
 export const ButtonFormSchema = BaseParentIdSchema.extend({
     label: z.string().max(32).nullable(),
-    path: z.string().min(1, 'Parameter required').max(100),
+    path: parameterSchema,
     value: z.string().min(1, 'Value required').max(5),
     valueAlt: z.string().max(5).nullable(),
     valueType: z.nativeEnum(ParameterValueType),

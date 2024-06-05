@@ -1,4 +1,4 @@
-import { BaseIdSchema } from '../shared';
+import { BaseIdSchema, parameterSchema } from '../shared';
 import { z } from 'zod';
 
 export enum StateBadgeKey {
@@ -11,7 +11,7 @@ export enum StateBadgeKey {
 
 export const StateBadgeSchema = BaseIdSchema.extend({
     key: z.nativeEnum(StateBadgeKey),
-    parameter: z.string().min(1, 'Parameter required').max(100),
+    parameter: parameterSchema,
     value: z.string().max(5),
     label: z.string().max(12),
     icon: z.string().max(30),

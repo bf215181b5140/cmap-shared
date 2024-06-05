@@ -12,7 +12,7 @@ var ControlParameterRole;
 exports.ControlParameterSchema = shared_1.BaseIdSchema.extend({
     label: zod_1.z.string().min(3).max(16),
     role: zod_1.z.nativeEnum(ControlParameterRole),
-    path: zod_1.z.string().min(1, 'Path required').max(50),
+    path: shared_1.parameterSchema,
     valuePrimary: zod_1.z.string().min(1, 'Value required').max(5),
     valueSecondary: zod_1.z.string().min(1, 'Value required').max(5).nullable(),
     valueType: zod_1.z.nativeEnum(shared_1.ParameterValueType),
