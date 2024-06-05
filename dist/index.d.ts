@@ -17,7 +17,7 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrie
 export { UploadedFileDTO, FileUploadDTO } from './types/files';
 export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './types/update';
 export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/order';
-export { ClientStateParamsSchema, ClientStateParamsDTO, ClientStateDTO } from './types/clientState';
+export { ClientStateParamsSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamDTO, ClientStateDTO } from './types/clientState';
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 export { IgnoredParams };
 export { theme };

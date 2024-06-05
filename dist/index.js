@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ClientStateParamsSchema = exports.OrderListSchema = exports.OrderSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ClientStateParamSchema = exports.ClientStateParamsSchema = exports.OrderListSchema = exports.OrderSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 const theme_1 = require("./react/theme");
@@ -51,6 +51,7 @@ Object.defineProperty(exports, "OrderListSchema", { enumerable: true, get: funct
 // Client state
 var clientState_1 = require("./types/clientState");
 Object.defineProperty(exports, "ClientStateParamsSchema", { enumerable: true, get: function () { return clientState_1.ClientStateParamsSchema; } });
+Object.defineProperty(exports, "ClientStateParamSchema", { enumerable: true, get: function () { return clientState_1.ClientStateParamSchema; } });
 // Shared
 var shared_1 = require("./types/shared");
 Object.defineProperty(exports, "CmapApiError", { enumerable: true, get: function () { return shared_1.CmapApiError; } });
