@@ -1,11 +1,12 @@
 import { z } from 'zod';
-export declare const UpdateSchema: z.ZodObject<{
+export declare const UpdateSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     version: z.ZodString;
     download: z.ZodString;
     description: z.ZodString;
     date: z.ZodDate;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string | null;
     description: string;
     download: string;
@@ -19,13 +20,14 @@ export declare const UpdateSchema: z.ZodObject<{
     date: Date;
 }>;
 export declare const UpdatesFormSchema: z.ZodObject<{
-    versions: z.ZodArray<z.ZodObject<{
+    versions: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodNullable<z.ZodString>;
+    }, {
         version: z.ZodString;
         download: z.ZodString;
         description: z.ZodString;
         date: z.ZodDate;
-    }, "strip", z.ZodTypeAny, {
+    }>, "strip", z.ZodTypeAny, {
         id: string | null;
         description: string;
         download: string;

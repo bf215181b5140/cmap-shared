@@ -32,13 +32,14 @@ export declare const RegisterFormSchema: z.ZodEffects<z.ZodObject<{
     passwordTwo: string;
     fingerprint: string;
 }>;
-export declare const RegisterSchema: z.ZodObject<Omit<{
+export declare const RegisterSchema: z.ZodObject<Omit<z.objectUtil.extendShape<{
     username: z.ZodString;
     passwordOne: z.ZodString;
     passwordTwo: z.ZodString;
     fingerprint: z.ZodString;
+}, {
     password: z.ZodString;
-}, "passwordOne" | "passwordTwo">, "strip", z.ZodTypeAny, {
+}>, "passwordOne" | "passwordTwo">, "strip", z.ZodTypeAny, {
     password: string;
     username: string;
     fingerprint: string;

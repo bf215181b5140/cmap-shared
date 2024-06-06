@@ -13,7 +13,7 @@ var StateBadgeKey;
 })(StateBadgeKey = exports.StateBadgeKey || (exports.StateBadgeKey = {}));
 exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
     key: zod_1.z.nativeEnum(StateBadgeKey),
-    parameter: shared_1.parameterSchema,
+    parameter: shared_1.parameterPathSchema,
     value: zod_1.z.string().max(5),
     label: zod_1.z.string().max(12),
     icon: zod_1.z.string().max(30),

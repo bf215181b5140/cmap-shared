@@ -21,10 +21,11 @@ export const BaseParentIdSchema = BaseIdSchema.extend({
 
 export const usernameSchema = z.string().regex(/^[a-zA-Z0-9]+$/, { message: 'Only letters and numbers allowed' }).min(3).max(16);
 export const passwordSchema = z.string().min(6).max(32);
-export const parameterSchema = z.string().min(1, 'Parameter required').max(100);
+
+export const parameterPathSchema = z.string().min(1, 'Parameter path required').max(100);
 
 export const parameterValueSchema = z.union([z.number(), z.boolean()]);
-export const parameterValueFormSchema = z.string().min(1, 'Value required').max(5).transform((val, ctx) => {
+export const parameterValueFormSchema = z.string().min(1, 'Parameter value required').max(5).transform((val, ctx) => {
     const convertedVal = convertParameterValueFromString(val);
     if (convertedVal === undefined) {
         ctx.addIssue({
@@ -37,8 +38,8 @@ export const parameterValueFormSchema = z.string().min(1, 'Value required').max(
     return convertedVal;
 });
 
-export const parameterValueOrAvtrSchema = z.union([z.string().min(1, 'VRChat avatar ID required').max(50).startsWith('avtr_', 'Invalid VRChat avatar ID'), z.number(), z.boolean()]);
-export const parameterValueOrAvtrFormSchema = z.string().min(1, 'Value required').max(50).transform((val, ctx) => {
+export const parameterValueOrAvtrSchema = z.union([z.string().startsWith('avtr_', 'Invalid VRChat avatar ID').max(50), z.number(), z.boolean()]);
+export const parameterValueOrAvtrFormSchema = z.string().min(1, 'Parameter value required').max(50).transform((val, ctx) => {
     // vrc avatar id
     if (val.startsWith('avtr_')) return val;
     // number or boolean

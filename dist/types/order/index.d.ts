@@ -1,18 +1,20 @@
 import { z } from 'zod';
-export declare const OrderSchema: z.ZodObject<{
+export declare const OrderSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
+}, {
     order: z.ZodNumber;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string;
     order: number;
 }, {
     id: string;
     order: number;
 }>;
-export declare const OrderListSchema: z.ZodArray<z.ZodObject<{
+export declare const OrderListSchema: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
+}, {
     order: z.ZodNumber;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string;
     order: number;
 }, {

@@ -31,7 +31,7 @@ export declare const BaseParentIdSchema: z.ZodObject<z.objectUtil.extendShape<{
 }>;
 export declare const usernameSchema: z.ZodString;
 export declare const passwordSchema: z.ZodString;
-export declare const parameterSchema: z.ZodString;
+export declare const parameterPathSchema: z.ZodString;
 export declare const parameterValueSchema: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
 export declare const parameterValueFormSchema: z.ZodEffects<z.ZodString, number | boolean, string>;
 export declare const parameterValueOrAvtrSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean]>;

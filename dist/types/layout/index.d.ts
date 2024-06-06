@@ -8,14 +8,16 @@ export declare enum LayoutWidth {
     Half = "half",
     Full = "full"
 }
-export declare const LayoutFormSchema: z.ZodObject<{
+export declare const LayoutFormSchema: z.ZodObject<z.objectUtil.extendShape<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     parentId: z.ZodString;
+}>, {
     label: z.ZodString;
     order: z.ZodNumber;
     width: z.ZodNativeEnum<typeof LayoutWidth>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string | null;
     width: LayoutWidth;
     order: number;

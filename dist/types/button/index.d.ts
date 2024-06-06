@@ -13,9 +13,11 @@ export declare enum ButtonImageOrientation {
     Vertical = "Vertical",
     Square = "Square"
 }
-export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
+export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.extendShape<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     parentId: z.ZodString;
+}>, {
     label: z.ZodNullable<z.ZodString>;
     path: z.ZodString;
     value: z.ZodString;
@@ -28,7 +30,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     file: z.ZodType<File, z.ZodTypeDef, File>;
     controlParameterId: z.ZodNullable<z.ZodString>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string | null;
     file: File;
     imageOrientation: ButtonImageOrientation;

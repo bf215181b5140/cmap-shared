@@ -1,18 +1,18 @@
 import { z } from 'zod';
-import { parameterSchema, parameterValueOrAvtrFormSchema, parameterValueOrAvtrSchema } from '../shared';
+import { parameterPathSchema, parameterValueOrAvtrFormSchema, parameterValueOrAvtrSchema } from '../shared';
 
 export const ClientStateParamsSchema = z.array(z.tuple([
-    parameterSchema,
+    parameterPathSchema,
     parameterValueOrAvtrSchema,
 ]));
 
 export const ClientStateParamFormSchema = z.object({
-    parameter: parameterSchema,
+    path: parameterPathSchema,
     value: parameterValueOrAvtrFormSchema,
 });
 
 export const ClientStateParamSchema = z.object({
-    parameter: parameterSchema,
+    path: parameterPathSchema,
     value: parameterValueOrAvtrSchema,
 });
 

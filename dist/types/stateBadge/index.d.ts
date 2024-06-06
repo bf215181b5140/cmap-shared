@@ -6,15 +6,16 @@ export declare enum StateBadgeKey {
     Afk = "Afk",
     Custom = "Custom"
 }
-export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
+export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     key: z.ZodNativeEnum<typeof StateBadgeKey>;
     parameter: z.ZodString;
     value: z.ZodString;
     label: z.ZodString;
     icon: z.ZodString;
     order: z.ZodNumber;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     key: StateBadgeKey;
     id: string | null;
     order: number;
@@ -49,15 +50,16 @@ export declare const StateBadgeSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export declare const StateBadgesSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
-    badges: z.ZodArray<z.ZodEffects<z.ZodObject<{
+    badges: z.ZodArray<z.ZodEffects<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodNullable<z.ZodString>;
+    }, {
         key: z.ZodNativeEnum<typeof StateBadgeKey>;
         parameter: z.ZodString;
         value: z.ZodString;
         label: z.ZodString;
         icon: z.ZodString;
         order: z.ZodNumber;
-    }, "strip", z.ZodTypeAny, {
+    }>, "strip", z.ZodTypeAny, {
         key: StateBadgeKey;
         id: string | null;
         order: number;

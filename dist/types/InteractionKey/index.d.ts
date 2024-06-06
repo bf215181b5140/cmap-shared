@@ -1,11 +1,12 @@
 import { BaseDTO } from '../shared';
 import { z } from 'zod';
 import { ClientDTO } from '../profile';
-export declare const InteractionKeySchema: z.ZodObject<{
+export declare const InteractionKeySchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     label: z.ZodString;
     key: z.ZodString;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     key: string;
     id: string | null;
     label: string;
@@ -16,11 +17,12 @@ export declare const InteractionKeySchema: z.ZodObject<{
 }>;
 export declare const InteractionKeyFormSchema: z.ZodObject<{
     clientId: z.ZodString;
-    interactionKeys: z.ZodArray<z.ZodObject<{
+    interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodNullable<z.ZodString>;
+    }, {
         label: z.ZodString;
         key: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
+    }>, "strip", z.ZodTypeAny, {
         key: string;
         id: string | null;
         label: string;

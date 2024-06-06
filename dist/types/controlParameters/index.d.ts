@@ -5,15 +5,16 @@ export declare enum ControlParameterRole {
     HP = "HP",
     Callback = "Callback"
 }
-export declare const ControlParameterSchema: z.ZodObject<{
+export declare const ControlParameterSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     label: z.ZodString;
     role: z.ZodNativeEnum<typeof ControlParameterRole>;
     path: z.ZodString;
     valuePrimary: z.ZodString;
     valueSecondary: z.ZodNullable<z.ZodString>;
     valueType: z.ZodNativeEnum<typeof ParameterValueType>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string | null;
     label: string;
     path: string;
@@ -32,15 +33,16 @@ export declare const ControlParameterSchema: z.ZodObject<{
 }>;
 export declare const ControlParametersFormSchema: z.ZodEffects<z.ZodObject<{
     avatarId: z.ZodString;
-    controlParameters: z.ZodOptional<z.ZodArray<z.ZodObject<{
+    controlParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodNullable<z.ZodString>;
+    }, {
         label: z.ZodString;
         role: z.ZodNativeEnum<typeof ControlParameterRole>;
         path: z.ZodString;
         valuePrimary: z.ZodString;
         valueSecondary: z.ZodNullable<z.ZodString>;
         valueType: z.ZodNativeEnum<typeof ParameterValueType>;
-    }, "strip", z.ZodTypeAny, {
+    }>, "strip", z.ZodTypeAny, {
         id: string | null;
         label: string;
         path: string;

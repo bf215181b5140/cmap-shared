@@ -6,12 +6,13 @@ import { LayoutDTO } from '../layout';
 import { ControlParameterDTO } from '../controlParameters';
 import { InteractionKeyDTO } from '../InteractionKey';
 import { StateBadgeDTO } from '../stateBadge';
-export declare const AvatarFormSchema: z.ZodObject<{
+export declare const AvatarFormSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     vrcId: z.ZodString;
     label: z.ZodString;
     default: z.ZodBoolean;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     default: boolean;
     id: string | null;
     label: string;
