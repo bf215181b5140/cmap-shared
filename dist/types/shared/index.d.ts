@@ -18,10 +18,11 @@ export declare const RequiredIdSchema: z.ZodObject<{
 }, {
     id: string;
 }>;
-export declare const BaseParentIdSchema: z.ZodObject<{
+export declare const BaseParentIdSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
+}, {
     parentId: z.ZodString;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     id: string | null;
     parentId: string;
 }, {
@@ -31,8 +32,10 @@ export declare const BaseParentIdSchema: z.ZodObject<{
 export declare const usernameSchema: z.ZodString;
 export declare const passwordSchema: z.ZodString;
 export declare const parameterSchema: z.ZodString;
-export declare const parameterValueSchema: z.ZodEffects<z.ZodString, string, string>;
-export declare const parameterValueOrAvtrSchema: z.ZodEffects<z.ZodString, string, string>;
+export declare const parameterValueSchema: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+export declare const parameterValueFormSchema: z.ZodEffects<z.ZodString, number | boolean, string>;
+export declare const parameterValueOrAvtrSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean]>;
+export declare const parameterValueOrAvtrFormSchema: z.ZodEffects<z.ZodString, string | number | boolean, string>;
 export interface BaseDTO {
     id?: string;
 }

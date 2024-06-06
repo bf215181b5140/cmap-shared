@@ -1,10 +1,15 @@
 import { z } from 'zod';
-import { parameterSchema, parameterValueOrAvtrSchema } from '../shared';
+import { parameterSchema, parameterValueOrAvtrFormSchema, parameterValueOrAvtrSchema } from '../shared';
 
 export const ClientStateParamsSchema = z.array(z.tuple([
     parameterSchema,
-    z.union([z.string(), z.number(), z.boolean()]),
+    parameterValueOrAvtrSchema,
 ]));
+
+export const ClientStateParamFormSchema = z.object({
+    parameter: parameterSchema,
+    value: parameterValueOrAvtrFormSchema,
+});
 
 export const ClientStateParamSchema = z.object({
     parameter: parameterSchema,
@@ -12,6 +17,8 @@ export const ClientStateParamSchema = z.object({
 });
 
 export type ClientStateParamsDTO = z.infer<typeof ClientStateParamsSchema>;
+
+export type ClientStateParamFormDTO = z.infer<typeof ClientStateParamFormSchema>;
 
 export type ClientStateParamDTO = z.infer<typeof ClientStateParamSchema>;
 

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmapApiErrorDTO = exports.CmapApiError = exports.parameterValueOrAvtrSchema = exports.parameterValueSchema = exports.parameterSchema = exports.passwordSchema = exports.usernameSchema = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.ParameterValueType = void 0;
+exports.CmapApiErrorDTO = exports.CmapApiError = exports.parameterValueOrAvtrFormSchema = exports.parameterValueOrAvtrSchema = exports.parameterValueFormSchema = exports.parameterValueSchema = exports.parameterSchema = exports.passwordSchema = exports.usernameSchema = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.ParameterValueType = void 0;
 const zod_1 = require("zod");
 const util_1 = require("../../util");
 var ParameterValueType;
@@ -21,19 +21,24 @@ exports.BaseParentIdSchema = exports.BaseIdSchema.extend({
 exports.usernameSchema = zod_1.z.string().regex(/^[a-zA-Z0-9]+$/, { message: 'Only letters and numbers allowed' }).min(3).max(16);
 exports.passwordSchema = zod_1.z.string().min(6).max(32);
 exports.parameterSchema = zod_1.z.string().min(1, 'Parameter required').max(100);
-exports.parameterValueSchema = zod_1.z.string().min(1, 'Value required').max(5).superRefine((val, ctx) => {
-    if ((0, util_1.convertParameterValueFromString)(val) === undefined) {
+exports.parameterValueSchema = zod_1.z.union([zod_1.z.number(), zod_1.z.boolean()]);
+exports.parameterValueFormSchema = zod_1.z.string().min(1, 'Value required').max(5).transform((val, ctx) => {
+    const convertedVal = (0, util_1.convertParameterValueFromString)(val);
+    if (convertedVal === undefined) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
-            message: 'Invalid value',
-            path: [`value`]
+            message: 'Invalid value, must be either number or bool',
+            fatal: true,
         });
+        return zod_1.z.NEVER;
     }
+    return convertedVal;
 });
-exports.parameterValueOrAvtrSchema = zod_1.z.string().min(1, 'Value required').max(50).superRefine((val, ctx) => {
+exports.parameterValueOrAvtrSchema = zod_1.z.union([zod_1.z.string().min(1, 'VRChat avatar ID required').max(50).startsWith('avtr_', 'Invalid VRChat avatar ID'), zod_1.z.number(), zod_1.z.boolean()]);
+exports.parameterValueOrAvtrFormSchema = zod_1.z.string().min(1, 'Value required').max(50).transform((val, ctx) => {
     // vrc avatar id
     if (val.startsWith('avtr_'))
-        return;
+        return val;
     // number or boolean
     if (val.length > 5) {
         ctx.addIssue({
@@ -43,7 +48,8 @@ exports.parameterValueOrAvtrSchema = zod_1.z.string().min(1, 'Value required').m
         });
         return zod_1.z.NEVER;
     }
-    if ((0, util_1.convertParameterValueFromString)(val) === undefined) {
+    const convertedVal = (0, util_1.convertParameterValueFromString)(val);
+    if (convertedVal === undefined) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
             message: 'Invalid value, must be either VRChat avatar ID, number or bool',
@@ -51,6 +57,7 @@ exports.parameterValueOrAvtrSchema = zod_1.z.string().min(1, 'Value required').m
         });
         return zod_1.z.NEVER;
     }
+    return convertedVal;
 });
 class CmapApiError extends Error {
     code;

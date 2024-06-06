@@ -38,7 +38,7 @@ export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './ty
 // Order
 export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/order';
 // Client state
-export { ClientStateParamsSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamDTO, ClientStateDTO } from './types/clientState';
+export { ClientStateParamsSchema, ClientStateParamFormSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamFormDTO, ClientStateParamDTO, ClientStateDTO } from './types/clientState';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
 

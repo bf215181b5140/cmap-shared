@@ -22,18 +22,25 @@ export const BaseParentIdSchema = BaseIdSchema.extend({
 export const usernameSchema = z.string().regex(/^[a-zA-Z0-9]+$/, { message: 'Only letters and numbers allowed' }).min(3).max(16);
 export const passwordSchema = z.string().min(6).max(32);
 export const parameterSchema = z.string().min(1, 'Parameter required').max(100);
-export const parameterValueSchema = z.string().min(1, 'Value required').max(5).superRefine((val, ctx) => {
-    if (convertParameterValueFromString(val) === undefined) {
+
+export const parameterValueSchema = z.union([z.number(), z.boolean()]);
+export const parameterValueFormSchema = z.string().min(1, 'Value required').max(5).transform((val, ctx) => {
+    const convertedVal = convertParameterValueFromString(val);
+    if (convertedVal === undefined) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: 'Invalid value',
-            path: [`value`]
+            message: 'Invalid value, must be either number or bool',
+            fatal: true,
         });
+        return z.NEVER;
     }
+    return convertedVal;
 });
-export const parameterValueOrAvtrSchema = z.string().min(1, 'Value required').max(50).superRefine((val, ctx) => {
+
+export const parameterValueOrAvtrSchema = z.union([z.string().min(1, 'VRChat avatar ID required').max(50).startsWith('avtr_', 'Invalid VRChat avatar ID'), z.number(), z.boolean()]);
+export const parameterValueOrAvtrFormSchema = z.string().min(1, 'Value required').max(50).transform((val, ctx) => {
     // vrc avatar id
-    if (val.startsWith('avtr_')) return;
+    if (val.startsWith('avtr_')) return val;
     // number or boolean
     if (val.length > 5) {
         ctx.addIssue({
@@ -43,7 +50,8 @@ export const parameterValueOrAvtrSchema = z.string().min(1, 'Value required').ma
         });
         return z.NEVER;
     }
-    if (convertParameterValueFromString(val) === undefined) {
+    const convertedVal = convertParameterValueFromString(val);
+    if (convertedVal === undefined) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: 'Invalid value, must be either VRChat avatar ID, number or bool',
@@ -51,6 +59,7 @@ export const parameterValueOrAvtrSchema = z.string().min(1, 'Value required').ma
         });
         return z.NEVER;
     }
+    return convertedVal;
 });
 
 export interface BaseDTO {
