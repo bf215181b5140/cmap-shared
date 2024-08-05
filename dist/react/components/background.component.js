@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Background;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const styled_components_1 = __importDefault(require("styled-components"));
 function Background({ background }) {
     return ((0, jsx_runtime_1.jsx)(BackgroundStyled, { className: background.className }));
 }
-exports.default = Background;
 const BackgroundStyled = styled_components_1.default.div `
   margin: 0;
   padding: 0;

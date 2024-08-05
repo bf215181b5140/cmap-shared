@@ -19,6 +19,7 @@ export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './ty
 export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/order';
 export { ClientStateParamsSchema, ClientStateParamFormSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamFormDTO, ClientStateParamDTO, ClientStateDTO } from './types/clientState';
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
+export { CmapErrorSchema, CmapErrorDTO } from './types/error';
 export { IgnoredParams };
 export { theme };
 export interface VrcParameter {

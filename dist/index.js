@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ClientStateParamSchema = exports.ClientStateParamFormSchema = exports.ClientStateParamsSchema = exports.OrderListSchema = exports.OrderSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
+exports.ContentBoxWidth = exports.FieldOption = exports.theme = exports.IgnoredParams = exports.CmapErrorSchema = exports.ParameterValueType = exports.BaseParentIdSchema = exports.RequiredIdSchema = exports.BaseIdSchema = exports.CmapApiErrorDTO = exports.CmapApiError = exports.ClientStateParamSchema = exports.ClientStateParamFormSchema = exports.ClientStateParamsSchema = exports.OrderListSchema = exports.OrderSchema = exports.UpdatesFormSchema = exports.UpdateSchema = exports.ButtonImageOrientation = exports.ButtonType = exports.ButtonFormSchema = exports.LayoutWidth = exports.LayoutFormSchema = exports.StateBadgesSchema = exports.StateBadgeSchema = exports.StateBadgeKey = exports.ControlParameterRole = exports.ControlParametersFormSchema = exports.AvatarFormSchema = exports.TierType = exports.ProfileFormSchema = exports.RegisterKeySchema = exports.RegisterSchema = exports.RegisterFormSchema = exports.LoginSchema = void 0;
 const const_1 = require("./const");
 Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
 const theme_1 = require("./react/theme");
@@ -61,6 +61,9 @@ Object.defineProperty(exports, "BaseIdSchema", { enumerable: true, get: function
 Object.defineProperty(exports, "RequiredIdSchema", { enumerable: true, get: function () { return shared_1.RequiredIdSchema; } });
 Object.defineProperty(exports, "BaseParentIdSchema", { enumerable: true, get: function () { return shared_1.BaseParentIdSchema; } });
 Object.defineProperty(exports, "ParameterValueType", { enumerable: true, get: function () { return shared_1.ParameterValueType; } });
+// Error
+var error_1 = require("./types/error");
+Object.defineProperty(exports, "CmapErrorSchema", { enumerable: true, get: function () { return error_1.CmapErrorSchema; } });
 class FieldOption {
     key = '';
     value = '';
@@ -72,4 +75,4 @@ var ContentBoxWidth;
     ContentBoxWidth["Third"] = "third";
     ContentBoxWidth["Half"] = "half";
     ContentBoxWidth["Full"] = "full";
-})(ContentBoxWidth = exports.ContentBoxWidth || (exports.ContentBoxWidth = {}));
+})(ContentBoxWidth || (exports.ContentBoxWidth = ContentBoxWidth = {}));

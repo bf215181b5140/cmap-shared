@@ -6,4 +6,4 @@ var TierType;
     TierType["Basic"] = "Basic";
     TierType["Standard"] = "Standard";
     TierType["Premium"] = "Premium";
-})(TierType = exports.TierType || (exports.TierType = {}));
+})(TierType || (exports.TierType = TierType = {}));

@@ -41,6 +41,8 @@ export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/or
 export { ClientStateParamsSchema, ClientStateParamFormSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamFormDTO, ClientStateParamDTO, ClientStateDTO } from './types/clientState';
 // Shared
 export { CmapApiError, CmapApiErrorDTO, BaseIdSchema, RequiredIdSchema, BaseParentIdSchema, ParameterValueType } from './types/shared';
+// Error
+export { CmapErrorSchema, CmapErrorDTO } from './types/error';
 
 /* ------------------------------------------------------------ */
 // Other

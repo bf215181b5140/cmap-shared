@@ -40,12 +40,12 @@ export declare const RegisterSchema: z.ZodObject<Omit<z.objectUtil.extendShape<{
 }, {
     password: z.ZodString;
 }>, "passwordOne" | "passwordTwo">, "strip", z.ZodTypeAny, {
-    password: string;
     username: string;
+    password: string;
     fingerprint: string;
 }, {
-    password: string;
     username: string;
+    password: string;
     fingerprint: string;
 }>;
 export declare const RegisterKeySchema: z.ZodObject<{

@@ -10,7 +10,7 @@ var StateBadgeKey;
     StateBadgeKey["TrackingType"] = "TrackingType";
     StateBadgeKey["Afk"] = "Afk";
     StateBadgeKey["Custom"] = "Custom";
-})(StateBadgeKey = exports.StateBadgeKey || (exports.StateBadgeKey = {}));
+})(StateBadgeKey || (exports.StateBadgeKey = StateBadgeKey = {}));
 exports.StateBadgeSchema = shared_1.BaseIdSchema.extend({
     key: zod_1.z.nativeEnum(StateBadgeKey),
     parameter: shared_1.parameterPathSchema,

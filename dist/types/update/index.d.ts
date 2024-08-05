@@ -9,14 +9,14 @@ export declare const UpdateSchema: z.ZodObject<z.objectUtil.extendShape<{
 }>, "strip", z.ZodTypeAny, {
     id: string | null;
     description: string;
-    download: string;
     version: string;
+    download: string;
     date: Date;
 }, {
     id: string | null;
     description: string;
-    download: string;
     version: string;
+    download: string;
     date: Date;
 }>;
 export declare const UpdatesFormSchema: z.ZodObject<{
@@ -30,30 +30,30 @@ export declare const UpdatesFormSchema: z.ZodObject<{
     }>, "strip", z.ZodTypeAny, {
         id: string | null;
         description: string;
-        download: string;
         version: string;
+        download: string;
         date: Date;
     }, {
         id: string | null;
         description: string;
-        download: string;
         version: string;
+        download: string;
         date: Date;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     versions: {
         id: string | null;
         description: string;
-        download: string;
         version: string;
+        download: string;
         date: Date;
     }[];
 }, {
     versions: {
         id: string | null;
         description: string;
-        download: string;
         version: string;
+        download: string;
         date: Date;
     }[];
 }>;

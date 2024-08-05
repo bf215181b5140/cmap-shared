@@ -8,7 +8,7 @@ var ParameterValueType;
     ParameterValueType["Int"] = "Int";
     ParameterValueType["Float"] = "Float";
     ParameterValueType["Bool"] = "Bool";
-})(ParameterValueType = exports.ParameterValueType || (exports.ParameterValueType = {}));
+})(ParameterValueType || (exports.ParameterValueType = ParameterValueType = {}));
 exports.BaseIdSchema = zod_1.z.object({
     id: zod_1.z.string().max(20).nullable()
 });

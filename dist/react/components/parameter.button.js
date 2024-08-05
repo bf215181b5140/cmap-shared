@@ -27,6 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.URL = void 0;
+exports.default = ParameterButton;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const styled_components_1 = __importStar(require("styled-components"));
 const colors_json_1 = __importDefault(require("../../colors.json"));
@@ -72,7 +73,6 @@ function ParameterButton(props) {
     }
     return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterButtonStyled, { disabled: !!props.disabled || !useCostUsable(), className: `${props.buttonStyle.className} ${props.active ? 'active' : ''}`, onClick: () => onClick(), children: [props.button.image?.urlPath && (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "bottom", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
 }
-exports.default = ParameterButton;
 function imageOrientationToAspectRatio(imageOrientation) {
     switch (imageOrientation) {
         case index_1.ButtonImageOrientation.Square:

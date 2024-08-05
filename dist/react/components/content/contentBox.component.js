@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ContentBox;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const index_1 = require("../../../index");
 const styled_components_1 = __importDefault(require("styled-components"));
@@ -34,7 +35,6 @@ function ContentBox(props) {
     }
     return ((0, jsx_runtime_1.jsxs)(ContentBoxWrapper, { flexGrow: props.flexGrow, flexBasis: getFlexBasis(), children: [props.title && (0, jsx_runtime_1.jsx)(ContentBoxTitle, { shown: shown, children: (0, jsx_runtime_1.jsxs)("h2", { onClick: () => setShown(prevState => !prevState), children: [(0, jsx_runtime_1.jsx)("i", { className: 'ri-arrow-down-s-line' }), props.title] }) }), shown && (0, jsx_runtime_1.jsx)(ContentBoxStyled, { children: props.loading !== true ? props.children : (0, jsx_runtime_1.jsx)(ContentLoading, { children: (0, jsx_runtime_1.jsx)("div", { className: 'loader' }) }) })] }));
 }
-exports.default = ContentBox;
 const ContentBoxWrapper = styled_components_1.default.div `
   flex-grow: ${props => props.flexGrow || 2};
   flex-basis: ${props => props.flexBasis || '0'};

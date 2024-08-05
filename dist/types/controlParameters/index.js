@@ -8,7 +8,7 @@ var ControlParameterRole;
     ControlParameterRole["UseCost"] = "Use cost";
     ControlParameterRole["HP"] = "HP";
     ControlParameterRole["Callback"] = "Callback";
-})(ControlParameterRole = exports.ControlParameterRole || (exports.ControlParameterRole = {}));
+})(ControlParameterRole || (exports.ControlParameterRole = ControlParameterRole = {}));
 exports.ControlParameterSchema = shared_1.BaseIdSchema.extend({
     label: zod_1.z.string().min(3).max(16),
     role: zod_1.z.nativeEnum(ControlParameterRole),

@@ -9,7 +9,7 @@ var LayoutWidth;
     LayoutWidth["Third"] = "third";
     LayoutWidth["Half"] = "half";
     LayoutWidth["Full"] = "full";
-})(LayoutWidth = exports.LayoutWidth || (exports.LayoutWidth = {}));
+})(LayoutWidth || (exports.LayoutWidth = LayoutWidth = {}));
 exports.LayoutFormSchema = shared_1.BaseParentIdSchema.extend({
     label: zod_1.z.string().max(32),
     order: zod_1.z.number(),

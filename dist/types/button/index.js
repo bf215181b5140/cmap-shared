@@ -8,13 +8,13 @@ var ButtonType;
     ButtonType["Button"] = "Button";
     ButtonType["Slider"] = "Slider";
     ButtonType["Toggle"] = "Toggle";
-})(ButtonType = exports.ButtonType || (exports.ButtonType = {}));
+})(ButtonType || (exports.ButtonType = ButtonType = {}));
 var ButtonImageOrientation;
 (function (ButtonImageOrientation) {
     ButtonImageOrientation["Horizontal"] = "Horizontal";
     ButtonImageOrientation["Vertical"] = "Vertical";
     ButtonImageOrientation["Square"] = "Square";
-})(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
+})(ButtonImageOrientation || (exports.ButtonImageOrientation = ButtonImageOrientation = {}));
 exports.ButtonFormSchema = shared_1.BaseParentIdSchema.extend({
     label: zod_1.z.string().max(32).nullable(),
     path: shared_1.parameterPathSchema,
