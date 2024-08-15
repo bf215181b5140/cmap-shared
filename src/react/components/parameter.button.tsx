@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
-import { ButtonDTO, ButtonImageOrientation, ButtonStyleDTO, ButtonType, ControlParameterDTO, UsedButton, ParameterValueType } from '../../index';
+import { ButtonDTO, ButtonImageOrientation, LayoutStyleDTO, ButtonType, ControlParameterDTO, UsedButton, ParameterValueType } from '../../index';
 import expOrb from '../images/expOrb.png';
 import ParameterSlider from './parameter.slider';
 
@@ -8,7 +8,7 @@ export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavat
 
 interface ParameterButtonProps {
     button: ButtonDTO;
-    buttonStyle: ButtonStyleDTO;
+    layoutStyle: LayoutStyleDTO;
     active?: boolean;
     disabled?: boolean;
     value?: string | number | boolean | undefined;
@@ -55,7 +55,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
             <SliderWrapper>
                 {props.button.label && <ParameterSliderLabel>{props.button.label}</ParameterSliderLabel>}
                 <ParameterSlider disabled={!!props.disabled || !useCostUsable()}
-                                 className={props.buttonStyle.className}
+                                 className={props.layoutStyle.className}
                                  onClick={(value: string) => onClick(value)}
                                  value={typeof props.value === 'number' ? props.value : 0}
                                  step={props.button.valueType === ParameterValueType.Float ? 0.01 : 1}
@@ -67,12 +67,12 @@ export default function ParameterButton(props: ParameterButtonProps) {
     }
 
     return (<UseCostWrapper>
-        <ParameterButtonStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.buttonStyle.className} ${props.active ? 'active' : ''}`}
+        <ParameterLayoutStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.layoutStyle.className} ${props.active ? 'active' : ''}`}
                                onClick={() => onClick()}>
             {props.button.image?.urlPath && <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
             {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
             <ActiveOverlay active={!!props.active} />
-        </ParameterButtonStyled>
+        </ParameterLayoutStyled>
         {props.button.useCost && <UseCostIcon position="bottom" background={expOrb} usable={useCostUsable()}>{props.button.useCost.toString()}</UseCostIcon>}
     </UseCostWrapper>);
 }
@@ -89,7 +89,7 @@ function imageOrientationToAspectRatio(imageOrientation: ButtonImageOrientation)
     }
 }
 
-const ParameterButtonStyled = styled.div<{ disabled: boolean }>`
+const ParameterLayoutStyled = styled.div<{ disabled: boolean }>`
   text-align: center;
   padding: 0;
   min-height: 4.5em;
@@ -98,7 +98,7 @@ const ParameterButtonStyled = styled.div<{ disabled: boolean }>`
   overflow: hidden;
   position: relative;
 
-  &.buttonStyle-1 {
+  &.layoutStyle-1 {
     background: ${colors['button-bg']};
     border: 2px solid ${colors['button-border']};
     border-radius: 8px;
@@ -111,7 +111,7 @@ const ParameterButtonStyled = styled.div<{ disabled: boolean }>`
     }
   }
 
-  &.buttonStyle-2 {
+  &.layoutStyle-2 {
     background: ${colors['button-2-bg']};
     border: 2px solid ${colors['button-2-border']};
     border-radius: 8px;

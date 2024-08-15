@@ -69,7 +69,7 @@ const ParameterSliderStyled = styled.div`
     }
   }
 
-  &.buttonStyle-1 {
+  &.layoutStyle-1 {
     background: ${props => props.theme.colors.buttons.primary.bg};
     border: 2px solid ${props => props.theme.colors.buttons.primary.border};
     border-radius: 8px;
@@ -81,7 +81,7 @@ const ParameterSliderStyled = styled.div`
     }
   }
 
-  &.buttonStyle-2 {
+  &.layoutStyle-2 {
     background: ${props => props.theme.colors.buttons.secondary.bg};
     border: 2px solid ${props => props.theme.colors.buttons.secondary.border};
     border-radius: 8px;

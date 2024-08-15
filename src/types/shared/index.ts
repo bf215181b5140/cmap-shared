@@ -1,106 +1,41 @@
 import { z } from 'zod';
 import { convertParameterValueFromString } from '../../util';
 
-export enum ParameterValueType {
-    Int = 'Int',
-    Float = 'Float',
-    Bool = 'Bool',
-}
-
-export const BaseIdSchema = z.object({
-    id: z.string().max(20).nullable()
-});
-
-export const RequiredIdSchema = z.object({
-    id: z.string().min(1).max(20),
-});
-
-export const BaseParentIdSchema = BaseIdSchema.extend({
-    parentId: z.string().min(1).max(20)
-});
+// ------------------- Field schemas ------------------- //
+export const IdSchema = z.string().min(1).max(20);
 
 export const usernameSchema = z.string().regex(/^[a-zA-Z0-9]+$/, { message: 'Only letters and numbers allowed' }).min(3).max(16);
 export const passwordSchema = z.string().min(6).max(32);
 
+export const vrcAvatarIdSchema = z.string().min(6, 'Invalid VRChat avatar ID').startsWith('avtr_', 'Invalid VRChat avatar ID').max(50);
+
 export const parameterPathSchema = z.string().min(1, 'Parameter path required').max(100);
+export const parameterValueSchema = z.string().min(1, 'Parameter value required').max(5)
+    .refine((val) => convertParameterValueFromString(val) !== undefined, { message: 'Invalid value, must be either number or bool' });
 
-export const parameterValueSchema = z.union([z.number(), z.boolean()]);
-export const parameterValueFormSchema = z.string().min(1, 'Parameter value required').max(5).transform((val, ctx) => {
-    const convertedVal = convertParameterValueFromString(val);
-    if (convertedVal === undefined) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Invalid value, must be either number or bool',
-            fatal: true,
-        });
-        return z.NEVER;
-    }
-    return convertedVal;
+export const parameterValueObjectSchema = z.union([z.number(), z.boolean()]);
+
+export const parameterValueOrAvatarSchema = z.union([parameterValueSchema, vrcAvatarIdSchema]);
+export const parameterValueObjectOrAvatarSchema = z.union([parameterValueObjectSchema, vrcAvatarIdSchema]);
+
+
+// ------------------- Object schemas ------------------- //
+export const BaseIdSchema = z.object({
+    id: IdSchema
 });
 
-export const parameterValueOrAvtrSchema = z.union([z.string().startsWith('avtr_', 'Invalid VRChat avatar ID').max(50), z.number(), z.boolean()]);
-export const parameterValueOrAvtrFormSchema = z.string().min(1, 'Parameter value required').max(50).transform((val, ctx) => {
-    // vrc avatar id
-    if (val.startsWith('avtr_')) return val;
-    // number or boolean
-    if (val.length > 5) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Invalid value, number or bool must be 5 or less characters',
-            fatal: true,
-        });
-        return z.NEVER;
-    }
-    const convertedVal = convertParameterValueFromString(val);
-    if (convertedVal === undefined) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Invalid value, must be either VRChat avatar ID, number or bool',
-            fatal: true,
-        });
-        return z.NEVER;
-    }
-    return convertedVal;
+export type BaseIdDTO = z.infer<typeof BaseIdSchema>;
+
+export const BaseNullableIdSchema = z.object({
+    id: IdSchema.nullable()
 });
 
-export interface BaseDTO {
-    id?: string;
-}
+export type BaseNullableIdDTO = z.infer<typeof BaseNullableIdSchema>;
 
-export interface BaseParentDTO extends BaseDTO {
-    parentId?: string;
-}
+export const BaseFormSchema = z.object({
+    id: IdSchema.nullable(),
+    parentId: IdSchema
+});
 
-export class CmapApiError extends Error {
-    code: number | undefined;
+export type BaseFormDTO = z.infer<typeof BaseFormSchema>;
 
-    constructor(message: string, code?: number) {
-        super(message);
-        this.code = code;
-        this.name = 'CmapApiError';
-        Object.setPrototypeOf(this, CmapApiError.prototype);
-    }
-
-    public dto(): CmapApiErrorDTO {
-        return new CmapApiErrorDTO(this.name, this.message, this.code);
-    }
-}
-
-export class CmapApiErrorDTO {
-    code?: number;
-    name: string;
-    message: string;
-    id?: string;
-
-    constructor(name: string, message: string, code?: number, id?: string) {
-        this.code = code;
-        this.name = name;
-        this.message = message;
-        this.id = id;
-    }
-
-    public setId(id: string): this {
-        this.id = id;
-        return this;
-    }
-}
