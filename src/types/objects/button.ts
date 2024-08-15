@@ -1,7 +1,7 @@
 import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType } from '../enums/button';
-import { UploadedFileSchema } from '../OLD/uploadedFile';
+import { UploadedFileSchema } from './uploadedFile';
 
 export const ButtonSchema = BaseIdSchema.extend({
     label: z.string(),

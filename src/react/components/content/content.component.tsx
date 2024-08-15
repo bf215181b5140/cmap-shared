@@ -1,5 +1,5 @@
-import { ReactProps } from '../../../index';
 import styled from 'styled-components';
+import { ReactProps } from '../../types';
 
 interface ContentProps extends ReactProps {
     flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';

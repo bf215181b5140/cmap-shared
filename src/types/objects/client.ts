@@ -1,10 +1,10 @@
 import { BaseIdSchema, IdSchema } from '../shared';
 import { z } from 'zod';
 import { ClientVisibility, OfflineDisplay, UnknownAvatarDisplay } from '../enums/client';
-import { UploadedFileSchema } from '../OLD/uploadedFile';
-import { InteractionKeySchema } from '../OLD/InteractionKey';
 import { TierSchema } from './tier';
 import { LayoutSchema } from './layout';
+import { UploadedFileSchema } from './uploadedFile';
+import { InteractionKeySchema } from './interactionKey';
 
 export const ClientSchema = BaseIdSchema.extend({
     username: z.string(),

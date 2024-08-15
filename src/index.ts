@@ -1,80 +1,52 @@
-import { ReactNode } from 'react';
-import { IgnoredParams } from './const';
-import { theme } from './react/theme';
-
-/* ------------------------------------------------------------ */
-// Types
-/* ------------------------------------------------------------ */
-// WebsitePage
-export { WebsitePageDTO } from './types/OLD/websitePage';
-// Admin approve files
-export { ApproveFilesDTO } from './types/OLD/admin/approveFiles';
-// Login
-export { LoginSchema, LoginDTO, LoginTokenDTO } from './types/OLD/login';
-// Register
-export { RegisterRequestDTO, RegisterInfoDTO, RegisterFormSchema, RegisterSchema, RegisterKeySchema, RegisterDTO, RegisterFormDTO } from './types/OLD/register';
-// Profile
-export { ProfileFormSchema, ProfileFormDTO, ProfileDTO, ClientDTO } from './types/profile';
-// Background
-export { BackgroundDTO } from './types/OLD/background';
-// LayoutStyle
-export { LayoutStyleDTO } from './types/OLD/style';
-// Tiers
-export { TiersDTO, TierDTO, TierType } from './types/OLD/tier';
-// Avatar
-export { AvatarFormSchema, AvatarFormDTO, AvatarPageDTO, AvatarDTO } from './types/OLD/layout';
-// Control parameters
-export { ControlParametersFormSchema, ControlParametersFormDTO, ControlParameterDTO, ControlParameterRole } from './types/OLD/controlParameters';
-// State badges
-export { StateBadgeKey, StateBadgeSchema, StateBadgesSchema, StateBadgeDTO, StateBadgesDTO } from './types/OLD/stateBadge';
-// Layout
-export { LayoutDTO, GroupFormSchema, LayoutFormDTO, GroupWidth } from './types/OLD/group';
-// Button
-export { ButtonFormSchema, ButtonFormDTO, ButtonDTO, ButtonType, ButtonImageOrientation } from './types/OLD/button';
-// Files
-export { UploadedFileDTO, FileUploadDTO } from './types/OLD/uploadedFile';
-// Update
-export { UpdateSchema, UpdatesFormSchema, UpdatesFormDTO, UpdateDTO } from './types/OLD/update';
-// Order
-export { OrderSchema, OrderListSchema, OrderDTO, OrderListDTO } from './types/OLD/order';
-// Client state
-export { ClientStateParamsSchema, ClientStateParamFormSchema, ClientStateParamSchema, ClientStateParamsDTO, ClientStateParamFormDTO, ClientStateParamDTO, ClientStateDTO } from './types/OLD/clientState';
-// Shared
-export { CmapApiError, CmapApiErrorDTO, BaseNullableIdSchema, BaseIdSchema, BaseFormSchema, ParameterValueType } from './types/shared';
-// Error
-export { CmapErrorSchema, CmapErrorDTO } from './types/error';
-
-/* ------------------------------------------------------------ */
-// Other
-/* ------------------------------------------------------------ */
-export { IgnoredParams };
-export { theme };
-
-/* ------------------------------------------------------------ */
-// Temp
-/* ------------------------------------------------------------ */
-export interface VrcParameter {
-    path: string;
-    value: boolean | number | string;
-}
-
-export interface UsedButton {
-    buttonId: string;
-    value: string;
-}
-
-export interface ReactProps {
-    children?: ReactNode;
-}
-
-export class FieldOption {
-    key: string = '';
-    value: string = '';
-}
-
-export enum ContentBoxWidth {
-    None = 'none',
-    Third = 'third',
-    Half = 'half',
-    Full = 'full'
-}
+// ------------------------------ Enums ------------------------------ //
+export { ClientVisibility, ClientVisibilityOptions, OfflineDisplay, OfflineDisplayOptions, UnknownAvatarDisplay, UnknownAvatarDisplayOptions } from './types/enums/client';
+export { ButtonImageOrientation, ButtonType } from './types/enums/button';
+export { StateBadgeType } from './types/enums/stateBadge';
+// ------------------------------ Objects ------------------------------ //
+export { AvatarDTO, AvatarSchema } from './types/objects/avatar';
+export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
+export { ButtonDTO, ButtonSchema } from './types/objects/button';
+export { ClientDTO, ClientSchema } from './types/objects/client';
+export { CallbackDTO, CallbackSchema } from './types/objects/callback';
+export { GroupDTO, GroupSchema } from './types/objects/group';
+export { InteractionKeyDTO, InteractionKeySchema } from './types/objects/interactionKey';
+export { LayoutDTO, LayoutSchema } from './types/objects/layout';
+export { LoginTokenDTO, LoginTokenSchema } from './types/objects/login';
+export { RegisterInfoDTO, RegisterInfoSchema } from './types/objects/register';
+export { RegistrationKeyDTO, RegistrationKeySchema } from './types/objects/registrationKey';
+export { StateBadgeDTO, StateBadgeSchema } from './types/objects/stateBadge';
+export { StyleDTO, StyleSchema } from './types/objects/style';
+export { TierDTO, TierSchema } from './types/objects/tier';
+export { UpdateDTO, UpdateSchema } from './types/objects/update';
+export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
+export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
+// ------------------------------ Forms ------------------------------ //
+export { AvatarFormDTO, AvatarFormSchema } from './types/forms/avatar';
+export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
+export { CallbackFormDTO, CallbackFormSchema } from './types/forms/callback';
+export { ProfileFormDTO, ProfileFormSchema } from './types/forms/profile';
+export { GroupFormDTO, GroupFormSchema } from './types/forms/group';
+export { InteractionKeyFormDTO, InteractionKeyFormSchema } from './types/forms/interactionKey';
+export { LayoutFormDTO, LayoutFormSchema } from './types/forms/layout';
+export { BackgroundFormDTO, BackgroundFormSchema } from './types/forms/background';
+export { StyleFormDTO, StyleFormSchema } from './types/forms/style';
+export { HealthFormDTO, HealthFormSchema } from './types/forms/health';
+export { UseCostFormDTO, UseCostFormSchema } from './types/forms/useCost';
+export { StateBadgeFormDTO, StateBadgeFormSchema } from './types/forms/stateBadge';
+export { UpdatesFormDTO, UpdatesFormSchema } from './types/forms/update';
+export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedFile';
+export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
+export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
+// ------------------------------ Pages ------------------------------ //
+export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
+export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
+export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';
+// ------------------------------ Website ------------------------------ //
+export { UsedButtonDTO, UsedButtonSchema } from './types/website';
+// ------------------------------ Input ------------------------------ //
+export { CmapSelectOption } from './types/inputs';
+// ------------------------------ Shared ------------------------------ //
+export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema } from './types/shared';
+// ------------------------------ Other ------------------------------ //
+export { KeyValue, VrcParameter } from './types';
+export { convertParameterValueFromString } from './util';

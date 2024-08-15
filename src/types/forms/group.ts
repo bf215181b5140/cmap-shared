@@ -1,11 +1,11 @@
 import { BaseFormSchema, IdSchema } from '../shared';
 import { z } from 'zod';
-import { GroupWidth } from '../enums/group';
+import { ContentBoxWidth } from '../../react';
 
 export const GroupFormSchema = BaseFormSchema.extend({
     label: z.string().max(32),
     order: z.number(),
-    width: z.nativeEnum(GroupWidth),
+    width: z.nativeEnum(ContentBoxWidth),
     interactionKeyId: IdSchema.nullable(),
 });
 

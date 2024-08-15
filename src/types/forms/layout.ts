@@ -1,4 +1,4 @@
-import { BaseFormSchema, IdSchema, vrcAvatarIdSchema } from '../shared';
+import { BaseFormSchema, vrcAvatarIdSchema } from '../shared';
 import { z } from 'zod';
 
 export const LayoutFormSchema = BaseFormSchema.extend({

@@ -5,9 +5,9 @@ interface BackgroundProps {
     background: BackgroundDTO;
 }
 
-export default function Background({background}: BackgroundProps) {
+export default function Background({ background }: BackgroundProps) {
 
-    return (<BackgroundStyled className={background.className} />);
+    return (<BackgroundStyled className={background.id} />);
 }
 
 const BackgroundStyled = styled.div`
@@ -75,7 +75,7 @@ const BackgroundStyled = styled.div`
     radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
     background-attachment: fixed;
   }
-  
+
   &.bg-premium-2 {
     --r: 50px; /* control the size */
     --c1: #0a252a /*color 1*/ 99%, #0000 101%;
@@ -102,7 +102,7 @@ const BackgroundStyled = styled.div`
     var(--g0) var(--s) calc(var(--r) / 2) #0A1118; /*color 2 again here */
     background-size: calc(4 * var(--s)) calc(6 * var(--r));
   }
-  
+
   &.bg-premium-3 {
     --s: 130px; /* control the size */
     --_g: #0000 90deg, #1d2123 0;
@@ -110,5 +110,5 @@ const BackgroundStyled = styled.div`
     conic-gradient(from -63.44deg at calc(200% / 3) 100%, var(--_g)) #2e353b;
     background-size: var(--s) var(--s);
   }
-  
+
 `;

@@ -1,4 +1,4 @@
-import { BaseFormSchema, IdSchema, parameterPathSchema, parameterValueSchema, vrcAvatarIdSchema } from '../shared';
+import { BaseFormSchema, IdSchema, parameterPathSchema, parameterValueSchema } from '../shared';
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType } from '../enums/button';
 import { convertParameterValueFromString } from '../../util';

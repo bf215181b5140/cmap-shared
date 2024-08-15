@@ -1,8 +1,8 @@
-import { ContentBoxWidth, ReactProps } from '../../../index';
 import styled from 'styled-components';
 import colors from '../../../colors.json';
 import { useEffect, useState } from 'react';
 import { CONTENT_GAP } from './content.component';
+import { ContentBoxWidth, ReactProps } from '../../types';
 
 interface ContentBoxProps extends ReactProps {
     title?: string;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
-import { ButtonDTO, ButtonImageOrientation, LayoutStyleDTO, ButtonType, ControlParameterDTO, UsedButton, ParameterValueType } from '../../index';
+import { ButtonDTO, ButtonImageOrientation, ButtonType, StyleDTO, UsedButtonDTO } from '../../index';
 import expOrb from '../images/expOrb.png';
 import ParameterSlider from './parameter.slider';
 
@@ -8,12 +8,12 @@ export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavat
 
 interface ParameterButtonProps {
     button: ButtonDTO;
-    layoutStyle: LayoutStyleDTO;
+    style: StyleDTO;
     active?: boolean;
     disabled?: boolean;
     value?: string | number | boolean | undefined;
-    useCostParameter?: { controlParameter: ControlParameterDTO, value: number };
-    onClick?: (usedParameter: UsedButton) => void;
+    useCostParameter?: { path: string, value: number };
+    onClick?: (usedParameter: UsedButtonDTO) => void;
 }
 
 export default function ParameterButton(props: ParameterButtonProps) {
@@ -22,14 +22,14 @@ export default function ParameterButton(props: ParameterButtonProps) {
         if (props.onClick) {
             switch (props.button.buttonType) {
                 case ButtonType.Button:
-                    if (!props.active) props.onClick({buttonId: props.button.id!, value: props.button.value!});
+                    if (!props.active) props.onClick({ buttonId: props.button.id!, value: props.button.value! });
                     break;
                 case ButtonType.Toggle:
-                    props.onClick({buttonId: props.button.id!, value: props.active ? props.button.valueAlt! : props.button.value!});
+                    props.onClick({ buttonId: props.button.id!, value: props.active ? props.button.valueAlt! : props.button.value! });
                     break;
                 case ButtonType.Slider:
                     if (value === undefined) return;
-                    props.onClick({buttonId: props.button.id!, value: value});
+                    props.onClick({ buttonId: props.button.id!, value: value });
                     break;
             }
         }
@@ -37,14 +37,14 @@ export default function ParameterButton(props: ParameterButtonProps) {
 
     function useCostUsable(): boolean {
         if (props.useCostParameter && props.button.useCost) {
-            return props.useCostParameter.value - props.button.useCost > Number(props.useCostParameter.controlParameter.valuePrimary);
+            return props.useCostParameter.value - props.button.useCost >= 0;
         }
         return true;
     }
 
     function imageUrl() {
         if (props.button.image?.urlPath.indexOf('blob:') === 0) {
-            return props.button.image?.urlPath;
+            return props.button.image.urlPath;
         } else {
             return URL + '/' + props.button.image?.urlPath;
         }
@@ -55,10 +55,10 @@ export default function ParameterButton(props: ParameterButtonProps) {
             <SliderWrapper>
                 {props.button.label && <ParameterSliderLabel>{props.button.label}</ParameterSliderLabel>}
                 <ParameterSlider disabled={!!props.disabled || !useCostUsable()}
-                                 className={props.layoutStyle.className}
+                                 className={props.style.id}
                                  onClick={(value: string) => onClick(value)}
                                  value={typeof props.value === 'number' ? props.value : 0}
-                                 step={props.button.valueType === ParameterValueType.Float ? 0.01 : 1}
+                                 step={Math.abs(Number(props.button.value) - Number(props.button.valueAlt)) > 1 ? 1 : 0.01}
                                  min={Number(props.button.value)}
                                  max={Number(props.button.valueAlt)} />
             </SliderWrapper>
@@ -67,9 +67,10 @@ export default function ParameterButton(props: ParameterButtonProps) {
     }
 
     return (<UseCostWrapper>
-        <ParameterLayoutStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.layoutStyle.className} ${props.active ? 'active' : ''}`}
+        <ParameterLayoutStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.style.id} ${props.active ? 'active' : ''}`}
                                onClick={() => onClick()}>
-            {props.button.image?.urlPath && <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
+            {props.button.image?.urlPath &&
+                <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
             {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
             <ActiveOverlay active={!!props.active} />
         </ParameterLayoutStyled>

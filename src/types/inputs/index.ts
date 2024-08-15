@@ -1,5 +1,5 @@
-export interface CmapSelectOption {
-    key: string,
-    value: string,
-    description?: string | undefined,
+import { KeyValue } from '../index';
+
+export interface CmapSelectOption extends KeyValue {
+    description?: string | undefined;
 }
