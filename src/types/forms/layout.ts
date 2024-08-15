@@ -1,9 +1,11 @@
-import { BaseFormSchema, vrcAvatarIdSchema } from '../shared';
+import { BaseNullableIdSchema, vrcAvatarIdSchema } from '../shared';
 import { z } from 'zod';
 
-export const LayoutFormSchema = BaseFormSchema.extend({
+export const LayoutFormSchema = BaseNullableIdSchema.extend({
     label: z.string().min(3).max(32),
-    vrcAvatarId: z.union([z.literal(''), vrcAvatarIdSchema])
+    avatars: z.array(BaseNullableIdSchema.extend({
+        vrcAvatarId: vrcAvatarIdSchema,
+    })),
 });
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;

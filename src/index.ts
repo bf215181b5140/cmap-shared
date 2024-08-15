@@ -21,7 +21,6 @@ export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
 // ------------------------------ Forms ------------------------------ //
-export { AvatarFormDTO, AvatarFormSchema } from './types/forms/avatar';
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
 export { CallbackFormDTO, CallbackFormSchema } from './types/forms/callback';
 export { ProfileFormDTO, ProfileFormSchema } from './types/forms/profile';
