@@ -3,6 +3,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
     label: z.ZodString;
+    avatars: z.ZodArray<z.ZodString, "many">;
     backgroud: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
@@ -17,7 +18,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            callBacks: z.ZodNumber;
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -33,7 +34,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }, {
             groups: number;
@@ -47,7 +48,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -65,7 +66,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     }, {
@@ -83,7 +84,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     }>>;
@@ -101,7 +102,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            callBacks: z.ZodNumber;
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -117,7 +118,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }, {
             groups: number;
@@ -131,7 +132,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -149,7 +150,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     }, {
@@ -167,7 +168,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     }>>;
@@ -177,17 +178,6 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCostEnabled: z.ZodBoolean;
     useCostPath: z.ZodNullable<z.ZodString>;
     useCostMax: z.ZodNullable<z.ZodNumber>;
-    avatars: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
-        id: z.ZodString;
-    }, {
-        vrcAvatarId: z.ZodString;
-    }>, "strip", z.ZodTypeAny, {
-        id: string;
-        vrcAvatarId: string;
-    }, {
-        id: string;
-        vrcAvatarId: string;
-    }>, "many">>;
     groups: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
@@ -354,6 +344,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
 }>, "strip", z.ZodTypeAny, {
     id: string;
     label: string;
+    avatars: string[];
     healthEnabled: boolean;
     healthPath: string | null;
     healthMax: number | null;
@@ -400,14 +391,10 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     } | undefined;
-    avatars?: {
-        id: string;
-        vrcAvatarId: string;
-    }[] | undefined;
     stateBadges?: {
         type: import("../..").StateBadgeType;
         id: string;
@@ -432,7 +419,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     } | undefined;
@@ -446,6 +433,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
 }, {
     id: string;
     label: string;
+    avatars: string[];
     healthEnabled: boolean;
     healthPath: string | null;
     healthMax: number | null;
@@ -492,14 +480,10 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     } | undefined;
-    avatars?: {
-        id: string;
-        vrcAvatarId: string;
-    }[] | undefined;
     stateBadges?: {
         type: import("../..").StateBadgeType;
         id: string;
@@ -524,7 +508,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | undefined;
     } | undefined;

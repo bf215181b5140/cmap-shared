@@ -1,7 +1,6 @@
 export { ClientVisibility, ClientVisibilityOptions, OfflineDisplay, OfflineDisplayOptions, UnknownAvatarDisplay, UnknownAvatarDisplayOptions } from './types/enums/client';
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
-export { AvatarDTO, AvatarSchema } from './types/objects/avatar';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';
@@ -18,7 +17,6 @@ export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
-export { AvatarFormDTO, AvatarFormSchema } from './types/forms/avatar';
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
 export { CallbackFormDTO, CallbackFormSchema } from './types/forms/callback';
 export { ProfileFormDTO, ProfileFormSchema } from './types/forms/profile';

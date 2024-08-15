@@ -14,7 +14,7 @@ export declare const RegistrationKeySchema: z.ZodObject<z.objectUtil.extendShape
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        callBacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -30,7 +30,7 @@ export declare const RegistrationKeySchema: z.ZodObject<z.objectUtil.extendShape
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -44,7 +44,7 @@ export declare const RegistrationKeySchema: z.ZodObject<z.objectUtil.extendShape
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }>>>;
     used: z.ZodBoolean;
@@ -64,7 +64,7 @@ export declare const RegistrationKeySchema: z.ZodObject<z.objectUtil.extendShape
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     } | null | undefined;
 }, {
@@ -83,7 +83,7 @@ export declare const RegistrationKeySchema: z.ZodObject<z.objectUtil.extendShape
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     } | null | undefined;
 }>;

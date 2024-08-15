@@ -13,7 +13,7 @@ export declare const StyleSchema: z.ZodObject<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        callBacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -29,7 +29,7 @@ export declare const StyleSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -43,7 +43,7 @@ export declare const StyleSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }>>;
 }, "strip", z.ZodTypeAny, {
@@ -61,7 +61,7 @@ export declare const StyleSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     } | undefined;
 }, {
@@ -79,7 +79,7 @@ export declare const StyleSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     } | undefined;
 }>;

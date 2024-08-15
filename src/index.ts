@@ -3,7 +3,6 @@ export { ClientVisibility, ClientVisibilityOptions, OfflineDisplay, OfflineDispl
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
 // ------------------------------ Objects ------------------------------ //
-export { AvatarDTO, AvatarSchema } from './types/objects/avatar';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';

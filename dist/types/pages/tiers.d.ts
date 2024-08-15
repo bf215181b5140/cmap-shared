@@ -11,7 +11,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        callBacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -27,7 +27,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -41,7 +41,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }>, "many">;
     clientTier: z.ZodObject<z.objectUtil.extendShape<{
@@ -55,7 +55,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        callBacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -71,7 +71,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -85,7 +85,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }>;
     registrationKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -103,7 +103,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            callBacks: z.ZodNumber;
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -119,7 +119,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }, {
             groups: number;
@@ -133,7 +133,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         }>>>;
         used: z.ZodBoolean;
@@ -153,7 +153,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | null | undefined;
     }, {
@@ -172,7 +172,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | null | undefined;
     }>, "many">;
@@ -189,7 +189,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }[];
     clientTier: {
@@ -204,7 +204,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     };
     registrationKeys: {
@@ -223,7 +223,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | null | undefined;
     }[];
@@ -240,7 +240,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     }[];
     clientTier: {
@@ -255,7 +255,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        callBacks: number;
         stateBadges: number;
     };
     registrationKeys: {
@@ -274,7 +274,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            callBacks: number;
             stateBadges: number;
         } | null | undefined;
     }[];
