@@ -35,6 +35,7 @@ export { UpdatesFormDTO, UpdatesFormSchema } from './types/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
 export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
+export { LoginFormSchema, LoginFormDTO } from './types/forms/login';
 // ------------------------------ Pages ------------------------------ //
 export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
