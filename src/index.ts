@@ -1,4 +1,5 @@
 // ------------------------------ Enums ------------------------------ //
+
 export { ClientVisibility, ClientVisibilityOptions, OfflineDisplay, OfflineDisplayOptions, UnknownAvatarDisplay, UnknownAvatarDisplayOptions } from './types/enums/client';
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
@@ -36,6 +37,7 @@ export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedF
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
 export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
 export { LoginFormSchema, LoginFormDTO } from './types/forms/login';
+export { RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/forms/register';
 // ------------------------------ Pages ------------------------------ //
 export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
