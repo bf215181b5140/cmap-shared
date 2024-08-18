@@ -36,7 +36,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        callBacks: z.ZodNumber;
+        callbacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -52,7 +52,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -66,7 +66,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     }>>;
     layouts: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -88,7 +88,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: z.ZodNumber;
                 useCost: z.ZodBoolean;
                 health: z.ZodBoolean;
-                callBacks: z.ZodNumber;
+                callbacks: z.ZodNumber;
                 stateBadges: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
@@ -104,7 +104,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }, {
                 groups: number;
@@ -118,7 +118,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -136,7 +136,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }, {
@@ -154,7 +154,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }>>;
@@ -172,7 +172,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: z.ZodNumber;
                 useCost: z.ZodBoolean;
                 health: z.ZodBoolean;
-                callBacks: z.ZodNumber;
+                callbacks: z.ZodNumber;
                 stateBadges: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
@@ -188,7 +188,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }, {
                 groups: number;
@@ -202,7 +202,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -220,7 +220,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }, {
@@ -238,7 +238,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }>>;
@@ -461,10 +461,17 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -489,17 +496,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }, {
         id: string;
         label: string;
@@ -550,10 +550,17 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -578,17 +585,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }>, "many">>;
     interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -675,10 +675,17 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -703,17 +710,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -727,7 +727,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     } | undefined;
 }, {
@@ -801,10 +801,17 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -829,17 +836,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -853,7 +853,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     } | undefined;
 }>;

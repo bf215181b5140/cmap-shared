@@ -12,7 +12,7 @@ exports.TierSchema = shared_1.BaseIdSchema.extend({
     avatars: zod_1.z.number(),
     useCost: zod_1.z.boolean(),
     health: zod_1.z.boolean(),
-    callBacks: zod_1.z.number(),
+    callbacks: zod_1.z.number(),
     stateBadges: zod_1.z.number(),
     groups: zod_1.z.number(),
     buttons: zod_1.z.number(),

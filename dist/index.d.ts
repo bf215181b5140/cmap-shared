@@ -33,6 +33,7 @@ export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedF
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
 export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
 export { LoginFormSchema, LoginFormDTO } from './types/forms/login';
+export { RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/forms/register';
 export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';

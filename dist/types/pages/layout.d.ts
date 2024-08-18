@@ -19,7 +19,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: z.ZodNumber;
                 useCost: z.ZodBoolean;
                 health: z.ZodBoolean;
-                callBacks: z.ZodNumber;
+                callbacks: z.ZodNumber;
                 stateBadges: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
@@ -35,7 +35,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }, {
                 groups: number;
@@ -49,7 +49,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -67,7 +67,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }, {
@@ -85,7 +85,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }>>;
@@ -103,7 +103,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: z.ZodNumber;
                 useCost: z.ZodBoolean;
                 health: z.ZodBoolean;
-                callBacks: z.ZodNumber;
+                callbacks: z.ZodNumber;
                 stateBadges: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
@@ -119,7 +119,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }, {
                 groups: number;
@@ -133,7 +133,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -151,7 +151,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }, {
@@ -169,7 +169,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         }>>;
@@ -392,10 +392,17 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -420,17 +427,10 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }, {
         id: string;
         label: string;
@@ -481,10 +481,17 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -509,17 +516,10 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }>, "many">;
     tier: z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -532,7 +532,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        callBacks: z.ZodNumber;
+        callbacks: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -548,7 +548,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -562,7 +562,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     }>;
     interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -635,10 +635,17 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -663,17 +670,10 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }[];
     tier: {
         groups: number;
@@ -687,7 +687,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     };
 }, {
@@ -746,10 +746,17 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
+        callbacks?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
         stateBadges?: {
             type: import("../..").StateBadgeType;
             id: string;
@@ -774,17 +781,10 @@ export declare const LayoutPageSchema: z.ZodObject<{
                 avatars: number;
                 useCost: boolean;
                 health: boolean;
-                callBacks: number;
+                callbacks: number;
                 stateBadges: number;
             } | undefined;
         } | undefined;
-        callbacks?: {
-            id: string;
-            value: string;
-            label: string;
-            path: string;
-            seconds: number;
-        }[] | undefined;
     }[];
     tier: {
         groups: number;
@@ -798,7 +798,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callBacks: number;
+        callbacks: number;
         stateBadges: number;
     };
 }>;
