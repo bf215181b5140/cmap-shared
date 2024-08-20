@@ -11,8 +11,6 @@ export { CallbackDTO, CallbackSchema } from './types/objects/callback';
 export { GroupDTO, GroupSchema } from './types/objects/group';
 export { InteractionKeyDTO, InteractionKeySchema } from './types/objects/interactionKey';
 export { LayoutDTO, LayoutSchema } from './types/objects/layout';
-export { LoginTokenDTO, LoginTokenSchema } from './types/objects/login';
-export { RegisterInfoDTO, RegisterInfoSchema } from './types/objects/register';
 export { RegistrationKeyDTO, RegistrationKeySchema } from './types/objects/registrationKey';
 export { StateBadgeDTO, StateBadgeSchema } from './types/objects/stateBadge';
 export { StyleDTO, StyleSchema } from './types/objects/style';
@@ -39,6 +37,8 @@ export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './t
 export { LoginFormSchema, LoginFormDTO } from './types/forms/login';
 export { RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/forms/register';
 // ------------------------------ Pages ------------------------------ //
+export { LoginTokenDTO, LoginTokenSchema } from './types/pages/login';
+export { RegisterInfoDTO, RegisterInfoSchema } from './types/pages/register';
 export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';
