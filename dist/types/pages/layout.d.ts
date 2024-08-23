@@ -184,7 +184,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         }, {
             label: z.ZodString;
             order: z.ZodNumber;
-            width: z.ZodNativeEnum<typeof import("../../react").ContentBoxWidth>;
+            width: z.ZodNativeEnum<typeof import("../..").ContentBoxWidth>;
             interactionKeyId: z.ZodNullable<z.ZodString>;
             buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
                 id: z.ZodString;
@@ -249,7 +249,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             }>, "many">>;
         }>, "strip", z.ZodTypeAny, {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;
@@ -273,7 +273,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             }[] | undefined;
         }, {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;
@@ -354,7 +354,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;
@@ -443,7 +443,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;
@@ -597,7 +597,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;
@@ -708,7 +708,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../react").ContentBoxWidth;
+            width: import("../..").ContentBoxWidth;
             order: number;
             label: string;
             interactionKeyId: string | null;

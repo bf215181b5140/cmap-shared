@@ -183,7 +183,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     }, {
         label: z.ZodString;
         order: z.ZodNumber;
-        width: z.ZodNativeEnum<typeof import("../../react").ContentBoxWidth>;
+        width: z.ZodNativeEnum<typeof import("../..").ContentBoxWidth>;
         interactionKeyId: z.ZodNullable<z.ZodString>;
         buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
@@ -248,7 +248,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         }>, "many">>;
     }>, "strip", z.ZodTypeAny, {
         id: string;
-        width: import("../../react").ContentBoxWidth;
+        width: import("../..").ContentBoxWidth;
         order: number;
         label: string;
         interactionKeyId: string | null;
@@ -272,7 +272,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         }[] | undefined;
     }, {
         id: string;
-        width: import("../../react").ContentBoxWidth;
+        width: import("../..").ContentBoxWidth;
         order: number;
         label: string;
         interactionKeyId: string | null;
@@ -353,7 +353,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCostMax: number | null;
     groups?: {
         id: string;
-        width: import("../../react").ContentBoxWidth;
+        width: import("../..").ContentBoxWidth;
         order: number;
         label: string;
         interactionKeyId: string | null;
@@ -442,7 +442,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCostMax: number | null;
     groups?: {
         id: string;
-        width: import("../../react").ContentBoxWidth;
+        width: import("../..").ContentBoxWidth;
         order: number;
         label: string;
         interactionKeyId: string | null;

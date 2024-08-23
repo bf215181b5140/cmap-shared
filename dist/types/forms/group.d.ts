@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ContentBoxWidth } from '../../react';
+import { ContentBoxWidth } from '../../react/types';
 export declare const GroupFormSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;

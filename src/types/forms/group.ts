@@ -1,6 +1,6 @@
 import { BaseFormSchema, IdSchema } from '../shared';
 import { z } from 'zod';
-import { ContentBoxWidth } from '../../react';
+import { ContentBoxWidth } from '../../react/types';
 
 export const GroupFormSchema = BaseFormSchema.extend({
     label: z.string().max(32),

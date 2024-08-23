@@ -1,7 +1,7 @@
 import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
 import { ButtonSchema } from './button';
-import { ContentBoxWidth } from '../../react';
+import { ContentBoxWidth } from '../../react/types';
 
 export const GroupSchema = BaseIdSchema.extend({
     label: z.string(),
