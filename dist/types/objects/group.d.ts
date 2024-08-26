@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import { ContentBoxWidth } from '../../react/types';
+import { SegmentWidth } from '../../react/types';
 export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
     label: z.ZodString;
     order: z.ZodNumber;
-    width: z.ZodNativeEnum<typeof ContentBoxWidth>;
+    width: z.ZodNativeEnum<typeof SegmentWidth>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
     buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -70,7 +70,7 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     }>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
-    width: ContentBoxWidth;
+    width: SegmentWidth;
     order: number;
     label: string;
     interactionKeyId: string | null;
@@ -94,7 +94,7 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     }[] | undefined;
 }, {
     id: string;
-    width: ContentBoxWidth;
+    width: SegmentWidth;
     order: number;
     label: string;
     interactionKeyId: string | null;

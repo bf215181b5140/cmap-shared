@@ -4,7 +4,7 @@ export interface ReactProps {
     children?: ReactNode;
 }
 
-export enum ContentBoxWidth {
+export enum SegmentWidth {
     None = 'None',
     Third = 'Third',
     Half = 'Half',

@@ -51,10 +51,5 @@ export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO
 export { KeyValue, VrcParameter } from './types';
 export { convertParameterValueFromString } from './util';
 // ------------------------------ React ------------------------------ //
-export { default as Content } from './react/components/content/content.component';
-export { default as ContentBox } from './react/components/content/contentBox.component';
-export { default as Background } from './react/components/background.component';
-export { default as Icon } from './react/components/icon.component';
-export { default as ParameterButton } from './react/components/parameter.button';
 export { theme } from './react/theme';
-export { ReactProps, ContentBoxWidth } from './react/types'
+export { ReactProps, SegmentWidth } from './react/types'

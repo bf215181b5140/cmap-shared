@@ -8,7 +8,7 @@ const types_1 = require("../../react/types");
 exports.GroupSchema = shared_1.BaseIdSchema.extend({
     label: zod_1.z.string(),
     order: zod_1.z.number(),
-    width: zod_1.z.nativeEnum(types_1.ContentBoxWidth),
+    width: zod_1.z.nativeEnum(types_1.SegmentWidth),
     interactionKeyId: zod_1.z.string().nullable(),
     buttons: zod_1.z.array(button_1.ButtonSchema).optional(),
 });

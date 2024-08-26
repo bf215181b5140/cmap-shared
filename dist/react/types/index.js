@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = void 0;
-var ContentBoxWidth;
-(function (ContentBoxWidth) {
-    ContentBoxWidth["None"] = "None";
-    ContentBoxWidth["Third"] = "Third";
-    ContentBoxWidth["Half"] = "Half";
-    ContentBoxWidth["Full"] = "Full";
-})(ContentBoxWidth || (exports.ContentBoxWidth = ContentBoxWidth = {}));
+exports.SegmentWidth = void 0;
+var SegmentWidth;
+(function (SegmentWidth) {
+    SegmentWidth["None"] = "None";
+    SegmentWidth["Third"] = "Third";
+    SegmentWidth["Half"] = "Half";
+    SegmentWidth["Full"] = "Full";
+})(SegmentWidth || (exports.SegmentWidth = SegmentWidth = {}));

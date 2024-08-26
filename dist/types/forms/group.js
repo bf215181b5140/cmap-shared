@@ -7,6 +7,6 @@ const types_1 = require("../../react/types");
 exports.GroupFormSchema = shared_1.BaseFormSchema.extend({
     label: zod_1.z.string().max(32),
     order: zod_1.z.number(),
-    width: zod_1.z.nativeEnum(types_1.ContentBoxWidth),
+    width: zod_1.z.nativeEnum(types_1.SegmentWidth),
     interactionKeyId: shared_1.IdSchema.nullable(),
 });
