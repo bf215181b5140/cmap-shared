@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import { passwordSchema, usernameSchema } from '../shared';
 
 export const LoginTokenSchema = z.object({
-    apiToken: usernameSchema,
-    displayName: passwordSchema,
+    apiToken: z.string(),
+    displayName: z.string(),
     isAdmin: z.boolean(),
 });
 
