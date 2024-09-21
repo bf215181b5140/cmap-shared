@@ -11,7 +11,12 @@ export const RegisterFormSchema = z.object({
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: 'Passwords don\'t match',
-            path: ['password', 'passwordRepeat']
+            path: ['password']
+        });
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Passwords don\'t match',
+            path: ['passwordRepeat']
         });
     }
 });

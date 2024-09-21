@@ -13,7 +13,12 @@ exports.RegisterFormSchema = zod_1.z.object({
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
             message: 'Passwords don\'t match',
-            path: ['password', 'passwordRepeat']
+            path: ['password']
+        });
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Passwords don\'t match',
+            path: ['passwordRepeat']
         });
     }
 });
