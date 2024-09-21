@@ -18,8 +18,8 @@ export const RegisterFormSchema = z.object({
 
 export type RegisterFormDTO = z.infer<typeof RegisterFormSchema>;
 
-export const RegisterWithKeyFormSchema = RegisterFormSchema.innerType().extend({
+export const RegisterWithKeyFormSchema = RegisterFormSchema.and(z.object({
     registrationKey: z.string().max(32),
-});
+}));
 
 export type RegisterWithKeyFormDTO = z.infer<typeof RegisterWithKeyFormSchema>;
