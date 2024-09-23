@@ -11,7 +11,7 @@ const interactionKey_1 = require("./interactionKey");
 exports.ClientSchema = shared_1.BaseIdSchema.extend({
     username: zod_1.z.string(),
     displayName: zod_1.z.string(),
-    bio: zod_1.z.string(),
+    bio: zod_1.z.string().nullable(),
     visibility: zod_1.z.nativeEnum(client_1.ClientVisibility),
     defaultLayoutId: shared_1.IdSchema.nullable(),
     unknownAvatarDisplay: zod_1.z.nativeEnum(client_1.UnknownAvatarDisplay),

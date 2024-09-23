@@ -9,7 +9,7 @@ import { InteractionKeySchema } from './interactionKey';
 export const ClientSchema = BaseIdSchema.extend({
     username: z.string(),
     displayName: z.string(),
-    bio: z.string(),
+    bio: z.string().nullable(),
     visibility: z.nativeEnum(ClientVisibility),
     defaultLayoutId: IdSchema.nullable(),
     unknownAvatarDisplay: z.nativeEnum(UnknownAvatarDisplay),

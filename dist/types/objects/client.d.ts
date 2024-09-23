@@ -5,7 +5,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
 }, {
     username: z.ZodString;
     displayName: z.ZodString;
-    bio: z.ZodString;
+    bio: z.ZodNullable<z.ZodString>;
     visibility: z.ZodNativeEnum<typeof ClientVisibility>;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarDisplay: z.ZodNativeEnum<typeof UnknownAvatarDisplay>;
@@ -609,7 +609,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     visibility: ClientVisibility;
     username: string;
     displayName: string;
-    bio: string;
+    bio: string | null;
     defaultLayoutId: string | null;
     unknownAvatarDisplay: UnknownAvatarDisplay;
     unknownAvatarMessage: string | null;
@@ -735,7 +735,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     visibility: ClientVisibility;
     username: string;
     displayName: string;
-    bio: string;
+    bio: string | null;
     defaultLayoutId: string | null;
     unknownAvatarDisplay: UnknownAvatarDisplay;
     unknownAvatarMessage: string | null;
