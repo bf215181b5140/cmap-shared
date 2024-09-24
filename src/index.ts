@@ -1,5 +1,5 @@
 // ------------------------------ Enums ------------------------------ //
-export { ClientVisibility, ClientVisibilityOptions, OfflineDisplay, OfflineDisplayOptions, UnknownAvatarDisplay, UnknownAvatarDisplayOptions } from './types/enums/client';
+export { ClientVisibility, ClientVisibilityOptions } from './types/enums/client';
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
 // ------------------------------ Objects ------------------------------ //

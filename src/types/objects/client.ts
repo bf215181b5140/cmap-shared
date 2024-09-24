@@ -1,6 +1,6 @@
 import { BaseIdSchema, IdSchema } from '../shared';
 import { z } from 'zod';
-import { ClientVisibility, OfflineDisplay, UnknownAvatarDisplay } from '../enums/client';
+import { ClientVisibility } from '../enums/client';
 import { TierSchema } from './tier';
 import { LayoutSchema } from './layout';
 import { UploadedFileSchema } from './uploadedFile';
@@ -11,10 +11,8 @@ export const ClientSchema = BaseIdSchema.extend({
     displayName: z.string(),
     bio: z.string().nullable(),
     visibility: z.nativeEnum(ClientVisibility),
-    defaultLayoutId: IdSchema.nullable(),
-    unknownAvatarDisplay: z.nativeEnum(UnknownAvatarDisplay),
+    defaultLayoutId: IdSchema.min(0).nullable(),
     unknownAvatarMessage: z.string().nullable(),
-    offlineDisplay: z.nativeEnum(OfflineDisplay),
     offlineMessage: z.string().nullable(),
     image: UploadedFileSchema.nullable().optional(),
     tier: TierSchema.optional(),

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ClientVisibility, OfflineDisplay, UnknownAvatarDisplay } from '../enums/client';
+import { ClientVisibility } from '../enums/client';
 export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
@@ -8,9 +8,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     bio: z.ZodNullable<z.ZodString>;
     visibility: z.ZodNativeEnum<typeof ClientVisibility>;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
-    unknownAvatarDisplay: z.ZodNativeEnum<typeof UnknownAvatarDisplay>;
     unknownAvatarMessage: z.ZodNullable<z.ZodString>;
-    offlineDisplay: z.ZodNativeEnum<typeof OfflineDisplay>;
     offlineMessage: z.ZodNullable<z.ZodString>;
     image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
         id: z.ZodString;
@@ -611,9 +609,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     displayName: string;
     bio: string | null;
     defaultLayoutId: string | null;
-    unknownAvatarDisplay: UnknownAvatarDisplay;
     unknownAvatarMessage: string | null;
-    offlineDisplay: OfflineDisplay;
     offlineMessage: string | null;
     image?: {
         id: string;
@@ -737,9 +733,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     displayName: string;
     bio: string | null;
     defaultLayoutId: string | null;
-    unknownAvatarDisplay: UnknownAvatarDisplay;
     unknownAvatarMessage: string | null;
-    offlineDisplay: OfflineDisplay;
     offlineMessage: string | null;
     image?: {
         id: string;
