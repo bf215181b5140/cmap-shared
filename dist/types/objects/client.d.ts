@@ -5,11 +5,11 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
 }, {
     username: z.ZodString;
     displayName: z.ZodString;
-    bio: z.ZodNullable<z.ZodString>;
+    bio: z.ZodString;
     visibility: z.ZodNativeEnum<typeof ClientVisibility>;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
-    unknownAvatarMessage: z.ZodNullable<z.ZodString>;
-    offlineMessage: z.ZodNullable<z.ZodString>;
+    unknownAvatarMessage: z.ZodString;
+    offlineMessage: z.ZodString;
     image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
         id: z.ZodString;
         fileName: z.ZodString;
@@ -607,10 +607,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     visibility: ClientVisibility;
     username: string;
     displayName: string;
-    bio: string | null;
+    bio: string;
     defaultLayoutId: string | null;
-    unknownAvatarMessage: string | null;
-    offlineMessage: string | null;
+    unknownAvatarMessage: string;
+    offlineMessage: string;
     image?: {
         id: string;
         fileName: string;
@@ -731,10 +731,10 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     visibility: ClientVisibility;
     username: string;
     displayName: string;
-    bio: string | null;
+    bio: string;
     defaultLayoutId: string | null;
-    unknownAvatarMessage: string | null;
-    offlineMessage: string | null;
+    unknownAvatarMessage: string;
+    offlineMessage: string;
     image?: {
         id: string;
         fileName: string;
