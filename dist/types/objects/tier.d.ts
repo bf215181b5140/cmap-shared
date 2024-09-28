@@ -10,7 +10,7 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: z.ZodNumber;
     useCost: z.ZodBoolean;
     health: z.ZodBoolean;
-    callbacks: z.ZodNumber;
+    controlParameters: z.ZodNumber;
     stateBadges: z.ZodNumber;
     groups: z.ZodNumber;
     buttons: z.ZodNumber;
@@ -26,7 +26,7 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: number;
     useCost: boolean;
     health: boolean;
-    callbacks: number;
+    controlParameters: number;
     stateBadges: number;
 }, {
     groups: number;
@@ -40,7 +40,7 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: number;
     useCost: boolean;
     health: boolean;
-    callbacks: number;
+    controlParameters: number;
     stateBadges: number;
 }>;
 export type TierDTO = z.infer<typeof TierSchema>;

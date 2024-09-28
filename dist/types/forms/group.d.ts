@@ -7,6 +7,7 @@ export declare const GroupFormSchema: z.ZodObject<z.objectUtil.extendShape<{
     label: z.ZodString;
     order: z.ZodNumber;
     width: z.ZodNativeEnum<typeof SegmentWidth>;
+    visibilityParameters: z.ZodArray<z.ZodString, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }>, "strip", z.ZodTypeAny, {
     id: string | null;
@@ -14,6 +15,7 @@ export declare const GroupFormSchema: z.ZodObject<z.objectUtil.extendShape<{
     order: number;
     label: string;
     parentId: string;
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
@@ -21,6 +23,7 @@ export declare const GroupFormSchema: z.ZodObject<z.objectUtil.extendShape<{
     order: number;
     label: string;
     parentId: string;
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }>;
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;

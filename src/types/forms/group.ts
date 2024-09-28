@@ -6,7 +6,8 @@ export const GroupFormSchema = BaseFormSchema.extend({
     label: z.string().max(32),
     order: z.number(),
     width: z.nativeEnum(SegmentWidth),
-    interactionKeyId: IdSchema.nullable(),
+    visibilityParameters: z.array(IdSchema),
+    interactionKeyId: IdSchema.min(0).nullable(),
 });
 
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;

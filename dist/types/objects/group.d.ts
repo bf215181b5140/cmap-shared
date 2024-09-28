@@ -6,6 +6,26 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     label: z.ZodString;
     order: z.ZodNumber;
     width: z.ZodNativeEnum<typeof SegmentWidth>;
+    visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        id: z.ZodString;
+    }, {
+        label: z.ZodString;
+        path: z.ZodString;
+        value: z.ZodString;
+        seconds: z.ZodNumber;
+    }>, "strip", z.ZodTypeAny, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }>, "many">>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
     buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -31,7 +51,46 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
             fileName: string;
             urlPath: string;
         }>>>;
-        callbackId: z.ZodNullable<z.ZodString>;
+        callbackParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+            id: z.ZodString;
+        }, {
+            label: z.ZodString;
+            path: z.ZodString;
+            value: z.ZodString;
+            seconds: z.ZodNumber;
+        }>, "strip", z.ZodTypeAny, {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }, {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }>, "many">>;
+        visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+            id: z.ZodString;
+        }, {
+            label: z.ZodString;
+            path: z.ZodString;
+            value: z.ZodString;
+            seconds: z.ZodNumber;
+        }>, "strip", z.ZodTypeAny, {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }, {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }>, "many">>;
         interactionKeyId: z.ZodNullable<z.ZodString>;
     }>, "strip", z.ZodTypeAny, {
         id: string;
@@ -43,13 +102,26 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: number | null;
         valueAlt: string;
         buttonType: import("../..").ButtonType;
-        callbackId: string | null;
         interactionKeyId: string | null;
         image?: {
             id: string;
             fileName: string;
             urlPath: string;
         } | null | undefined;
+        callbackParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+        visibilityParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
     }, {
         id: string;
         imageOrientation: import("../..").ButtonImageOrientation;
@@ -60,13 +132,26 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: number | null;
         valueAlt: string;
         buttonType: import("../..").ButtonType;
-        callbackId: string | null;
         interactionKeyId: string | null;
         image?: {
             id: string;
             fileName: string;
             urlPath: string;
         } | null | undefined;
+        callbackParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+        visibilityParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
     }>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
@@ -84,13 +169,33 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: number | null;
         valueAlt: string;
         buttonType: import("../..").ButtonType;
-        callbackId: string | null;
         interactionKeyId: string | null;
         image?: {
             id: string;
             fileName: string;
             urlPath: string;
         } | null | undefined;
+        callbackParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+        visibilityParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+    }[] | undefined;
+    visibilityParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
     }[] | undefined;
 }, {
     id: string;
@@ -108,13 +213,33 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: number | null;
         valueAlt: string;
         buttonType: import("../..").ButtonType;
-        callbackId: string | null;
         interactionKeyId: string | null;
         image?: {
             id: string;
             fileName: string;
             urlPath: string;
         } | null | undefined;
+        callbackParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+        visibilityParameters?: {
+            id: string;
+            value: string;
+            label: string;
+            path: string;
+            seconds: number;
+        }[] | undefined;
+    }[] | undefined;
+    visibilityParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
     }[] | undefined;
 }>;
 export type GroupDTO = z.infer<typeof GroupSchema>;

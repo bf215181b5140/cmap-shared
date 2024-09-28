@@ -5,6 +5,8 @@ import { TierSchema } from './tier';
 import { LayoutSchema } from './layout';
 import { UploadedFileSchema } from './uploadedFile';
 import { InteractionKeySchema } from './interactionKey';
+import { BackgroundSchema } from './background';
+import { StyleSchema } from './style';
 
 export const ClientSchema = BaseIdSchema.extend({
     username: z.string(),
@@ -16,6 +18,8 @@ export const ClientSchema = BaseIdSchema.extend({
     offlineMessage: z.string(),
     image: UploadedFileSchema.nullable().optional(),
     tier: TierSchema.optional(),
+    backgroud: BackgroundSchema.optional(),
+    style: StyleSchema.optional(),
     layouts: z.array(LayoutSchema).optional(),
     interactionKeys: z.array(InteractionKeySchema).optional(),
 });

@@ -12,7 +12,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
-    callbackId: z.ZodNullable<z.ZodString>;
+    callbackParameters: z.ZodArray<z.ZodString, "many">;
+    visibilityParameters: z.ZodArray<z.ZodString, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }>, "strip", z.ZodTypeAny, {
     id: string | null;
@@ -25,7 +26,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
+    callbackParameters: string[];
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
@@ -38,7 +40,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
+    callbackParameters: string[];
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }>, {
     id: string | null;
@@ -51,7 +54,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
+    callbackParameters: string[];
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
@@ -64,7 +68,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
+    callbackParameters: string[];
+    visibilityParameters: string[];
     interactionKeyId: string | null;
 }>;
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;

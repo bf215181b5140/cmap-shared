@@ -5,10 +5,12 @@ const shared_1 = require("../shared");
 const zod_1 = require("zod");
 const button_1 = require("./button");
 const types_1 = require("../../react/types");
+const controlParameter_1 = require("./controlParameter");
 exports.GroupSchema = shared_1.BaseIdSchema.extend({
     label: zod_1.z.string(),
     order: zod_1.z.number(),
     width: zod_1.z.nativeEnum(types_1.SegmentWidth),
+    visibilityParameters: zod_1.z.array(controlParameter_1.ControlParameterSchema).optional(),
     interactionKeyId: zod_1.z.string().nullable(),
     buttons: zod_1.z.array(button_1.ButtonSchema).optional(),
 });

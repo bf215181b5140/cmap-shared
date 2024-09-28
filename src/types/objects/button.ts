@@ -2,6 +2,8 @@ import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
 import { ButtonImageOrientation, ButtonType } from '../enums/button';
 import { UploadedFileSchema } from './uploadedFile';
+import { ControlParameterSchema } from './controlParameter';
+import { InteractionKeySchema } from './interactionKey';
 
 export const ButtonSchema = BaseIdSchema.extend({
     label: z.string(),
@@ -13,7 +15,8 @@ export const ButtonSchema = BaseIdSchema.extend({
     order: z.number(),
     useCost: z.number().nullable(),
     image: UploadedFileSchema.nullable().optional(),
-    callbackId: z.string().nullable(),
+    callbackParameters: z.array(ControlParameterSchema).optional(),
+    visibilityParameters: z.array(ControlParameterSchema).optional(),
     interactionKeyId: z.string().nullable(),
 });
 

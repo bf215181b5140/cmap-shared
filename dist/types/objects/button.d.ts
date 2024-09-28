@@ -24,7 +24,46 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
         fileName: string;
         urlPath: string;
     }>>>;
-    callbackId: z.ZodNullable<z.ZodString>;
+    callbackParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        id: z.ZodString;
+    }, {
+        label: z.ZodString;
+        path: z.ZodString;
+        value: z.ZodString;
+        seconds: z.ZodNumber;
+    }>, "strip", z.ZodTypeAny, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }>, "many">>;
+    visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        id: z.ZodString;
+    }, {
+        label: z.ZodString;
+        path: z.ZodString;
+        value: z.ZodString;
+        seconds: z.ZodNumber;
+    }>, "strip", z.ZodTypeAny, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }, {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }>, "many">>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
@@ -36,13 +75,26 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
     interactionKeyId: string | null;
     image?: {
         id: string;
         fileName: string;
         urlPath: string;
     } | null | undefined;
+    callbackParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }[] | undefined;
+    visibilityParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }[] | undefined;
 }, {
     id: string;
     imageOrientation: ButtonImageOrientation;
@@ -53,12 +105,25 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCost: number | null;
     valueAlt: string;
     buttonType: ButtonType;
-    callbackId: string | null;
     interactionKeyId: string | null;
     image?: {
         id: string;
         fileName: string;
         urlPath: string;
     } | null | undefined;
+    callbackParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }[] | undefined;
+    visibilityParameters?: {
+        id: string;
+        value: string;
+        label: string;
+        path: string;
+        seconds: number;
+    }[] | undefined;
 }>;
 export type ButtonDTO = z.infer<typeof ButtonSchema>;

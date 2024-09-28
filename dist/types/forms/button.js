@@ -14,8 +14,9 @@ exports.ButtonFormSchema = shared_1.BaseFormSchema.extend({
     imageOrientation: zod_1.z.nativeEnum(button_1.ButtonImageOrientation),
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
-    callbackId: shared_1.IdSchema.nullable(),
-    interactionKeyId: shared_1.IdSchema.nullable(),
+    callbackParameters: zod_1.z.array(shared_1.IdSchema).max(4),
+    visibilityParameters: zod_1.z.array(shared_1.IdSchema).max(10),
+    interactionKeyId: shared_1.IdSchema.min(0).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement
     if ((val.buttonType === button_1.ButtonType.Slider || val.buttonType === button_1.ButtonType.Toggle) && (!val.valueAlt || val.valueAlt === '')) {

@@ -6,7 +6,7 @@ export { StateBadgeType } from './types/enums/stateBadge';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';
-export { CallbackDTO, CallbackSchema } from './types/objects/callback';
+export { ControlParameterDTO, ControlParameterSchema } from './types/objects/controlParameter';
 export { GroupDTO, GroupSchema } from './types/objects/group';
 export { InteractionKeyDTO, InteractionKeySchema } from './types/objects/interactionKey';
 export { LayoutDTO, LayoutSchema } from './types/objects/layout';
@@ -19,7 +19,7 @@ export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFil
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
 // ------------------------------ Forms ------------------------------ //
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
-export { CallbackFormDTO, CallbackFormSchema } from './types/forms/callback';
+export { ControlParameterFormDTO, ControlParameterFormSchema } from './types/forms/controlParameter';
 export { ProfileFormDTO, ProfileFormSchema } from './types/forms/profile';
 export { GroupFormDTO, GroupFormSchema } from './types/forms/group';
 export { InteractionKeyFormDTO, InteractionKeyFormSchema } from './types/forms/interactionKey';

@@ -12,8 +12,9 @@ export const ButtonFormSchema = BaseFormSchema.extend({
     imageOrientation: z.nativeEnum(ButtonImageOrientation),
     order: z.number(),
     useCost: z.number().nullable(),
-    callbackId: IdSchema.nullable(),
-    interactionKeyId: IdSchema.nullable(),
+    callbackParameters: z.array(IdSchema).max(4),
+    visibilityParameters: z.array(IdSchema).max(10),
+    interactionKeyId: IdSchema.min(0).nullable(),
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement
     if ((val.buttonType === ButtonType.Slider || val.buttonType === ButtonType.Toggle) && (!val.valueAlt || val.valueAlt === '')) {

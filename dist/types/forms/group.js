@@ -8,5 +8,6 @@ exports.GroupFormSchema = shared_1.BaseFormSchema.extend({
     label: zod_1.z.string().max(32),
     order: zod_1.z.number(),
     width: zod_1.z.nativeEnum(types_1.SegmentWidth),
-    interactionKeyId: shared_1.IdSchema.nullable(),
+    visibilityParameters: zod_1.z.array(shared_1.IdSchema),
+    interactionKeyId: shared_1.IdSchema.min(0).nullable(),
 });

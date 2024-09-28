@@ -8,6 +8,8 @@ const tier_1 = require("./tier");
 const layout_1 = require("./layout");
 const uploadedFile_1 = require("./uploadedFile");
 const interactionKey_1 = require("./interactionKey");
+const background_1 = require("./background");
+const style_1 = require("./style");
 exports.ClientSchema = shared_1.BaseIdSchema.extend({
     username: zod_1.z.string(),
     displayName: zod_1.z.string(),
@@ -18,6 +20,8 @@ exports.ClientSchema = shared_1.BaseIdSchema.extend({
     offlineMessage: zod_1.z.string(),
     image: uploadedFile_1.UploadedFileSchema.nullable().optional(),
     tier: tier_1.TierSchema.optional(),
+    backgroud: background_1.BackgroundSchema.optional(),
+    style: style_1.StyleSchema.optional(),
     layouts: zod_1.z.array(layout_1.LayoutSchema).optional(),
     interactionKeys: zod_1.z.array(interactionKey_1.InteractionKeySchema).optional(),
 });

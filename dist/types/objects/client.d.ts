@@ -34,7 +34,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        callbacks: z.ZodNumber;
+        controlParameters: z.ZodNumber;
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -50,7 +50,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callbacks: number;
+        controlParameters: number;
         stateBadges: number;
     }, {
         groups: number;
@@ -64,182 +64,182 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callbacks: number;
+        controlParameters: number;
         stateBadges: number;
+    }>>;
+    backgroud: z.ZodOptional<z.ZodObject<{
+        id: z.ZodString;
+        label: z.ZodString;
+        tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
+            id: z.ZodString;
+        }, {
+            rank: z.ZodNumber;
+            label: z.ZodString;
+            color: z.ZodString;
+            interactionKeys: z.ZodNumber;
+            layouts: z.ZodNumber;
+            avatars: z.ZodNumber;
+            useCost: z.ZodBoolean;
+            health: z.ZodBoolean;
+            controlParameters: z.ZodNumber;
+            stateBadges: z.ZodNumber;
+            groups: z.ZodNumber;
+            buttons: z.ZodNumber;
+        }>, "strip", z.ZodTypeAny, {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        }, {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        }>>;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    }, {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    }>>;
+    style: z.ZodOptional<z.ZodObject<{
+        id: z.ZodString;
+        label: z.ZodString;
+        tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
+            id: z.ZodString;
+        }, {
+            rank: z.ZodNumber;
+            label: z.ZodString;
+            color: z.ZodString;
+            interactionKeys: z.ZodNumber;
+            layouts: z.ZodNumber;
+            avatars: z.ZodNumber;
+            useCost: z.ZodBoolean;
+            health: z.ZodBoolean;
+            controlParameters: z.ZodNumber;
+            stateBadges: z.ZodNumber;
+            groups: z.ZodNumber;
+            buttons: z.ZodNumber;
+        }>, "strip", z.ZodTypeAny, {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        }, {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        }>>;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    }, {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
     }>>;
     layouts: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
         label: z.ZodString;
         avatars: z.ZodArray<z.ZodString, "many">;
-        backgroud: z.ZodOptional<z.ZodObject<{
-            id: z.ZodString;
-            label: z.ZodString;
-            tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
-                id: z.ZodString;
-            }, {
-                rank: z.ZodNumber;
-                label: z.ZodString;
-                color: z.ZodString;
-                interactionKeys: z.ZodNumber;
-                layouts: z.ZodNumber;
-                avatars: z.ZodNumber;
-                useCost: z.ZodBoolean;
-                health: z.ZodBoolean;
-                callbacks: z.ZodNumber;
-                stateBadges: z.ZodNumber;
-                groups: z.ZodNumber;
-                buttons: z.ZodNumber;
-            }>, "strip", z.ZodTypeAny, {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            }, {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        }, {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        }>>;
-        style: z.ZodOptional<z.ZodObject<{
-            id: z.ZodString;
-            label: z.ZodString;
-            tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
-                id: z.ZodString;
-            }, {
-                rank: z.ZodNumber;
-                label: z.ZodString;
-                color: z.ZodString;
-                interactionKeys: z.ZodNumber;
-                layouts: z.ZodNumber;
-                avatars: z.ZodNumber;
-                useCost: z.ZodBoolean;
-                health: z.ZodBoolean;
-                callbacks: z.ZodNumber;
-                stateBadges: z.ZodNumber;
-                groups: z.ZodNumber;
-                buttons: z.ZodNumber;
-            }>, "strip", z.ZodTypeAny, {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            }, {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        }, {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        }>>;
         healthEnabled: z.ZodBoolean;
         healthPath: z.ZodNullable<z.ZodString>;
         healthMax: z.ZodNullable<z.ZodNumber>;
@@ -252,6 +252,26 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: z.ZodString;
             order: z.ZodNumber;
             width: z.ZodNativeEnum<typeof import("../..").SegmentWidth>;
+            visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+                id: z.ZodString;
+            }, {
+                label: z.ZodString;
+                path: z.ZodString;
+                value: z.ZodString;
+                seconds: z.ZodNumber;
+            }>, "strip", z.ZodTypeAny, {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
+            }, {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
+            }>, "many">>;
             interactionKeyId: z.ZodNullable<z.ZodString>;
             buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
                 id: z.ZodString;
@@ -277,7 +297,46 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                     fileName: string;
                     urlPath: string;
                 }>>>;
-                callbackId: z.ZodNullable<z.ZodString>;
+                callbackParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+                    id: z.ZodString;
+                }, {
+                    label: z.ZodString;
+                    path: z.ZodString;
+                    value: z.ZodString;
+                    seconds: z.ZodNumber;
+                }>, "strip", z.ZodTypeAny, {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }, {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }>, "many">>;
+                visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+                    id: z.ZodString;
+                }, {
+                    label: z.ZodString;
+                    path: z.ZodString;
+                    value: z.ZodString;
+                    seconds: z.ZodNumber;
+                }>, "strip", z.ZodTypeAny, {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }, {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }>, "many">>;
                 interactionKeyId: z.ZodNullable<z.ZodString>;
             }>, "strip", z.ZodTypeAny, {
                 id: string;
@@ -289,13 +348,26 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
             }, {
                 id: string;
                 imageOrientation: import("../..").ButtonImageOrientation;
@@ -306,13 +378,26 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
             }>, "many">>;
         }>, "strip", z.ZodTypeAny, {
             id: string;
@@ -330,13 +415,33 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }, {
             id: string;
@@ -354,16 +459,36 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }>, "many">>;
-        callbacks: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        controlParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
             label: z.ZodString;
@@ -435,35 +560,36 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }[] | undefined;
-        style?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
-        callbacks?: {
+        controlParameters?: {
             id: string;
             value: string;
             label: string;
@@ -479,25 +605,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             icon: string;
         }[] | undefined;
-        backgroud?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
     }, {
         id: string;
         label: string;
@@ -524,35 +631,36 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }[] | undefined;
-        style?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
-        callbacks?: {
+        controlParameters?: {
             id: string;
             value: string;
             label: string;
@@ -568,25 +676,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             icon: string;
         }[] | undefined;
-        backgroud?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
     }>, "many">>;
     interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -611,6 +700,25 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
+    style?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    } | undefined;
     image?: {
         id: string;
         fileName: string;
@@ -647,35 +755,36 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }[] | undefined;
-        style?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
-        callbacks?: {
+        controlParameters?: {
             id: string;
             value: string;
             label: string;
@@ -691,25 +800,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             icon: string;
         }[] | undefined;
-        backgroud?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -723,8 +813,27 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callbacks: number;
+        controlParameters: number;
         stateBadges: number;
+    } | undefined;
+    backgroud?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
     } | undefined;
 }, {
     id: string;
@@ -735,6 +844,25 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
+    style?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    } | undefined;
     image?: {
         id: string;
         fileName: string;
@@ -771,35 +899,36 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 useCost: number | null;
                 valueAlt: string;
                 buttonType: import("../..").ButtonType;
-                callbackId: string | null;
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
                     urlPath: string;
                 } | null | undefined;
+                callbackParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+                visibilityParameters?: {
+                    id: string;
+                    value: string;
+                    label: string;
+                    path: string;
+                    seconds: number;
+                }[] | undefined;
+            }[] | undefined;
+            visibilityParameters?: {
+                id: string;
+                value: string;
+                label: string;
+                path: string;
+                seconds: number;
             }[] | undefined;
         }[] | undefined;
-        style?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
-        callbacks?: {
+        controlParameters?: {
             id: string;
             value: string;
             label: string;
@@ -815,25 +944,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             icon: string;
         }[] | undefined;
-        backgroud?: {
-            id: string;
-            label: string;
-            tier?: {
-                groups: number;
-                id: string;
-                buttons: number;
-                color: string;
-                label: string;
-                rank: number;
-                interactionKeys: number;
-                layouts: number;
-                avatars: number;
-                useCost: boolean;
-                health: boolean;
-                callbacks: number;
-                stateBadges: number;
-            } | undefined;
-        } | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -847,8 +957,27 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        callbacks: number;
+        controlParameters: number;
         stateBadges: number;
+    } | undefined;
+    backgroud?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
     } | undefined;
 }>;
 export type ClientDTO = z.infer<typeof ClientSchema>;
