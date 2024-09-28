@@ -20,7 +20,7 @@ exports.ClientSchema = shared_1.BaseIdSchema.extend({
     offlineMessage: zod_1.z.string(),
     image: uploadedFile_1.UploadedFileSchema.nullable().optional(),
     tier: tier_1.TierSchema.optional(),
-    backgroud: background_1.BackgroundSchema.optional(),
+    background: background_1.BackgroundSchema.optional(),
     style: style_1.StyleSchema.optional(),
     layouts: zod_1.z.array(layout_1.LayoutSchema).optional(),
     interactionKeys: zod_1.z.array(interactionKey_1.InteractionKeySchema).optional(),

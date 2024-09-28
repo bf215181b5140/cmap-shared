@@ -18,7 +18,7 @@ export const ClientSchema = BaseIdSchema.extend({
     offlineMessage: z.string(),
     image: UploadedFileSchema.nullable().optional(),
     tier: TierSchema.optional(),
-    backgroud: BackgroundSchema.optional(),
+    background: BackgroundSchema.optional(),
     style: StyleSchema.optional(),
     layouts: z.array(LayoutSchema).optional(),
     interactionKeys: z.array(InteractionKeySchema).optional(),

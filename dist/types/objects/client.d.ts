@@ -67,7 +67,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         controlParameters: number;
         stateBadges: number;
     }>>;
-    backgroud: z.ZodOptional<z.ZodObject<{
+    background: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
@@ -700,6 +700,25 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
+    background?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    } | undefined;
     style?: {
         id: string;
         label: string;
@@ -815,25 +834,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-    } | undefined;
-    backgroud?: {
-        id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            buttons: number;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            avatars: number;
-            useCost: boolean;
-            health: boolean;
-            controlParameters: number;
-            stateBadges: number;
-        } | undefined;
     } | undefined;
 }, {
     id: string;
@@ -844,6 +844,25 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
+    background?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            controlParameters: number;
+            stateBadges: number;
+        } | undefined;
+    } | undefined;
     style?: {
         id: string;
         label: string;
@@ -959,25 +978,6 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-    } | undefined;
-    backgroud?: {
-        id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            buttons: number;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            avatars: number;
-            useCost: boolean;
-            health: boolean;
-            controlParameters: number;
-            stateBadges: number;
-        } | undefined;
     } | undefined;
 }>;
 export type ClientDTO = z.infer<typeof ClientSchema>;
