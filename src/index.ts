@@ -20,7 +20,7 @@ export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, Cl
 // ------------------------------ API ------------------------------ //
 export { GetProfileDTO, GetProfileSchema } from './types/api/profile/profile';
 export { PostBasicInfoDTO, PostBasicInfoSchema } from './types/api/profile/basicInfo/basicInfo';
-export { PostInteractionKeysDTO, PostInteractionKeysSchema } from './types/api/profile/interactionKeys/interactionKeys';
+export { PostInteractionKeysDTO, PostInteractionKeysSchema, PostInteractionKeysResultSchema, PostInteractionKeysResulDTO } from './types/api/profile/interactionKeys/interactionKeys';
 export { GetBackgroundDTO, GetBackgroundSchema, PostBackgroundDTO, PostBackgroundSchema } from './types/api/profile/background/background';
 export { GetStyleDTO, GetStyleSchema, PostStyleDTO, PostStyleSchema } from './types/api/profile/style/style';
 // ------------------------------ Forms ------------------------------ //
