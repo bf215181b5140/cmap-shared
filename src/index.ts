@@ -29,6 +29,7 @@ export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
 
 export { TiersPageSchema, TiersPageDTO } from './types/api/tiers/tiers';
 export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './types/api/tiers/useAccountKey/useAccountKey';
+export { GeneratedAccountKeySchema, GeneratedAccountKeyDTO } from './types/api/tiers/generateAccountKey/generateAccountKey';
 // ------------------------------ Forms ------------------------------ //
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './types/forms/controlParameter';
