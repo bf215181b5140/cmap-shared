@@ -7,5 +7,9 @@ const accountKey_1 = require("../../objects/accountKey");
 exports.TiersPageSchema = zod_1.z.object({
     tiers: zod_1.z.array(tier_1.TierSchema),
     clientTier: tier_1.TierSchema,
-    accountKeys: zod_1.z.array(accountKey_1.AccountKeySchema),
+    generatedKeys: zod_1.z.array(accountKey_1.AccountKeySchema.required({
+        tier: true
+    }).extend({
+        used: zod_1.z.boolean(),
+    })),
 });

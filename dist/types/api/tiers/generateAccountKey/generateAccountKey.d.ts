@@ -1,9 +1,8 @@
 import { z } from 'zod';
-export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
-    id: z.ZodString;
-}, {
+export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
     key: z.ZodString;
-    tier: z.ZodOptional<z.ZodNullable<z.ZodObject<z.objectUtil.extendShape<{
+    id: z.ZodString;
+    tier: z.ZodNullable<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
         rank: z.ZodNumber;
@@ -46,11 +45,13 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-    }>>>;
+    }>>;
+}, {
+    used: z.ZodBoolean;
 }>, "strip", z.ZodTypeAny, {
     key: string;
     id: string;
-    tier?: {
+    tier: {
         groups: number;
         id: string;
         buttons: number;
@@ -64,11 +65,12 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-    } | null | undefined;
+    } | null;
+    used: boolean;
 }, {
     key: string;
     id: string;
-    tier?: {
+    tier: {
         groups: number;
         id: string;
         buttons: number;
@@ -82,6 +84,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-    } | null | undefined;
+    } | null;
+    used: boolean;
 }>;
-export type AccountKeyDTO = z.infer<typeof AccountKeySchema>;
+export type GeneratedAccountKeyDTO = z.infer<typeof GeneratedAccountKeySchema>;

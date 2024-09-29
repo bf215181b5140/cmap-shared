@@ -88,11 +88,10 @@ export declare const TiersPageSchema: z.ZodObject<{
         controlParameters: number;
         stateBadges: number;
     }>;
-    accountKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
-        id: z.ZodString;
-    }, {
+    generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         key: z.ZodString;
-        tier: z.ZodOptional<z.ZodNullable<z.ZodObject<z.objectUtil.extendShape<{
+        id: z.ZodString;
+        tier: z.ZodNullable<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
             rank: z.ZodNumber;
@@ -135,13 +134,13 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        }>>>;
+        }>>;
+    }, {
         used: z.ZodBoolean;
     }>, "strip", z.ZodTypeAny, {
         key: string;
         id: string;
-        used: boolean;
-        tier?: {
+        tier: {
             groups: number;
             id: string;
             buttons: number;
@@ -155,12 +154,12 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null | undefined;
+        } | null;
+        used: boolean;
     }, {
         key: string;
         id: string;
-        used: boolean;
-        tier?: {
+        tier: {
             groups: number;
             id: string;
             buttons: number;
@@ -174,7 +173,8 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null | undefined;
+        } | null;
+        used: boolean;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     tiers: {
@@ -207,11 +207,10 @@ export declare const TiersPageSchema: z.ZodObject<{
         controlParameters: number;
         stateBadges: number;
     };
-    accountKeys: {
+    generatedKeys: {
         key: string;
         id: string;
-        used: boolean;
-        tier?: {
+        tier: {
             groups: number;
             id: string;
             buttons: number;
@@ -225,7 +224,8 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null | undefined;
+        } | null;
+        used: boolean;
     }[];
 }, {
     tiers: {
@@ -258,11 +258,10 @@ export declare const TiersPageSchema: z.ZodObject<{
         controlParameters: number;
         stateBadges: number;
     };
-    accountKeys: {
+    generatedKeys: {
         key: string;
         id: string;
-        used: boolean;
-        tier?: {
+        tier: {
             groups: number;
             id: string;
             buttons: number;
@@ -276,7 +275,8 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null | undefined;
+        } | null;
+        used: boolean;
     }[];
 }>;
 export type TiersPageDTO = z.infer<typeof TiersPageSchema>;

@@ -5,7 +5,11 @@ import { AccountKeySchema } from '../../objects/accountKey';
 export const TiersPageSchema = z.object({
     tiers: z.array(TierSchema),
     clientTier: TierSchema,
-    accountKeys: z.array(AccountKeySchema),
+    generatedKeys: z.array(AccountKeySchema.required({
+        tier: true
+    }).extend({
+        used: z.boolean(),
+    })),
 });
 
 export type TiersPageDTO = z.infer<typeof TiersPageSchema>;

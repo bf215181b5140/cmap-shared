@@ -7,5 +7,4 @@ const tier_1 = require("./tier");
 exports.AccountKeySchema = shared_1.BaseIdSchema.extend({
     key: zod_1.z.string(),
     tier: tier_1.TierSchema.nullable().optional(),
-    used: zod_1.z.boolean(),
 });
