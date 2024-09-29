@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.UsedButtonSchema = exports.ApproveFilesPageSchema = exports.LayoutPageSchema = exports.TiersPageSchema = exports.RegisterInfoSchema = exports.LoginTokenSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.LoginFormSchema = exports.ClientStateParameterFormSchema = exports.OrderFormSchema = exports.UploadFileFormSchema = exports.UpdatesFormSchema = exports.StateBadgeFormSchema = exports.UseCostFormSchema = exports.HealthFormSchema = exports.StyleFormSchema = exports.BackgroundFormSchema = exports.LayoutFormSchema = exports.InteractionKeyFormSchema = exports.GroupFormSchema = exports.ProfileFormSchema = exports.ControlParameterFormSchema = exports.ButtonFormSchema = exports.ClientStateSchema = exports.ClientStateParameterSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.StyleSchema = exports.StateBadgeSchema = exports.RegistrationKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ControlParameterSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.StateBadgeType = exports.ButtonType = exports.ButtonImageOrientation = exports.ClientVisibilityOptions = exports.ClientVisibility = void 0;
-exports.SegmentWidth = exports.theme = exports.convertParameterValueFromString = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = void 0;
+exports.ApproveFilesPageSchema = exports.LayoutPageSchema = exports.TiersPageSchema = exports.RegisterInfoSchema = exports.LoginTokenSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.LoginFormSchema = exports.ClientStateParameterFormSchema = exports.OrderFormSchema = exports.UploadFileFormSchema = exports.UpdatesFormSchema = exports.StateBadgeFormSchema = exports.UseCostFormSchema = exports.HealthFormSchema = exports.StyleFormSchema = exports.BackgroundFormSchema = exports.LayoutFormSchema = exports.InteractionKeyFormSchema = exports.GroupFormSchema = exports.ProfileFormSchema = exports.ControlParameterFormSchema = exports.ButtonFormSchema = exports.PostStyleSchema = exports.GetStyleSchema = exports.PostBackgroundSchema = exports.GetBackgroundSchema = exports.PostInteractionKeysSchema = exports.PostBasicInfoSchema = exports.GetProfileSchema = exports.ClientStateSchema = exports.ClientStateParameterSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.StyleSchema = exports.StateBadgeSchema = exports.RegistrationKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ControlParameterSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.StateBadgeType = exports.ButtonType = exports.ButtonImageOrientation = exports.ClientVisibilityOptions = exports.ClientVisibility = void 0;
+exports.SegmentWidth = exports.theme = exports.convertParameterValueFromString = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.UsedButtonSchema = void 0;
 // ------------------------------ Enums ------------------------------ //
 var client_1 = require("./types/enums/client");
 Object.defineProperty(exports, "ClientVisibility", { enumerable: true, get: function () { return client_1.ClientVisibility; } });
@@ -41,23 +41,36 @@ Object.defineProperty(exports, "UploadedFileSchema", { enumerable: true, get: fu
 var clientState_1 = require("./types/objects/clientState");
 Object.defineProperty(exports, "ClientStateParameterSchema", { enumerable: true, get: function () { return clientState_1.ClientStateParameterSchema; } });
 Object.defineProperty(exports, "ClientStateSchema", { enumerable: true, get: function () { return clientState_1.ClientStateSchema; } });
+// ------------------------------ API ------------------------------ //
+var profile_1 = require("./types/api/profile/profile");
+Object.defineProperty(exports, "GetProfileSchema", { enumerable: true, get: function () { return profile_1.GetProfileSchema; } });
+var basicInfo_1 = require("./types/api/profile/basicInfo/basicInfo");
+Object.defineProperty(exports, "PostBasicInfoSchema", { enumerable: true, get: function () { return basicInfo_1.PostBasicInfoSchema; } });
+var interactionKeys_1 = require("./types/api/profile/interactionKeys/interactionKeys");
+Object.defineProperty(exports, "PostInteractionKeysSchema", { enumerable: true, get: function () { return interactionKeys_1.PostInteractionKeysSchema; } });
+var background_2 = require("./types/api/profile/background/background");
+Object.defineProperty(exports, "GetBackgroundSchema", { enumerable: true, get: function () { return background_2.GetBackgroundSchema; } });
+Object.defineProperty(exports, "PostBackgroundSchema", { enumerable: true, get: function () { return background_2.PostBackgroundSchema; } });
+var style_2 = require("./types/api/profile/style/style");
+Object.defineProperty(exports, "GetStyleSchema", { enumerable: true, get: function () { return style_2.GetStyleSchema; } });
+Object.defineProperty(exports, "PostStyleSchema", { enumerable: true, get: function () { return style_2.PostStyleSchema; } });
 // ------------------------------ Forms ------------------------------ //
 var button_3 = require("./types/forms/button");
 Object.defineProperty(exports, "ButtonFormSchema", { enumerable: true, get: function () { return button_3.ButtonFormSchema; } });
 var controlParameter_2 = require("./types/forms/controlParameter");
 Object.defineProperty(exports, "ControlParameterFormSchema", { enumerable: true, get: function () { return controlParameter_2.ControlParameterFormSchema; } });
-var profile_1 = require("./types/forms/profile");
-Object.defineProperty(exports, "ProfileFormSchema", { enumerable: true, get: function () { return profile_1.ProfileFormSchema; } });
+var profile_2 = require("./types/forms/profile");
+Object.defineProperty(exports, "ProfileFormSchema", { enumerable: true, get: function () { return profile_2.ProfileFormSchema; } });
 var group_2 = require("./types/forms/group");
 Object.defineProperty(exports, "GroupFormSchema", { enumerable: true, get: function () { return group_2.GroupFormSchema; } });
 var interactionKey_2 = require("./types/forms/interactionKey");
 Object.defineProperty(exports, "InteractionKeyFormSchema", { enumerable: true, get: function () { return interactionKey_2.InteractionKeyFormSchema; } });
 var layout_2 = require("./types/forms/layout");
 Object.defineProperty(exports, "LayoutFormSchema", { enumerable: true, get: function () { return layout_2.LayoutFormSchema; } });
-var background_2 = require("./types/forms/background");
-Object.defineProperty(exports, "BackgroundFormSchema", { enumerable: true, get: function () { return background_2.BackgroundFormSchema; } });
-var style_2 = require("./types/forms/style");
-Object.defineProperty(exports, "StyleFormSchema", { enumerable: true, get: function () { return style_2.StyleFormSchema; } });
+var background_3 = require("./types/forms/background");
+Object.defineProperty(exports, "BackgroundFormSchema", { enumerable: true, get: function () { return background_3.BackgroundFormSchema; } });
+var style_3 = require("./types/forms/style");
+Object.defineProperty(exports, "StyleFormSchema", { enumerable: true, get: function () { return style_3.StyleFormSchema; } });
 var health_1 = require("./types/forms/health");
 Object.defineProperty(exports, "HealthFormSchema", { enumerable: true, get: function () { return health_1.HealthFormSchema; } });
 var useCost_1 = require("./types/forms/useCost");
