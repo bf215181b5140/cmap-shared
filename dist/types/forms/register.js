@@ -23,5 +23,5 @@ exports.RegisterFormSchema = zod_1.z.object({
     }
 });
 exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema.and(zod_1.z.object({
-    registrationKey: zod_1.z.string().max(32),
+    accountKey: zod_1.z.string().max(32),
 }));

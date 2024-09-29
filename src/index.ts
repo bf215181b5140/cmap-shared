@@ -10,7 +10,7 @@ export { ControlParameterDTO, ControlParameterSchema } from './types/objects/con
 export { GroupDTO, GroupSchema } from './types/objects/group';
 export { InteractionKeyDTO, InteractionKeySchema } from './types/objects/interactionKey';
 export { LayoutDTO, LayoutSchema } from './types/objects/layout';
-export { RegistrationKeyDTO, RegistrationKeySchema } from './types/objects/registrationKey';
+export { AccountKeyDTO, AccountKeySchema } from './types/objects/accountKey';
 export { StateBadgeDTO, StateBadgeSchema } from './types/objects/stateBadge';
 export { StyleDTO, StyleSchema } from './types/objects/style';
 export { TierDTO, TierSchema } from './types/objects/tier';
@@ -21,11 +21,14 @@ export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, Cl
 export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
 export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';
 
-export { ProfileSchema, ProfileDTO } from './types/api/profile/profile';
+export { ProfilePageSchema, ProfilePageDTO } from './types/api/profile/profile';
 export { BasicInfoFormSchema, BasicInfoFormDTO } from './types/api/profile/basicInfo/basicInfo';
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './types/api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './types/api/profile/background/background';
 export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
+
+export { TiersPageSchema, TiersPageDTO } from './types/api/tiers/tiers';
+export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './types/api/tiers/useAccountKey/useAccountKey';
 // ------------------------------ Forms ------------------------------ //
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './types/forms/controlParameter';
@@ -40,7 +43,6 @@ export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedF
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
 export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
 // ------------------------------ Pages ------------------------------ //
-export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';
 // ------------------------------ Website ------------------------------ //
