@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const GetStyleSchema: z.ZodArray<z.ZodObject<{
+export declare const StylesSchema: z.ZodArray<z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
     tier: z.ZodObject<z.objectUtil.extendShape<{
@@ -83,12 +83,4 @@ export declare const GetStyleSchema: z.ZodArray<z.ZodObject<{
         stateBadges: number;
     };
 }>, "many">;
-export type GetStyleDTO = z.infer<typeof GetStyleSchema>;
-export declare const PostStyleSchema: z.ZodObject<{
-    id: z.ZodString;
-}, "strip", z.ZodTypeAny, {
-    id: string;
-}, {
-    id: string;
-}>;
-export type PostStyleDTO = z.infer<typeof PostStyleSchema>;
+export type StylesDTO = z.infer<typeof StylesSchema>;

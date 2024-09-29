@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostBasicInfoSchema = void 0;
+exports.BasicInfoFormSchema = void 0;
 const shared_1 = require("../../../shared");
 const zod_1 = require("zod");
 const client_1 = require("../../../enums/client");
-exports.PostBasicInfoSchema = zod_1.z.object({
+exports.BasicInfoFormSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(32),
     bio: zod_1.z.string().max(1000),
     visibility: zod_1.z.nativeEnum(client_1.ClientVisibility),

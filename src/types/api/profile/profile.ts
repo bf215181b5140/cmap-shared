@@ -1,7 +1,7 @@
 import { ClientSchema } from '../../objects/client';
 import { z } from 'zod';
 
-export const GetProfileSchema = ClientSchema.required({
+export const ProfileSchema = ClientSchema.required({
     image: true,
     tier: true,
     background: true,
@@ -10,4 +10,4 @@ export const GetProfileSchema = ClientSchema.required({
     interactionKeys: true,
 });
 
-export type GetProfileDTO = z.infer<typeof GetProfileSchema>;
+export type ProfileDTO = z.infer<typeof ProfileSchema>;

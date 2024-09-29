@@ -18,11 +18,14 @@ export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
 // ------------------------------ API ------------------------------ //
-export { GetProfileDTO, GetProfileSchema } from './types/api/profile/profile';
-export { PostBasicInfoDTO, PostBasicInfoSchema } from './types/api/profile/basicInfo/basicInfo';
-export { PostInteractionKeysDTO, PostInteractionKeysSchema, PostInteractionKeysResultSchema, PostInteractionKeysResulDTO } from './types/api/profile/interactionKeys/interactionKeys';
-export { GetBackgroundDTO, GetBackgroundSchema, PostBackgroundDTO, PostBackgroundSchema } from './types/api/profile/background/background';
-export { GetStyleDTO, GetStyleSchema, PostStyleDTO, PostStyleSchema } from './types/api/profile/style/style';
+export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
+export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';
+
+export { ProfileSchema, ProfileDTO } from './types/api/profile/profile';
+export { BasicInfoFormSchema, BasicInfoFormDTO } from './types/api/profile/basicInfo/basicInfo';
+export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './types/api/profile/interactionKeys/interactionKeys';
+export { BackgroundsSchema, BackgroundsDTO } from './types/api/profile/background/background';
+export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
 // ------------------------------ Forms ------------------------------ //
 export { ButtonFormDTO, ButtonFormSchema } from './types/forms/button';
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './types/forms/controlParameter';
@@ -39,11 +42,7 @@ export { UpdatesFormDTO, UpdatesFormSchema } from './types/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
 export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
-export { LoginFormSchema, LoginFormDTO } from './types/forms/login';
-export { RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/forms/register';
 // ------------------------------ Pages ------------------------------ //
-export { LoginTokenDTO, LoginTokenSchema } from './types/pages/login';
-export { RegisterInfoDTO, RegisterInfoSchema } from './types/pages/register';
 export { TiersPageDTO, TiersPageSchema } from './types/pages/tiers';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';

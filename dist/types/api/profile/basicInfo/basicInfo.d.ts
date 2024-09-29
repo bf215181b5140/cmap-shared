@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { ClientVisibility } from '../../../enums/client';
-export declare const PostBasicInfoSchema: z.ZodObject<{
+export declare const BasicInfoFormSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
     visibility: z.ZodNativeEnum<typeof ClientVisibility>;
@@ -22,4 +22,4 @@ export declare const PostBasicInfoSchema: z.ZodObject<{
     unknownAvatarMessage: string;
     offlineMessage: string;
 }>;
-export type PostBasicInfoDTO = z.infer<typeof PostBasicInfoSchema>;
+export type BasicInfoFormDTO = z.infer<typeof BasicInfoFormSchema>;

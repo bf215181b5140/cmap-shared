@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const GetBackgroundSchema: z.ZodArray<z.ZodObject<{
+export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
     tier: z.ZodObject<z.objectUtil.extendShape<{
@@ -83,12 +83,4 @@ export declare const GetBackgroundSchema: z.ZodArray<z.ZodObject<{
         stateBadges: number;
     };
 }>, "many">;
-export type GetBackgroundDTO = z.infer<typeof GetBackgroundSchema>;
-export declare const PostBackgroundSchema: z.ZodObject<{
-    id: z.ZodString;
-}, "strip", z.ZodTypeAny, {
-    id: string;
-}, {
-    id: string;
-}>;
-export type PostBackgroundDTO = z.infer<typeof PostBackgroundSchema>;
+export type BackgroundsDTO = z.infer<typeof BackgroundsSchema>;

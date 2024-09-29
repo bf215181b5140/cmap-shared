@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const GetProfileSchema: z.ZodObject<{
+export declare const ProfileSchema: z.ZodObject<{
     id: z.ZodString;
     background: z.ZodObject<{
         id: z.ZodString;
@@ -978,4 +978,4 @@ export declare const GetProfileSchema: z.ZodObject<{
     unknownAvatarMessage: string;
     offlineMessage: string;
 }>;
-export type GetProfileDTO = z.infer<typeof GetProfileSchema>;
+export type ProfileDTO = z.infer<typeof ProfileSchema>;
