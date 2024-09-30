@@ -4,7 +4,7 @@ import { TierSchema } from './tier';
 
 export const AccountKeySchema = BaseIdSchema.extend({
     key: z.string(),
-    tier: TierSchema.nullable().optional(),
+    tier: TierSchema.optional(),
 });
 
 export type AccountKeyDTO = z.infer<typeof AccountKeySchema>;

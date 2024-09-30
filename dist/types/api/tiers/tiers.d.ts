@@ -91,7 +91,7 @@ export declare const TiersPageSchema: z.ZodObject<{
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         key: z.ZodString;
         id: z.ZodString;
-        tier: z.ZodNullable<z.ZodObject<z.objectUtil.extendShape<{
+        tier: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
             rank: z.ZodNumber;
@@ -134,7 +134,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        }>>;
+        }>;
     }, {
         used: z.ZodBoolean;
     }>, "strip", z.ZodTypeAny, {
@@ -154,7 +154,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null;
+        };
         used: boolean;
     }, {
         key: string;
@@ -173,7 +173,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null;
+        };
         used: boolean;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -224,7 +224,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null;
+        };
         used: boolean;
     }[];
 }, {
@@ -275,7 +275,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-        } | null;
+        };
         used: boolean;
     }[];
 }>;

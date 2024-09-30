@@ -1,15 +1,11 @@
 import { z } from 'zod';
 import { TierSchema } from '../../objects/tier';
-import { AccountKeySchema } from '../../objects/accountKey';
+import { GeneratedAccountKeySchema } from './generateAccountKey/generateAccountKey';
 
 export const TiersPageSchema = z.object({
     tiers: z.array(TierSchema),
     clientTier: TierSchema,
-    generatedKeys: z.array(AccountKeySchema.required({
-        tier: true
-    }).extend({
-        used: z.boolean(),
-    })),
+    generatedKeys: z.array(GeneratedAccountKeySchema),
 });
 
 export type TiersPageDTO = z.infer<typeof TiersPageSchema>;
