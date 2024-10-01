@@ -18,6 +18,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
+        accountKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -32,6 +33,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }, {
         groups: number;
         id: string;
@@ -46,6 +48,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }>>;
 }>, "strip", z.ZodTypeAny, {
     key: string;
@@ -64,6 +67,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     } | undefined;
 }, {
     key: string;
@@ -82,6 +86,7 @@ export declare const AccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     } | undefined;
 }>;
 export type AccountKeyDTO = z.infer<typeof AccountKeySchema>;

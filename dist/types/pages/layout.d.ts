@@ -457,6 +457,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
+        accountKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -471,6 +472,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }, {
         groups: number;
         id: string;
@@ -485,6 +487,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }>;
     backgroud: z.ZodObject<{
         id: z.ZodString;
@@ -504,6 +507,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
+            accountKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -518,6 +522,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }, {
             groups: number;
             id: string;
@@ -532,6 +537,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -550,6 +556,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -568,6 +575,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }>;
     style: z.ZodObject<{
@@ -588,6 +596,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
+            accountKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -602,6 +611,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }, {
             groups: number;
             id: string;
@@ -616,6 +626,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -634,6 +645,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -652,6 +664,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }>;
     interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -686,6 +699,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     };
     interactionKeys: {
@@ -779,6 +793,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     };
     backgroud: {
         id: string;
@@ -797,6 +812,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     };
 }, {
@@ -817,6 +833,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     };
     interactionKeys: {
@@ -910,6 +927,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     };
     backgroud: {
         id: string;
@@ -928,6 +946,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     };
 }>;

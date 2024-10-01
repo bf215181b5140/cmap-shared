@@ -17,6 +17,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
+        accountKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -31,6 +32,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }, {
         groups: number;
         id: string;
@@ -45,6 +47,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }>;
 }, "strip", z.ZodTypeAny, {
     id: string;
@@ -63,6 +66,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     };
 }, {
     id: string;
@@ -81,6 +85,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     };
 }>, "many">;
 export type BackgroundsDTO = z.infer<typeof BackgroundsSchema>;

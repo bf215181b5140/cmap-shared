@@ -16,4 +16,5 @@ exports.TierSchema = shared_1.BaseIdSchema.extend({
     stateBadges: zod_1.z.number(),
     groups: zod_1.z.number(),
     buttons: zod_1.z.number(),
+    accountKeys: zod_1.z.number(),
 });

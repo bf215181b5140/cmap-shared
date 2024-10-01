@@ -38,6 +38,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
+        accountKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -52,6 +53,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }, {
         groups: number;
         id: string;
@@ -66,6 +68,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     }>>;
     background: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
@@ -85,6 +88,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
+            accountKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -99,6 +103,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }, {
             groups: number;
             id: string;
@@ -113,6 +118,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -131,6 +137,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -149,6 +156,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }>>;
     style: z.ZodOptional<z.ZodObject<{
@@ -169,6 +177,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
+            accountKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -183,6 +192,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }, {
             groups: number;
             id: string;
@@ -197,6 +207,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -215,6 +226,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -233,6 +245,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     }>>;
     layouts: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -717,6 +730,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     } | undefined;
     style?: {
@@ -736,6 +750,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     } | undefined;
     image?: {
@@ -834,6 +849,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     } | undefined;
 }, {
     id: string;
@@ -861,6 +877,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     } | undefined;
     style?: {
@@ -880,6 +897,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
+            accountKeys: number;
         } | undefined;
     } | undefined;
     image?: {
@@ -978,6 +996,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
+        accountKeys: number;
     } | undefined;
 }>;
 export type ClientDTO = z.infer<typeof ClientSchema>;
