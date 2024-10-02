@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { NotificationTypeSchema } from '../../enums/notification';
+import { NotificationType, NotificationTypeSchema } from '../../enums/notification';
 
 export const ApiResponseSchema = z.object({
     type: NotificationTypeSchema,
@@ -7,3 +7,14 @@ export const ApiResponseSchema = z.object({
 });
 
 export type ApiResponseDTO = z.infer<typeof ApiResponseSchema>;
+
+export class ApiError extends Error implements ApiResponseDTO {
+    type: NotificationType;
+    name: string = 'ApiResponse';
+
+    constructor(type: NotificationType, message: string) {
+        super(message);
+        this.type = type;
+    }
+}
+
