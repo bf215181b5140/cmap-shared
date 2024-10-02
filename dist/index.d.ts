@@ -1,6 +1,7 @@
 export { ClientVisibility, ClientVisibilityOptions } from './types/enums/client';
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
+export { NotificationTypeSchema, NotificationType } from './types/enums/notification';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';
@@ -15,6 +16,7 @@ export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { StateParameterSchema, StateParameterDTO, StateSchema, StateDTO } from './types/objects/state';
+export { ApiResponseSchema, ApiResponseDTO } from './types/api/errors/errors';
 export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
 export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';
 export { ProfilePageSchema, ProfilePageDTO } from './types/api/profile/profile';
