@@ -20,7 +20,7 @@ export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateParameterSchema, ClientStateParameterDTO, ClientStateParametersSchema, ClientStateParametersDTO, ClientStateSchema, ClientStateDTO } from './types/objects/clientState';
 // ------------------------------ API ------------------------------ //
-export { ApiResponseSchema, ApiResponseDTO, ApiError } from './types/api/errors/errors';
+export { ApiResponseSchema, ApiResponseDTO } from './types/api';
 
 export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
 export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';
