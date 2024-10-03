@@ -16,8 +16,7 @@ export { StyleDTO, StyleSchema } from './types/objects/style';
 export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
-export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
-export { StateParameterSchema, StateParameterDTO, StateParametersSchema, StateParametersDTO, StateSchema, StateDTO } from './types/objects/state';
+export { ClientStateParameterSchema, ClientStateParameterDTO, ClientStateParametersSchema, ClientStateParametersDTO, ClientStateSchema, ClientStateDTO } from './types/objects/clientState';
 export { ApiResponseSchema, ApiResponseDTO, ApiError } from './types/api/errors/errors';
 export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
 export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';
@@ -26,7 +25,7 @@ export { BasicInfoFormSchema, BasicInfoFormDTO } from './types/api/profile/basic
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './types/api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './types/api/profile/background/background';
 export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
-export { StateParameterFormSchema, StateParameterFormDTO } from './types/api/state/parameter/parameter';
+export { ClientStateParameterFormSchema, ClientStateParameterFormDTO } from './types/api/state/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './types/api/tiers/tiers';
 export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './types/api/tiers/useAccountKey/useAccountKey';
 export { GeneratedAccountKeySchema, GeneratedAccountKeyDTO } from './types/api/tiers/generateAccountKey/generateAccountKey';
@@ -41,7 +40,6 @@ export { StateBadgeFormDTO, StateBadgeFormSchema } from './types/forms/stateBadg
 export { UpdatesFormDTO, UpdatesFormSchema } from './types/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
-export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';
 export { UsedButtonDTO, UsedButtonSchema } from './types/website';

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const StateParameterFormSchema: z.ZodEffects<z.ZodObject<{
+export declare const ClientStateParameterFormSchema: z.ZodEffects<z.ZodObject<{
     path: z.ZodString;
     value: z.ZodUnion<[z.ZodEffects<z.ZodString, string, string>, z.ZodString]>;
 }, "strip", z.ZodTypeAny, {
@@ -18,4 +18,4 @@ export declare const StateParameterFormSchema: z.ZodEffects<z.ZodObject<{
     value: string;
     path: string;
 }>;
-export type StateParameterFormDTO = z.infer<typeof StateParameterFormSchema>;
+export type ClientStateParameterFormDTO = z.infer<typeof ClientStateParameterFormSchema>;

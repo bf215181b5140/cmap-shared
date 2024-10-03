@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { parameterPathSchema, parameterValueOrAvatarSchema } from '../../../shared';
 import { convertParameterValueFromString } from '../../../../util';
 
-export const StateParameterFormSchema = z.object({
+export const ClientStateParameterFormSchema = z.object({
     path: parameterPathSchema,
     value: parameterValueOrAvatarSchema,
 }).transform((val, ctx) => {
@@ -22,4 +22,4 @@ export const StateParameterFormSchema = z.object({
     return { ...val, value: convertedVal };
 });
 
-export type StateParameterFormDTO = z.infer<typeof StateParameterFormSchema>;
+export type ClientStateParameterFormDTO = z.infer<typeof ClientStateParameterFormSchema>;

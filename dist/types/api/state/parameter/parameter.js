@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StateParameterFormSchema = void 0;
+exports.ClientStateParameterFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../shared");
 const util_1 = require("../../../../util");
-exports.StateParameterFormSchema = zod_1.z.object({
+exports.ClientStateParameterFormSchema = zod_1.z.object({
     path: shared_1.parameterPathSchema,
     value: shared_1.parameterValueOrAvatarSchema,
 }).transform((val, ctx) => {

@@ -18,8 +18,7 @@ export { StyleDTO, StyleSchema } from './types/objects/style';
 export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
-export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
-export { StateParameterSchema, StateParameterDTO, StateParametersSchema, StateParametersDTO, StateSchema, StateDTO } from './types/objects/state';
+export { ClientStateParameterSchema, ClientStateParameterDTO, ClientStateParametersSchema, ClientStateParametersDTO, ClientStateSchema, ClientStateDTO } from './types/objects/clientState';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO, ApiError } from './types/api/errors/errors';
 
@@ -32,7 +31,7 @@ export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './types/api/p
 export { BackgroundsSchema, BackgroundsDTO } from './types/api/profile/background/background';
 export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
 
-export { StateParameterFormSchema, StateParameterFormDTO } from './types/api/state/parameter/parameter';
+export { ClientStateParameterFormSchema, ClientStateParameterFormDTO } from './types/api/state/parameter/parameter';
 
 export { TiersPageSchema, TiersPageDTO } from './types/api/tiers/tiers';
 export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './types/api/tiers/useAccountKey/useAccountKey';
@@ -49,7 +48,6 @@ export { StateBadgeFormDTO, StateBadgeFormSchema } from './types/forms/stateBadg
 export { UpdatesFormDTO, UpdatesFormSchema } from './types/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './types/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './types/forms/order';
-export { ClientStateParameterFormDTO, ClientStateParameterFormSchema } from './types/forms/clientState';
 // ------------------------------ Pages ------------------------------ //
 export { LayoutPageDTO, LayoutPageSchema } from './types/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/approveFiles';
