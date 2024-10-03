@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { parameterPathSchema, parameterValueSchema, vrcAvatarIdSchema } from '../../shared';
-import { convertParameterValueFromString } from '../../../util';
+import { parameterPathSchema, parameterValueSchema, vrcAvatarIdSchema } from '../../../shared';
+import { convertParameterValueFromString } from '../../../../util';
 
 export const StateParameterFormSchema = z.object({
     path: parameterPathSchema,
@@ -8,7 +8,7 @@ export const StateParameterFormSchema = z.object({
 }).transform(val => {
     const convertedValue = convertParameterValueFromString(val.value);
     const transformedValue = convertedValue !== undefined ? convertedValue : val.value;
-    return [val.path, transformedValue];
+    return { ...val, value: transformedValue };
 });
 
 export type StateParameterFormDTO = z.infer<typeof StateParameterFormSchema>;

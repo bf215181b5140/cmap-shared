@@ -31,7 +31,7 @@ export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './types/api/p
 export { BackgroundsSchema, BackgroundsDTO } from './types/api/profile/background/background';
 export { StylesSchema, StylesDTO } from './types/api/profile/style/style';
 
-export { StateParameterFormSchema, StateParameterFormDTO } from './types/api/state/state';
+export { StateParameterFormSchema, StateParameterFormDTO } from './types/api/state/parameter/parameter';
 
 export { TiersPageSchema, TiersPageDTO } from './types/api/tiers/tiers';
 export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './types/api/tiers/useAccountKey/useAccountKey';
