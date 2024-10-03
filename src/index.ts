@@ -18,7 +18,7 @@ export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
-export { StateParameterSchema, StateParameterDTO, StateSchema, StateDTO } from './types/objects/state';
+export { StateParameterSchema, StateParameterDTO, StateParametersSchema, StateParametersDTO, StateSchema, StateDTO } from './types/objects/state';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO, ApiError } from './types/api/errors/errors';
 

@@ -16,7 +16,7 @@ export { TierDTO, TierSchema } from './types/objects/tier';
 export { UpdateDTO, UpdateSchema } from './types/objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './types/objects/uploadedFile';
 export { ClientStateDTO, ClientStateParameterDTO, ClientStateParameterSchema, ClientStateSchema } from './types/objects/clientState';
-export { StateParameterSchema, StateParameterDTO, StateSchema, StateDTO } from './types/objects/state';
+export { StateParameterSchema, StateParameterDTO, StateParametersSchema, StateParametersDTO, StateSchema, StateDTO } from './types/objects/state';
 export { ApiResponseSchema, ApiResponseDTO, ApiError } from './types/api/errors/errors';
 export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './types/api/login/login';
 export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './types/api/register/register';

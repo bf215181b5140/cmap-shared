@@ -8,6 +8,16 @@ export const StateParameterSchema = z.tuple([
 
 export type StateParameterDTO = z.infer<typeof StateParameterSchema>;
 
-export const StateSchema = z.array(StateParameterSchema);
+export const StateParametersSchema = z.array(StateParameterSchema);
+
+export type StateParametersDTO = z.infer<typeof StateParametersSchema>;
+
+export const StateSchema = z.object({
+    isConnected: z.boolean(),
+    isOnVrchat: z.boolean().nullable(),
+    parameters: StateParametersSchema,
+});
 
 export type StateDTO = z.infer<typeof StateSchema>;
+
+
