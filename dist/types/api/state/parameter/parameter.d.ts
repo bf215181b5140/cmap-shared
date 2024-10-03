@@ -9,7 +9,10 @@ export declare const StateParameterFormSchema: z.ZodEffects<z.ZodObject<{
     value: string;
     path: string;
 }>, {
-    value: string | number | boolean;
+    value: string;
+    path: string;
+} | {
+    value: number | boolean;
     path: string;
 }, {
     value: string;

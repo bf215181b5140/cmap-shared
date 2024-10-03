@@ -6,9 +6,20 @@ const shared_1 = require("../../../shared");
 const util_1 = require("../../../../util");
 exports.StateParameterFormSchema = zod_1.z.object({
     path: shared_1.parameterPathSchema,
-    value: zod_1.z.union([shared_1.parameterValueSchema, shared_1.vrcAvatarIdSchema]),
-}).transform(val => {
-    const convertedValue = (0, util_1.convertParameterValueFromString)(val.value);
-    const transformedValue = convertedValue !== undefined ? convertedValue : val.value;
-    return { ...val, value: transformedValue };
+    value: shared_1.parameterValueOrAvatarSchema,
+}).transform((val, ctx) => {
+    // vrc avatar id
+    if (val.value.startsWith('avtr_'))
+        return val;
+    // convert to number or boolean
+    const convertedVal = (0, util_1.convertParameterValueFromString)(val.value);
+    if (convertedVal === undefined) {
+        ctx.addIssue({
+            code: zod_1.z.ZodIssueCode.custom,
+            message: 'Invalid value, must be either VRChat avatar ID, number or bool',
+            fatal: true,
+        });
+        return zod_1.z.NEVER;
+    }
+    return { ...val, value: convertedVal };
 });

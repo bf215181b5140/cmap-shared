@@ -4,6 +4,7 @@ export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
 export { NotificationTypeSchema, NotificationType } from './types/enums/notification';
 // ------------------------------ Objects ------------------------------ //
+export { VrcParameterSchema, VrcParameter } from './types/objects/vrcParameter';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';
@@ -59,7 +60,7 @@ export { CmapSelectOption } from './types/inputs';
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema } from './types/shared';
 // ------------------------------ Other ------------------------------ //
-export { KeyValue, VrcParameter } from './types';
+export { KeyValue } from './types';
 export { convertParameterValueFromString } from './util';
 // ------------------------------ React ------------------------------ //
 export { theme } from './react/theme';

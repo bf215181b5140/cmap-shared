@@ -2,6 +2,7 @@ export { ClientVisibility, ClientVisibilityOptions } from './types/enums/client'
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
 export { NotificationTypeSchema, NotificationType } from './types/enums/notification';
+export { VrcParameterSchema, VrcParameter } from './types/objects/vrcParameter';
 export { BackgroundDTO, BackgroundSchema } from './types/objects/background';
 export { ButtonDTO, ButtonSchema } from './types/objects/button';
 export { ClientDTO, ClientSchema } from './types/objects/client';
@@ -46,7 +47,7 @@ export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './types/pages/appro
 export { UsedButtonDTO, UsedButtonSchema } from './types/website';
 export { CmapSelectOption } from './types/inputs';
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema } from './types/shared';
-export { KeyValue, VrcParameter } from './types';
+export { KeyValue } from './types';
 export { convertParameterValueFromString } from './util';
 export { theme } from './react/theme';
 export { ReactProps, SegmentWidth } from './react/types';
