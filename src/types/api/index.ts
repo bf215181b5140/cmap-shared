@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { NotificationTypeSchema } from '../enums/notification';
+import { NotificationTypeSchema } from '../enums/notificationType';
 
 export const ApiResponseSchema = z.object({
     type: NotificationTypeSchema,

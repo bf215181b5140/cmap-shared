@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { ButtonImageOrientation, ButtonType } from '../enums/button';
 export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodNullable<z.ZodString>;
     parentId: z.ZodString;
@@ -8,8 +7,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     path: z.ZodString;
     value: z.ZodEffects<z.ZodString, string, string>;
     valueAlt: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
-    buttonType: z.ZodNativeEnum<typeof ButtonType>;
-    imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
+    buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
+    imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
     callbackParameters: z.ZodArray<z.ZodString, "many">;
@@ -17,7 +16,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }>, "strip", z.ZodTypeAny, {
     id: string | null;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
@@ -25,13 +24,13 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     parentId: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     callbackParameters: string[];
     visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
@@ -39,13 +38,13 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     parentId: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     callbackParameters: string[];
     visibilityParameters: string[];
     interactionKeyId: string | null;
 }>, {
     id: string | null;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
@@ -53,13 +52,13 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     parentId: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     callbackParameters: string[];
     visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
@@ -67,7 +66,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     parentId: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     callbackParameters: string[];
     visibilityParameters: string[];
     interactionKeyId: string | null;

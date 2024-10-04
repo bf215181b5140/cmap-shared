@@ -225,7 +225,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         }, {
             label: z.ZodString;
             order: z.ZodNumber;
-            width: z.ZodNativeEnum<typeof import("../../..").SegmentWidth>;
+            width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
             visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
                 id: z.ZodString;
             }, {
@@ -254,8 +254,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 path: z.ZodString;
                 value: z.ZodString;
                 valueAlt: z.ZodString;
-                buttonType: z.ZodNativeEnum<typeof import("../../..").ButtonType>;
-                imageOrientation: z.ZodNativeEnum<typeof import("../../..").ButtonImageOrientation>;
+                buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
+                imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                 order: z.ZodNumber;
                 useCost: z.ZodNullable<z.ZodNumber>;
                 image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
@@ -314,14 +314,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 interactionKeyId: z.ZodNullable<z.ZodString>;
             }>, "strip", z.ZodTypeAny, {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -344,14 +344,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 }[] | undefined;
             }, {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -375,20 +375,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
             }>, "many">>;
         }>, "strip", z.ZodTypeAny, {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -419,20 +419,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
             }[] | undefined;
         }, {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -485,14 +485,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
         stateBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
-            type: z.ZodNativeEnum<typeof import("../../..").StateBadgeType>;
+            type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
             path: z.ZodString;
             value: z.ZodString;
             label: z.ZodString;
             icon: z.ZodString;
             order: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;
@@ -500,7 +500,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             path: string;
             icon: string;
         }, {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;
@@ -520,20 +520,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -571,7 +571,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             seconds: number;
         }[] | undefined;
         stateBadges?: {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;
@@ -591,20 +591,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -642,7 +642,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             seconds: number;
         }[] | undefined;
         stateBadges?: {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;
@@ -769,20 +769,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -820,7 +820,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             seconds: number;
         }[] | undefined;
         stateBadges?: {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;
@@ -916,20 +916,20 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostMax: number | null;
         groups?: {
             id: string;
-            width: import("../../..").SegmentWidth;
+            width: "None" | "Third" | "Half" | "Full";
             order: number;
             label: string;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
-                imageOrientation: import("../../..").ButtonImageOrientation;
+                imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
                 value: string;
                 label: string;
                 path: string;
                 useCost: number | null;
                 valueAlt: string;
-                buttonType: import("../../..").ButtonType;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -967,7 +967,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             seconds: number;
         }[] | undefined;
         stateBadges?: {
-            type: import("../../..").StateBadgeType;
+            type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
             value: string;

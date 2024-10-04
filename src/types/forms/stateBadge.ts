@@ -1,18 +1,18 @@
 import { z } from 'zod';
 import { BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueSchema } from '../shared';
-import { StateBadgeType } from '../enums/stateBadge';
+import { StateBadgeTypeSchema } from '../enums/stateBadgeType';
 
 export const StateBadgeFormSchema = z.object({
     parentId: IdSchema,
     statebadges: z.array(BaseNullableIdSchema.extend({
-        type: z.nativeEnum(StateBadgeType),
+        type: StateBadgeTypeSchema,
         path: parameterPathSchema,
         value: z.union([z.literal(''), parameterValueSchema]),
         label: z.string().min(3).max(20),
         icon: z.string().max(30),
         order: z.number(),
     }).transform((val, ctx) => {
-        if (val.type === StateBadgeType.Custom) {
+        if (val.type === 'Custom') {
             // Check value if custom badge
             if (!val.value || val.value === '') {
                 ctx.addIssue({
@@ -41,7 +41,7 @@ export const StateBadgeFormSchema = z.object({
     })),
 }).superRefine((val, ctx) => {
     val.statebadges.forEach(badge => {
-        if (badge.type !== StateBadgeType.Custom) {
+        if (badge.type !== 'Custom') {
             const count = val.statebadges.filter(b => b.type === badge.type).length;
             if (count > 1) {
                 ctx.addIssue({

@@ -1,9 +1,9 @@
 import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
-import { StateBadgeType } from '../enums/stateBadge';
+import { StateBadgeTypeSchema } from '../enums/stateBadgeType';
 
 export const StateBadgeSchema = BaseIdSchema.extend({
-    type: z.nativeEnum(StateBadgeType),
+    type: StateBadgeTypeSchema,
     path: z.string(),
     value: z.string(),
     label: z.string(),

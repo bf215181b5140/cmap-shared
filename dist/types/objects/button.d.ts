@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { ButtonImageOrientation, ButtonType } from '../enums/button';
 export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
@@ -7,8 +6,8 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     path: z.ZodString;
     value: z.ZodString;
     valueAlt: z.ZodString;
-    buttonType: z.ZodNativeEnum<typeof ButtonType>;
-    imageOrientation: z.ZodNativeEnum<typeof ButtonImageOrientation>;
+    buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
+    imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
     image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
@@ -67,14 +66,14 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
     path: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     image?: {
         id: string;
@@ -97,14 +96,14 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     }[] | undefined;
 }, {
     id: string;
-    imageOrientation: ButtonImageOrientation;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
     label: string;
     path: string;
     useCost: number | null;
     valueAlt: string;
-    buttonType: ButtonType;
+    buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     image?: {
         id: string;

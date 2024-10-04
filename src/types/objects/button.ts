@@ -1,17 +1,17 @@
 import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
-import { ButtonImageOrientation, ButtonType } from '../enums/button';
 import { UploadedFileSchema } from './uploadedFile';
 import { ControlParameterSchema } from './controlParameter';
-import { InteractionKeySchema } from './interactionKey';
+import { ButtonTypeSchema } from '../enums/buttonType';
+import { ImageOrientationSchema } from '../enums/imageOrientation';
 
 export const ButtonSchema = BaseIdSchema.extend({
     label: z.string(),
     path: z.string(),
     value: z.string(),
     valueAlt: z.string(),
-    buttonType: z.nativeEnum(ButtonType),
-    imageOrientation: z.nativeEnum(ButtonImageOrientation),
+    buttonType: ButtonTypeSchema,
+    imageOrientation: ImageOrientationSchema,
     order: z.number(),
     useCost: z.number().nullable(),
     image: UploadedFileSchema.nullable().optional(),

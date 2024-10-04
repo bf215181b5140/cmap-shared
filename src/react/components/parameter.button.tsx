@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
 import colors from '../../colors.json';
-import { ButtonDTO, ButtonImageOrientation, ButtonType, StyleDTO, UsedButtonDTO } from '../../index';
+import { ButtonDTO, StyleDTO, UsedButtonDTO } from '../../index';
 import expOrb from '../images/expOrb.png';
 import ParameterSlider from './parameter.slider';
+import { ImageOrientation } from '../../index';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
 
@@ -21,13 +22,13 @@ export default function ParameterButton(props: ParameterButtonProps) {
     function onClick(value?: string) {
         if (props.onClick) {
             switch (props.button.buttonType) {
-                case ButtonType.Button:
+                case 'Button':
                     if (!props.active) props.onClick({ buttonId: props.button.id!, value: props.button.value! });
                     break;
-                case ButtonType.Toggle:
+                case 'Toggle':
                     props.onClick({ buttonId: props.button.id!, value: props.active ? props.button.valueAlt! : props.button.value! });
                     break;
-                case ButtonType.Slider:
+                case 'Slider':
                     if (value === undefined) return;
                     props.onClick({ buttonId: props.button.id!, value: value });
                     break;
@@ -50,7 +51,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
         }
     }
 
-    if (props.button.buttonType === ButtonType.Slider) {
+    if (props.button.buttonType === 'Slider') {
         return (<UseCostWrapper>
             <SliderWrapper>
                 {props.button.label && <ParameterSliderLabel>{props.button.label}</ParameterSliderLabel>}
@@ -70,7 +71,7 @@ export default function ParameterButton(props: ParameterButtonProps) {
         <ParameterLayoutStyled disabled={!!props.disabled || !useCostUsable()} className={`${props.style.id} ${props.active ? 'active' : ''}`}
                                onClick={() => onClick()}>
             {props.button.image?.urlPath &&
-                <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || ButtonImageOrientation.Square} />}
+                <ParameterButtonPicture src={imageUrl()} imageOrientation={props.button.imageOrientation || 'Square'} />}
             {props.button.label && <ParameterButtonLabel>{props.button.label}</ParameterButtonLabel>}
             <ActiveOverlay active={!!props.active} />
         </ParameterLayoutStyled>
@@ -78,13 +79,13 @@ export default function ParameterButton(props: ParameterButtonProps) {
     </UseCostWrapper>);
 }
 
-function imageOrientationToAspectRatio(imageOrientation: ButtonImageOrientation): string {
+function imageOrientationToAspectRatio(imageOrientation: ImageOrientation): string {
     switch (imageOrientation) {
-        case ButtonImageOrientation.Square:
+        case 'Square':
             return '4/3';
-        case ButtonImageOrientation.Vertical:
+        case 'Vertical':
             return '3/4';
-        case ButtonImageOrientation.Horizontal:
+        case 'Horizontal':
         default:
             return '16/9';
     }
@@ -189,7 +190,7 @@ const ParameterButtonLabel = styled.div`
   align-items: center;
 `;
 
-const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: ButtonImageOrientation }>`
+const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: ImageOrientation }>`
   width: 100%;
   aspect-ratio: ${props => imageOrientationToAspectRatio(props.imageOrientation)};
   margin: 0;

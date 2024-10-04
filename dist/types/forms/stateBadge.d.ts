@@ -1,18 +1,17 @@
 import { z } from 'zod';
-import { StateBadgeType } from '../enums/stateBadge';
 export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
     parentId: z.ZodString;
     statebadges: z.ZodArray<z.ZodEffects<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodNullable<z.ZodString>;
     }, {
-        type: z.ZodNativeEnum<typeof StateBadgeType>;
+        type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
         path: z.ZodString;
         value: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
         label: z.ZodString;
         icon: z.ZodString;
         order: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -20,7 +19,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }, {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -28,7 +27,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }>, {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -36,7 +35,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }, {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -47,7 +46,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     parentId: string;
     statebadges: {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -58,7 +57,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
 }, {
     parentId: string;
     statebadges: {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -69,7 +68,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
 }>, {
     parentId: string;
     statebadges: {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;
@@ -80,7 +79,7 @@ export declare const StateBadgeFormSchema: z.ZodEffects<z.ZodObject<{
 }, {
     parentId: string;
     statebadges: {
-        type: StateBadgeType;
+        type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
         value: string;

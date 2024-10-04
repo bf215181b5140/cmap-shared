@@ -31,7 +31,6 @@ exports.default = ParameterButton;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const styled_components_1 = __importStar(require("styled-components"));
 const colors_json_1 = __importDefault(require("../../colors.json"));
-const index_1 = require("../../index");
 const expOrb_png_1 = __importDefault(require("../images/expOrb.png"));
 const parameter_slider_1 = __importDefault(require("./parameter.slider"));
 exports.URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';
@@ -39,14 +38,14 @@ function ParameterButton(props) {
     function onClick(value) {
         if (props.onClick) {
             switch (props.button.buttonType) {
-                case index_1.ButtonType.Button:
+                case 'Button':
                     if (!props.active)
                         props.onClick({ buttonId: props.button.id, value: props.button.value });
                     break;
-                case index_1.ButtonType.Toggle:
+                case 'Toggle':
                     props.onClick({ buttonId: props.button.id, value: props.active ? props.button.valueAlt : props.button.value });
                     break;
-                case index_1.ButtonType.Slider:
+                case 'Slider':
                     if (value === undefined)
                         return;
                     props.onClick({ buttonId: props.button.id, value: value });
@@ -68,19 +67,19 @@ function ParameterButton(props) {
             return exports.URL + '/' + props.button.image?.urlPath;
         }
     }
-    if (props.button.buttonType === index_1.ButtonType.Slider) {
+    if (props.button.buttonType === 'Slider') {
         return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(SliderWrapper, { children: [props.button.label && (0, jsx_runtime_1.jsx)(ParameterSliderLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(parameter_slider_1.default, { disabled: !!props.disabled || !useCostUsable(), className: props.style.id, onClick: (value) => onClick(value), value: typeof props.value === 'number' ? props.value : 0, step: Math.abs(Number(props.button.value) - Number(props.button.valueAlt)) > 1 ? 1 : 0.01, min: Number(props.button.value), max: Number(props.button.valueAlt) })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "top", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
     }
     return ((0, jsx_runtime_1.jsxs)(UseCostWrapper, { children: [(0, jsx_runtime_1.jsxs)(ParameterLayoutStyled, { disabled: !!props.disabled || !useCostUsable(), className: `${props.style.id} ${props.active ? 'active' : ''}`, onClick: () => onClick(), children: [props.button.image?.urlPath &&
-                        (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || index_1.ButtonImageOrientation.Square }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "bottom", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
+                        (0, jsx_runtime_1.jsx)(ParameterButtonPicture, { src: imageUrl(), imageOrientation: props.button.imageOrientation || 'Square' }), props.button.label && (0, jsx_runtime_1.jsx)(ParameterButtonLabel, { children: props.button.label }), (0, jsx_runtime_1.jsx)(ActiveOverlay, { active: !!props.active })] }), props.button.useCost && (0, jsx_runtime_1.jsx)(UseCostIcon, { position: "bottom", background: expOrb_png_1.default, usable: useCostUsable(), children: props.button.useCost.toString() })] }));
 }
 function imageOrientationToAspectRatio(imageOrientation) {
     switch (imageOrientation) {
-        case index_1.ButtonImageOrientation.Square:
+        case 'Square':
             return '4/3';
-        case index_1.ButtonImageOrientation.Vertical:
+        case 'Vertical':
             return '3/4';
-        case index_1.ButtonImageOrientation.Horizontal:
+        case 'Horizontal':
         default:
             return '16/9';
     }

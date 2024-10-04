@@ -1,16 +1,15 @@
 import { z } from 'zod';
-import { StateBadgeType } from '../enums/stateBadge';
 export declare const StateBadgeSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
-    type: z.ZodNativeEnum<typeof StateBadgeType>;
+    type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
     path: z.ZodString;
     value: z.ZodString;
     label: z.ZodString;
     icon: z.ZodString;
     order: z.ZodNumber;
 }>, "strip", z.ZodTypeAny, {
-    type: StateBadgeType;
+    type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
     id: string;
     order: number;
     value: string;
@@ -18,7 +17,7 @@ export declare const StateBadgeSchema: z.ZodObject<z.objectUtil.extendShape<{
     path: string;
     icon: string;
 }, {
-    type: StateBadgeType;
+    type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
     id: string;
     order: number;
     value: string;

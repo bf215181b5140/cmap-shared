@@ -1,11 +1,10 @@
 import { z } from 'zod';
-import { SegmentWidth } from '../../react/types';
 export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
     label: z.ZodString;
     order: z.ZodNumber;
-    width: z.ZodNativeEnum<typeof SegmentWidth>;
+    width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
     visibilityParameters: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
@@ -34,8 +33,8 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         path: z.ZodString;
         value: z.ZodString;
         valueAlt: z.ZodString;
-        buttonType: z.ZodNativeEnum<typeof import("../..").ButtonType>;
-        imageOrientation: z.ZodNativeEnum<typeof import("../..").ButtonImageOrientation>;
+        buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
+        imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
         order: z.ZodNumber;
         useCost: z.ZodNullable<z.ZodNumber>;
         image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
@@ -94,14 +93,14 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         interactionKeyId: z.ZodNullable<z.ZodString>;
     }>, "strip", z.ZodTypeAny, {
         id: string;
-        imageOrientation: import("../..").ButtonImageOrientation;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
         value: string;
         label: string;
         path: string;
         useCost: number | null;
         valueAlt: string;
-        buttonType: import("../..").ButtonType;
+        buttonType: "Button" | "Slider" | "Toggle";
         interactionKeyId: string | null;
         image?: {
             id: string;
@@ -124,14 +123,14 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         }[] | undefined;
     }, {
         id: string;
-        imageOrientation: import("../..").ButtonImageOrientation;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
         value: string;
         label: string;
         path: string;
         useCost: number | null;
         valueAlt: string;
-        buttonType: import("../..").ButtonType;
+        buttonType: "Button" | "Slider" | "Toggle";
         interactionKeyId: string | null;
         image?: {
             id: string;
@@ -155,20 +154,20 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     }>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
-    width: SegmentWidth;
+    width: "None" | "Third" | "Half" | "Full";
     order: number;
     label: string;
     interactionKeyId: string | null;
     buttons?: {
         id: string;
-        imageOrientation: import("../..").ButtonImageOrientation;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
         value: string;
         label: string;
         path: string;
         useCost: number | null;
         valueAlt: string;
-        buttonType: import("../..").ButtonType;
+        buttonType: "Button" | "Slider" | "Toggle";
         interactionKeyId: string | null;
         image?: {
             id: string;
@@ -199,20 +198,20 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
     }[] | undefined;
 }, {
     id: string;
-    width: SegmentWidth;
+    width: "None" | "Third" | "Half" | "Full";
     order: number;
     label: string;
     interactionKeyId: string | null;
     buttons?: {
         id: string;
-        imageOrientation: import("../..").ButtonImageOrientation;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
         value: string;
         label: string;
         path: string;
         useCost: number | null;
         valueAlt: string;
-        buttonType: import("../..").ButtonType;
+        buttonType: "Button" | "Slider" | "Toggle";
         interactionKeyId: string | null;
         image?: {
             id: string;
