@@ -90,7 +90,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             accountKeys: number;
         } | undefined;
     }>;
-    visibility: z.ZodNativeEnum<typeof import("../../..").ClientVisibility>;
+    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
     style: z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
@@ -724,7 +724,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             accountKeys: number;
         } | undefined;
     };
-    visibility: import("../../..").ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     style: {
         id: string;
         label: string;
@@ -871,7 +871,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             accountKeys: number;
         } | undefined;
     };
-    visibility: import("../../..").ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     style: {
         id: string;
         label: string;

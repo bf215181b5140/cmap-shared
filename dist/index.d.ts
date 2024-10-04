@@ -1,4 +1,4 @@
-export { ClientVisibility, ClientVisibilityOptions } from './types/enums/client';
+export { ClientVisibilitySchema, ClientVisibility } from './types/enums/clientVisibility';
 export { ButtonImageOrientation, ButtonType } from './types/enums/button';
 export { StateBadgeType } from './types/enums/stateBadge';
 export { NotificationTypeSchema, NotificationType } from './types/enums/notification';

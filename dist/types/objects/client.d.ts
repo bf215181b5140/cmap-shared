@@ -1,12 +1,11 @@
 import { z } from 'zod';
-import { ClientVisibility } from '../enums/client';
 export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
     username: z.ZodString;
     displayName: z.ZodString;
     bio: z.ZodString;
-    visibility: z.ZodNativeEnum<typeof ClientVisibility>;
+    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
     offlineMessage: z.ZodString;
@@ -706,7 +705,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     }>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     id: string;
-    visibility: ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     username: string;
     displayName: string;
     bio: string;
@@ -853,7 +852,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
     } | undefined;
 }, {
     id: string;
-    visibility: ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     username: string;
     displayName: string;
     bio: string;

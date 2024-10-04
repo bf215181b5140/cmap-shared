@@ -1,21 +1,20 @@
 import { z } from 'zod';
-import { ClientVisibility } from '../../../enums/client';
 export declare const BasicInfoFormSchema: z.ZodObject<{
     displayName: z.ZodString;
     bio: z.ZodString;
-    visibility: z.ZodNativeEnum<typeof ClientVisibility>;
+    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
     offlineMessage: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    visibility: ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
 }, {
-    visibility: ClientVisibility;
+    visibility: "Visible" | "Hidden" | "Private";
     displayName: string;
     bio: string;
     defaultLayoutId: string | null;
