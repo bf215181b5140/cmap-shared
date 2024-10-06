@@ -19,7 +19,8 @@ export { StyleDTO, StyleSchema } from './objects/style';
 export { TierDTO, TierSchema } from './objects/tier';
 export { UpdateDTO, UpdateSchema } from './objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './objects/uploadedFile';
-export { ClientStateParameterSchema, ClientStateParameterDTO, ClientStateParametersSchema, ClientStateParametersDTO, ClientStateSchema, ClientStateDTO } from './objects/clientState';
+export { ClientStateSchema, ClientStateDTO } from './objects/clientState';
+export { TrackedParametersMap, TrackedParameterSchema, TrackedParameterDTO, TrackedParametersSchema, TrackedParametersDTO } from './objects/trackedParameters';
 export { KeyValueSchema, KeyValueDTO } from './objects/keyValue';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO } from './api';
