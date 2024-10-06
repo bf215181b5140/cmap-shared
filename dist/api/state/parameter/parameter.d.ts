@@ -15,3 +15,4 @@ export declare const TrackedParameterFormSchema: z.ZodEffects<z.ZodObject<{
     value: string;
     path: string;
 }>;
+export type TrackedParameterFormDTO = z.infer<typeof TrackedParameterFormSchema>;

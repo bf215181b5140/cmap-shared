@@ -13,3 +13,5 @@ export const TrackedParameterFormSchema = z.object({
 
     return { path: val.path, value: convertedVal } as VrcParameter;
 });
+
+export type TrackedParameterFormDTO = z.infer<typeof TrackedParameterFormSchema>;
