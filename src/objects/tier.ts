@@ -14,7 +14,7 @@ export const TierSchema = BaseIdSchema.extend({
     stateBadges: z.number(),
     groups: z.number(),
     buttons: z.number(),
-    accountKeys: z.number(),
+    inviteKeys: z.number(),
 });
 
 export type TierDTO = z.infer<typeof TierSchema>;

@@ -19,7 +19,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
-            accountKeys: z.ZodNumber;
+            inviteKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -34,7 +34,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }, {
             groups: number;
             id: string;
@@ -49,7 +49,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -68,7 +68,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -87,7 +87,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     }>;
     visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
@@ -109,7 +109,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
-            accountKeys: z.ZodNumber;
+            inviteKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -124,7 +124,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }, {
             groups: number;
             id: string;
@@ -139,7 +139,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id: string;
@@ -158,7 +158,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     }, {
         id: string;
@@ -177,7 +177,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     }>;
     image: z.ZodNullable<z.ZodObject<{
@@ -665,7 +665,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
-        accountKeys: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -680,7 +680,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }, {
         groups: number;
         id: string;
@@ -695,7 +695,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }>;
     displayName: z.ZodString;
     bio: z.ZodString;
@@ -721,7 +721,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     };
     visibility: "Visible" | "Hidden" | "Private";
@@ -742,7 +742,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     };
     image: {
@@ -842,7 +842,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     displayName: string;
     bio: string;
@@ -868,7 +868,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     };
     visibility: "Visible" | "Hidden" | "Private";
@@ -889,7 +889,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         } | undefined;
     };
     image: {
@@ -989,7 +989,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     displayName: string;
     bio: string;

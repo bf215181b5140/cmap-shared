@@ -28,5 +28,5 @@ exports.RegisterFormSchema = zod_1.z.object({
     }
 });
 exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema.and(zod_1.z.object({
-    accountKey: zod_1.z.string().max(32),
+    inviteKey: zod_1.z.string().max(32),
 }));

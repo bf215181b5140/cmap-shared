@@ -15,7 +15,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
-        accountKeys: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -30,7 +30,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }, {
         groups: number;
         id: string;
@@ -45,7 +45,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }>, "many">;
     clientTier: z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
@@ -62,7 +62,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
-        accountKeys: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -77,7 +77,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }, {
         groups: number;
         id: string;
@@ -92,7 +92,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }>;
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         key: z.ZodString;
@@ -112,7 +112,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             stateBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
-            accountKeys: z.ZodNumber;
+            inviteKeys: z.ZodNumber;
         }>, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
@@ -127,7 +127,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }, {
             groups: number;
             id: string;
@@ -142,7 +142,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         }>;
     }, {
         used: z.ZodBoolean;
@@ -163,7 +163,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         };
         used: boolean;
     }, {
@@ -183,7 +183,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         };
         used: boolean;
     }>, "many">;
@@ -202,7 +202,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }[];
     clientTier: {
         groups: number;
@@ -218,7 +218,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     generatedKeys: {
         key: string;
@@ -237,7 +237,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         };
         used: boolean;
     }[];
@@ -256,7 +256,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }[];
     clientTier: {
         groups: number;
@@ -272,7 +272,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     generatedKeys: {
         key: string;
@@ -291,7 +291,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             health: boolean;
             controlParameters: number;
             stateBadges: number;
-            accountKeys: number;
+            inviteKeys: number;
         };
         used: boolean;
     }[];

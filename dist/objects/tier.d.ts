@@ -14,7 +14,7 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     stateBadges: z.ZodNumber;
     groups: z.ZodNumber;
     buttons: z.ZodNumber;
-    accountKeys: z.ZodNumber;
+    inviteKeys: z.ZodNumber;
 }>, "strip", z.ZodTypeAny, {
     groups: number;
     id: string;
@@ -29,7 +29,7 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     health: boolean;
     controlParameters: number;
     stateBadges: number;
-    accountKeys: number;
+    inviteKeys: number;
 }, {
     groups: number;
     id: string;
@@ -44,6 +44,6 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     health: boolean;
     controlParameters: number;
     stateBadges: number;
-    accountKeys: number;
+    inviteKeys: number;
 }>;
 export type TierDTO = z.infer<typeof TierSchema>;

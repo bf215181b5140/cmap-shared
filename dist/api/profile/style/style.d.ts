@@ -17,7 +17,7 @@ export declare const StylesSchema: z.ZodArray<z.ZodObject<{
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
-        accountKeys: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -32,7 +32,7 @@ export declare const StylesSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }, {
         groups: number;
         id: string;
@@ -47,7 +47,7 @@ export declare const StylesSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }>;
 }, "strip", z.ZodTypeAny, {
     id: string;
@@ -66,7 +66,7 @@ export declare const StylesSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
 }, {
     id: string;
@@ -85,7 +85,7 @@ export declare const StylesSchema: z.ZodArray<z.ZodObject<{
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
 }>, "many">;
 export type StylesDTO = z.infer<typeof StylesSchema>;

@@ -13,7 +13,7 @@ export { ControlParameterDTO, ControlParameterSchema } from './objects/controlPa
 export { GroupDTO, GroupSchema } from './objects/group';
 export { InteractionKeyDTO, InteractionKeySchema } from './objects/interactionKey';
 export { LayoutDTO, LayoutSchema } from './objects/layout';
-export { AccountKeyDTO, AccountKeySchema } from './objects/accountKey';
+export { InviteKeyDTO, InviteKeySchema } from './objects/inviteKey';
 export { StateBadgeDTO, StateBadgeSchema } from './objects/stateBadge';
 export { StyleDTO, StyleSchema } from './objects/style';
 export { TierDTO, TierSchema } from './objects/tier';
@@ -36,8 +36,8 @@ export { StylesSchema, StylesDTO } from './api/profile/style/style';
 export { ClientStateParameterFormSchema, ClientStateParameterFormDTO } from './api/state/parameter/parameter';
 
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
-export { UseAccountKeyFormSchema, UseAccountKeyFormDTO } from './api/tiers/useAccountKey/useAccountKey';
-export { GeneratedAccountKeySchema, GeneratedAccountKeyDTO } from './api/tiers/generateAccountKey/generateAccountKey';
+export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
+export { GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/generateInviteKey/generateInviteKey';
 // ------------------------------ Forms ------------------------------ //
 export { ButtonFormDTO, ButtonFormSchema } from './OLD/forms/button';
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './OLD/forms/controlParameter';

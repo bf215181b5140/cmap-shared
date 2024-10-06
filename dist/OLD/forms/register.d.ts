@@ -52,10 +52,10 @@ export declare const RegisterWithKeyFormSchema: z.ZodIntersection<z.ZodEffects<z
     passwordRepeat: string;
     fingerprint: string;
 }>, z.ZodObject<{
-    accountKey: z.ZodString;
+    inviteKey: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    accountKey: string;
+    inviteKey: string;
 }, {
-    accountKey: string;
+    inviteKey: string;
 }>>;
 export type RegisterWithKeyFormDTO = z.infer<typeof RegisterWithKeyFormSchema>;

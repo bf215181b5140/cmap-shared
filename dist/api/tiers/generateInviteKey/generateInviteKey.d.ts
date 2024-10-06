@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
     key: z.ZodString;
     id: z.ZodString;
     tier: z.ZodObject<z.objectUtil.extendShape<{
@@ -17,7 +17,7 @@ export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendS
         stateBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
-        accountKeys: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
     }>, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
@@ -32,7 +32,7 @@ export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendS
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }, {
         groups: number;
         id: string;
@@ -47,7 +47,7 @@ export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendS
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     }>;
 }, {
     used: z.ZodBoolean;
@@ -68,7 +68,7 @@ export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendS
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     used: boolean;
 }, {
@@ -88,8 +88,8 @@ export declare const GeneratedAccountKeySchema: z.ZodObject<z.objectUtil.extendS
         health: boolean;
         controlParameters: number;
         stateBadges: number;
-        accountKeys: number;
+        inviteKeys: number;
     };
     used: boolean;
 }>;
-export type GeneratedAccountKeyDTO = z.infer<typeof GeneratedAccountKeySchema>;
+export type GeneratedInviteKeyDTO = z.infer<typeof GeneratedInviteKeySchema>;
