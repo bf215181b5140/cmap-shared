@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const StateBadgeSchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const ParameterBadgeSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodString;
 }, {
     type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
@@ -25,4 +25,4 @@ export declare const StateBadgeSchema: z.ZodObject<z.objectUtil.extendShape<{
     path: string;
     icon: string;
 }>;
-export type StateBadgeDTO = z.infer<typeof StateBadgeSchema>;
+export type ParameterBadgeDTO = z.infer<typeof ParameterBadgeSchema>;

@@ -1,25 +1,15 @@
 import { z } from 'zod';
 import { parameterPathSchema, parameterValueOrAvatarSchema } from '../../../shared';
 import { convertParameterValueFromString } from '../../../util';
+import { VrcParameter } from '../../../objects/vrcParameter';
 
-export const ClientStateParameterFormSchema = z.object({
+export const TrackedParameterFormSchema = z.object({
     path: parameterPathSchema,
     value: parameterValueOrAvatarSchema,
-}).transform((val, ctx) => {
-    // vrc avatar id
-    if (val.value.startsWith('avtr_')) return val;
-    // convert to number or boolean
-    const convertedVal = convertParameterValueFromString(val.value);
-    if (convertedVal === undefined) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Invalid value, must be either VRChat avatar ID, number or bool',
-            fatal: true,
-        });
-        return z.NEVER;
-    }
+}).transform((val) => {
+    // convert to number or boolean, otherwise it must be avatarId
+    let convertedVal: string | number | boolean | undefined = convertParameterValueFromString(val.value);
+    if (convertedVal === undefined) convertedVal = val.value
 
-    return { ...val, value: convertedVal };
+    return { path: val.path, value: convertedVal } as VrcParameter;
 });
-
-export type ClientStateParameterFormDTO = z.infer<typeof ClientStateParameterFormSchema>;

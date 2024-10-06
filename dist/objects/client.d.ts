@@ -34,7 +34,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
         controlParameters: z.ZodNumber;
-        stateBadges: z.ZodNumber;
+        parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -51,7 +51,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -66,7 +66,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }>>;
     background: z.ZodOptional<z.ZodObject<{
@@ -84,7 +84,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
             controlParameters: z.ZodNumber;
-            stateBadges: z.ZodNumber;
+            parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -101,7 +101,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -116,7 +116,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -135,7 +135,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -154,7 +154,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -173,7 +173,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
             controlParameters: z.ZodNumber;
-            stateBadges: z.ZodNumber;
+            parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -190,7 +190,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -205,7 +205,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -224,7 +224,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -243,7 +243,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -520,7 +520,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             seconds: number;
         }>, "many">>;
-        stateBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        parameterBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
             type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
@@ -608,7 +608,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -679,7 +679,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -728,7 +728,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -748,7 +748,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -824,7 +824,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -847,7 +847,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }, {
@@ -875,7 +875,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -895,7 +895,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -971,7 +971,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -994,7 +994,7 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }>;

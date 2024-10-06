@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StateBadgeFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../shared");
-const stateBadgeType_1 = require("../../enums/stateBadgeType");
+const parameterBadgeType_1 = require("../../enums/parameterBadgeType");
 exports.StateBadgeFormSchema = zod_1.z.object({
     parentId: shared_1.IdSchema,
     statebadges: zod_1.z.array(shared_1.BaseNullableIdSchema.extend({
-        type: stateBadgeType_1.StateBadgeTypeSchema,
+        type: parameterBadgeType_1.ParameterBadgeTypeSchema,
         path: shared_1.parameterPathSchema,
         value: zod_1.z.union([zod_1.z.literal(''), shared_1.parameterValueSchema]),
         label: zod_1.z.string().min(3).max(20),

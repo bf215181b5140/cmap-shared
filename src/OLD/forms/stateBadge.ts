@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import { BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueSchema } from '../../shared';
-import { StateBadgeTypeSchema } from '../../enums/stateBadgeType';
+import { ParameterBadgeTypeSchema } from '../../enums/parameterBadgeType';
 
 export const StateBadgeFormSchema = z.object({
     parentId: IdSchema,
     statebadges: z.array(BaseNullableIdSchema.extend({
-        type: StateBadgeTypeSchema,
+        type: ParameterBadgeTypeSchema,
         path: parameterPathSchema,
         value: z.union([z.literal(''), parameterValueSchema]),
         label: z.string().min(3).max(20),

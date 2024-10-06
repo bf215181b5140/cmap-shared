@@ -14,7 +14,7 @@ export declare const BackgroundSchema: z.ZodObject<{
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
         controlParameters: z.ZodNumber;
-        stateBadges: z.ZodNumber;
+        parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -31,7 +31,7 @@ export declare const BackgroundSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -46,7 +46,7 @@ export declare const BackgroundSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }>>;
 }, "strip", z.ZodTypeAny, {
@@ -65,7 +65,7 @@ export declare const BackgroundSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }, {
@@ -84,7 +84,7 @@ export declare const BackgroundSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }>;

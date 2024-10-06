@@ -15,7 +15,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
         controlParameters: z.ZodNumber;
-        stateBadges: z.ZodNumber;
+        parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -32,7 +32,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -47,7 +47,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }>>;
 }>, "strip", z.ZodTypeAny, {
@@ -66,7 +66,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }, {
@@ -85,7 +85,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     } | undefined;
 }>;

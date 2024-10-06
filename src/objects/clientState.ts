@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { parameterPathSchema, parameterValueObjectOrAvatarSchema } from '../shared';
 import { TrackedParametersSchema } from './trackedParameters';
 
 export const ClientStateSchema = z.object({

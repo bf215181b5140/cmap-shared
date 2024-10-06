@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const ClientStateParameterFormSchema: z.ZodEffects<z.ZodObject<{
+export declare const TrackedParameterFormSchema: z.ZodEffects<z.ZodObject<{
     path: z.ZodString;
     value: z.ZodUnion<[z.ZodEffects<z.ZodString, string, string>, z.ZodString]>;
 }, "strip", z.ZodTypeAny, {
@@ -9,13 +9,9 @@ export declare const ClientStateParameterFormSchema: z.ZodEffects<z.ZodObject<{
     value: string;
     path: string;
 }>, {
-    value: string;
-    path: string;
-} | {
-    value: number | boolean;
+    value: string | number | boolean;
     path: string;
 }, {
     value: string;
     path: string;
 }>;
-export type ClientStateParameterFormDTO = z.infer<typeof ClientStateParameterFormSchema>;

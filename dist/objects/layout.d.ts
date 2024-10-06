@@ -272,7 +272,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         path: string;
         seconds: number;
     }>, "many">>;
-    stateBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    parameterBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
         type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
@@ -360,7 +360,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         path: string;
         seconds: number;
     }[] | undefined;
-    stateBadges?: {
+    parameterBadges?: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string;
         order: number;
@@ -431,7 +431,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         path: string;
         seconds: number;
     }[] | undefined;
-    stateBadges?: {
+    parameterBadges?: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string;
         order: number;

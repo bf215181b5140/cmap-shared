@@ -11,7 +11,7 @@ export const TierSchema = BaseIdSchema.extend({
     useCost: z.boolean(),
     health: z.boolean(),
     controlParameters: z.number(),
-    stateBadges: z.number(),
+    parameterBadges: z.number(),
     groups: z.number(),
     buttons: z.number(),
     inviteKeys: z.number(),

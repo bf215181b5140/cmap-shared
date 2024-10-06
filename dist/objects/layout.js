@@ -5,7 +5,7 @@ const shared_1 = require("../shared");
 const zod_1 = require("zod");
 const group_1 = require("./group");
 const controlParameter_1 = require("./controlParameter");
-const stateBadge_1 = require("./stateBadge");
+const parameterBadge_1 = require("./parameterBadge");
 exports.LayoutSchema = shared_1.BaseIdSchema.extend({
     label: zod_1.z.string(),
     avatars: zod_1.z.array(zod_1.z.string()),
@@ -17,5 +17,5 @@ exports.LayoutSchema = shared_1.BaseIdSchema.extend({
     useCostMax: zod_1.z.number().nullable(),
     groups: zod_1.z.array(group_1.GroupSchema).optional(),
     controlParameters: zod_1.z.array(controlParameter_1.ControlParameterSchema).optional(),
-    stateBadges: zod_1.z.array(stateBadge_1.StateBadgeSchema).optional(),
+    parameterBadges: zod_1.z.array(parameterBadge_1.ParameterBadgeSchema).optional(),
 });

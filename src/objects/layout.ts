@@ -2,7 +2,7 @@ import { BaseIdSchema } from '../shared';
 import { z } from 'zod';
 import { GroupSchema } from './group';
 import { ControlParameterSchema, } from './controlParameter';
-import { StateBadgeSchema } from './stateBadge';
+import { ParameterBadgeSchema } from './parameterBadge';
 
 export const LayoutSchema = BaseIdSchema.extend({
     label: z.string(),
@@ -15,7 +15,7 @@ export const LayoutSchema = BaseIdSchema.extend({
     useCostMax: z.number().nullable(),
     groups: z.array(GroupSchema).optional(),
     controlParameters: z.array(ControlParameterSchema).optional(),
-    stateBadges: z.array(StateBadgeSchema).optional(),
+    parameterBadges: z.array(ParameterBadgeSchema).optional(),
 });
 
 export type LayoutDTO = z.infer<typeof LayoutSchema>;

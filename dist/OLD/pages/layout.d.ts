@@ -273,7 +273,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             path: string;
             seconds: number;
         }>, "many">>;
-        stateBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        parameterBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
         }, {
             type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
@@ -361,7 +361,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -432,7 +432,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -454,7 +454,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
         controlParameters: z.ZodNumber;
-        stateBadges: z.ZodNumber;
+        parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -471,7 +471,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -486,7 +486,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     }>;
     backgroud: z.ZodObject<{
@@ -504,7 +504,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
             controlParameters: z.ZodNumber;
-            stateBadges: z.ZodNumber;
+            parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -521,7 +521,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -536,7 +536,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -555,7 +555,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -574,7 +574,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }>;
@@ -593,7 +593,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
             controlParameters: z.ZodNumber;
-            stateBadges: z.ZodNumber;
+            parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -610,7 +610,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -625,7 +625,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -644,7 +644,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -663,7 +663,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     }>;
@@ -698,7 +698,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     };
@@ -769,7 +769,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -792,7 +792,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     };
     backgroud: {
@@ -811,7 +811,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     };
@@ -832,7 +832,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     };
@@ -903,7 +903,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             path: string;
             seconds: number;
         }[] | undefined;
-        stateBadges?: {
+        parameterBadges?: {
             type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
             id: string;
             order: number;
@@ -926,7 +926,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
         useCost: boolean;
         health: boolean;
         controlParameters: number;
-        stateBadges: number;
+        parameterBadges: number;
         inviteKeys: number;
     };
     backgroud: {
@@ -945,7 +945,7 @@ export declare const LayoutPageSchema: z.ZodObject<{
             useCost: boolean;
             health: boolean;
             controlParameters: number;
-            stateBadges: number;
+            parameterBadges: number;
             inviteKeys: number;
         } | undefined;
     };

@@ -3,7 +3,7 @@ export { ClientVisibilitySchema, ClientVisibility } from './enums/clientVisibili
 export { GroupWidthSchema, GroupWidth } from './enums/groupWidth';
 export { ImageOrientationSchema, ImageOrientation } from './enums/imageOrientation';
 export { NotificationTypeSchema, NotificationType } from './enums/notificationType';
-export { StateBadgeTypeSchema, StateBadgeType } from './enums/stateBadgeType';
+export { ParameterBadgeTypeSchema, ParameterBadgeType } from './enums/parameterBadgeType';
 export { VrcParameterSchema, VrcParameter } from './objects/vrcParameter';
 export { BackgroundDTO, BackgroundSchema } from './objects/background';
 export { ButtonDTO, ButtonSchema } from './objects/button';
@@ -13,7 +13,7 @@ export { GroupDTO, GroupSchema } from './objects/group';
 export { InteractionKeyDTO, InteractionKeySchema } from './objects/interactionKey';
 export { LayoutDTO, LayoutSchema } from './objects/layout';
 export { InviteKeyDTO, InviteKeySchema } from './objects/inviteKey';
-export { StateBadgeDTO, StateBadgeSchema } from './objects/stateBadge';
+export { ParameterBadgeDTO, ParameterBadgeSchema } from './objects/parameterBadge';
 export { StyleDTO, StyleSchema } from './objects/style';
 export { TierDTO, TierSchema } from './objects/tier';
 export { UpdateDTO, UpdateSchema } from './objects/update';
@@ -29,7 +29,7 @@ export { BasicInfoFormSchema, BasicInfoFormDTO } from './api/profile/basicInfo/b
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
-export { ClientStateParameterFormSchema, ClientStateParameterFormDTO } from './api/state/parameter/parameter';
+export { TrackedParameterFormSchema } from './api/state/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
 export { GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/generateInviteKey/generateInviteKey';
