@@ -29,7 +29,8 @@ export { BasicInfoFormSchema, BasicInfoFormDTO } from './api/profile/basicInfo/b
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
-export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/state/parameter/parameter';
+export { LayoutPageSchema, LayoutPageDTO } from './api/layout/layouts';
+export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
 export { GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/generateInviteKey/generateInviteKey';
@@ -44,7 +45,6 @@ export { StateBadgeFormDTO, StateBadgeFormSchema } from './OLD/forms/stateBadge'
 export { UpdatesFormDTO, UpdatesFormSchema } from './OLD/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './OLD/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './OLD/forms/order';
-export { LayoutPageDTO, LayoutPageSchema } from './OLD/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './OLD/pages/approveFiles';
 export { UsedButtonDTO, UsedButtonSchema } from './OLD/website';
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema } from './shared';

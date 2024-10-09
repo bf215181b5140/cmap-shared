@@ -34,7 +34,9 @@ export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
 
-export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/state/parameter/parameter';
+export { LayoutPageSchema, LayoutPageDTO } from './api/layout/layouts';
+
+export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
@@ -52,7 +54,6 @@ export { UpdatesFormDTO, UpdatesFormSchema } from './OLD/forms/update';
 export { UploadFileFormDTO, UploadFileFormSchema } from './OLD/forms/uploadedFile';
 export { OrderFormDTO, OrderFormSchema } from './OLD/forms/order';
 // ------------------------------ Pages ------------------------------ //
-export { LayoutPageDTO, LayoutPageSchema } from './OLD/pages/layout';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './OLD/pages/approveFiles';
 // ------------------------------ Website ------------------------------ //
 export { UsedButtonDTO, UsedButtonSchema } from './OLD/website';
