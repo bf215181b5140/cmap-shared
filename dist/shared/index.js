@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseFormSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueSchema = exports.parameterPathSchema = exports.vrcAvatarIdSchema = exports.passwordSchema = exports.usernameSchema = exports.IdSchema = void 0;
+exports.OrderSchema = exports.BaseFormSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueSchema = exports.parameterPathSchema = exports.vrcAvatarIdSchema = exports.passwordSchema = exports.usernameSchema = exports.IdSchema = void 0;
 const zod_1 = require("zod");
 const util_1 = require("../util");
 // ------------------- Field schemas ------------------- //
@@ -25,3 +25,4 @@ exports.BaseFormSchema = zod_1.z.object({
     id: exports.IdSchema.nullable(),
     parentId: exports.IdSchema
 });
+exports.OrderSchema = zod_1.z.array(exports.BaseIdSchema.extend({ order: zod_1.z.number() }));

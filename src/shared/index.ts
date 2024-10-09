@@ -39,3 +39,6 @@ export const BaseFormSchema = z.object({
 
 export type BaseFormDTO = z.infer<typeof BaseFormSchema>;
 
+export const OrderSchema = z.array(BaseIdSchema.extend({ order: z.number() }));
+
+export type OrderDTO = z.infer<typeof OrderSchema>;

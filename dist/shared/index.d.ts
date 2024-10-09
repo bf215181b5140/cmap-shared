@@ -35,3 +35,15 @@ export declare const BaseFormSchema: z.ZodObject<{
     parentId: string;
 }>;
 export type BaseFormDTO = z.infer<typeof BaseFormSchema>;
+export declare const OrderSchema: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    id: z.ZodString;
+}, {
+    order: z.ZodNumber;
+}>, "strip", z.ZodTypeAny, {
+    id: string;
+    order: number;
+}, {
+    id: string;
+    order: number;
+}>, "many">;
+export type OrderDTO = z.infer<typeof OrderSchema>;

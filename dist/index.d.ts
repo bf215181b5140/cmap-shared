@@ -29,7 +29,7 @@ export { BasicInfoFormSchema, BasicInfoFormDTO } from './api/profile/basicInfo/b
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
-export { LayoutPageSchema, LayoutPageDTO } from './api/layout/layouts';
+export { LayoutPageSchema, LayoutPageDTO, LayoutFormSchema, LayoutFormDTO } from './api/layout/layout';
 export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
@@ -38,7 +38,6 @@ export { ButtonFormDTO, ButtonFormSchema } from './OLD/forms/button';
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './OLD/forms/controlParameter';
 export { ProfileFormDTO, ProfileFormSchema } from './OLD/forms/profile';
 export { GroupFormDTO, GroupFormSchema } from './OLD/forms/group';
-export { LayoutFormDTO, LayoutFormSchema } from './OLD/forms/layout';
 export { HealthFormDTO, HealthFormSchema } from './OLD/forms/health';
 export { UseCostFormDTO, UseCostFormSchema } from './OLD/forms/useCost';
 export { StateBadgeFormDTO, StateBadgeFormSchema } from './OLD/forms/stateBadge';
@@ -47,5 +46,5 @@ export { UploadFileFormDTO, UploadFileFormSchema } from './OLD/forms/uploadedFil
 export { OrderFormDTO, OrderFormSchema } from './OLD/forms/order';
 export { ApproveFilesPageDTO, ApproveFilesPageSchema } from './OLD/pages/approveFiles';
 export { UsedButtonDTO, UsedButtonSchema } from './OLD/website';
-export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema } from './shared';
+export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO } from './shared';
 export { convertParameterValueFromString } from './util';
