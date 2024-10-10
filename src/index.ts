@@ -34,7 +34,8 @@ export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
 
-export { LayoutPageSchema, LayoutPageDTO, LayoutFormSchema, LayoutFormDTO } from './api/layout/layout';
+export { LayoutsPageSchema, LayoutsPageDTO } from './api/layouts/layouts';
+export { LayoutFormSchema, LayoutFormDTO } from './api/layouts/layout/layout';
 
 export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 

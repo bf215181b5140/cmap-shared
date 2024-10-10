@@ -29,7 +29,8 @@ export { BasicInfoFormSchema, BasicInfoFormDTO } from './api/profile/basicInfo/b
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
-export { LayoutPageSchema, LayoutPageDTO, LayoutFormSchema, LayoutFormDTO } from './api/layout/layout';
+export { LayoutsPageSchema, LayoutsPageDTO } from './api/layouts/layouts';
+export { LayoutFormSchema, LayoutFormDTO } from './api/layouts/layout/layout';
 export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
