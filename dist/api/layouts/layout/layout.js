@@ -4,6 +4,7 @@ exports.LayoutFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../shared");
 exports.LayoutFormSchema = zod_1.z.object({
+    id: shared_1.IdSchema.nullable(),
     label: zod_1.z.string().min(3).max(32),
     avatars: zod_1.z.array(shared_1.vrcAvatarIdSchema),
     healthEnabled: zod_1.z.boolean(),

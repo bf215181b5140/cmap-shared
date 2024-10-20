@@ -1,5 +1,6 @@
 import { z } from 'zod';
 export declare const LayoutFormSchema: z.ZodObject<{
+    id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     avatars: z.ZodArray<z.ZodString, "many">;
     healthEnabled: z.ZodBoolean;
@@ -9,6 +10,7 @@ export declare const LayoutFormSchema: z.ZodObject<{
     useCostPath: z.ZodNullable<z.ZodString>;
     useCostMax: z.ZodNullable<z.ZodNumber>;
 }, "strip", z.ZodTypeAny, {
+    id: string | null;
     label: string;
     avatars: string[];
     healthEnabled: boolean;
@@ -18,6 +20,7 @@ export declare const LayoutFormSchema: z.ZodObject<{
     useCostPath: string | null;
     useCostMax: number | null;
 }, {
+    id: string | null;
     label: string;
     avatars: string[];
     healthEnabled: boolean;

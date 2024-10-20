@@ -1,7 +1,8 @@
 import { z } from 'zod';
-import { parameterPathSchema, vrcAvatarIdSchema } from '../../../shared';
+import { IdSchema, parameterPathSchema, vrcAvatarIdSchema } from '../../../shared';
 
 export const LayoutFormSchema = z.object({
+    id: IdSchema.nullable(),
     label: z.string().min(3).max(32),
     avatars: z.array(vrcAvatarIdSchema),
     healthEnabled: z.boolean(),

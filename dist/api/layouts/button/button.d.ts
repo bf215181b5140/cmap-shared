@@ -1,28 +1,15 @@
 import { z } from 'zod';
-export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
-    id: z.ZodString;
-}, {
+export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
+    groupId: z.ZodString;
+    id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
     path: z.ZodString;
-    value: z.ZodString;
-    valueAlt: z.ZodString;
+    value: z.ZodEffects<z.ZodString, string, string>;
+    valueAlt: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
     buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
-    image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
-        id: z.ZodString;
-        fileName: z.ZodString;
-        urlPath: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }>>>;
     callbackParameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
         value: z.ZodEffects<z.ZodString, string, string>;
@@ -50,8 +37,8 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
         condition: "equal" | "not_equal" | "less_than" | "more_than";
     }>, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
-}>, "strip", z.ZodTypeAny, {
-    id: string;
+}, "strip", z.ZodTypeAny, {
+    id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
@@ -71,13 +58,9 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
         condition: "equal" | "not_equal" | "less_than" | "more_than";
     }[];
     interactionKeyId: string | null;
-    image?: {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    } | null | undefined;
+    groupId: string;
 }, {
-    id: string;
+    id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     value: string;
@@ -97,10 +80,50 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
         condition: "equal" | "not_equal" | "less_than" | "more_than";
     }[];
     interactionKeyId: string | null;
-    image?: {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    } | null | undefined;
+    groupId: string;
+}>, {
+    id: string | null;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
+    order: number;
+    value: string;
+    label: string;
+    path: string;
+    useCost: number | null;
+    valueAlt: string;
+    buttonType: "Button" | "Slider" | "Toggle";
+    callbackParameters: {
+        value: string;
+        path: string;
+        seconds: number;
+    }[];
+    visibilityParameters: {
+        value: string;
+        path: string;
+        condition: "equal" | "not_equal" | "less_than" | "more_than";
+    }[];
+    interactionKeyId: string | null;
+    groupId: string;
+}, {
+    id: string | null;
+    imageOrientation: "Horizontal" | "Square" | "Vertical";
+    order: number;
+    value: string;
+    label: string;
+    path: string;
+    useCost: number | null;
+    valueAlt: string;
+    buttonType: "Button" | "Slider" | "Toggle";
+    callbackParameters: {
+        value: string;
+        path: string;
+        seconds: number;
+    }[];
+    visibilityParameters: {
+        value: string;
+        path: string;
+        condition: "equal" | "not_equal" | "less_than" | "more_than";
+    }[];
+    interactionKeyId: string | null;
+    groupId: string;
 }>;
-export type ButtonDTO = z.infer<typeof ButtonSchema>;
+export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
