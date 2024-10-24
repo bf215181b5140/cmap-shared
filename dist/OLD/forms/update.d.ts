@@ -9,14 +9,14 @@ export declare const UpdatesFormSchema: z.ZodArray<z.ZodObject<z.objectUtil.exte
 }>, "strip", z.ZodTypeAny, {
     id: string | null;
     description: string;
-    date: Date;
     version: string;
     download: string;
+    date: Date;
 }, {
     id: string | null;
     description: string;
-    date: Date;
     version: string;
     download: string;
+    date: Date;
 }>, "many">;
 export type UpdatesFormDTO = z.infer<typeof UpdatesFormSchema>;

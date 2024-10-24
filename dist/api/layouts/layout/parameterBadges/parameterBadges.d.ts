@@ -1,7 +1,7 @@
 import { z } from 'zod';
 export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
     layoutId: z.ZodString;
-    statebadges: z.ZodArray<z.ZodEffects<z.ZodObject<{
+    parameterBadges: z.ZodArray<z.ZodEffects<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
         path: z.ZodString;
@@ -43,8 +43,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         icon: string;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    layoutId: string;
-    statebadges: {
+    parameterBadges: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
@@ -53,9 +52,9 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }[];
+    layoutId: string;
 }, {
-    layoutId: string;
-    statebadges: {
+    parameterBadges: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
@@ -64,9 +63,9 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }[];
+    layoutId: string;
 }>, {
-    layoutId: string;
-    statebadges: {
+    parameterBadges: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
@@ -75,9 +74,9 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }[];
+    layoutId: string;
 }, {
-    layoutId: string;
-    statebadges: {
+    parameterBadges: {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
@@ -86,5 +85,6 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         path: string;
         icon: string;
     }[];
+    layoutId: string;
 }>;
 export type ParameterBadgeFormDTO = z.infer<typeof ParameterBadgeFormSchema>;

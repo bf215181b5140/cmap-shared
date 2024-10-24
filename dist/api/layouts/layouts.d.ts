@@ -194,6 +194,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         urlPath: string;
     }>>>;
     username: z.ZodString;
+    displayName: z.ZodString;
     interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
@@ -610,7 +611,6 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     }>;
-    displayName: z.ZodString;
     bio: z.ZodString;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
@@ -659,6 +659,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         } | undefined;
     };
     username: string;
+    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -739,7 +740,6 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     };
-    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
@@ -793,6 +793,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         } | undefined;
     };
     username: string;
+    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -873,7 +874,6 @@ export declare const LayoutsPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     };
-    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;

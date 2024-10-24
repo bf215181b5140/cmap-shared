@@ -4,7 +4,7 @@ import { ParameterBadgeTypeSchema } from '../../../../enums/parameterBadgeType';
 
 export const ParameterBadgeFormSchema = z.object({
   layoutId: IdSchema,
-  statebadges: z.array(z.object({
+  parameterBadges: z.array(z.object({
     id: IdSchema.nullable(),
     type: ParameterBadgeTypeSchema,
     path: parameterPathSchema,
@@ -14,8 +14,8 @@ export const ParameterBadgeFormSchema = z.object({
     order: z.number(),
   }).transform((val, ctx) => {
     if (val.type === 'Custom') {
-      // Check value if custom badge
-      if (!val.value || val.value === '') {
+      // If it's custom badge, value is required or label needs to have value display placeholder
+      if ((!val.value || val.value === '') && !val.label.includes('{v}')) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: 'Value required for custom badge',
@@ -31,14 +31,14 @@ export const ParameterBadgeFormSchema = z.object({
     return val;
   })),
 }).superRefine((val, ctx) => {
-  val.statebadges.forEach(badge => {
+  val.parameterBadges.forEach(badge => {
     if (badge.type !== 'Custom') {
-      const count = val.statebadges.filter(b => b.type === badge.type).length;
+      const count = val.parameterBadges.filter(b => b.type === badge.type).length;
       if (count > 1) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: `Duplicate badges are not allowed: ${badge.type}`,
-          path: ['statebadges'],
+          path: ['parameterBadges'],
         });
       }
     }
