@@ -89,18 +89,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;
@@ -115,18 +115,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;
@@ -153,18 +153,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;
@@ -191,18 +191,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;
@@ -266,18 +266,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;
@@ -324,18 +324,18 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             label: string;
             path: string;
             useCost: number | null;
-            valueAlt: string;
-            buttonType: "Button" | "Slider" | "Toggle";
-            callbackParameters: {
-                value: string;
-                path: string;
-                seconds: number;
-            }[];
             visibilityParameters: {
                 value: string;
                 path: string;
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }[];
+            callbackParameters: {
+                value: string;
+                path: string;
+                seconds: number;
+            }[];
+            valueAlt: string;
+            buttonType: "Button" | "Slider" | "Toggle";
             interactionKeyId: string | null;
             image?: {
                 id: string;

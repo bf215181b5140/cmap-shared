@@ -15,7 +15,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            visibilityParameters: z.ZodNumber;
+            callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -32,7 +33,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }, {
@@ -47,7 +49,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }>>;
@@ -66,7 +69,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -85,7 +89,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -105,7 +110,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            visibilityParameters: z.ZodNumber;
+            callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -122,7 +128,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }, {
@@ -137,7 +144,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }>>;
@@ -156,7 +164,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -175,7 +184,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -194,7 +204,6 @@ export declare const ProfilePageSchema: z.ZodObject<{
         urlPath: string;
     }>>;
     username: z.ZodString;
-    displayName: z.ZodString;
     interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
     }, {
@@ -299,18 +308,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -325,18 +334,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -363,18 +372,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -401,18 +410,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -476,18 +485,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -534,18 +543,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -575,7 +584,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        visibilityParameters: z.ZodNumber;
+        callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -592,7 +602,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     }, {
@@ -607,10 +618,12 @@ export declare const ProfilePageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     }>;
+    displayName: z.ZodString;
     bio: z.ZodString;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
@@ -632,7 +645,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -653,7 +667,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -664,7 +679,6 @@ export declare const ProfilePageSchema: z.ZodObject<{
         urlPath: string;
     } | null;
     username: string;
-    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -699,18 +713,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -741,10 +755,12 @@ export declare const ProfilePageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     };
+    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
@@ -766,7 +782,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -787,7 +804,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -798,7 +816,6 @@ export declare const ProfilePageSchema: z.ZodObject<{
         urlPath: string;
     } | null;
     username: string;
-    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -833,18 +850,18 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -875,10 +892,12 @@ export declare const ProfilePageSchema: z.ZodObject<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     };
+    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;

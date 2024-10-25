@@ -23,10 +23,10 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     path: string;
     parentId: string;
     useCost: number | null;
+    visibilityParameters: string[];
+    callbackParameters: string[];
     valueAlt: string;
     buttonType: "Button" | "Slider" | "Toggle";
-    callbackParameters: string[];
-    visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
@@ -37,10 +37,10 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     path: string;
     parentId: string;
     useCost: number | null;
+    visibilityParameters: string[];
+    callbackParameters: string[];
     valueAlt: string;
     buttonType: "Button" | "Slider" | "Toggle";
-    callbackParameters: string[];
-    visibilityParameters: string[];
     interactionKeyId: string | null;
 }>, {
     id: string | null;
@@ -51,10 +51,10 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     path: string;
     parentId: string;
     useCost: number | null;
+    visibilityParameters: string[];
+    callbackParameters: string[];
     valueAlt: string;
     buttonType: "Button" | "Slider" | "Toggle";
-    callbackParameters: string[];
-    visibilityParameters: string[];
     interactionKeyId: string | null;
 }, {
     id: string | null;
@@ -65,10 +65,10 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<z.objectUtil.ext
     path: string;
     parentId: string;
     useCost: number | null;
+    visibilityParameters: string[];
+    callbackParameters: string[];
     valueAlt: string;
     buttonType: "Button" | "Slider" | "Toggle";
-    callbackParameters: string[];
-    visibilityParameters: string[];
     interactionKeyId: string | null;
 }>;
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;

@@ -10,7 +10,8 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: z.ZodNumber;
     useCost: z.ZodBoolean;
     health: z.ZodBoolean;
-    controlParameters: z.ZodNumber;
+    visibilityParameters: z.ZodNumber;
+    callbackParameters: z.ZodNumber;
     parameterBadges: z.ZodNumber;
     groups: z.ZodNumber;
     buttons: z.ZodNumber;
@@ -27,7 +28,8 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: number;
     useCost: boolean;
     health: boolean;
-    controlParameters: number;
+    visibilityParameters: number;
+    callbackParameters: number;
     parameterBadges: number;
     inviteKeys: number;
 }, {
@@ -42,7 +44,8 @@ export declare const TierSchema: z.ZodObject<z.objectUtil.extendShape<{
     avatars: number;
     useCost: boolean;
     health: boolean;
-    controlParameters: number;
+    visibilityParameters: number;
+    callbackParameters: number;
     parameterBadges: number;
     inviteKeys: number;
 }>;

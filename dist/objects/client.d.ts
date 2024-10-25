@@ -33,7 +33,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: z.ZodNumber;
         useCost: z.ZodBoolean;
         health: z.ZodBoolean;
-        controlParameters: z.ZodNumber;
+        visibilityParameters: z.ZodNumber;
+        callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
@@ -50,7 +51,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     }, {
@@ -65,7 +67,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     }>>;
@@ -83,7 +86,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            visibilityParameters: z.ZodNumber;
+            callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -100,7 +104,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }, {
@@ -115,7 +120,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }>>;
@@ -134,7 +140,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -153,7 +160,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -172,7 +180,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: z.ZodNumber;
             useCost: z.ZodBoolean;
             health: z.ZodBoolean;
-            controlParameters: z.ZodNumber;
+            visibilityParameters: z.ZodNumber;
+            callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
@@ -189,7 +198,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }, {
@@ -204,7 +214,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         }>>;
@@ -223,7 +234,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -242,7 +254,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -337,18 +350,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -363,18 +376,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -401,18 +414,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -439,18 +452,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -514,18 +527,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -572,18 +585,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -640,7 +653,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -660,7 +674,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -704,18 +719,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -746,7 +761,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     } | undefined;
@@ -774,7 +790,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -794,7 +811,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
             avatars: number;
             useCost: boolean;
             health: boolean;
-            controlParameters: number;
+            visibilityParameters: number;
+            callbackParameters: number;
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
@@ -838,18 +856,18 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
                 label: string;
                 path: string;
                 useCost: number | null;
-                valueAlt: string;
-                buttonType: "Button" | "Slider" | "Toggle";
-                callbackParameters: {
-                    value: string;
-                    path: string;
-                    seconds: number;
-                }[];
                 visibilityParameters: {
                     value: string;
                     path: string;
                     condition: "equal" | "not_equal" | "less_than" | "more_than";
                 }[];
+                callbackParameters: {
+                    value: string;
+                    path: string;
+                    seconds: number;
+                }[];
+                valueAlt: string;
+                buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
                     id: string;
@@ -880,7 +898,8 @@ export declare const ClientSchema: z.ZodObject<z.objectUtil.extendShape<{
         avatars: number;
         useCost: boolean;
         health: boolean;
-        controlParameters: number;
+        visibilityParameters: number;
+        callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
     } | undefined;
