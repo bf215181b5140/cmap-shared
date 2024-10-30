@@ -1,7 +1,6 @@
 import { z } from 'zod';
-export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const LayoutSchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     label: z.ZodString;
     avatars: z.ZodArray<z.ZodString, "many">;
     healthEnabled: z.ZodBoolean;
@@ -10,9 +9,8 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
     useCostEnabled: z.ZodBoolean;
     useCostPath: z.ZodNullable<z.ZodString>;
     useCostMax: z.ZodNullable<z.ZodNumber>;
-    groups: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    groups: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-    }, {
         label: z.ZodString;
         order: z.ZodNumber;
         width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
@@ -30,9 +28,8 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             condition: "equal" | "not_equal" | "less_than" | "more_than";
         }>, "many">;
         interactionKeyId: z.ZodNullable<z.ZodString>;
-        buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        buttons: z.ZodOptional<z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-        }, {
             label: z.ZodString;
             path: z.ZodString;
             value: z.ZodString;
@@ -81,7 +78,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
                 condition: "equal" | "not_equal" | "less_than" | "more_than";
             }>, "many">;
             interactionKeyId: z.ZodNullable<z.ZodString>;
-        }>, "strip", z.ZodTypeAny, {
+        }, "strip", z.ZodTypeAny, {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -134,7 +131,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
                 urlPath: string;
             } | null | undefined;
         }>, "many">>;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         id: string;
         width: "None" | "Third" | "Half" | "Full";
         order: number;
@@ -211,16 +208,15 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
             } | null | undefined;
         }[] | undefined;
     }>, "many">>;
-    parameterBadges: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    parameterBadges: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-    }, {
         type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
         path: z.ZodString;
         value: z.ZodString;
         label: z.ZodString;
         icon: z.ZodString;
         order: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string;
         order: number;
@@ -237,7 +233,7 @@ export declare const LayoutSchema: z.ZodObject<z.objectUtil.extendShape<{
         path: string;
         icon: string;
     }>, "many">>;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     id: string;
     label: string;
     avatars: string[];

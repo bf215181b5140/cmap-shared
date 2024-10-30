@@ -1,10 +1,9 @@
 import { z } from 'zod';
-export declare const InteractionKeySchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const InteractionKeySchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     label: z.ZodString;
     key: z.ZodString;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     key: string;
     id: string;
     label: string;

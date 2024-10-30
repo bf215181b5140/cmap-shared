@@ -6,7 +6,8 @@ const zod_1 = require("zod");
 const button_1 = require("./button");
 const groupWidth_1 = require("../enums/groupWidth");
 const visibilityParameter_1 = require("./visibilityParameter");
-exports.GroupSchema = shared_1.BaseIdSchema.extend({
+exports.GroupSchema = zod_1.z.object({
+    id: shared_1.IdSchema,
     label: zod_1.z.string(),
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,

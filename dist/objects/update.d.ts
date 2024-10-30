@@ -1,12 +1,11 @@
 import { z } from 'zod';
-export declare const UpdateSchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const UpdateSchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     version: z.ZodString;
     download: z.ZodString;
     description: z.ZodString;
     date: z.ZodDate;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     id: string;
     description: string;
     date: Date;

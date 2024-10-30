@@ -1,11 +1,9 @@
 import { z } from 'zod';
-export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const InviteKeySchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     key: z.ZodString;
-    tier: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
+    tier: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
-    }, {
         rank: z.ZodNumber;
         label: z.ZodString;
         color: z.ZodString;
@@ -20,7 +18,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
         buttons: number;
@@ -53,7 +51,7 @@ export declare const InviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
         parameterBadges: number;
         inviteKeys: number;
     }>>;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     key: string;
     id: string;
     tier?: {

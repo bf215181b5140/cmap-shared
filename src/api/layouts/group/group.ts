@@ -10,7 +10,7 @@ export const GroupFormSchema = z.object({
   order: z.number(),
   width: GroupWidthSchema,
   visibilityParameters: z.array(VisibilityParameterSchema),
-  interactionKeyId: IdSchema.min(0).nullable(),
+  interactionKeyId: IdSchema.nullable(),
 });
 
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;

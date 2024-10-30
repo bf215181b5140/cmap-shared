@@ -8,7 +8,7 @@ exports.BasicInfoFormSchema = zod_1.z.object({
     displayName: zod_1.z.string().min(3).max(32),
     bio: zod_1.z.string().max(1000),
     visibility: clientVisibility_1.ClientVisibilitySchema,
-    defaultLayoutId: shared_1.IdSchema.min(0).nullable(),
+    defaultLayoutId: shared_1.IdSchema.nullable(),
     unknownAvatarMessage: zod_1.z.string().max(1000),
     offlineMessage: zod_1.z.string().max(1000),
 });

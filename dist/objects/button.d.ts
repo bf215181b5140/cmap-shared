@@ -1,7 +1,6 @@
 import { z } from 'zod';
-export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const ButtonSchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     label: z.ZodString;
     path: z.ZodString;
     value: z.ZodString;
@@ -50,7 +49,7 @@ export declare const ButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
         condition: "equal" | "not_equal" | "less_than" | "more_than";
     }>, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     id: string;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;

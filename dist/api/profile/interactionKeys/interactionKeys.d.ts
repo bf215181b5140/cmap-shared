@@ -1,11 +1,10 @@
 import { z } from 'zod';
 export declare const InteractionKeysFormSchema: z.ZodObject<{
-    interactionKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    interactionKeys: z.ZodArray<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
-    }, {
         label: z.ZodString;
         key: z.ZodString;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         key: string;
         id: string | null;
         label: string;

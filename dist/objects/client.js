@@ -10,12 +10,13 @@ const interactionKey_1 = require("./interactionKey");
 const background_1 = require("./background");
 const style_1 = require("./style");
 const clientVisibility_1 = require("../enums/clientVisibility");
-exports.ClientSchema = shared_1.BaseIdSchema.extend({
+exports.ClientSchema = zod_1.z.object({
+    id: shared_1.IdSchema,
     username: zod_1.z.string(),
     displayName: zod_1.z.string(),
     bio: zod_1.z.string(),
     visibility: clientVisibility_1.ClientVisibilitySchema,
-    defaultLayoutId: shared_1.IdSchema.min(0).nullable(),
+    defaultLayoutId: shared_1.IdSchema.nullable(),
     unknownAvatarMessage: zod_1.z.string(),
     offlineMessage: zod_1.z.string(),
     image: uploadedFile_1.UploadedFileSchema.nullable().optional(),

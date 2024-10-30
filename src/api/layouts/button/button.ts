@@ -19,7 +19,7 @@ export const ButtonFormSchema = z.object({
   useCost: z.number().nullable(),
   callbackParameters: z.array(CallbackParameterSchema),
   visibilityParameters: z.array(VisibilityParameterSchema),
-  interactionKeyId: IdSchema.min(0).nullable(),
+  interactionKeyId: IdSchema.nullable(),
 }).superRefine((val, ctx) => {
   // Check valueAlt requirement
   if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && (!val.valueAlt || val.valueAlt === '')) {

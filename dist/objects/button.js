@@ -8,7 +8,8 @@ const buttonType_1 = require("../enums/buttonType");
 const imageOrientation_1 = require("../enums/imageOrientation");
 const visibilityParameter_1 = require("./visibilityParameter");
 const callbackParameter_1 = require("./callbackParameter");
-exports.ButtonSchema = shared_1.BaseIdSchema.extend({
+exports.ButtonSchema = zod_1.z.object({
+    id: shared_1.IdSchema,
     label: zod_1.z.string(),
     path: zod_1.z.string(),
     value: zod_1.z.string(),

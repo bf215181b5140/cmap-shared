@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TierSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../shared");
-exports.TierSchema = shared_1.BaseIdSchema.extend({
+exports.TierSchema = zod_1.z.object({
+    id: shared_1.IdSchema,
     rank: zod_1.z.number(),
     label: zod_1.z.string(),
     color: zod_1.z.string(),

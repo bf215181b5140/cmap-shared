@@ -42,7 +42,7 @@ export const ParameterBadgeFormSchema = z.object({
         });
       }
     }
-  })
+  });
 });
 
 export type ParameterBadgeFormDTO = z.infer<typeof ParameterBadgeFormSchema>;

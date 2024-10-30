@@ -2,9 +2,8 @@ import { z } from 'zod';
 export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendShape<{
     key: z.ZodString;
     id: z.ZodString;
-    tier: z.ZodObject<z.objectUtil.extendShape<{
+    tier: z.ZodObject<{
         id: z.ZodString;
-    }, {
         rank: z.ZodNumber;
         label: z.ZodString;
         color: z.ZodString;
@@ -19,7 +18,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
         buttons: number;

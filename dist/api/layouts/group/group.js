@@ -12,5 +12,5 @@ exports.GroupFormSchema = zod_1.z.object({
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),
-    interactionKeyId: shared_1.IdSchema.min(0).nullable(),
+    interactionKeyId: shared_1.IdSchema.nullable(),
 });

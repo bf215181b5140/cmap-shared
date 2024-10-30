@@ -1,7 +1,6 @@
 import { z } from 'zod';
-export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
+export declare const GroupSchema: z.ZodObject<{
     id: z.ZodString;
-}, {
     label: z.ZodString;
     order: z.ZodNumber;
     width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
@@ -19,9 +18,8 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
         condition: "equal" | "not_equal" | "less_than" | "more_than";
     }>, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
-    buttons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    buttons: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-    }, {
         label: z.ZodString;
         path: z.ZodString;
         value: z.ZodString;
@@ -70,7 +68,7 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
             condition: "equal" | "not_equal" | "less_than" | "more_than";
         }>, "many">;
         interactionKeyId: z.ZodNullable<z.ZodString>;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         id: string;
         imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
@@ -123,7 +121,7 @@ export declare const GroupSchema: z.ZodObject<z.objectUtil.extendShape<{
             urlPath: string;
         } | null | undefined;
     }>, "many">>;
-}>, "strip", z.ZodTypeAny, {
+}, "strip", z.ZodTypeAny, {
     id: string;
     width: "None" | "Third" | "Half" | "Full";
     order: number;

@@ -5,7 +5,8 @@ const shared_1 = require("../shared");
 const zod_1 = require("zod");
 const group_1 = require("./group");
 const parameterBadge_1 = require("./parameterBadge");
-exports.LayoutSchema = shared_1.BaseIdSchema.extend({
+exports.LayoutSchema = zod_1.z.object({
+    id: shared_1.IdSchema,
     label: zod_1.z.string(),
     avatars: zod_1.z.array(zod_1.z.string()),
     healthEnabled: zod_1.z.boolean(),

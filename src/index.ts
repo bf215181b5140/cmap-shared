@@ -54,7 +54,6 @@ export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO
 // ------------------------------ Other ------------------------------ //
 export { convertParameterValueFromString } from './util';
 
-
 // ------------------------------ OLD ------------------------------ //
 export { ControlParameterFormDTO, ControlParameterFormSchema } from './OLD/forms/controlParameter';
 export { ProfileFormDTO, ProfileFormSchema } from './OLD/forms/profile';

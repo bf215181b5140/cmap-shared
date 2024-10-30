@@ -1,8 +1,7 @@
 import { z } from 'zod';
 export declare const TiersPageSchema: z.ZodObject<{
-    tiers: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    tiers: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-    }, {
         rank: z.ZodNumber;
         label: z.ZodString;
         color: z.ZodString;
@@ -17,7 +16,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
         buttons: number;
@@ -50,9 +49,8 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     }>, "many">;
-    clientTier: z.ZodObject<z.objectUtil.extendShape<{
+    clientTier: z.ZodObject<{
         id: z.ZodString;
-    }, {
         rank: z.ZodNumber;
         label: z.ZodString;
         color: z.ZodString;
@@ -67,7 +65,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
         buttons: number;
@@ -103,9 +101,8 @@ export declare const TiersPageSchema: z.ZodObject<{
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         key: z.ZodString;
         id: z.ZodString;
-        tier: z.ZodObject<z.objectUtil.extendShape<{
+        tier: z.ZodObject<{
             id: z.ZodString;
-        }, {
             rank: z.ZodNumber;
             label: z.ZodString;
             color: z.ZodString;
@@ -120,7 +117,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
-        }>, "strip", z.ZodTypeAny, {
+        }, "strip", z.ZodTypeAny, {
             groups: number;
             id: string;
             buttons: number;

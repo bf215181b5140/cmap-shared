@@ -2,9 +2,8 @@ import { z } from 'zod';
 export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
-    tier: z.ZodObject<z.objectUtil.extendShape<{
+    tier: z.ZodObject<{
         id: z.ZodString;
-    }, {
         rank: z.ZodNumber;
         label: z.ZodString;
         color: z.ZodString;
@@ -19,7 +18,7 @@ export declare const BackgroundsSchema: z.ZodArray<z.ZodObject<{
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         groups: number;
         id: string;
         buttons: number;
