@@ -11,6 +11,7 @@ const callbackParameter_1 = require("./callbackParameter");
 exports.ButtonSchema = zod_1.z.object({
     id: shared_1.IdSchema,
     label: zod_1.z.string(),
+    showLabel: zod_1.z.boolean(),
     path: zod_1.z.string(),
     value: zod_1.z.string(),
     valueAlt: zod_1.z.string(),

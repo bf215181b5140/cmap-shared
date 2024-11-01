@@ -8,7 +8,8 @@ const visibilityParameter_1 = require("../../../objects/visibilityParameter");
 exports.GroupFormSchema = zod_1.z.object({
     layoutId: shared_1.IdSchema,
     id: shared_1.IdSchema.nullable(),
-    label: zod_1.z.string().max(32),
+    label: zod_1.z.string().min(1, 'Label is required').max(32),
+    showLabel: zod_1.z.boolean(),
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),

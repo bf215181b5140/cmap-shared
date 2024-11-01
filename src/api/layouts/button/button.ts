@@ -9,7 +9,8 @@ import { convertParameterValueFromString } from '../../../util';
 export const ButtonFormSchema = z.object({
   groupId: IdSchema,
   id: IdSchema.nullable(),
-  label: z.string().max(32),
+  label: z.string().min(1, 'Label is required').max(32),
+  showLabel: z.boolean(),
   path: parameterPathSchema,
   value: parameterValueSchema,
   valueAlt: z.union([z.literal(''), parameterValueSchema]),

@@ -11,7 +11,8 @@ const util_1 = require("../../../util");
 exports.ButtonFormSchema = zod_1.z.object({
     groupId: shared_1.IdSchema,
     id: shared_1.IdSchema.nullable(),
-    label: zod_1.z.string().max(32),
+    label: zod_1.z.string().min(1, 'Label is required').max(32),
+    showLabel: zod_1.z.boolean(),
     path: shared_1.parameterPathSchema,
     value: shared_1.parameterValueSchema,
     valueAlt: zod_1.z.union([zod_1.z.literal(''), shared_1.parameterValueSchema]),

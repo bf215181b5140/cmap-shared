@@ -228,25 +228,27 @@ export declare const ProfilePageSchema: z.ZodObject<{
         groups: z.ZodOptional<z.ZodArray<z.ZodObject<{
             id: z.ZodString;
             label: z.ZodString;
+            showLabel: z.ZodBoolean;
             order: z.ZodNumber;
             width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
             visibilityParameters: z.ZodArray<z.ZodObject<{
                 path: z.ZodString;
                 value: z.ZodEffects<z.ZodString, string, string>;
-                condition: z.ZodEnum<["equal", "not_equal", "less_than", "more_than"]>;
+                condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
             }, "strip", z.ZodTypeAny, {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }, {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }>, "many">;
             interactionKeyId: z.ZodNullable<z.ZodString>;
             buttons: z.ZodOptional<z.ZodArray<z.ZodObject<{
                 id: z.ZodString;
                 label: z.ZodString;
+                showLabel: z.ZodBoolean;
                 path: z.ZodString;
                 value: z.ZodString;
                 valueAlt: z.ZodString;
@@ -283,15 +285,15 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: z.ZodArray<z.ZodObject<{
                     path: z.ZodString;
                     value: z.ZodEffects<z.ZodString, string, string>;
-                    condition: z.ZodEnum<["equal", "not_equal", "less_than", "more_than"]>;
+                    condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
                 }, "strip", z.ZodTypeAny, {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }, {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }>, "many">;
                 interactionKeyId: z.ZodNullable<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
@@ -305,13 +307,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -331,13 +334,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -355,8 +359,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -369,13 +374,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -393,8 +399,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -407,13 +414,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -467,8 +475,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -481,13 +490,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -525,8 +535,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -539,13 +550,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -694,8 +706,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -708,13 +721,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
@@ -831,8 +845,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             visibilityParameters: {
                 value: string;
                 path: string;
-                condition: "equal" | "not_equal" | "less_than" | "more_than";
+                condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
+            showLabel: boolean;
             interactionKeyId: string | null;
             buttons?: {
                 id: string;
@@ -845,13 +860,14 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 visibilityParameters: {
                     value: string;
                     path: string;
-                    condition: "equal" | "not_equal" | "less_than" | "more_than";
+                    condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
                     value: string;
                     path: string;
                     seconds: number;
                 }[];
+                showLabel: boolean;
                 valueAlt: string;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;

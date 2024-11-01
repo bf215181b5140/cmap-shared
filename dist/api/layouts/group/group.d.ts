@@ -3,20 +3,21 @@ export declare const GroupFormSchema: z.ZodObject<{
     layoutId: z.ZodString;
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
+    showLabel: z.ZodBoolean;
     order: z.ZodNumber;
     width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
     visibilityParameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
         value: z.ZodEffects<z.ZodString, string, string>;
-        condition: z.ZodEnum<["equal", "not_equal", "less_than", "more_than"]>;
+        condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
     }, "strip", z.ZodTypeAny, {
         value: string;
         path: string;
-        condition: "equal" | "not_equal" | "less_than" | "more_than";
+        condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }, {
         value: string;
         path: string;
-        condition: "equal" | "not_equal" | "less_than" | "more_than";
+        condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }>, "many">;
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
@@ -27,8 +28,9 @@ export declare const GroupFormSchema: z.ZodObject<{
     visibilityParameters: {
         value: string;
         path: string;
-        condition: "equal" | "not_equal" | "less_than" | "more_than";
+        condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
+    showLabel: boolean;
     interactionKeyId: string | null;
     layoutId: string;
 }, {
@@ -39,8 +41,9 @@ export declare const GroupFormSchema: z.ZodObject<{
     visibilityParameters: {
         value: string;
         path: string;
-        condition: "equal" | "not_equal" | "less_than" | "more_than";
+        condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
+    showLabel: boolean;
     interactionKeyId: string | null;
     layoutId: string;
 }>;

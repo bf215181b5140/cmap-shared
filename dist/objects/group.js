@@ -9,6 +9,7 @@ const visibilityParameter_1 = require("./visibilityParameter");
 exports.GroupSchema = zod_1.z.object({
     id: shared_1.IdSchema,
     label: zod_1.z.string(),
+    showLabel: zod_1.z.boolean(),
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),

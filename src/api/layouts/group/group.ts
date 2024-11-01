@@ -6,7 +6,8 @@ import { VisibilityParameterSchema } from '../../../objects/visibilityParameter'
 export const GroupFormSchema = z.object({
   layoutId: IdSchema,
   id: IdSchema.nullable(),
-  label: z.string().max(32),
+  label: z.string().min(1, 'Label is required').max(32),
+  showLabel: z.boolean(),
   order: z.number(),
   width: GroupWidthSchema,
   visibilityParameters: z.array(VisibilityParameterSchema),

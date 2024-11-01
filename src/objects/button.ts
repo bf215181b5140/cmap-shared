@@ -9,6 +9,7 @@ import { CallbackParameterSchema } from './callbackParameter';
 export const ButtonSchema = z.object({
   id: IdSchema,
   label: z.string(),
+  showLabel: z.boolean(),
   path: z.string(),
   value: z.string(),
   valueAlt: z.string(),
