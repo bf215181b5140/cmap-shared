@@ -9,17 +9,25 @@ export const ParameterBadgeFormSchema = z.object({
     type: ParameterBadgeTypeSchema,
     path: parameterPathSchema,
     value: z.union([z.literal(''), parameterValueSchema]),
-    label: z.string().min(3).max(20),
+    label: z.union([z.literal(''), z.string().min(2).max(20)]),
     icon: z.string().max(30),
     order: z.number(),
   }).transform((val, ctx) => {
     if (val.type === 'Custom') {
-      // If it's custom badge, value is required or label needs to have value display placeholder
-      if ((!val.value || val.value === '') && !val.label.includes('{v}')) {
+      // If it's custom badge, value is required
+      if (!val.value || val.value === '') {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message: 'Value required for custom badge',
+          message: 'Value is required for custom badge',
           path: ['value']
+        });
+      }
+      // If it's custom badge, label is required
+      if (!val.label || val.label === '') {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Label is required for custom badge',
+          path: ['label']
         });
       }
     } else {

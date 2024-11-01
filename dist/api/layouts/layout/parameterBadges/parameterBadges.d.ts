@@ -6,7 +6,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
         path: z.ZodString;
         value: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
-        label: z.ZodString;
+        label: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         icon: z.ZodString;
         order: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {

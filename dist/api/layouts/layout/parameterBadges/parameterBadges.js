@@ -11,17 +11,25 @@ exports.ParameterBadgeFormSchema = zod_1.z.object({
         type: parameterBadgeType_1.ParameterBadgeTypeSchema,
         path: shared_1.parameterPathSchema,
         value: zod_1.z.union([zod_1.z.literal(''), shared_1.parameterValueSchema]),
-        label: zod_1.z.string().min(3).max(20),
+        label: zod_1.z.union([zod_1.z.literal(''), zod_1.z.string().min(2).max(20)]),
         icon: zod_1.z.string().max(30),
         order: zod_1.z.number(),
     }).transform((val, ctx) => {
         if (val.type === 'Custom') {
-            // If it's custom badge, value is required or label needs to have value display placeholder
-            if ((!val.value || val.value === '') && !val.label.includes('{v}')) {
+            // If it's custom badge, value is required
+            if (!val.value || val.value === '') {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
-                    message: 'Value required for custom badge',
+                    message: 'Value is required for custom badge',
                     path: ['value']
+                });
+            }
+            // If it's custom badge, label is required
+            if (!val.label || val.label === '') {
+                ctx.addIssue({
+                    code: zod_1.z.ZodIssueCode.custom,
+                    message: 'Label is required for custom badge',
+                    path: ['label']
                 });
             }
         }
