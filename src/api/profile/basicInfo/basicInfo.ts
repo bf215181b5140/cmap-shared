@@ -6,7 +6,7 @@ export const BasicInfoFormSchema = z.object({
   displayName: z.string().min(3).max(32),
   bio: z.string().max(1000),
   visibility: ClientVisibilitySchema,
-  defaultLayoutId: IdSchema.nullable(),
+  defaultLayoutId: IdSchema.min(0),
   unknownAvatarMessage: z.string().max(1000),
   offlineMessage: z.string().max(1000),
 });
