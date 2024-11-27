@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayoutFormSchema = void 0;
+exports.LayoutCopySchema = exports.LayoutFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../shared");
 exports.LayoutFormSchema = zod_1.z.object({
@@ -13,4 +13,7 @@ exports.LayoutFormSchema = zod_1.z.object({
     useCostEnabled: zod_1.z.boolean(),
     useCostPath: shared_1.parameterPathSchema.nullable(),
     useCostMax: zod_1.z.number().nullable(),
+});
+exports.LayoutCopySchema = zod_1.z.object({
+    id: shared_1.IdSchema,
 });

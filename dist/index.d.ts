@@ -34,9 +34,9 @@ export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/back
 export { StylesSchema, StylesDTO } from './api/profile/style/style';
 export { LayoutsPageSchema, LayoutsPageDTO } from './api/layouts/layouts';
 export { ParameterBadgeFormSchema, ParameterBadgeFormDTO } from './api/layouts/layout/parameterBadges/parameterBadges';
-export { LayoutFormSchema, LayoutFormDTO } from './api/layouts/layout/layout';
-export { GroupFormSchema, GroupFormDTO } from './api/layouts/group/group';
-export { ButtonFormSchema, ButtonFormDTO } from './api/layouts/button/button';
+export { LayoutFormSchema, LayoutFormDTO, LayoutCopySchema, LayoutCopyDTO } from './api/layouts/layout/layout';
+export { GroupFormSchema, GroupFormDTO, GroupCopySchema, GroupCopyDTO } from './api/layouts/group/group';
+export { ButtonFormSchema, ButtonFormDTO, ButtonCopySchema, ButtonCopyDTO } from './api/layouts/button/button';
 export { TrackedParameterFormSchema, TrackedParameterFormDTO } from './api/trackedParameters/parameter/parameter';
 export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
 export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';

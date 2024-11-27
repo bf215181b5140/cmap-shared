@@ -14,3 +14,9 @@ export const LayoutFormSchema = z.object({
 });
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
+
+export const LayoutCopySchema = z.object({
+  id: IdSchema,
+});
+
+export type LayoutCopyDTO = z.infer<typeof LayoutCopySchema>;

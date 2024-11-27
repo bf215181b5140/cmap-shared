@@ -50,3 +50,10 @@ export const ButtonFormSchema = z.object({
 });
 
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
+
+export const ButtonCopySchema = z.object({
+  id: IdSchema,
+  groupId: IdSchema,
+});
+
+export type ButtonCopyDTO = z.infer<typeof ButtonCopySchema>;

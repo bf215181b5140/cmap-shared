@@ -132,3 +132,14 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     groupId: string;
 }>;
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
+export declare const ButtonCopySchema: z.ZodObject<{
+    id: z.ZodString;
+    groupId: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+    groupId: string;
+}, {
+    id: string;
+    groupId: string;
+}>;
+export type ButtonCopyDTO = z.infer<typeof ButtonCopySchema>;

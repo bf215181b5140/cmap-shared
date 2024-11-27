@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupFormSchema = void 0;
+exports.GroupCopySchema = exports.GroupFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../shared");
 const groupWidth_1 = require("../../../enums/groupWidth");
@@ -14,4 +14,8 @@ exports.GroupFormSchema = zod_1.z.object({
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),
     interactionKeyId: shared_1.IdSchema.nullable(),
+});
+exports.GroupCopySchema = zod_1.z.object({
+    id: shared_1.IdSchema,
+    layoutId: shared_1.IdSchema,
 });

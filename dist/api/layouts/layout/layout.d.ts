@@ -31,3 +31,11 @@ export declare const LayoutFormSchema: z.ZodObject<{
     useCostMax: number | null;
 }>;
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
+export declare const LayoutCopySchema: z.ZodObject<{
+    id: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+}, {
+    id: string;
+}>;
+export type LayoutCopyDTO = z.infer<typeof LayoutCopySchema>;

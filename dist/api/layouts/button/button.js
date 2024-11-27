@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ButtonFormSchema = void 0;
+exports.ButtonCopySchema = exports.ButtonFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../shared");
 const buttonType_1 = require("../../../enums/buttonType");
@@ -49,4 +49,8 @@ exports.ButtonFormSchema = zod_1.z.object({
             });
         }
     }
+});
+exports.ButtonCopySchema = zod_1.z.object({
+    id: shared_1.IdSchema,
+    groupId: shared_1.IdSchema,
 });

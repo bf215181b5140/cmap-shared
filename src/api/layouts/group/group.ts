@@ -15,3 +15,10 @@ export const GroupFormSchema = z.object({
 });
 
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;
+
+export const GroupCopySchema = z.object({
+  id: IdSchema,
+  layoutId: IdSchema,
+});
+
+export type GroupCopyDTO = z.infer<typeof GroupCopySchema>;

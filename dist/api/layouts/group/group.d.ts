@@ -48,3 +48,14 @@ export declare const GroupFormSchema: z.ZodObject<{
     layoutId: string;
 }>;
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;
+export declare const GroupCopySchema: z.ZodObject<{
+    id: z.ZodString;
+    layoutId: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+    layoutId: string;
+}, {
+    id: string;
+    layoutId: string;
+}>;
+export type GroupCopyDTO = z.infer<typeof GroupCopySchema>;
