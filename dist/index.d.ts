@@ -15,7 +15,7 @@ export { InteractionKeyDTO, InteractionKeySchema } from './objects/interactionKe
 export { LayoutDTO, LayoutSchema } from './objects/layout';
 export { InviteKeyDTO, InviteKeySchema } from './objects/inviteKey';
 export { ParameterBadgeDTO, ParameterBadgeSchema } from './objects/parameterBadge';
-export { StyleDTO, StyleSchema } from './objects/style';
+export { ThemeDTO, ThemeSchema } from './objects/theme';
 export { TierDTO, TierSchema } from './objects/tier';
 export { UpdateDTO, UpdateSchema } from './objects/update';
 export { UploadedFileDTO, UploadedFileSchema } from './objects/uploadedFile';
@@ -31,7 +31,7 @@ export { ProfilePageSchema, ProfilePageDTO } from './api/profile/profile';
 export { BasicInfoFormSchema, BasicInfoFormDTO } from './api/profile/basicInfo/basicInfo';
 export { InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/profile/interactionKeys/interactionKeys';
 export { BackgroundsSchema, BackgroundsDTO } from './api/profile/background/background';
-export { StylesSchema, StylesDTO } from './api/profile/style/style';
+export { ThemesSchema, ThemesDTO } from './api/profile/theme/theme';
 export { LayoutsPageSchema, LayoutsPageDTO } from './api/layouts/layouts';
 export { ParameterBadgeFormSchema, ParameterBadgeFormDTO } from './api/layouts/layout/parameterBadges/parameterBadges';
 export { LayoutFormSchema, LayoutFormDTO, LayoutCopySchema, LayoutCopyDTO } from './api/layouts/layout/layout';

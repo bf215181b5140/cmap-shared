@@ -1,8 +1,8 @@
 import { z } from 'zod';
-export declare const StyleSchema: z.ZodObject<{
+export declare const ThemesSchema: z.ZodArray<z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
-    tier: z.ZodOptional<z.ZodObject<{
+    tier: z.ZodObject<{
         id: z.ZodString;
         rank: z.ZodNumber;
         label: z.ZodString;
@@ -50,11 +50,11 @@ export declare const StyleSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
-    }>>;
+    }>;
 }, "strip", z.ZodTypeAny, {
     id: string;
     label: string;
-    tier?: {
+    tier: {
         groups: number;
         id: string;
         buttons: number;
@@ -70,11 +70,11 @@ export declare const StyleSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
-    } | undefined;
+    };
 }, {
     id: string;
     label: string;
-    tier?: {
+    tier: {
         groups: number;
         id: string;
         buttons: number;
@@ -90,6 +90,6 @@ export declare const StyleSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
-    } | undefined;
-}>;
-export type StyleDTO = z.infer<typeof StyleSchema>;
+    };
+}>, "many">;
+export type ThemesDTO = z.infer<typeof ThemesSchema>;

@@ -5,7 +5,7 @@ import { LayoutSchema } from './layout';
 import { UploadedFileSchema } from './uploadedFile';
 import { InteractionKeySchema } from './interactionKey';
 import { BackgroundSchema } from './background';
-import { StyleSchema } from './style';
+import { ThemeSchema } from './theme';
 import { ClientVisibilitySchema } from '../enums/clientVisibility';
 
 export const ClientSchema = z.object({
@@ -20,7 +20,7 @@ export const ClientSchema = z.object({
   image: UploadedFileSchema.nullable().optional(),
   tier: TierSchema.optional(),
   background: BackgroundSchema.optional(),
-  style: StyleSchema.optional(),
+  theme: ThemeSchema.optional(),
   layouts: z.array(LayoutSchema).optional(),
   interactionKeys: z.array(InteractionKeySchema).optional(),
 });

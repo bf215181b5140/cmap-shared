@@ -8,7 +8,7 @@ const layout_1 = require("./layout");
 const uploadedFile_1 = require("./uploadedFile");
 const interactionKey_1 = require("./interactionKey");
 const background_1 = require("./background");
-const style_1 = require("./style");
+const theme_1 = require("./theme");
 const clientVisibility_1 = require("../enums/clientVisibility");
 exports.ClientSchema = zod_1.z.object({
     id: shared_1.IdSchema,
@@ -22,7 +22,7 @@ exports.ClientSchema = zod_1.z.object({
     image: uploadedFile_1.UploadedFileSchema.nullable().optional(),
     tier: tier_1.TierSchema.optional(),
     background: background_1.BackgroundSchema.optional(),
-    style: style_1.StyleSchema.optional(),
+    theme: theme_1.ThemeSchema.optional(),
     layouts: zod_1.z.array(layout_1.LayoutSchema).optional(),
     interactionKeys: zod_1.z.array(interactionKey_1.InteractionKeySchema).optional(),
 });

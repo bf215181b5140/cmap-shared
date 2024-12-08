@@ -163,7 +163,7 @@ export declare const ClientSchema: z.ZodObject<{
             inviteKeys: number;
         } | undefined;
     }>>;
-    style: z.ZodOptional<z.ZodObject<{
+    theme: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<{
@@ -662,27 +662,6 @@ export declare const ClientSchema: z.ZodObject<{
             inviteKeys: number;
         } | undefined;
     } | undefined;
-    style?: {
-        id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            buttons: number;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            avatars: number;
-            useCost: boolean;
-            health: boolean;
-            visibilityParameters: number;
-            callbackParameters: number;
-            parameterBadges: number;
-            inviteKeys: number;
-        } | undefined;
-    } | undefined;
     image?: {
         id: string;
         fileName: string;
@@ -770,6 +749,27 @@ export declare const ClientSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
+    } | undefined;
+    theme?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            visibilityParameters: number;
+            callbackParameters: number;
+            parameterBadges: number;
+            inviteKeys: number;
+        } | undefined;
     } | undefined;
 }, {
     id: string;
@@ -801,27 +801,6 @@ export declare const ClientSchema: z.ZodObject<{
             inviteKeys: number;
         } | undefined;
     } | undefined;
-    style?: {
-        id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            buttons: number;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            avatars: number;
-            useCost: boolean;
-            health: boolean;
-            visibilityParameters: number;
-            callbackParameters: number;
-            parameterBadges: number;
-            inviteKeys: number;
-        } | undefined;
-    } | undefined;
     image?: {
         id: string;
         fileName: string;
@@ -909,6 +888,27 @@ export declare const ClientSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         inviteKeys: number;
+    } | undefined;
+    theme?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            visibilityParameters: number;
+            callbackParameters: number;
+            parameterBadges: number;
+            inviteKeys: number;
+        } | undefined;
     } | undefined;
 }>;
 export type ClientDTO = z.infer<typeof ClientSchema>;

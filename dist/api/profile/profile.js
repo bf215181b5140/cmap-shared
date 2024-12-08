@@ -6,7 +6,7 @@ exports.ProfilePageSchema = client_1.ClientSchema.required({
     image: true,
     tier: true,
     background: true,
-    style: true,
+    theme: true,
     layouts: true,
     interactionKeys: true,
 });
