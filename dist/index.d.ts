@@ -35,8 +35,6 @@ export { GroupFormSchema, GroupFormDTO, GroupCopySchema, GroupCopyDTO } from './
 export { ButtonFormSchema, ButtonFormDTO, ButtonCopySchema, ButtonCopyDTO } from './api/layouts/button/button';
 export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/interactionKeys/interactionKeys';
 export { StylePageSchema, StylePageDTO } from './api/style/style';
-export { TiersPageSchema, TiersPageDTO } from './api/tiers/tiers';
-export { UseInviteKeyFormSchema, UseInviteKeyFormDTO } from './api/tiers/useInviteKey/useInviteKey';
-export { GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/generateInviteKey/generateInviteKey';
+export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO } from './shared';
 export { convertParameterValueFromString } from './util';

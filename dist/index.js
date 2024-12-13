@@ -92,10 +92,8 @@ var style_1 = require("./api/style/style");
 Object.defineProperty(exports, "StylePageSchema", { enumerable: true, get: function () { return style_1.StylePageSchema; } });
 var tiers_1 = require("./api/tiers/tiers");
 Object.defineProperty(exports, "TiersPageSchema", { enumerable: true, get: function () { return tiers_1.TiersPageSchema; } });
-var useInviteKey_1 = require("./api/tiers/useInviteKey/useInviteKey");
-Object.defineProperty(exports, "UseInviteKeyFormSchema", { enumerable: true, get: function () { return useInviteKey_1.UseInviteKeyFormSchema; } });
-var generateInviteKey_1 = require("./api/tiers/generateInviteKey/generateInviteKey");
-Object.defineProperty(exports, "GeneratedInviteKeySchema", { enumerable: true, get: function () { return generateInviteKey_1.GeneratedInviteKeySchema; } });
+Object.defineProperty(exports, "UseInviteKeyFormSchema", { enumerable: true, get: function () { return tiers_1.UseInviteKeyFormSchema; } });
+Object.defineProperty(exports, "GeneratedInviteKeySchema", { enumerable: true, get: function () { return tiers_1.GeneratedInviteKeySchema; } });
 // ------------------------------ Shared ------------------------------ //
 var shared_1 = require("./shared");
 Object.defineProperty(exports, "BaseFormSchema", { enumerable: true, get: function () { return shared_1.BaseFormSchema; } });
