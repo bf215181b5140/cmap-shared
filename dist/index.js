@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UseInviteKeyFormSchema = exports.TiersPageSchema = exports.TrackedParameterFormSchema = exports.ButtonCopySchema = exports.ButtonFormSchema = exports.GroupCopySchema = exports.GroupFormSchema = exports.LayoutCopySchema = exports.LayoutFormSchema = exports.ParameterBadgeFormSchema = exports.LayoutsPageSchema = exports.ThemesSchema = exports.BackgroundsSchema = exports.InteractionKeysFormSchema = exports.BasicInfoFormSchema = exports.ProfilePageSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.RegisterInfoSchema = exports.LoginFormSchema = exports.LoginTokenSchema = exports.ApiResponseSchema = exports.VisibilityParameterSchema = exports.CallbackParameterSchema = exports.KeyValueSchema = exports.TrackedParametersSchema = exports.TrackedParameterSchema = exports.TrackedParametersMap = exports.ClientStateSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.ThemeSchema = exports.ParameterBadgeSchema = exports.InviteKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ControlParameterSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.VrcParameterSchema = exports.VisibilityParameterConditionSchema = exports.ParameterBadgeTypeSchema = exports.NotificationTypeSchema = exports.ImageOrientationSchema = exports.GroupWidthSchema = exports.ClientVisibilitySchema = exports.ButtonTypeSchema = void 0;
-exports.ApproveFilesPageSchema = exports.UsedButtonSchema = exports.OrderFormSchema = exports.UploadFileFormSchema = exports.UpdatesFormSchema = exports.StateBadgeFormSchema = exports.UseCostFormSchema = exports.HealthFormSchema = exports.ProfileFormSchema = exports.ControlParameterFormSchema = exports.convertParameterValueFromString = exports.OrderSchema = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.GeneratedInviteKeySchema = void 0;
+exports.GeneratedInviteKeySchema = exports.UseInviteKeyFormSchema = exports.TiersPageSchema = exports.StylePageSchema = exports.InteractionKeysFormSchema = exports.InteractionKeysPageSchema = exports.ButtonCopySchema = exports.ButtonFormSchema = exports.GroupCopySchema = exports.GroupFormSchema = exports.LayoutCopySchema = exports.LayoutFormSchema = exports.ParameterBadgeFormSchema = exports.LayoutsPageSchema = exports.ProfileFormSchema = exports.ProfilePageSchema = exports.TrackedParameterFormSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.RegisterInfoSchema = exports.LoginFormSchema = exports.LoginTokenSchema = exports.ApiResponseSchema = exports.VisibilityParameterSchema = exports.CallbackParameterSchema = exports.KeyValueSchema = exports.TrackedParametersSchema = exports.TrackedParameterSchema = exports.TrackedParametersMap = exports.ClientStateSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.ThemeSchema = exports.ParameterBadgeSchema = exports.InviteKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.VrcParameterSchema = exports.VisibilityParameterConditionSchema = exports.ParameterBadgeTypeSchema = exports.NotificationTypeSchema = exports.ImageOrientationSchema = exports.GroupWidthSchema = exports.ClientVisibilitySchema = exports.ButtonTypeSchema = void 0;
+exports.convertParameterValueFromString = exports.OrderSchema = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = void 0;
 // ------------------------------ Enums ------------------------------ //
 var buttonType_1 = require("./enums/buttonType");
 Object.defineProperty(exports, "ButtonTypeSchema", { enumerable: true, get: function () { return buttonType_1.ButtonTypeSchema; } });
@@ -26,8 +26,6 @@ var button_1 = require("./objects/button");
 Object.defineProperty(exports, "ButtonSchema", { enumerable: true, get: function () { return button_1.ButtonSchema; } });
 var client_1 = require("./objects/client");
 Object.defineProperty(exports, "ClientSchema", { enumerable: true, get: function () { return client_1.ClientSchema; } });
-var controlParameter_1 = require("./OLD/controlParameter");
-Object.defineProperty(exports, "ControlParameterSchema", { enumerable: true, get: function () { return controlParameter_1.ControlParameterSchema; } });
 var group_1 = require("./objects/group");
 Object.defineProperty(exports, "GroupSchema", { enumerable: true, get: function () { return group_1.GroupSchema; } });
 var interactionKey_1 = require("./objects/interactionKey");
@@ -68,16 +66,12 @@ var register_1 = require("./api/register/register");
 Object.defineProperty(exports, "RegisterInfoSchema", { enumerable: true, get: function () { return register_1.RegisterInfoSchema; } });
 Object.defineProperty(exports, "RegisterFormSchema", { enumerable: true, get: function () { return register_1.RegisterFormSchema; } });
 Object.defineProperty(exports, "RegisterWithKeyFormSchema", { enumerable: true, get: function () { return register_1.RegisterWithKeyFormSchema; } });
+// todo
+var parameter_1 = require("./api/trackedParameters/parameter/parameter");
+Object.defineProperty(exports, "TrackedParameterFormSchema", { enumerable: true, get: function () { return parameter_1.TrackedParameterFormSchema; } });
 var profile_1 = require("./api/profile/profile");
 Object.defineProperty(exports, "ProfilePageSchema", { enumerable: true, get: function () { return profile_1.ProfilePageSchema; } });
-var basicInfo_1 = require("./api/profile/basicInfo/basicInfo");
-Object.defineProperty(exports, "BasicInfoFormSchema", { enumerable: true, get: function () { return basicInfo_1.BasicInfoFormSchema; } });
-var interactionKeys_1 = require("./api/profile/interactionKeys/interactionKeys");
-Object.defineProperty(exports, "InteractionKeysFormSchema", { enumerable: true, get: function () { return interactionKeys_1.InteractionKeysFormSchema; } });
-var background_2 = require("./api/profile/background/background");
-Object.defineProperty(exports, "BackgroundsSchema", { enumerable: true, get: function () { return background_2.BackgroundsSchema; } });
-var theme_2 = require("./api/profile/theme/theme");
-Object.defineProperty(exports, "ThemesSchema", { enumerable: true, get: function () { return theme_2.ThemesSchema; } });
+Object.defineProperty(exports, "ProfileFormSchema", { enumerable: true, get: function () { return profile_1.ProfileFormSchema; } });
 var layouts_1 = require("./api/layouts/layouts");
 Object.defineProperty(exports, "LayoutsPageSchema", { enumerable: true, get: function () { return layouts_1.LayoutsPageSchema; } });
 var parameterBadges_1 = require("./api/layouts/layout/parameterBadges/parameterBadges");
@@ -91,8 +85,11 @@ Object.defineProperty(exports, "GroupCopySchema", { enumerable: true, get: funct
 var button_2 = require("./api/layouts/button/button");
 Object.defineProperty(exports, "ButtonFormSchema", { enumerable: true, get: function () { return button_2.ButtonFormSchema; } });
 Object.defineProperty(exports, "ButtonCopySchema", { enumerable: true, get: function () { return button_2.ButtonCopySchema; } });
-var parameter_1 = require("./api/trackedParameters/parameter/parameter");
-Object.defineProperty(exports, "TrackedParameterFormSchema", { enumerable: true, get: function () { return parameter_1.TrackedParameterFormSchema; } });
+var interactionKeys_1 = require("./api/interactionKeys/interactionKeys");
+Object.defineProperty(exports, "InteractionKeysPageSchema", { enumerable: true, get: function () { return interactionKeys_1.InteractionKeysPageSchema; } });
+Object.defineProperty(exports, "InteractionKeysFormSchema", { enumerable: true, get: function () { return interactionKeys_1.InteractionKeysFormSchema; } });
+var style_1 = require("./api/style/style");
+Object.defineProperty(exports, "StylePageSchema", { enumerable: true, get: function () { return style_1.StylePageSchema; } });
 var tiers_1 = require("./api/tiers/tiers");
 Object.defineProperty(exports, "TiersPageSchema", { enumerable: true, get: function () { return tiers_1.TiersPageSchema; } });
 var useInviteKey_1 = require("./api/tiers/useInviteKey/useInviteKey");
@@ -117,24 +114,3 @@ Object.defineProperty(exports, "OrderSchema", { enumerable: true, get: function 
 // ------------------------------ Other ------------------------------ //
 var util_1 = require("./util");
 Object.defineProperty(exports, "convertParameterValueFromString", { enumerable: true, get: function () { return util_1.convertParameterValueFromString; } });
-// ------------------------------ OLD ------------------------------ //
-var controlParameter_2 = require("./OLD/forms/controlParameter");
-Object.defineProperty(exports, "ControlParameterFormSchema", { enumerable: true, get: function () { return controlParameter_2.ControlParameterFormSchema; } });
-var profile_2 = require("./OLD/forms/profile");
-Object.defineProperty(exports, "ProfileFormSchema", { enumerable: true, get: function () { return profile_2.ProfileFormSchema; } });
-var health_1 = require("./OLD/forms/health");
-Object.defineProperty(exports, "HealthFormSchema", { enumerable: true, get: function () { return health_1.HealthFormSchema; } });
-var useCost_1 = require("./OLD/forms/useCost");
-Object.defineProperty(exports, "UseCostFormSchema", { enumerable: true, get: function () { return useCost_1.UseCostFormSchema; } });
-var stateBadge_1 = require("./OLD/forms/stateBadge");
-Object.defineProperty(exports, "StateBadgeFormSchema", { enumerable: true, get: function () { return stateBadge_1.StateBadgeFormSchema; } });
-var update_2 = require("./OLD/forms/update");
-Object.defineProperty(exports, "UpdatesFormSchema", { enumerable: true, get: function () { return update_2.UpdatesFormSchema; } });
-var uploadedFile_2 = require("./OLD/forms/uploadedFile");
-Object.defineProperty(exports, "UploadFileFormSchema", { enumerable: true, get: function () { return uploadedFile_2.UploadFileFormSchema; } });
-var order_1 = require("./OLD/forms/order");
-Object.defineProperty(exports, "OrderFormSchema", { enumerable: true, get: function () { return order_1.OrderFormSchema; } });
-var website_1 = require("./OLD/website");
-Object.defineProperty(exports, "UsedButtonSchema", { enumerable: true, get: function () { return website_1.UsedButtonSchema; } });
-var approveFiles_1 = require("./OLD/pages/approveFiles");
-Object.defineProperty(exports, "ApproveFilesPageSchema", { enumerable: true, get: function () { return approveFiles_1.ApproveFilesPageSchema; } });

@@ -1,7 +1,7 @@
 import { z } from 'zod';
-export declare const ProfilePageSchema: z.ZodObject<{
+export declare const InteractionKeysPageSchema: z.ZodObject<{
     id: z.ZodString;
-    background: z.ZodObject<{
+    background: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<{
@@ -93,9 +93,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
-    }>;
+    }>>;
     visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
-    image: z.ZodNullable<z.ZodObject<{
+    image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
         id: z.ZodString;
         fileName: z.ZodString;
         urlPath: z.ZodString;
@@ -107,7 +107,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         id: string;
         fileName: string;
         urlPath: string;
-    }>>;
+    }>>>;
     username: z.ZodString;
     interactionKeys: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
@@ -122,7 +122,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
         id: string;
         label: string;
     }>, "many">;
-    layouts: z.ZodArray<z.ZodObject<{
+    layouts: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         avatars: z.ZodArray<z.ZodString, "many">;
@@ -484,7 +484,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-    }>, "many">;
+    }>, "many">>;
     tier: z.ZodObject<{
         id: z.ZodString;
         rank: z.ZodNumber;
@@ -539,7 +539,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
     offlineMessage: z.ZodString;
-    theme: z.ZodObject<{
+    theme: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<{
@@ -631,10 +631,39 @@ export declare const ProfilePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
-    }>;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     id: string;
-    background: {
+    visibility: "Visible" | "Hidden" | "Private";
+    username: string;
+    interactionKeys: {
+        key: string;
+        id: string;
+        label: string;
+    }[];
+    tier: {
+        groups: number;
+        id: string;
+        buttons: number;
+        color: string;
+        label: string;
+        rank: number;
+        interactionKeys: number;
+        layouts: number;
+        avatars: number;
+        useCost: boolean;
+        health: boolean;
+        visibilityParameters: number;
+        callbackParameters: number;
+        parameterBadges: number;
+        inviteKeys: number;
+    };
+    displayName: string;
+    bio: string;
+    defaultLayoutId: string | null;
+    unknownAvatarMessage: string;
+    offlineMessage: string;
+    background?: {
         id: string;
         label: string;
         tier?: {
@@ -654,20 +683,13 @@ export declare const ProfilePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
-    };
-    visibility: "Visible" | "Hidden" | "Private";
-    image: {
+    } | undefined;
+    image?: {
         id: string;
         fileName: string;
         urlPath: string;
-    } | null;
-    username: string;
-    interactionKeys: {
-        key: string;
-        id: string;
-        label: string;
-    }[];
-    layouts: {
+    } | null | undefined;
+    layouts?: {
         id: string;
         label: string;
         avatars: string[];
@@ -727,6 +749,36 @@ export declare const ProfilePageSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
+    }[] | undefined;
+    theme?: {
+        id: string;
+        label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            buttons: number;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            avatars: number;
+            useCost: boolean;
+            health: boolean;
+            visibilityParameters: number;
+            callbackParameters: number;
+            parameterBadges: number;
+            inviteKeys: number;
+        } | undefined;
+    } | undefined;
+}, {
+    id: string;
+    visibility: "Visible" | "Hidden" | "Private";
+    username: string;
+    interactionKeys: {
+        key: string;
+        id: string;
+        label: string;
     }[];
     tier: {
         groups: number;
@@ -750,7 +802,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
     offlineMessage: string;
-    theme: {
+    background?: {
         id: string;
         label: string;
         tier?: {
@@ -770,43 +822,13 @@ export declare const ProfilePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
-    };
-}, {
-    id: string;
-    background: {
-        id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            buttons: number;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            avatars: number;
-            useCost: boolean;
-            health: boolean;
-            visibilityParameters: number;
-            callbackParameters: number;
-            parameterBadges: number;
-            inviteKeys: number;
-        } | undefined;
-    };
-    visibility: "Visible" | "Hidden" | "Private";
-    image: {
+    } | undefined;
+    image?: {
         id: string;
         fileName: string;
         urlPath: string;
-    } | null;
-    username: string;
-    interactionKeys: {
-        key: string;
-        id: string;
-        label: string;
-    }[];
-    layouts: {
+    } | null | undefined;
+    layouts?: {
         id: string;
         label: string;
         avatars: string[];
@@ -866,30 +888,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-    }[];
-    tier: {
-        groups: number;
-        id: string;
-        buttons: number;
-        color: string;
-        label: string;
-        rank: number;
-        interactionKeys: number;
-        layouts: number;
-        avatars: number;
-        useCost: boolean;
-        health: boolean;
-        visibilityParameters: number;
-        callbackParameters: number;
-        parameterBadges: number;
-        inviteKeys: number;
-    };
-    displayName: string;
-    bio: string;
-    defaultLayoutId: string | null;
-    unknownAvatarMessage: string;
-    offlineMessage: string;
-    theme: {
+    }[] | undefined;
+    theme?: {
         id: string;
         label: string;
         tier?: {
@@ -909,29 +909,34 @@ export declare const ProfilePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         } | undefined;
-    };
+    } | undefined;
 }>;
-export type ProfilePageDTO = z.infer<typeof ProfilePageSchema>;
-export declare const ProfileFormSchema: z.ZodObject<{
-    displayName: z.ZodString;
-    bio: z.ZodString;
-    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
-    defaultLayoutId: z.ZodNullable<z.ZodString>;
-    unknownAvatarMessage: z.ZodString;
-    offlineMessage: z.ZodString;
+export type InteractionKeysPageDTO = z.infer<typeof InteractionKeysPageSchema>;
+export declare const InteractionKeysFormSchema: z.ZodObject<{
+    interactionKeys: z.ZodArray<z.ZodObject<{
+        id: z.ZodNullable<z.ZodString>;
+        label: z.ZodString;
+        key: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        key: string;
+        id: string | null;
+        label: string;
+    }, {
+        key: string;
+        id: string | null;
+        label: string;
+    }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    visibility: "Visible" | "Hidden" | "Private";
-    displayName: string;
-    bio: string;
-    defaultLayoutId: string | null;
-    unknownAvatarMessage: string;
-    offlineMessage: string;
+    interactionKeys: {
+        key: string;
+        id: string | null;
+        label: string;
+    }[];
 }, {
-    visibility: "Visible" | "Hidden" | "Private";
-    displayName: string;
-    bio: string;
-    defaultLayoutId: string | null;
-    unknownAvatarMessage: string;
-    offlineMessage: string;
+    interactionKeys: {
+        key: string;
+        id: string | null;
+        label: string;
+    }[];
 }>;
-export type ProfileFormDTO = z.infer<typeof ProfileFormSchema>;
+export type InteractionKeysFormDTO = z.infer<typeof InteractionKeysFormSchema>;
