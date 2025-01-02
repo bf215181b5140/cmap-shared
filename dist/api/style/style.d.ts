@@ -110,6 +110,7 @@ export declare const StylePageSchema: z.ZodObject<{
             urlPath: string;
         }>>>;
         username: z.ZodString;
+        displayName: z.ZodString;
         interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<{
             id: z.ZodString;
             label: z.ZodString;
@@ -535,7 +536,6 @@ export declare const StylePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         }>;
-        displayName: z.ZodString;
         bio: z.ZodString;
         defaultLayoutId: z.ZodNullable<z.ZodString>;
         unknownAvatarMessage: z.ZodString;
@@ -658,6 +658,7 @@ export declare const StylePageSchema: z.ZodObject<{
         };
         visibility: "Visible" | "Hidden" | "Private";
         username: string;
+        displayName: string;
         tier: {
             groups: number;
             id: string;
@@ -675,7 +676,6 @@ export declare const StylePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         };
-        displayName: string;
         bio: string;
         defaultLayoutId: string | null;
         unknownAvatarMessage: string;
@@ -797,6 +797,7 @@ export declare const StylePageSchema: z.ZodObject<{
         };
         visibility: "Visible" | "Hidden" | "Private";
         username: string;
+        displayName: string;
         tier: {
             groups: number;
             id: string;
@@ -814,7 +815,6 @@ export declare const StylePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         };
-        displayName: string;
         bio: string;
         defaultLayoutId: string | null;
         unknownAvatarMessage: string;
@@ -1124,6 +1124,7 @@ export declare const StylePageSchema: z.ZodObject<{
         };
         visibility: "Visible" | "Hidden" | "Private";
         username: string;
+        displayName: string;
         tier: {
             groups: number;
             id: string;
@@ -1141,7 +1142,6 @@ export declare const StylePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         };
-        displayName: string;
         bio: string;
         defaultLayoutId: string | null;
         unknownAvatarMessage: string;
@@ -1307,6 +1307,7 @@ export declare const StylePageSchema: z.ZodObject<{
         };
         visibility: "Visible" | "Hidden" | "Private";
         username: string;
+        displayName: string;
         tier: {
             groups: number;
             id: string;
@@ -1324,7 +1325,6 @@ export declare const StylePageSchema: z.ZodObject<{
             parameterBadges: number;
             inviteKeys: number;
         };
-        displayName: string;
         bio: string;
         defaultLayoutId: string | null;
         unknownAvatarMessage: string;

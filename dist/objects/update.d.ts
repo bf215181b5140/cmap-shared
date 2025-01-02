@@ -8,14 +8,14 @@ export declare const UpdateSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     id: string;
     description: string;
-    date: Date;
     version: string;
     download: string;
+    date: Date;
 }, {
     id: string;
     description: string;
-    date: Date;
     version: string;
     download: string;
+    date: Date;
 }>;
 export type UpdateDTO = z.infer<typeof UpdateSchema>;

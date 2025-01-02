@@ -109,6 +109,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         urlPath: string;
     }>>>;
     username: z.ZodString;
+    displayName: z.ZodString;
     interactionKeys: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
@@ -534,7 +535,6 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     }>;
-    displayName: z.ZodString;
     bio: z.ZodString;
     defaultLayoutId: z.ZodNullable<z.ZodString>;
     unknownAvatarMessage: z.ZodString;
@@ -636,6 +636,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
     id: string;
     visibility: "Visible" | "Hidden" | "Private";
     username: string;
+    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -658,7 +659,6 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     };
-    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
@@ -775,6 +775,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
     id: string;
     visibility: "Visible" | "Hidden" | "Private";
     username: string;
+    displayName: string;
     interactionKeys: {
         key: string;
         id: string;
@@ -797,7 +798,6 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         parameterBadges: number;
         inviteKeys: number;
     };
-    displayName: string;
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
