@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoadingSpinner = styled.div`
+const LoadingSpinner = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
@@ -27,3 +27,5 @@ export const LoadingSpinner = styled.div`
     }
   }
 `;
+
+export default LoadingSpinner;
