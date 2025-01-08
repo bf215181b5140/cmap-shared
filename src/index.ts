@@ -41,7 +41,7 @@ export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormS
 export { StylePageSchema, StylePageDTO } from './api/style/style';
 export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
 // ------------------------------ Shared ------------------------------ //
-export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO } from './shared';
+export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 // ------------------------------ Frontend ------------------------------ //
 export { UsedButtonSchema, UsedButtonDTO } from './api/website';
 // ------------------------------ Other ------------------------------ //

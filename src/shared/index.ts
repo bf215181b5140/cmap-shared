@@ -18,6 +18,8 @@ export const parameterValueObjectSchema = z.union([z.number(), z.boolean()]);
 export const parameterValueOrAvatarSchema = z.union([parameterValueSchema, vrcAvatarIdSchema]);
 export const parameterValueObjectOrAvatarSchema = z.union([parameterValueObjectSchema, vrcAvatarIdSchema]);
 
+export const interactionKeySchema = z.string().min(1, 'Key is required').max(16);
+
 // ------------------- Object schemas ------------------- //
 export const BaseIdSchema = z.object({
   id: IdSchema

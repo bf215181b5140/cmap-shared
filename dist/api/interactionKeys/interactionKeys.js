@@ -12,6 +12,6 @@ exports.InteractionKeysFormSchema = zod_1.z.object({
     interactionKeys: zod_1.z.array(zod_1.z.object({
         id: shared_1.IdSchema.nullable(),
         label: zod_1.z.string().min(1, 'Label is required').max(32),
-        key: zod_1.z.string().min(1, 'Key is required').max(16),
+        key: shared_1.interactionKeySchema,
     })),
 });

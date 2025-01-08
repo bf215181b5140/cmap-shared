@@ -8,6 +8,7 @@ export declare const parameterValueSchema: z.ZodEffects<z.ZodString, string, str
 export declare const parameterValueObjectSchema: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
 export declare const parameterValueOrAvatarSchema: z.ZodUnion<[z.ZodEffects<z.ZodString, string, string>, z.ZodString]>;
 export declare const parameterValueObjectOrAvatarSchema: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>, z.ZodString]>;
+export declare const interactionKeySchema: z.ZodString;
 export declare const BaseIdSchema: z.ZodObject<{
     id: z.ZodString;
 }, "strip", z.ZodTypeAny, {

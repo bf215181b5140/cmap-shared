@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderSchema = exports.BaseFormSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueSchema = exports.parameterPathSchema = exports.vrcAvatarIdSchema = exports.passwordSchema = exports.usernameSchema = exports.IdSchema = void 0;
+exports.OrderSchema = exports.BaseFormSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.interactionKeySchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueSchema = exports.parameterPathSchema = exports.vrcAvatarIdSchema = exports.passwordSchema = exports.usernameSchema = exports.IdSchema = void 0;
 const zod_1 = require("zod");
 const util_1 = require("../util");
 // ------------------- Field schemas ------------------- //
@@ -14,6 +14,7 @@ exports.parameterValueSchema = zod_1.z.string().min(1, 'Parameter value required
 exports.parameterValueObjectSchema = zod_1.z.union([zod_1.z.number(), zod_1.z.boolean()]);
 exports.parameterValueOrAvatarSchema = zod_1.z.union([exports.parameterValueSchema, exports.vrcAvatarIdSchema]);
 exports.parameterValueObjectOrAvatarSchema = zod_1.z.union([exports.parameterValueObjectSchema, exports.vrcAvatarIdSchema]);
+exports.interactionKeySchema = zod_1.z.string().min(1, 'Key is required').max(16);
 // ------------------- Object schemas ------------------- //
 exports.BaseIdSchema = zod_1.z.object({
     id: exports.IdSchema

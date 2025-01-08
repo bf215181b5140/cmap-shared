@@ -36,7 +36,7 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonCopySchema, ButtonCopyDTO } from
 export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/interactionKeys/interactionKeys';
 export { StylePageSchema, StylePageDTO } from './api/style/style';
 export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
-export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO } from './shared';
+export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 export { UsedButtonSchema, UsedButtonDTO } from './api/website';
 export { convertParameterValueFromString } from './util';
 export declare const URL_LIVE = "https://changemyavatarparams.com";
