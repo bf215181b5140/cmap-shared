@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 // @ts-ignore
 import expOrb from '../../../images/expOrb.png';
-import ParameterSlider from './parameter.slider';
+import { ParameterSlider } from './parameter.slider';
 import { ButtonDTO, ImageOrientation, ThemeDTO, UsedButtonDTO } from '../../../src';
 
 export const URL = process.env.NODE_ENV === 'production' ? 'https://changemyavatarparams.com' : 'http://localhost:8080';

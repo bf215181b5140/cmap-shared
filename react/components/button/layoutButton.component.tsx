@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { MouseEvent } from 'react';
-import ParameterButton from './parameter.button';
+import { ParameterButton } from './parameter.button';
 import { ButtonDTO, ThemeDTO } from '../../../src';
 
 interface LayoutButtonProps {
