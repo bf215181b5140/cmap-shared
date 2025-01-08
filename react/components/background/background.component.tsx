@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { BackgroundDTO } from '../../../src';
 
-const Background = styled.div<{ background: BackgroundDTO; }>`
+export const Background = styled.div<{ background: BackgroundDTO; }>`
   width: 100%;
   height: 100%;
   margin: 0;
@@ -10,8 +10,6 @@ const Background = styled.div<{ background: BackgroundDTO; }>`
   // background style
   ${props => backgroundStyles[props.background.id]};
 `;
-
-export default Background;
 
 const backgroundStyles: { [key: string]: FlattenInterpolation<ThemeProps<DefaultTheme>> } = {
   ocean: css`

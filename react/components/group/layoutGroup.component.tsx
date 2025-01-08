@@ -1,76 +1,70 @@
 import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { MouseEvent, ReactNode } from 'react';
-import { LAYOUT_ELEMENT_GAP } from '../layout/layout.component';
+import { MouseEvent } from 'react';
+import { LayoutGroupGap } from '../layout/layout.component';
 import { GroupDTO, GroupWidth, ThemeDTO } from '../../../src';
 
 interface LayoutGroupProps {
   theme: ThemeDTO;
   group: GroupDTO;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
-export default function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProps) {
+export function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProps) {
 
   const readonly = !onClick;
 
-  return (<LayoutGroupStyled cmapTheme={theme} width={group.width} onClick={onClick} aria-readonly={readonly}>
-    {group.showLabel && <h2 className={'layoutGroupLabel'}>{group.label}</h2>}
+  return (<LayoutGroupStyled className={'layoutGroup'} themeDto={theme} width={group.width} onClick={onClick} aria-readonly={readonly}>
+    {group.showLabel && <h2 style={{ marginTop: '0' }}>{group.label}</h2>}
     <div className={'layoutButtonWrapper'}>
       {children}
     </div>
   </LayoutGroupStyled>);
 }
 
-const LayoutGroupStyled = styled.div.attrs(() => ({ className: 'layoutGroup' }))<{ cmapTheme: ThemeDTO, width: GroupWidth }>`
+const LayoutGroupStyled = styled.div<{ themeDto: ThemeDTO, width: GroupWidth }>`
   padding: 20px;
   border-radius: 8px;
 
   .layoutButtonWrapper {
-      column-gap: 20px;
-      column-fill: balance;
-      column-width: 240px;
-      gap: 20px;
+    column-gap: 20px;
+    column-fill: balance;
+    column-width: 240px;
+    gap: 20px;
   }
 
-
-  flex: ${props => {
-  switch (props.width) {
-    case 'None':
-      return '1';
-    case 'Third':
-      return `calc(100% * (1 / 3) - ${LAYOUT_ELEMENT_GAP})`;
-    case 'Half':
-      return ` calc(100% * (1 / 2) - ${LAYOUT_ELEMENT_GAP})`;
-    case 'Full':
-      return ` calc(100%)`;
-    default:
-      return undefined;
-  }
-}};
-
-  ${props => groupThemes[props.cmapTheme.id]};
-  
   &[aria-readonly='false'] {
     cursor: pointer;
     transition: 0.1s linear;
-    
+
     :hover:not(:has(.layoutButton:hover, .newItem:hover)) {
       box-shadow: inset 0 0 0px 2px ${props => props.theme.colors.ui.highlight4};
     }
   }
 
-  > h2.layoutGroupLabel {
-    margin-top: 0;
-  }
+  flex: ${props => {
+    switch (props.width) {
+      case 'None':
+        return '1';
+      case 'Third':
+        return `calc(100% * (1 / 3) - ${LayoutGroupGap})`;
+      case 'Half':
+        return ` calc(100% * (1 / 2) - ${LayoutGroupGap})`;
+      case 'Full':
+        return ` calc(100%)`;
+      default:
+        return undefined;
+    }
+  }};
+
+  ${props => groupThemes[props.themeDto.id]};
 `;
 
-const groupThemes: { [key: string]: FlattenInterpolation<ThemeProps<DefaultTheme>> } = {};
-
-groupThemes.vrcGreen = css`
-  background: ${props => props.theme.colors.ui.background3};
-`;
-
-groupThemes.vrcGrey = css`
-  background: ${props => props.theme.colors.ui.background3};
-`;
+const groupThemes: { [key: string]: FlattenInterpolation<ThemeProps<DefaultTheme>> } = {
+  vrcGreen: css`
+    background: ${props => props.theme.colors.ui.background3};
+  `,
+  vrcGrey: css`
+    background: ${props => props.theme.colors.ui.background3};
+  `
+};

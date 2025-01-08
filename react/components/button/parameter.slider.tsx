@@ -11,7 +11,7 @@ interface ParameterSliderProps {
   onClick: (value: string) => void;
 }
 
-export default function ParameterSlider({ value, step, min, max, disabled, className, onClick }: ParameterSliderProps) {
+export function ParameterSlider({ value, step, min, max, disabled, className, onClick }: ParameterSliderProps) {
 
   const inputRef = useRef<any>(null);
   const width = ((value - min) / (max - min)) * 100;
