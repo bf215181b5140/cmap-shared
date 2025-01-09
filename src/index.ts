@@ -48,7 +48,7 @@ export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO
 // ------------------------------ Frontend ------------------------------ //
 export { UsedButtonSchema, UsedButtonDTO } from './api/website';
 // ------------------------------ Other ------------------------------ //
-export { convertParameterValueFromString, imageUrlPathToUrl } from './util';
+export { convertParameterValueFromString, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
 // ------------------------------ Const ------------------------------ //
 export const URL_LIVE = 'https://changemyavatarparams.com';
 export const URL = process.env.NODE_ENV === 'production' ? URL_LIVE : 'http://localhost:8080';
