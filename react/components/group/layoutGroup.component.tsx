@@ -2,6 +2,7 @@ import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'sty
 import { MouseEvent } from 'react';
 import { LayoutGroupGap } from '../layout/layout.component';
 import { GroupDTO, GroupWidth, ThemeDTO } from '../../../src';
+import { LayoutButtonWrapper } from '../button/layoutButtonWrapper.component';
 
 interface LayoutGroupProps {
   theme: ThemeDTO;
@@ -16,22 +17,15 @@ export function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProp
 
   return (<LayoutGroupStyled className={'layoutGroup'} themeDto={theme} width={group.width} onClick={onClick} aria-readonly={readonly}>
     {group.showLabel && <h2 style={{ marginTop: '0' }}>{group.label}</h2>}
-    <div className={'layoutButtonWrapper'}>
+    <LayoutButtonWrapper>
       {children}
-    </div>
+    </LayoutButtonWrapper>
   </LayoutGroupStyled>);
 }
 
 const LayoutGroupStyled = styled.div<{ themeDto: ThemeDTO, width: GroupWidth }>`
   padding: 20px;
   border-radius: 8px;
-
-  .layoutButtonWrapper {
-    column-gap: 20px;
-    column-fill: balance;
-    column-width: 240px;
-    gap: 20px;
-  }
 
   &[aria-readonly='false'] {
     cursor: pointer;

@@ -1,5 +1,6 @@
 // ------------------------------ Components ------------------------------ //
 export { Background } from './components/background/background.component';
+export { LayoutButtonWrapper } from './components/button/layoutButtonWrapper.component';
 export { LayoutButton } from './components/button/layoutButton.component';
 export { ParameterButton } from './components/button/parameter.button';
 export { ParameterSlider } from './components/button/parameter.slider';
