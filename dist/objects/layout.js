@@ -5,6 +5,7 @@ const shared_1 = require("../shared");
 const zod_1 = require("zod");
 const group_1 = require("./group");
 const parameterBadge_1 = require("./parameterBadge");
+const preset_1 = require("./preset");
 exports.LayoutSchema = zod_1.z.object({
     id: shared_1.IdSchema,
     label: zod_1.z.string(),
@@ -17,4 +18,5 @@ exports.LayoutSchema = zod_1.z.object({
     useCostMax: zod_1.z.number().nullable(),
     groups: zod_1.z.array(group_1.GroupSchema).optional(),
     parameterBadges: zod_1.z.array(parameterBadge_1.ParameterBadgeSchema).optional(),
+    presets: zod_1.z.array(preset_1.PresetSchema).optional(),
 });

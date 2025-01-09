@@ -5,11 +5,11 @@ export declare const ClientStateSchema: z.ZodObject<{
     parameters: z.ZodArray<z.ZodTuple<[z.ZodString, z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>, z.ZodString]>], null>, "many">;
 }, "strip", z.ZodTypeAny, {
     isConnected: boolean;
-    isOnVrchat: boolean | null;
     parameters: [string, string | number | boolean][];
+    isOnVrchat: boolean | null;
 }, {
     isConnected: boolean;
-    isOnVrchat: boolean | null;
     parameters: [string, string | number | boolean][];
+    isOnVrchat: boolean | null;
 }>;
 export type ClientStateDTO = z.infer<typeof ClientStateSchema>;
