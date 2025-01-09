@@ -34,6 +34,7 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: z.ZodNumber;
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
+        presets: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -52,6 +53,7 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -68,6 +70,7 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }>>;
     background: z.ZodOptional<z.ZodObject<{
@@ -86,6 +89,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: z.ZodNumber;
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
+            presets: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -104,6 +108,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -120,6 +125,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -140,6 +146,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -160,6 +167,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -179,6 +187,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: z.ZodNumber;
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
+            presets: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -197,6 +206,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -213,6 +223,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -233,6 +244,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -253,6 +265,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -827,6 +840,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -944,6 +958,7 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     } | undefined;
     theme?: {
@@ -964,6 +979,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -994,6 +1010,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -1111,6 +1128,7 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     } | undefined;
     theme?: {
@@ -1131,6 +1149,7 @@ export declare const ClientSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;

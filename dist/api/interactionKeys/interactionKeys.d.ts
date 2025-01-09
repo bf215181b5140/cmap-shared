@@ -17,6 +17,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: z.ZodNumber;
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
+            presets: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -35,6 +36,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -51,6 +53,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -71,6 +74,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -91,6 +95,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -667,6 +672,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         visibilityParameters: z.ZodNumber;
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
+        presets: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -685,6 +691,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -701,6 +708,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }>;
     bio: z.ZodString;
@@ -723,6 +731,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: z.ZodNumber;
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
+            presets: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -741,6 +750,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -757,6 +767,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -777,6 +788,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -797,6 +809,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -825,6 +838,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     bio: string;
@@ -849,6 +863,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -964,6 +979,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -992,6 +1008,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     bio: string;
@@ -1016,6 +1033,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -1131,6 +1149,7 @@ export declare const InteractionKeysPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;

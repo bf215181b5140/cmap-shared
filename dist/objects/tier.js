@@ -16,6 +16,7 @@ exports.TierSchema = zod_1.z.object({
     visibilityParameters: zod_1.z.number(),
     callbackParameters: zod_1.z.number(),
     parameterBadges: zod_1.z.number(),
+    presets: zod_1.z.number(),
     groups: zod_1.z.number(),
     buttons: zod_1.z.number(),
     inviteKeys: zod_1.z.number(),

@@ -15,6 +15,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         visibilityParameters: z.ZodNumber;
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
+        presets: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -33,6 +34,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -49,6 +51,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }>;
 }, {
@@ -71,6 +74,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -92,6 +96,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -119,6 +124,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: z.ZodNumber;
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
+        presets: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -137,6 +143,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -153,6 +160,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }>, "many">;
     clientTier: z.ZodObject<{
@@ -168,6 +176,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: z.ZodNumber;
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
+        presets: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -186,6 +195,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -202,6 +212,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }>;
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -220,6 +231,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: z.ZodNumber;
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
+            presets: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -238,6 +250,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -254,6 +267,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         }>;
     }, {
@@ -276,6 +290,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -297,6 +312,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -317,6 +333,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -334,6 +351,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -354,6 +372,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -374,6 +393,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -391,6 +411,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         parameterBadges: number;
+        presets: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -411,6 +432,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             visibilityParameters: number;
             callbackParameters: number;
             parameterBadges: number;
+            presets: number;
             inviteKeys: number;
         };
         used: boolean;

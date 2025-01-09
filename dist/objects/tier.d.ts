@@ -12,6 +12,7 @@ export declare const TierSchema: z.ZodObject<{
     visibilityParameters: z.ZodNumber;
     callbackParameters: z.ZodNumber;
     parameterBadges: z.ZodNumber;
+    presets: z.ZodNumber;
     groups: z.ZodNumber;
     buttons: z.ZodNumber;
     inviteKeys: z.ZodNumber;
@@ -30,6 +31,7 @@ export declare const TierSchema: z.ZodObject<{
     visibilityParameters: number;
     callbackParameters: number;
     parameterBadges: number;
+    presets: number;
     inviteKeys: number;
 }, {
     groups: number;
@@ -46,6 +48,7 @@ export declare const TierSchema: z.ZodObject<{
     visibilityParameters: number;
     callbackParameters: number;
     parameterBadges: number;
+    presets: number;
     inviteKeys: number;
 }>;
 export type TierDTO = z.infer<typeof TierSchema>;
