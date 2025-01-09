@@ -14,8 +14,8 @@ export function convertParameterValueFromString(value: string): number | boolean
 }
 
 export function imageUrlPathToUrl(urlPath: string) {
-  if (urlPath.startsWith('blob:'))  return urlPath;
-    return URL + '/' + urlPath;
+  if (urlPath.startsWith('blob:')) return urlPath;
+  return URL + '/' + urlPath;
 }
 
 export function imageOrientationToAspectRatio(imageOrientation: ImageOrientation) {
