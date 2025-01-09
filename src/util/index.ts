@@ -1,3 +1,5 @@
+import { URL } from '../index';
+
 export function convertParameterValueFromString(value: string): number | boolean | undefined {
   // boolean
   if (value === 'true') return true;
@@ -9,4 +11,9 @@ export function convertParameterValueFromString(value: string): number | boolean
 
   // failed to convert
   return undefined;
+}
+
+export function imageUrlPathToUrl(urlPath: string) {
+  if (urlPath.startsWith('blob:'))  return urlPath;
+    return URL + '/' + urlPath;
 }
