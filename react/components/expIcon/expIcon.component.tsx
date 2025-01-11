@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// @ts-ignore
 import expOrb from '../../../images/expOrb.png';
 
 interface ExpIconProps {
