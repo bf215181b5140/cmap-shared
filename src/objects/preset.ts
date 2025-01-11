@@ -1,14 +1,12 @@
-import { IdSchema } from '../shared';
 import { z } from 'zod';
 import { UploadedFileSchema } from './uploadedFile';
-import { ButtonTypeSchema } from '../enums/buttonType';
 import { ImageOrientationSchema } from '../enums/imageOrientation';
 import { VisibilityParameterSchema } from './visibilityParameter';
 import { CallbackParameterSchema } from './callbackParameter';
 import { PresetParameterSchema } from './presetParameter';
 
 export const PresetSchema = z.object({
-  id: IdSchema,
+  id: z.string(),
   label: z.string(),
   showLabel: z.boolean(),
   parameters: PresetParameterSchema,
