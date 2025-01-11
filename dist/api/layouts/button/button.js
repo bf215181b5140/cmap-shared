@@ -7,15 +7,15 @@ const buttonType_1 = require("../../../enums/buttonType");
 const imageOrientation_1 = require("../../../enums/imageOrientation");
 const callbackParameter_1 = require("../../../objects/callbackParameter");
 const visibilityParameter_1 = require("../../../objects/visibilityParameter");
-const util_1 = require("../../../util");
+const parameter_1 = require("../../../primitives/parameter");
 exports.ButtonFormSchema = zod_1.z.object({
     groupId: shared_1.IdSchema,
     id: shared_1.IdSchema.nullable(),
     label: zod_1.z.string().min(1, 'Label is required').max(32),
     showLabel: zod_1.z.boolean(),
-    path: shared_1.parameterPathSchema,
-    value: shared_1.parameterValueSchema,
-    valueAlt: zod_1.z.union([zod_1.z.literal(''), shared_1.parameterValueSchema]),
+    path: parameter_1.parameterPathSchema,
+    value: parameter_1.parameterValueFormSchema,
+    valueAlt: zod_1.z.union([zod_1.z.literal('').transform(() => null), zod_1.z.null(), parameter_1.parameterValueFormSchema]),
     buttonType: buttonType_1.ButtonTypeSchema,
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),
@@ -25,7 +25,7 @@ exports.ButtonFormSchema = zod_1.z.object({
     interactionKeyId: shared_1.IdSchema.nullable(),
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement
-    if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && (!val.valueAlt || val.valueAlt === '')) {
+    if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && val.valueAlt === null) {
         ctx.addIssue({
             code: zod_1.z.ZodIssueCode.custom,
             message: 'Value is required for slider or toggle button',
@@ -34,14 +34,14 @@ exports.ButtonFormSchema = zod_1.z.object({
     }
     // Check values are number for slider
     if (val.buttonType === 'Slider') {
-        if (typeof (0, util_1.convertParameterValueFromString)(val.value) !== 'number') {
+        if (typeof val.value !== 'number') {
             ctx.addIssue({
                 code: zod_1.z.ZodIssueCode.custom,
                 message: 'Value must be a number for slider',
                 path: ['value']
             });
         }
-        if (typeof (0, util_1.convertParameterValueFromString)(val.valueAlt) !== 'number') {
+        if (typeof val.valueAlt !== 'number') {
             ctx.addIssue({
                 code: zod_1.z.ZodIssueCode.custom,
                 message: 'Value must be a number for slider',

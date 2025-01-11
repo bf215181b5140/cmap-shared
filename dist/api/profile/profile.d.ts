@@ -163,8 +163,8 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 label: z.ZodString;
                 showLabel: z.ZodBoolean;
                 path: z.ZodString;
-                value: z.ZodString;
-                valueAlt: z.ZodString;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+                valueAlt: z.ZodUnion<[z.ZodNull, z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>]>;
                 buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
                 imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                 order: z.ZodNumber;
@@ -213,7 +213,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -228,7 +228,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -240,7 +240,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -255,7 +255,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -280,7 +280,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -295,7 +295,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -320,7 +320,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -335,7 +335,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -508,7 +508,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -523,7 +523,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -596,7 +596,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -611,7 +611,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -876,7 +876,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -891,7 +891,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {
@@ -1046,7 +1046,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
-                value: string;
+                value: number | boolean;
                 label: string;
                 path: string;
                 useCost: number | null;
@@ -1061,7 +1061,7 @@ export declare const ProfilePageSchema: z.ZodObject<{
                     seconds: number;
                 }[];
                 showLabel: boolean;
-                valueAlt: string;
+                valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
                 interactionKeyId: string | null;
                 image?: {

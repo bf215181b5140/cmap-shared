@@ -1,12 +1,12 @@
 import { z } from 'zod';
 export declare const PresetParameterFormSchema: z.ZodObject<{
     path: z.ZodString;
-    value: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, number | boolean, string>;
+    value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
 }, "strip", z.ZodTypeAny, {
     value: number | boolean;
     path: string;
 }, {
-    value: string;
+    value: string | number | boolean;
     path: string;
 }>;
 export type PresetParameterFormDTO = z.infer<typeof PresetParameterFormSchema>;
@@ -17,12 +17,12 @@ export declare const PresetFormSchema: z.ZodObject<{
     showLabel: z.ZodBoolean;
     parameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
-        value: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, number | boolean, string>;
+        value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
     }, "strip", z.ZodTypeAny, {
         value: number | boolean;
         path: string;
     }, {
-        value: string;
+        value: string | number | boolean;
         path: string;
     }>, "many">;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
@@ -97,7 +97,7 @@ export declare const PresetFormSchema: z.ZodObject<{
     showLabel: boolean;
     interactionKeyId: string | null;
     parameters: {
-        value: string;
+        value: string | number | boolean;
         path: string;
     }[];
     layoutId: string;

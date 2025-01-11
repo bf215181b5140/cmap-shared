@@ -5,14 +5,15 @@ import { ButtonTypeSchema } from '../enums/buttonType';
 import { ImageOrientationSchema } from '../enums/imageOrientation';
 import { VisibilityParameterSchema } from './visibilityParameter';
 import { CallbackParameterSchema } from './callbackParameter';
+import { parameterValueSimpleSchema } from '../primitives/parameter';
 
 export const ButtonSchema = z.object({
   id: IdSchema,
   label: z.string(),
   showLabel: z.boolean(),
   path: z.string(),
-  value: z.string(),
-  valueAlt: z.string(),
+  value: parameterValueSimpleSchema,
+  valueAlt: z.union([z.null(), parameterValueSimpleSchema]),
   buttonType: ButtonTypeSchema,
   imageOrientation: ImageOrientationSchema,
   order: z.number(),

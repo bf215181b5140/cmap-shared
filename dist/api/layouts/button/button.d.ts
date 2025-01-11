@@ -5,8 +5,8 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     label: z.ZodString;
     showLabel: z.ZodBoolean;
     path: z.ZodString;
-    value: z.ZodEffects<z.ZodString, string, string>;
-    valueAlt: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
+    value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+    valueAlt: z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodNull, z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>]>;
     buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
@@ -42,7 +42,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
-    value: string;
+    value: number | boolean;
     label: string;
     path: string;
     useCost: number | null;
@@ -57,7 +57,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
         seconds: number;
     }[];
     showLabel: boolean;
-    valueAlt: string;
+    valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     groupId: string;
@@ -65,7 +65,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
-    value: string;
+    value: string | number | boolean;
     label: string;
     path: string;
     useCost: number | null;
@@ -80,7 +80,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
         seconds: number;
     }[];
     showLabel: boolean;
-    valueAlt: string;
+    valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     groupId: string;
@@ -88,7 +88,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
-    value: string;
+    value: number | boolean;
     label: string;
     path: string;
     useCost: number | null;
@@ -103,7 +103,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
         seconds: number;
     }[];
     showLabel: boolean;
-    valueAlt: string;
+    valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     groupId: string;
@@ -111,7 +111,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
-    value: string;
+    value: string | number | boolean;
     label: string;
     path: string;
     useCost: number | null;
@@ -126,7 +126,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
         seconds: number;
     }[];
     showLabel: boolean;
-    valueAlt: string;
+    valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     interactionKeyId: string | null;
     groupId: string;
