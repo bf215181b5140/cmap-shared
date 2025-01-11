@@ -50,7 +50,7 @@ export { PresetParameterFormSchema, PresetParameterFormDTO, PresetFormSchema, Pr
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 // ------------------------------ Other ------------------------------ //
-export { convertParameterValueFromString, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
+export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
 // ------------------------------ Const ------------------------------ //
 export const URL_LIVE = 'https://changemyavatarparams.com';
 export const URL = process.env.NODE_ENV === 'production' ? URL_LIVE : 'http://localhost:8080';
