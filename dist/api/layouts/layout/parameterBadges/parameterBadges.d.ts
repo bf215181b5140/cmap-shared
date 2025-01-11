@@ -5,7 +5,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         id: z.ZodNullable<z.ZodString>;
         type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
         path: z.ZodString;
-        value: z.ZodUnion<[z.ZodLiteral<"">, z.ZodEffects<z.ZodString, string, string>]>;
+        value: z.ZodNullable<z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>]>>;
         label: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         icon: z.ZodString;
         order: z.ZodNumber;
@@ -13,7 +13,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -21,7 +21,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: string | number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -29,7 +29,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -37,7 +37,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: string | number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -47,7 +47,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -58,7 +58,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: string | number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -69,7 +69,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: number | boolean | null;
         label: string;
         path: string;
         icon: string;
@@ -80,7 +80,7 @@ export declare const ParameterBadgeFormSchema: z.ZodEffects<z.ZodObject<{
         type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
         id: string | null;
         order: number;
-        value: string;
+        value: string | number | boolean | null;
         label: string;
         path: string;
         icon: string;

@@ -1,21 +1,22 @@
 import { z } from 'zod';
-import { IdSchema, parameterPathSchema, parameterValueSchema } from '../../../../shared';
 import { ParameterBadgeTypeSchema } from '../../../../enums/parameterBadgeType';
+import { parameterPathSchema, parameterValueFormSchema } from '../../../../primitives/parameter';
+import { idSchema } from '../../../../primitives/shared';
 
 export const ParameterBadgeFormSchema = z.object({
-  layoutId: IdSchema,
+  layoutId: idSchema,
   parameterBadges: z.array(z.object({
-    id: IdSchema.nullable(),
+    id: idSchema.nullable(),
     type: ParameterBadgeTypeSchema,
     path: parameterPathSchema,
-    value: z.union([z.literal(''), parameterValueSchema]),
-    label: z.union([z.literal(''), z.string().min(2).max(20)]),
-    icon: z.string().max(30),
+    value: z.union([z.literal('').transform(() => null), parameterValueFormSchema]).nullable(),
+    label: z.union([z.literal(''), z.string().min(2, 'Label too short').max(20, 'Label too long')]),
+    icon: z.string().max(30, 'Icon too long'),
     order: z.number(),
   }).transform((val, ctx) => {
     if (val.type === 'Custom') {
       // If it's custom badge, value is required
-      if (!val.value || val.value === '') {
+      if (val.value === null) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: 'Value is required for custom badge',
@@ -32,7 +33,7 @@ export const ParameterBadgeFormSchema = z.object({
       }
     } else {
       // clear unneeded values if it's not custom badge
-      val.value = '';
+      val.value = null;
       val.label = '';
       val.icon = '';
     }

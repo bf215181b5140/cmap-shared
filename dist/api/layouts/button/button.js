@@ -2,16 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonCopySchema = exports.ButtonFormSchema = void 0;
 const zod_1 = require("zod");
-const shared_1 = require("../../../shared");
 const buttonType_1 = require("../../../enums/buttonType");
 const imageOrientation_1 = require("../../../enums/imageOrientation");
 const callbackParameter_1 = require("../../../objects/callbackParameter");
 const visibilityParameter_1 = require("../../../objects/visibilityParameter");
 const parameter_1 = require("../../../primitives/parameter");
+const shared_1 = require("../../../primitives/shared");
 exports.ButtonFormSchema = zod_1.z.object({
-    groupId: shared_1.IdSchema,
-    id: shared_1.IdSchema.nullable(),
-    label: zod_1.z.string().min(1, 'Label is required').max(32),
+    groupId: shared_1.idSchema,
+    id: shared_1.idSchema.nullable(),
+    label: shared_1.labelSchema,
     showLabel: zod_1.z.boolean(),
     path: parameter_1.parameterPathSchema,
     value: parameter_1.parameterValueFormSchema,
@@ -22,7 +22,7 @@ exports.ButtonFormSchema = zod_1.z.object({
     useCost: zod_1.z.number().nullable(),
     callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterSchema),
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),
-    interactionKeyId: shared_1.IdSchema.nullable(),
+    interactionKeyId: shared_1.idSchema.nullable(),
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement
     if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && val.valueAlt === null) {
@@ -51,6 +51,6 @@ exports.ButtonFormSchema = zod_1.z.object({
     }
 });
 exports.ButtonCopySchema = zod_1.z.object({
-    id: shared_1.IdSchema,
-    groupId: shared_1.IdSchema,
+    id: shared_1.idSchema,
+    groupId: shared_1.idSchema,
 });

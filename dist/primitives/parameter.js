@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parameterValueOrAvatarSimpleSchema = exports.parameterValueSimpleSchema = exports.parameterValueOrAvatarFormSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueFormSchema = exports.parameterValueSchema = exports.parameterValueNumberSchema = exports.parameterValueStringSchema = exports.parameterValueAvatarIdSchema = exports.parameterPathSchema = void 0;
 const zod_1 = require("zod");
 const util_1 = require("../util");
-// todo - these aren't used yet, just for testing
 exports.parameterPathSchema = zod_1.z.string().min(1, 'Parameter path required').max(100, 'Parameter path too long');
 exports.parameterValueAvatarIdSchema = zod_1.z.string().min(6, 'Too short for VRChat avatar ID').max(50, 'Too long for VRChat avatar ID').startsWith('avtr_', 'Invalid VRChat avatar ID');
 exports.parameterValueStringSchema = zod_1.z.string().min(1, 'Parameter value required').max(5, 'Parameter value too long').transform((val, ctx) => {

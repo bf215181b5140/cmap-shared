@@ -2,18 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LayoutCopySchema = exports.LayoutFormSchema = void 0;
 const zod_1 = require("zod");
-const shared_1 = require("../../../shared");
+const shared_1 = require("../../../primitives/shared");
+const parameter_1 = require("../../../primitives/parameter");
 exports.LayoutFormSchema = zod_1.z.object({
-    id: shared_1.IdSchema.nullable(),
-    label: zod_1.z.string().min(3).max(32),
-    avatars: zod_1.z.array(shared_1.vrcAvatarIdSchema),
+    id: shared_1.idSchema.nullable(),
+    label: shared_1.labelSchema,
+    avatars: zod_1.z.array(parameter_1.parameterValueAvatarIdSchema),
     healthEnabled: zod_1.z.boolean(),
-    healthPath: shared_1.parameterPathSchema.nullable(),
+    healthPath: parameter_1.parameterPathSchema.nullable(),
     healthMax: zod_1.z.number().nullable(),
     useCostEnabled: zod_1.z.boolean(),
-    useCostPath: shared_1.parameterPathSchema.nullable(),
+    useCostPath: parameter_1.parameterPathSchema.nullable(),
     useCostMax: zod_1.z.number().nullable(),
 });
 exports.LayoutCopySchema = zod_1.z.object({
-    id: shared_1.IdSchema,
+    id: shared_1.idSchema,
 });

@@ -14,12 +14,12 @@ export const ProfilePageSchema = ClientSchema.required({
 export type ProfilePageDTO = z.infer<typeof ProfilePageSchema>;
 
 export const ProfileFormSchema = z.object({
-  displayName: z.string().min(3).max(32),
-  bio: z.string().max(1000),
+  displayName: z.string().min(3, 'Display name too short').max(32, 'Display name too long (max 32 characters)'),
+  bio: z.string().max(1000, 'Bio too long (max 1000 characters)'),
   visibility: ClientVisibilitySchema,
   defaultLayoutId: z.string().max(20).nullable(),
-  unknownAvatarMessage: z.string().max(1000),
-  offlineMessage: z.string().max(1000),
+  unknownAvatarMessage: z.string().max(1000, 'Message too long (max 1000 characters)'),
+  offlineMessage: z.string().max(1000, 'Message too long (max 1000 characters)'),
 });
 
 export type ProfileFormDTO = z.infer<typeof ProfileFormSchema>;

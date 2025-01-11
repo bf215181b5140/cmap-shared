@@ -3,7 +3,7 @@ export declare const ParameterBadgeSchema: z.ZodObject<{
     id: z.ZodString;
     type: z.ZodEnum<["Mute", "VrMode", "TrackingType", "Afk", "Custom"]>;
     path: z.ZodString;
-    value: z.ZodString;
+    value: z.ZodNullable<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>>;
     label: z.ZodString;
     icon: z.ZodString;
     order: z.ZodNumber;
@@ -11,7 +11,7 @@ export declare const ParameterBadgeSchema: z.ZodObject<{
     type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
     id: string;
     order: number;
-    value: string;
+    value: number | boolean | null;
     label: string;
     path: string;
     icon: string;
@@ -19,7 +19,7 @@ export declare const ParameterBadgeSchema: z.ZodObject<{
     type: "Mute" | "VrMode" | "TrackingType" | "Afk" | "Custom";
     id: string;
     order: number;
-    value: string;
+    value: number | boolean | null;
     label: string;
     path: string;
     icon: string;

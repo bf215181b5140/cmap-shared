@@ -31,6 +31,7 @@ export { UseButtonSchema, UseButtonDTO } from './objects/useButton';
 export { UsedButtonSchema, UsedButtonDTO } from './objects/usedButton';
 export { UsePresetSchema, UsePresetDTO } from './objects/usePreset';
 export { UsedPresetSchema, UsedPresetDTO } from './objects/usedPreset';
+export { PresetParameterSchema, PresetParameterDTO } from './objects/presetParameter';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO } from './api';
 
@@ -46,7 +47,7 @@ export { ButtonFormSchema, ButtonFormDTO, ButtonCopySchema, ButtonCopyDTO } from
 export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/interactionKeys/interactionKeys';
 export { StylePageSchema, StylePageDTO } from './api/style/style';
 export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
-export { PresetParameterFormSchema, PresetParameterFormDTO, PresetFormSchema, PresetFormDTO, PresetCopySchema, PresetCopyDTO } from './api/layouts/layout/preset/preset';
+export { PresetFormSchema, PresetFormDTO, PresetCopySchema, PresetCopyDTO } from './api/layouts/layout/preset/preset';
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 // ------------------------------ Other ------------------------------ //

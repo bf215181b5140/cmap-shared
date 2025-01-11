@@ -2,22 +2,15 @@ import { z } from 'zod';
 import { CallbackParameterSchema } from '../../../../objects/callbackParameter';
 import { ImageOrientationSchema } from '../../../../enums/imageOrientation';
 import { VisibilityParameterSchema } from '../../../../objects/visibilityParameter';
-import { parameterPathSchema, parameterValueFormSchema } from '../../../../primitives/parameter';
 import { idSchema, labelSchema } from '../../../../primitives/shared';
-
-export const PresetParameterFormSchema = z.object({
-  path: parameterPathSchema,
-  value: parameterValueFormSchema
-});
-
-export type PresetParameterFormDTO = z.infer<typeof PresetParameterFormSchema>;
+import { PresetParameterSchema } from '../../../../objects/presetParameter';
 
 export const PresetFormSchema = z.object({
   layoutId: idSchema,
   id: idSchema.nullable(),
   label: labelSchema,
   showLabel: z.boolean(),
-  parameters: z.array(PresetParameterFormSchema),
+  parameters: z.array(PresetParameterSchema),
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
   useCost: z.number().nullable(),

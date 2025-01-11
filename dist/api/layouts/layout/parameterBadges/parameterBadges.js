@@ -2,22 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ParameterBadgeFormSchema = void 0;
 const zod_1 = require("zod");
-const shared_1 = require("../../../../shared");
 const parameterBadgeType_1 = require("../../../../enums/parameterBadgeType");
+const parameter_1 = require("../../../../primitives/parameter");
+const shared_1 = require("../../../../primitives/shared");
 exports.ParameterBadgeFormSchema = zod_1.z.object({
-    layoutId: shared_1.IdSchema,
+    layoutId: shared_1.idSchema,
     parameterBadges: zod_1.z.array(zod_1.z.object({
-        id: shared_1.IdSchema.nullable(),
+        id: shared_1.idSchema.nullable(),
         type: parameterBadgeType_1.ParameterBadgeTypeSchema,
-        path: shared_1.parameterPathSchema,
-        value: zod_1.z.union([zod_1.z.literal(''), shared_1.parameterValueSchema]),
-        label: zod_1.z.union([zod_1.z.literal(''), zod_1.z.string().min(2).max(20)]),
-        icon: zod_1.z.string().max(30),
+        path: parameter_1.parameterPathSchema,
+        value: zod_1.z.union([zod_1.z.literal('').transform(() => null), parameter_1.parameterValueFormSchema]).nullable(),
+        label: zod_1.z.union([zod_1.z.literal(''), zod_1.z.string().min(2, 'Label too short').max(20, 'Label too long')]),
+        icon: zod_1.z.string().max(30, 'Icon too long'),
         order: zod_1.z.number(),
     }).transform((val, ctx) => {
         if (val.type === 'Custom') {
             // If it's custom badge, value is required
-            if (!val.value || val.value === '') {
+            if (val.value === null) {
                 ctx.addIssue({
                     code: zod_1.z.ZodIssueCode.custom,
                     message: 'Value is required for custom badge',
@@ -35,7 +36,7 @@ exports.ParameterBadgeFormSchema = zod_1.z.object({
         }
         else {
             // clear unneeded values if it's not custom badge
-            val.value = '';
+            val.value = null;
             val.label = '';
             val.icon = '';
         }

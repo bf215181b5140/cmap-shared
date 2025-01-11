@@ -8,14 +8,14 @@ export declare const GroupFormSchema: z.ZodObject<{
     width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
     visibilityParameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
-        value: z.ZodEffects<z.ZodString, string, string>;
+        value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
         condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
     }, "strip", z.ZodTypeAny, {
-        value: string;
+        value: number | boolean;
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }, {
-        value: string;
+        value: string | number | boolean;
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }>, "many">;
@@ -26,7 +26,7 @@ export declare const GroupFormSchema: z.ZodObject<{
     order: number;
     label: string;
     visibilityParameters: {
-        value: string;
+        value: number | boolean;
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
@@ -39,7 +39,7 @@ export declare const GroupFormSchema: z.ZodObject<{
     order: number;
     label: string;
     visibilityParameters: {
-        value: string;
+        value: string | number | boolean;
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];

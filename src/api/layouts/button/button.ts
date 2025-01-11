@@ -1,15 +1,15 @@
 import { z } from 'zod';
-import { IdSchema } from '../../../shared';
 import { ButtonTypeSchema } from '../../../enums/buttonType';
 import { ImageOrientationSchema } from '../../../enums/imageOrientation';
 import { CallbackParameterSchema } from '../../../objects/callbackParameter';
 import { VisibilityParameterSchema } from '../../../objects/visibilityParameter';
 import { parameterPathSchema, parameterValueFormSchema } from '../../../primitives/parameter';
+import { idSchema, labelSchema } from '../../../primitives/shared';
 
 export const ButtonFormSchema = z.object({
-  groupId: IdSchema,
-  id: IdSchema.nullable(),
-  label: z.string().min(1, 'Label is required').max(32),
+  groupId: idSchema,
+  id: idSchema.nullable(),
+  label: labelSchema,
   showLabel: z.boolean(),
   path: parameterPathSchema,
   value: parameterValueFormSchema,
@@ -20,7 +20,7 @@ export const ButtonFormSchema = z.object({
   useCost: z.number().nullable(),
   callbackParameters: z.array(CallbackParameterSchema),
   visibilityParameters: z.array(VisibilityParameterSchema),
-  interactionKeyId: IdSchema.nullable(),
+  interactionKeyId: idSchema.nullable(),
 }).superRefine((val, ctx) => {
   // Check valueAlt requirement
   if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && val.valueAlt === null) {
@@ -52,8 +52,8 @@ export const ButtonFormSchema = z.object({
 export type ButtonFormDTO = z.infer<typeof ButtonFormSchema>;
 
 export const ButtonCopySchema = z.object({
-  id: IdSchema,
-  groupId: IdSchema,
+  id: idSchema,
+  groupId: idSchema,
 });
 
 export type ButtonCopyDTO = z.infer<typeof ButtonCopySchema>;

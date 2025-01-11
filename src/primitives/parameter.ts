@@ -1,8 +1,6 @@
 import { z } from 'zod';
 import { convertParameterValueFromString } from '../util';
 
-// todo - these aren't used yet, just for testing
-
 export const parameterPathSchema = z.string().min(1, 'Parameter path required').max(100, 'Parameter path too long');
 
 export const parameterValueAvatarIdSchema = z.string().min(6, 'Too short for VRChat avatar ID').max(50, 'Too long for VRChat avatar ID').startsWith('avtr_', 'Invalid VRChat avatar ID');

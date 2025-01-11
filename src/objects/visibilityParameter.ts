@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import { parameterPathSchema, parameterValueSchema } from '../shared';
 import { VisibilityParameterConditionSchema } from '../enums/visibilityParameterCondition';
+import { parameterPathSchema, parameterValueFormSchema } from '../primitives/parameter';
 
 export const VisibilityParameterSchema = z.object({
   path: parameterPathSchema,
-  value: parameterValueSchema,
+  value: parameterValueFormSchema,
   condition: VisibilityParameterConditionSchema,
 });
 

@@ -1,10 +1,11 @@
 import { z } from 'zod';
-import { IdSchema, parameterPathSchema, vrcAvatarIdSchema } from '../../../shared';
+import { idSchema, labelSchema } from '../../../primitives/shared';
+import { parameterPathSchema, parameterValueAvatarIdSchema } from '../../../primitives/parameter';
 
 export const LayoutFormSchema = z.object({
-  id: IdSchema.nullable(),
-  label: z.string().min(3).max(32),
-  avatars: z.array(vrcAvatarIdSchema),
+  id: idSchema.nullable(),
+  label: labelSchema,
+  avatars: z.array(parameterValueAvatarIdSchema),
   healthEnabled: z.boolean(),
   healthPath: parameterPathSchema.nullable(),
   healthMax: z.number().nullable(),
@@ -16,7 +17,7 @@ export const LayoutFormSchema = z.object({
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;
 
 export const LayoutCopySchema = z.object({
-  id: IdSchema,
+  id: idSchema,
 });
 
 export type LayoutCopyDTO = z.infer<typeof LayoutCopySchema>;
