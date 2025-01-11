@@ -13,7 +13,7 @@ export const ButtonFormSchema = z.object({
   showLabel: z.boolean(),
   path: parameterPathSchema,
   value: parameterValueFormSchema,
-  valueAlt: z.union([z.literal('').transform(() => null), z.null(), parameterValueFormSchema]),
+  valueAlt: z.union([z.literal('').transform(() => null), parameterValueFormSchema]).nullable(),
   buttonType: ButtonTypeSchema,
   imageOrientation: ImageOrientationSchema,
   order: z.number(),

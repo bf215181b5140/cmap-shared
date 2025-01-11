@@ -15,7 +15,7 @@ exports.ButtonSchema = zod_1.z.object({
     showLabel: zod_1.z.boolean(),
     path: zod_1.z.string(),
     value: parameter_1.parameterValueSimpleSchema,
-    valueAlt: zod_1.z.union([zod_1.z.null(), parameter_1.parameterValueSimpleSchema]),
+    valueAlt: parameter_1.parameterValueSimpleSchema.nullable(),
     buttonType: buttonType_1.ButtonTypeSchema,
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),

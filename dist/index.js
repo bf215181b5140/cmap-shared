@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TiersPageSchema = exports.StylePageSchema = exports.InteractionKeysFormSchema = exports.InteractionKeysPageSchema = exports.ButtonCopySchema = exports.ButtonFormSchema = exports.GroupCopySchema = exports.GroupFormSchema = exports.LayoutCopySchema = exports.LayoutFormSchema = exports.ParameterBadgeFormSchema = exports.LayoutsPageSchema = exports.ProfileFormSchema = exports.ProfilePageSchema = exports.StatePageSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.RegisterInfoSchema = exports.LoginFormSchema = exports.LoginTokenSchema = exports.ApiResponseSchema = exports.PresetParameterSchema = exports.PresetSchema = exports.VisibilityParameterSchema = exports.CallbackParameterSchema = exports.KeyValueSchema = exports.TrackedParametersSchema = exports.TrackedParameterSchema = exports.TrackedParametersMap = exports.ClientStateSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.ThemeSchema = exports.ParameterBadgeSchema = exports.InviteKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.VrcParameterSchema = exports.VisibilityParameterConditionSchema = exports.ParameterBadgeTypeSchema = exports.NotificationTypeSchema = exports.ImageOrientationSchema = exports.GroupWidthSchema = exports.ClientVisibilitySchema = exports.ButtonTypeSchema = void 0;
-exports.URL = exports.URL_LIVE = exports.imageOrientationToAspectRatio = exports.imageUrlPathToUrl = exports.convertParameterValueFromString = exports.UsedButtonSchema = exports.interactionKeySchema = exports.OrderSchema = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.PresetCopySchema = exports.PresetFormSchema = exports.PresetParameterFormSchema = exports.GeneratedInviteKeySchema = exports.UseInviteKeyFormSchema = void 0;
+exports.ButtonCopySchema = exports.ButtonFormSchema = exports.GroupCopySchema = exports.GroupFormSchema = exports.LayoutCopySchema = exports.LayoutFormSchema = exports.ParameterBadgeFormSchema = exports.LayoutsPageSchema = exports.ProfileFormSchema = exports.ProfilePageSchema = exports.StatePageSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.RegisterInfoSchema = exports.LoginFormSchema = exports.LoginTokenSchema = exports.ApiResponseSchema = exports.UsedPresetSchema = exports.UsePresetSchema = exports.UsedButtonSchema = exports.UseButtonSchema = exports.ParameterSchema = exports.PresetSchema = exports.VisibilityParameterSchema = exports.CallbackParameterSchema = exports.KeyValueSchema = exports.TrackedParametersSchema = exports.TrackedParameterSchema = exports.TrackedParametersMap = exports.ClientStateSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.ThemeSchema = exports.ParameterBadgeSchema = exports.InviteKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ClientSchema = exports.ButtonSchema = exports.BackgroundSchema = exports.VrcParameterSchema = exports.VisibilityParameterConditionSchema = exports.ParameterBadgeTypeSchema = exports.NotificationTypeSchema = exports.ImageOrientationSchema = exports.GroupWidthSchema = exports.ClientVisibilitySchema = exports.ButtonTypeSchema = void 0;
+exports.URL = exports.URL_LIVE = exports.imageOrientationToAspectRatio = exports.imageUrlPathToUrl = exports.convertParameterValueFromString = exports.interactionKeySchema = exports.OrderSchema = exports.vrcAvatarIdSchema = exports.usernameSchema = exports.passwordSchema = exports.parameterValueSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueObjectSchema = exports.parameterValueObjectOrAvatarSchema = exports.parameterPathSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.PresetCopySchema = exports.PresetFormSchema = exports.PresetParameterFormSchema = exports.GeneratedInviteKeySchema = exports.UseInviteKeyFormSchema = exports.TiersPageSchema = exports.StylePageSchema = exports.InteractionKeysFormSchema = exports.InteractionKeysPageSchema = void 0;
 // ------------------------------ Enums ------------------------------ //
 var buttonType_1 = require("./enums/buttonType");
 Object.defineProperty(exports, "ButtonTypeSchema", { enumerable: true, get: function () { return buttonType_1.ButtonTypeSchema; } });
@@ -58,8 +58,16 @@ var visibilityParameter_1 = require("./objects/visibilityParameter");
 Object.defineProperty(exports, "VisibilityParameterSchema", { enumerable: true, get: function () { return visibilityParameter_1.VisibilityParameterSchema; } });
 var preset_1 = require("./objects/preset");
 Object.defineProperty(exports, "PresetSchema", { enumerable: true, get: function () { return preset_1.PresetSchema; } });
-var presetParameter_1 = require("./objects/presetParameter");
-Object.defineProperty(exports, "PresetParameterSchema", { enumerable: true, get: function () { return presetParameter_1.PresetParameterSchema; } });
+var parameter_1 = require("./objects/parameter");
+Object.defineProperty(exports, "ParameterSchema", { enumerable: true, get: function () { return parameter_1.ParameterSchema; } });
+var useButton_1 = require("./objects/useButton");
+Object.defineProperty(exports, "UseButtonSchema", { enumerable: true, get: function () { return useButton_1.UseButtonSchema; } });
+var usedButton_1 = require("./objects/usedButton");
+Object.defineProperty(exports, "UsedButtonSchema", { enumerable: true, get: function () { return usedButton_1.UsedButtonSchema; } });
+var usePreset_1 = require("./objects/usePreset");
+Object.defineProperty(exports, "UsePresetSchema", { enumerable: true, get: function () { return usePreset_1.UsePresetSchema; } });
+var usedPreset_1 = require("./objects/usedPreset");
+Object.defineProperty(exports, "UsedPresetSchema", { enumerable: true, get: function () { return usedPreset_1.UsedPresetSchema; } });
 // ------------------------------ API ------------------------------ //
 var api_1 = require("./api");
 Object.defineProperty(exports, "ApiResponseSchema", { enumerable: true, get: function () { return api_1.ApiResponseSchema; } });
@@ -117,9 +125,6 @@ Object.defineProperty(exports, "usernameSchema", { enumerable: true, get: functi
 Object.defineProperty(exports, "vrcAvatarIdSchema", { enumerable: true, get: function () { return shared_1.vrcAvatarIdSchema; } });
 Object.defineProperty(exports, "OrderSchema", { enumerable: true, get: function () { return shared_1.OrderSchema; } });
 Object.defineProperty(exports, "interactionKeySchema", { enumerable: true, get: function () { return shared_1.interactionKeySchema; } });
-// ------------------------------ Frontend ------------------------------ //
-var website_1 = require("./api/website");
-Object.defineProperty(exports, "UsedButtonSchema", { enumerable: true, get: function () { return website_1.UsedButtonSchema; } });
 // ------------------------------ Other ------------------------------ //
 var util_1 = require("./util");
 Object.defineProperty(exports, "convertParameterValueFromString", { enumerable: true, get: function () { return util_1.convertParameterValueFromString; } });

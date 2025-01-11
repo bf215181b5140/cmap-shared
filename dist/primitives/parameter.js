@@ -47,6 +47,7 @@ exports.parameterValueSimpleSchema = zod_1.z.union([
     zod_1.z.boolean()
 ]);
 exports.parameterValueOrAvatarSimpleSchema = zod_1.z.union([
+    zod_1.z.string(),
     zod_1.z.number(),
     zod_1.z.boolean()
 ]);

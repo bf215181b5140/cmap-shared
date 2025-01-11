@@ -6,7 +6,7 @@ export declare const ButtonFormSchema: z.ZodEffects<z.ZodObject<{
     showLabel: z.ZodBoolean;
     path: z.ZodString;
     value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
-    valueAlt: z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodNull, z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>]>;
+    valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>]>>;
     buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;

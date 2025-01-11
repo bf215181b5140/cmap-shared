@@ -26,7 +26,11 @@ export { KeyValueSchema, KeyValueDTO } from './objects/keyValue';
 export { CallbackParameterSchema, CallbackParameterDTO } from './objects/callbackParameter';
 export { VisibilityParameterSchema, VisibilityParameterDTO } from './objects/visibilityParameter';
 export { PresetSchema, PresetDTO } from './objects/preset';
-export { PresetParameterSchema, PresetParameterDTO } from './objects/presetParameter';
+export { ParameterSchema, ParameterDTO } from './objects/parameter';
+export { UseButtonSchema, UseButtonDTO } from './objects/useButton';
+export { UsedButtonSchema, UsedButtonDTO } from './objects/usedButton';
+export { UsePresetSchema, UsePresetDTO } from './objects/usePreset';
+export { UsedPresetSchema, UsedPresetDTO } from './objects/usedPreset';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO } from './api';
 
@@ -45,8 +49,6 @@ export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyForm
 export { PresetParameterFormSchema, PresetParameterFormDTO, PresetFormSchema, PresetFormDTO, PresetCopySchema, PresetCopyDTO } from './api/layouts/layout/preset/preset';
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, parameterPathSchema, parameterValueObjectOrAvatarSchema, parameterValueObjectSchema, parameterValueOrAvatarSchema, parameterValueSchema, passwordSchema, usernameSchema, vrcAvatarIdSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
-// ------------------------------ Frontend ------------------------------ //
-export { UsedButtonSchema, UsedButtonDTO } from './api/website';
 // ------------------------------ Other ------------------------------ //
 export { convertParameterValueFromString, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
 // ------------------------------ Const ------------------------------ //

@@ -3,7 +3,7 @@ export declare const PresetSchema: z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
     showLabel: z.ZodBoolean;
-    parameters: z.ZodObject<{
+    parameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
         value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
     }, "strip", z.ZodTypeAny, {
@@ -12,7 +12,7 @@ export declare const PresetSchema: z.ZodObject<{
     }, {
         value: number | boolean;
         path: string;
-    }>;
+    }>, "many">;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
     useCost: z.ZodNullable<z.ZodNumber>;
@@ -77,7 +77,7 @@ export declare const PresetSchema: z.ZodObject<{
     parameters: {
         value: number | boolean;
         path: string;
-    };
+    }[];
     image?: {
         id: string;
         fileName: string;
@@ -104,7 +104,7 @@ export declare const PresetSchema: z.ZodObject<{
     parameters: {
         value: number | boolean;
         path: string;
-    };
+    }[];
     image?: {
         id: string;
         fileName: string;

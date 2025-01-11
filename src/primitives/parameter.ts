@@ -54,6 +54,7 @@ export const parameterValueSimpleSchema = z.union([
 ]);
 
 export const parameterValueOrAvatarSimpleSchema = z.union([
+  z.string(),
   z.number(),
   z.boolean()
 ]);

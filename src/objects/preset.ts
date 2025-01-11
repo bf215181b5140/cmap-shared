@@ -3,13 +3,13 @@ import { UploadedFileSchema } from './uploadedFile';
 import { ImageOrientationSchema } from '../enums/imageOrientation';
 import { VisibilityParameterSchema } from './visibilityParameter';
 import { CallbackParameterSchema } from './callbackParameter';
-import { PresetParameterSchema } from './presetParameter';
+import { ParameterSchema } from './parameter';
 
 export const PresetSchema = z.object({
   id: z.string(),
   label: z.string(),
   showLabel: z.boolean(),
-  parameters: PresetParameterSchema,
+  parameters: z.array(ParameterSchema),
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
   useCost: z.number().nullable(),

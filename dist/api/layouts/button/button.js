@@ -15,7 +15,7 @@ exports.ButtonFormSchema = zod_1.z.object({
     showLabel: zod_1.z.boolean(),
     path: parameter_1.parameterPathSchema,
     value: parameter_1.parameterValueFormSchema,
-    valueAlt: zod_1.z.union([zod_1.z.literal('').transform(() => null), zod_1.z.null(), parameter_1.parameterValueFormSchema]),
+    valueAlt: zod_1.z.union([zod_1.z.literal('').transform(() => null), parameter_1.parameterValueFormSchema]).nullable(),
     buttonType: buttonType_1.ButtonTypeSchema,
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),

@@ -8,4 +8,4 @@ export declare const parameterValueFormSchema: z.ZodUnion<[z.ZodEffects<z.ZodStr
 export declare const parameterValueOrAvatarSchema: z.ZodUnion<[z.ZodString, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
 export declare const parameterValueOrAvatarFormSchema: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodString, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
 export declare const parameterValueSimpleSchema: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
-export declare const parameterValueOrAvatarSimpleSchema: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+export declare const parameterValueOrAvatarSimpleSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean]>;

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 export declare const VrcParameterSchema: z.ZodObject<{
     path: z.ZodString;
-    value: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>, z.ZodString]>;
+    value: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean]>;
 }, "strip", z.ZodTypeAny, {
     value: string | number | boolean;
     path: string;

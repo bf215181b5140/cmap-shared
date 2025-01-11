@@ -165,7 +165,7 @@ export declare const StylePageSchema: z.ZodObject<{
                     showLabel: z.ZodBoolean;
                     path: z.ZodString;
                     value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
-                    valueAlt: z.ZodUnion<[z.ZodNull, z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>]>;
+                    valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>>;
                     buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
                     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                     order: z.ZodNumber;
@@ -375,7 +375,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 id: z.ZodString;
                 label: z.ZodString;
                 showLabel: z.ZodBoolean;
-                parameters: z.ZodObject<{
+                parameters: z.ZodArray<z.ZodObject<{
                     path: z.ZodString;
                     value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                 }, "strip", z.ZodTypeAny, {
@@ -384,7 +384,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 }, {
                     value: number | boolean;
                     path: string;
-                }>;
+                }>, "many">;
                 imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                 order: z.ZodNumber;
                 useCost: z.ZodNullable<z.ZodNumber>;
@@ -449,7 +449,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -476,7 +476,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -564,7 +564,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -652,7 +652,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -976,7 +976,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -1146,7 +1146,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -1514,7 +1514,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;
@@ -1730,7 +1730,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 parameters: {
                     value: number | boolean;
                     path: string;
-                };
+                }[];
                 image?: {
                     id: string;
                     fileName: string;

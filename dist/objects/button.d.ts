@@ -5,7 +5,7 @@ export declare const ButtonSchema: z.ZodObject<{
     showLabel: z.ZodBoolean;
     path: z.ZodString;
     value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
-    valueAlt: z.ZodUnion<[z.ZodNull, z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>]>;
+    valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>>;
     buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
     order: z.ZodNumber;
