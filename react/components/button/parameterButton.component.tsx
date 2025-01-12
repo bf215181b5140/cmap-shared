@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ButtonBaseStyle } from './button.style';
 import { ButtonDTO, ButtonTypeSchema, imageOrientationToAspectRatio, imageUrlPathToUrl, ThemeDTO, trimNumberDecimals, UseButtonDTO, ImageOrientation } from '../../../src';
 import { ExpIcon } from '../expIcon/expIcon.component';
@@ -15,6 +15,8 @@ interface ParameterButtonProps {
 
 export function ParameterButton({ theme, button, value, enoughExp, disabled, onClick }: ParameterButtonProps) {
 
+  const [buttonUsed, setButtonUsed] = useState(false);
+
   const active = useMemo(() => {
     // if value is float then we trim it to 3 decimals for comparison (vrc floats aren't accurate and it converts 0.3 into something like 0.3000000001124749325)
     if (typeof value === 'number' && !Number.isInteger(value)) return trimNumberDecimals(value) === button.value;
@@ -22,6 +24,8 @@ export function ParameterButton({ theme, button, value, enoughExp, disabled, onC
   }, [button.value, value]);
 
   function onClickInternal(event: React.MouseEvent<HTMLDivElement>) {
+    if (buttonUsed) return;
+
     if (onClick) {
       switch (button.buttonType) {
         case ButtonTypeSchema.Values.Button:
@@ -32,9 +36,13 @@ export function ParameterButton({ theme, button, value, enoughExp, disabled, onC
           break;
       }
     }
+
+    setButtonUsed(true);
+    setTimeout(() => setButtonUsed(false), 100);
   }
 
-  return (<ParameterButtonStyled className={'parameterButton'} themeDto={theme} aria-readonly={disabled} aria-current={active} onClick={onClickInternal}>
+  return (<ParameterButtonStyled className={'parameterButton'} themeDto={theme} aria-readonly={disabled} aria-current={active}
+                                 onClick={onClickInternal} buttonUsed={buttonUsed}>
     {button.image && <ParameterButtonPicture src={imageUrlPathToUrl(button.image.urlPath)} imageOrientation={button.imageOrientation} />}
     {button.showLabel && <ParameterButtonLabel>{button.label}</ParameterButtonLabel>}
     <ActiveOverlay active={active} />
@@ -42,11 +50,12 @@ export function ParameterButton({ theme, button, value, enoughExp, disabled, onC
   </ParameterButtonStyled>);
 }
 
-const ParameterButtonStyled = styled(ButtonBaseStyle)`
+const ParameterButtonStyled = styled(ButtonBaseStyle)<{ buttonUsed: boolean }>`
   min-height: 72px;
   overflow: hidden;
   position: relative;
 
+  ${props => props.buttonUsed && css`transform: scale(1) !important;`}
 `;
 
 const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: ImageOrientation }>`

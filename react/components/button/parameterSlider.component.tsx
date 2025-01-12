@@ -22,6 +22,7 @@ export function ParameterSlider({ theme, button, value, enoughExp, disabled, onC
 
   const inputRef = useRef<any>(null);
   const [sliderValue, setSliderValue] = useState(numberValue);
+  const [sliderUsed, setSliderUsed] = useState(false);
 
   const width = ((sliderValue - min) / (max - min)) * 100;
 
@@ -63,9 +64,14 @@ export function ParameterSlider({ theme, button, value, enoughExp, disabled, onC
   function handleMouseUp(event: React.MouseEvent<HTMLDivElement> | MouseEvent) {
     calculateInputRange(event, true);
     setDragging(false);
+
+    setSliderUsed(true);
+    setTimeout(() => setSliderUsed(false), 100);
   }
 
   function handleMouseDown(event: React.MouseEvent<HTMLDivElement> | MouseEvent) {
+    if (sliderUsed) return;
+
     calculateInputRange(event);
     setDragging(true);
   }
