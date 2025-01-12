@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { GroupWidthSchema } from '../../../enums/groupWidth';
-import { VisibilityParameterSchema } from '../../../objects/visibilityParameter';
+import { VisibilityParameterFormSchema } from '../../../objects/visibilityParameter';
 import { idSchema, labelSchema } from '../../../primitives/shared';
 
 export const GroupFormSchema = z.object({
@@ -10,7 +10,7 @@ export const GroupFormSchema = z.object({
   showLabel: z.boolean(),
   order: z.number(),
   width: GroupWidthSchema,
-  visibilityParameters: z.array(VisibilityParameterSchema),
+  visibilityParameters: z.array(VisibilityParameterFormSchema),
   interactionKeyId: idSchema.nullable(),
 });
 

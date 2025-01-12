@@ -23,15 +23,15 @@ export { UploadedFileDTO, UploadedFileSchema } from './objects/uploadedFile';
 export { ClientStateSchema, ClientStateDTO } from './objects/clientState';
 export { TrackedParametersMap, TrackedParameterSchema, TrackedParameterDTO, TrackedParametersSchema, TrackedParametersDTO } from './objects/trackedParameters';
 export { KeyValueSchema, KeyValueDTO } from './objects/keyValue';
-export { CallbackParameterSchema, CallbackParameterDTO } from './objects/callbackParameter';
-export { VisibilityParameterSchema, VisibilityParameterDTO } from './objects/visibilityParameter';
+export { CallbackParameterSchema, CallbackParameterDTO, CallbackParameterFormSchema, CallbackParameterFormDTO } from './objects/callbackParameter';
+export { VisibilityParameterSchema, VisibilityParameterDTO, VisibilityParameterFormSchema, VisibilityParameterFormDTO } from './objects/visibilityParameter';
 export { PresetSchema, PresetDTO } from './objects/preset';
 export { ParameterSchema, ParameterDTO } from './objects/parameter';
 export { UseButtonSchema, UseButtonDTO } from './objects/useButton';
 export { UsedButtonSchema, UsedButtonDTO } from './objects/usedButton';
 export { UsePresetSchema, UsePresetDTO } from './objects/usePreset';
 export { UsedPresetSchema, UsedPresetDTO } from './objects/usedPreset';
-export { PresetParameterSchema, PresetParameterDTO } from './objects/presetParameter';
+export { PresetParameterSchema, PresetParameterDTO, PresetParameterFormSchema, PresetParameterFormDTO } from './objects/presetParameter';
 // ------------------------------ API ------------------------------ //
 export { ApiResponseSchema, ApiResponseDTO } from './api';
 

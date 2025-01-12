@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import { ButtonTypeSchema } from '../../../enums/buttonType';
 import { ImageOrientationSchema } from '../../../enums/imageOrientation';
-import { CallbackParameterSchema } from '../../../objects/callbackParameter';
-import { VisibilityParameterSchema } from '../../../objects/visibilityParameter';
+import { CallbackParameterFormSchema } from '../../../objects/callbackParameter';
+import { VisibilityParameterFormSchema } from '../../../objects/visibilityParameter';
 import { parameterPathSchema, parameterValueFormSchema } from '../../../primitives/parameter';
 import { idSchema, labelSchema } from '../../../primitives/shared';
 
@@ -18,8 +18,8 @@ export const ButtonFormSchema = z.object({
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
   useCost: z.number().nullable(),
-  callbackParameters: z.array(CallbackParameterSchema),
-  visibilityParameters: z.array(VisibilityParameterSchema),
+  callbackParameters: z.array(CallbackParameterFormSchema),
+  visibilityParameters: z.array(VisibilityParameterFormSchema),
   interactionKeyId: idSchema.nullable(),
 }).superRefine((val, ctx) => {
   // Check valueAlt requirement

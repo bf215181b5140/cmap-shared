@@ -20,8 +20,8 @@ exports.ButtonFormSchema = zod_1.z.object({
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
-    callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterSchema),
-    visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),
+    callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterFormSchema),
+    visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
     interactionKeyId: shared_1.idSchema.nullable(),
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement

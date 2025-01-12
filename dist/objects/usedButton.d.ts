@@ -4,14 +4,14 @@ export declare const UsedButtonSchema: z.ZodObject<{
     value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
     callbackParameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
-        value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+        value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
         seconds: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         value: number | boolean;
         path: string;
         seconds: number;
     }, {
-        value: string | number | boolean;
+        value: number | boolean;
         path: string;
         seconds: number;
     }>, "many">;
@@ -41,7 +41,7 @@ export declare const UsedButtonSchema: z.ZodObject<{
     value: number | boolean;
     path: string;
     callbackParameters: {
-        value: string | number | boolean;
+        value: number | boolean;
         path: string;
         seconds: number;
     }[];

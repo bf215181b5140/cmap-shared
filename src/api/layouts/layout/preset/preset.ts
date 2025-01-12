@@ -1,21 +1,21 @@
 import { z } from 'zod';
-import { CallbackParameterSchema } from '../../../../objects/callbackParameter';
+import { CallbackParameterFormSchema } from '../../../../objects/callbackParameter';
 import { ImageOrientationSchema } from '../../../../enums/imageOrientation';
-import { VisibilityParameterSchema } from '../../../../objects/visibilityParameter';
+import { VisibilityParameterFormSchema } from '../../../../objects/visibilityParameter';
 import { idSchema, labelSchema } from '../../../../primitives/shared';
-import { PresetParameterSchema } from '../../../../objects/presetParameter';
+import { PresetParameterFormSchema } from '../../../../objects/presetParameter';
 
 export const PresetFormSchema = z.object({
   layoutId: idSchema,
   id: idSchema.nullable(),
   label: labelSchema,
   showLabel: z.boolean(),
-  parameters: z.array(PresetParameterSchema),
+  parameters: z.array(PresetParameterFormSchema),
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
   useCost: z.number().nullable(),
-  callbackParameters: z.array(CallbackParameterSchema),
-  visibilityParameters: z.array(VisibilityParameterSchema),
+  callbackParameters: z.array(CallbackParameterFormSchema),
+  visibilityParameters: z.array(VisibilityParameterFormSchema),
   interactionKeyId: idSchema.nullable(),
 });
 

@@ -12,14 +12,14 @@ export declare const UsedPresetSchema: z.ZodObject<{
     }>, "many">;
     callbackParameters: z.ZodArray<z.ZodObject<{
         path: z.ZodString;
-        value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+        value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
         seconds: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         value: number | boolean;
         path: string;
         seconds: number;
     }, {
-        value: string | number | boolean;
+        value: number | boolean;
         path: string;
         seconds: number;
     }>, "many">;
@@ -49,7 +49,7 @@ export declare const UsedPresetSchema: z.ZodObject<{
     } | undefined;
 }, {
     callbackParameters: {
-        value: string | number | boolean;
+        value: number | boolean;
         path: string;
         seconds: number;
     }[];

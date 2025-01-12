@@ -146,14 +146,14 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
             visibilityParameters: z.ZodArray<z.ZodObject<{
                 path: z.ZodString;
-                value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                 condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
             }, "strip", z.ZodTypeAny, {
                 value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }, {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }>, "many">;
@@ -184,27 +184,27 @@ export declare const LayoutsPageSchema: z.ZodObject<{
                 }>>>;
                 callbackParameters: z.ZodArray<z.ZodObject<{
                     path: z.ZodString;
-                    value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+                    value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                     seconds: z.ZodNumber;
                 }, "strip", z.ZodTypeAny, {
                     value: number | boolean;
                     path: string;
                     seconds: number;
                 }, {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     seconds: number;
                 }>, "many">;
                 visibilityParameters: z.ZodArray<z.ZodObject<{
                     path: z.ZodString;
-                    value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+                    value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                     condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
                 }, "strip", z.ZodTypeAny, {
                     value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }, {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }>, "many">;
@@ -245,12 +245,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
                 path: string;
                 useCost: number | null;
                 visibilityParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     seconds: number;
                 }[];
@@ -310,7 +310,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             order: number;
             label: string;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
@@ -325,12 +325,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
                 path: string;
                 useCost: number | null;
                 visibilityParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     seconds: number;
                 }[];
@@ -402,27 +402,27 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             }>>>;
             callbackParameters: z.ZodArray<z.ZodObject<{
                 path: z.ZodString;
-                value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                 seconds: z.ZodNumber;
             }, "strip", z.ZodTypeAny, {
                 value: number | boolean;
                 path: string;
                 seconds: number;
             }, {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 seconds: number;
             }>, "many">;
             visibilityParameters: z.ZodArray<z.ZodObject<{
                 path: z.ZodString;
-                value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
                 condition: z.ZodEnum<["Equal", "Not_equal", "Less_than", "More_than"]>;
             }, "strip", z.ZodTypeAny, {
                 value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }, {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }>, "many">;
@@ -461,12 +461,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             label: string;
             useCost: number | null;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
             callbackParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 seconds: number;
             }[];
@@ -586,7 +586,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             order: number;
             label: string;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
@@ -601,12 +601,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
                 path: string;
                 useCost: number | null;
                 visibilityParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     seconds: number;
                 }[];
@@ -637,12 +637,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             label: string;
             useCost: number | null;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
             callbackParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 seconds: number;
             }[];
@@ -1031,7 +1031,7 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             order: number;
             label: string;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
@@ -1046,12 +1046,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
                 path: string;
                 useCost: number | null;
                 visibilityParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }[];
                 callbackParameters: {
-                    value: string | number | boolean;
+                    value: number | boolean;
                     path: string;
                     seconds: number;
                 }[];
@@ -1082,12 +1082,12 @@ export declare const LayoutsPageSchema: z.ZodObject<{
             label: string;
             useCost: number | null;
             visibilityParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
             callbackParameters: {
-                value: string | number | boolean;
+                value: number | boolean;
                 path: string;
                 seconds: number;
             }[];

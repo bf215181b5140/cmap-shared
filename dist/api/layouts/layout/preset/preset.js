@@ -12,12 +12,12 @@ exports.PresetFormSchema = zod_1.z.object({
     id: shared_1.idSchema.nullable(),
     label: shared_1.labelSchema,
     showLabel: zod_1.z.boolean(),
-    parameters: zod_1.z.array(presetParameter_1.PresetParameterSchema),
+    parameters: zod_1.z.array(presetParameter_1.PresetParameterFormSchema),
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),
     useCost: zod_1.z.number().nullable(),
-    callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterSchema),
-    visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterSchema),
+    callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterFormSchema),
+    visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
     interactionKeyId: shared_1.idSchema.nullable(),
 });
 exports.PresetCopySchema = zod_1.z.object({
