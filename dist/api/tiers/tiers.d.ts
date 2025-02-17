@@ -16,6 +16,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
+        presetParameters: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -35,6 +36,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -52,6 +54,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }>;
 }, {
@@ -75,6 +78,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -97,6 +101,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -125,6 +130,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
+        presetParameters: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -144,6 +150,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -161,6 +168,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }>, "many">;
     clientTier: z.ZodObject<{
@@ -177,6 +185,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: z.ZodNumber;
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
+        presetParameters: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -196,6 +205,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -213,6 +223,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }>;
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -232,6 +243,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
+            presetParameters: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -251,6 +263,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -268,6 +281,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }>;
     }, {
@@ -291,6 +305,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -313,6 +328,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -334,6 +350,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -352,6 +369,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -373,6 +391,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -394,6 +413,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -412,6 +432,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         callbackParameters: number;
         parameterBadges: number;
         presets: number;
+        presetParameters: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -433,6 +454,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         used: boolean;

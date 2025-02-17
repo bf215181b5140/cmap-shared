@@ -19,6 +19,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: z.ZodNumber;
                 parameterBadges: z.ZodNumber;
                 presets: z.ZodNumber;
+                presetParameters: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
                 inviteKeys: z.ZodNumber;
@@ -38,6 +39,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             }, {
                 groups: number;
@@ -55,6 +57,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -76,6 +79,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         }, {
@@ -97,6 +101,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         }>;
@@ -674,6 +679,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
+            presetParameters: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -693,6 +699,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -710,6 +717,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }>;
         bio: z.ZodString;
@@ -733,6 +741,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: z.ZodNumber;
                 parameterBadges: z.ZodNumber;
                 presets: z.ZodNumber;
+                presetParameters: z.ZodNumber;
                 groups: z.ZodNumber;
                 buttons: z.ZodNumber;
                 inviteKeys: z.ZodNumber;
@@ -752,6 +761,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             }, {
                 groups: number;
@@ -769,6 +779,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -790,6 +801,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         }, {
@@ -811,6 +823,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         }>;
@@ -835,6 +848,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -857,6 +871,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         bio: string;
@@ -882,6 +897,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1005,6 +1021,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1027,6 +1044,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         bio: string;
@@ -1052,6 +1070,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1172,6 +1191,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
+            presetParameters: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -1191,6 +1211,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -1208,6 +1229,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }>;
     }, "strip", z.ZodTypeAny, {
@@ -1229,6 +1251,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }, {
@@ -1250,6 +1273,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }>, "many">;
@@ -1270,6 +1294,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: z.ZodNumber;
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
+            presetParameters: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -1289,6 +1314,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -1306,6 +1332,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         }>;
     }, "strip", z.ZodTypeAny, {
@@ -1327,6 +1354,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }, {
@@ -1348,6 +1376,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }>, "many">;
@@ -1373,6 +1402,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1395,6 +1425,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         bio: string;
@@ -1420,6 +1451,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1542,6 +1574,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }[];
@@ -1564,6 +1597,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }[];
@@ -1589,6 +1623,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1611,6 +1646,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
         bio: string;
@@ -1636,6 +1672,7 @@ export declare const StylePageSchema: z.ZodObject<{
                 callbackParameters: number;
                 parameterBadges: number;
                 presets: number;
+                presetParameters: number;
                 inviteKeys: number;
             } | undefined;
         };
@@ -1758,6 +1795,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }[];
@@ -1780,6 +1818,7 @@ export declare const StylePageSchema: z.ZodObject<{
             callbackParameters: number;
             parameterBadges: number;
             presets: number;
+            presetParameters: number;
             inviteKeys: number;
         };
     }[];

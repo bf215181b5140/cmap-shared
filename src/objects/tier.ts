@@ -15,6 +15,7 @@ export const TierSchema = z.object({
   callbackParameters: z.number(),
   parameterBadges: z.number(),
   presets: z.number(),
+  presetParameters: z.number(),
   groups: z.number(),
   buttons: z.number(),
   inviteKeys: z.number(),
