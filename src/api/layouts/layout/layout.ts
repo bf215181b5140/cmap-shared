@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import { idSchema, labelSchema } from '../../../primitives/shared';
+import { idSchema, labelRequiredSchema, labelOptionalSchema } from '../../../primitives/shared';
 import { parameterPathSchema, parameterValueAvatarIdSchema } from '../../../primitives/parameter';
 
 export const LayoutFormSchema = z.object({
   id: idSchema.nullable(),
-  label: labelSchema,
+  label: labelRequiredSchema,
   avatars: z.array(parameterValueAvatarIdSchema),
   healthEnabled: z.boolean(),
   healthPath: parameterPathSchema.nullable(),

@@ -7,6 +7,7 @@ import { InteractionKeySchema } from './interactionKey';
 import { BackgroundSchema } from './background';
 import { ThemeSchema } from './theme';
 import { ClientVisibilitySchema } from '../enums/clientVisibility';
+import { AvatarButtonSchema } from './avatarButton';
 
 export const ClientSchema = z.object({
   id: IdSchema,
@@ -22,6 +23,7 @@ export const ClientSchema = z.object({
   background: BackgroundSchema.optional(),
   theme: ThemeSchema.optional(),
   layouts: z.array(LayoutSchema).optional(),
+  avatarButtons: z.array(AvatarButtonSchema).optional(),
   interactionKeys: z.array(InteractionKeySchema).optional(),
 });
 

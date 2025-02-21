@@ -30,8 +30,8 @@ export declare const GroupFormSchema: z.ZodObject<{
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
-    showLabel: boolean;
     interactionKeyId: string | null;
+    showLabel: boolean;
     layoutId: string;
 }, {
     id: string | null;
@@ -43,8 +43,8 @@ export declare const GroupFormSchema: z.ZodObject<{
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
-    showLabel: boolean;
     interactionKeyId: string | null;
+    showLabel: boolean;
     layoutId: string;
 }>;
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;

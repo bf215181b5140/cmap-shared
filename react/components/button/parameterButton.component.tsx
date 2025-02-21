@@ -1,38 +1,38 @@
 import styled, { css } from 'styled-components';
 import React, { useMemo, useState } from 'react';
 import { ButtonBaseStyle } from './button.style';
-import { ButtonDTO, ButtonTypeSchema, imageOrientationToAspectRatio, imageUrlPathToUrl, ThemeDTO, trimNumberDecimals, UseButtonDTO, ImageOrientation } from '../../../src';
+import { ParameterButtonDTO, ParameterButtonTypeSchema, imageOrientationToAspectRatio, imageUrlPathToUrl, ThemeDTO, trimNumberDecimals, UseParameterButtonDTO, ImageOrientation } from '../../../src';
 import { ExpIcon } from '../expIcon/expIcon.component';
 
 interface ParameterButtonProps {
   theme: ThemeDTO;
-  button: ButtonDTO;
+  parameterButton: ParameterButtonDTO;
   value?: string | number | boolean;
   enoughExp: boolean;
   disabled: boolean;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>, useButton: UseButtonDTO) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>, useParameterButton: UseParameterButtonDTO) => void;
 }
 
-export function ParameterButton({ theme, button, value, enoughExp, disabled, onClick }: ParameterButtonProps) {
+export function ParameterButtonComponent({ theme, parameterButton, value, enoughExp, disabled, onClick }: ParameterButtonProps) {
 
   const [buttonUsed, setButtonUsed] = useState(false);
 
   const active = useMemo(() => {
     // if value is float then we trim it to 3 decimals for comparison (vrc floats aren't accurate and it converts 0.3 into something like 0.3000000001124749325)
-    if (typeof value === 'number' && !Number.isInteger(value)) return trimNumberDecimals(value) === button.value;
-    return value === button.value;
-  }, [button.value, value]);
+    if (typeof value === 'number' && !Number.isInteger(value)) return trimNumberDecimals(value) === parameterButton.value;
+    return value === parameterButton.value;
+  }, [parameterButton.value, value]);
 
   function onClickInternal(event: React.MouseEvent<HTMLDivElement>) {
     if (buttonUsed) return;
 
     if (onClick) {
-      switch (button.buttonType) {
-        case ButtonTypeSchema.Values.Button:
-          if (!active) onClick(event, { id: button.id, value: button.value });
+      switch (parameterButton.buttonType) {
+        case ParameterButtonTypeSchema.Values.Button:
+          if (!active) onClick(event, { id: parameterButton.id, value: parameterButton.value });
           break;
-        case ButtonTypeSchema.Values.Toggle:
-          onClick(event, { id: button.id, value: (active && button.valueAlt !== null) ? button.valueAlt : button.value });
+        case ParameterButtonTypeSchema.Values.Toggle:
+          onClick(event, { id: parameterButton.id, value: (active && parameterButton.valueAlt !== null) ? parameterButton.valueAlt : parameterButton.value });
           break;
       }
     }
@@ -43,10 +43,10 @@ export function ParameterButton({ theme, button, value, enoughExp, disabled, onC
 
   return (<ParameterButtonStyled className={'parameterButton'} themeDto={theme} aria-readonly={disabled} aria-current={active}
                                  onClick={onClickInternal} buttonUsed={buttonUsed}>
-    {button.image && <ParameterButtonPicture src={imageUrlPathToUrl(button.image.urlPath)} imageOrientation={button.imageOrientation} />}
-    {button.showLabel && <ParameterButtonLabel>{button.label}</ParameterButtonLabel>}
+    {parameterButton.image && <ParameterButtonPicture src={imageUrlPathToUrl(parameterButton.image.urlPath)} imageOrientation={parameterButton.imageOrientation} />}
+    {parameterButton.label && <ParameterButtonLabel>{parameterButton.label}</ParameterButtonLabel>}
     <ActiveOverlay active={active} />
-    {button.useCost && <ExpIcon enoughExp={enoughExp} exp={button.useCost} />}
+    {parameterButton.useCost && <ExpIcon enoughExp={enoughExp} exp={parameterButton.useCost} />}
   </ParameterButtonStyled>);
 }
 

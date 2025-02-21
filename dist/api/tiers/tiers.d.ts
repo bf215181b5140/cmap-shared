@@ -17,6 +17,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
         presetParameters: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -37,6 +38,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -55,6 +57,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }>;
 }, {
@@ -79,6 +82,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -102,6 +106,7 @@ export declare const GeneratedInviteKeySchema: z.ZodObject<z.objectUtil.extendSh
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     };
     used: boolean;
@@ -131,6 +136,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
         presetParameters: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -151,6 +157,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -169,6 +176,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }>, "many">;
     clientTier: z.ZodObject<{
@@ -186,6 +194,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
         presetParameters: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -206,6 +215,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -224,6 +234,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }>;
     generatedKeys: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
@@ -244,6 +255,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
             presetParameters: z.ZodNumber;
+            avatarButtons: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -264,6 +276,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -282,6 +295,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }>;
     }, {
@@ -306,6 +320,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -329,6 +344,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -351,6 +367,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -370,6 +387,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -392,6 +410,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         };
         used: boolean;
@@ -414,6 +433,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }[];
     clientTier: {
@@ -433,6 +453,7 @@ export declare const TiersPageSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     };
     generatedKeys: {
@@ -455,6 +476,7 @@ export declare const TiersPageSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         };
         used: boolean;

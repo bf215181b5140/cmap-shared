@@ -6,7 +6,7 @@ const shared_1 = require("../../../primitives/shared");
 const parameter_1 = require("../../../primitives/parameter");
 exports.LayoutFormSchema = zod_1.z.object({
     id: shared_1.idSchema.nullable(),
-    label: shared_1.labelSchema,
+    label: shared_1.labelRequiredSchema,
     avatars: zod_1.z.array(parameter_1.parameterValueAvatarIdSchema),
     healthEnabled: zod_1.z.boolean(),
     healthPath: parameter_1.parameterPathSchema.nullable(),

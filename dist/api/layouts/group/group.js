@@ -8,7 +8,7 @@ const shared_1 = require("../../../primitives/shared");
 exports.GroupFormSchema = zod_1.z.object({
     layoutId: shared_1.idSchema,
     id: shared_1.idSchema.nullable(),
-    label: shared_1.labelSchema,
+    label: shared_1.labelOptionalSchema,
     showLabel: zod_1.z.boolean(),
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,

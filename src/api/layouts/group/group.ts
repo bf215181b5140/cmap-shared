@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import { GroupWidthSchema } from '../../../enums/groupWidth';
 import { VisibilityParameterFormSchema } from '../../../objects/visibilityParameter';
-import { idSchema, labelSchema } from '../../../primitives/shared';
+import { idSchema, labelOptionalSchema } from '../../../primitives/shared';
 
 export const GroupFormSchema = z.object({
   layoutId: idSchema,
   id: idSchema.nullable(),
-  label: labelSchema,
+  label: labelOptionalSchema,
   showLabel: z.boolean(),
   order: z.number(),
   width: GroupWidthSchema,

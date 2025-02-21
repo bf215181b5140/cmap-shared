@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 import { ButtonBaseStyle } from './button.style';
 import React, { useEffect, useRef, useState } from 'react';
-import { ButtonDTO, ThemeDTO, UseButtonDTO } from '../../../src';
+import { ParameterButtonDTO, ThemeDTO, UseParameterButtonDTO } from '../../../src';
 import { ExpIcon } from '../expIcon/expIcon.component';
 
 interface ParameterSliderProps {
   theme: ThemeDTO;
-  button: ButtonDTO;
+  parameterButton: ParameterButtonDTO;
   value?: string | number | boolean;
   enoughExp: boolean;
   disabled: boolean;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>, useButton: UseButtonDTO) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>, useButton: UseParameterButtonDTO) => void;
 }
 
-export function ParameterSlider({ theme, button, value, enoughExp, disabled, onClick }: ParameterSliderProps) {
+export function ParameterSliderComponent({ theme, parameterButton, value, enoughExp, disabled, onClick }: ParameterSliderProps) {
 
-  const min = Number(button.value);
-  const max = Number(button.valueAlt);
+  const min = Number(parameterButton.value);
+  const max = Number(parameterButton.valueAlt);
   const numberValue = typeof value === 'number' ? value : (max - ((max - min) / 2));
   const step = Math.abs(min - max) > 1 ? 1 : 0.01;
 
@@ -58,7 +58,7 @@ export function ParameterSlider({ theme, button, value, enoughExp, disabled, onC
       newValue = Math.round(newValue);
     }
     setSliderValue(newValue);
-    if (emit && onClick) onClick(event as any, { id: button.id, value: newValue });
+    if (emit && onClick) onClick(event as any, { id: parameterButton.id, value: newValue });
   }
 
   function handleMouseUp(event: React.MouseEvent<HTMLDivElement> | MouseEvent) {
@@ -77,12 +77,12 @@ export function ParameterSlider({ theme, button, value, enoughExp, disabled, onC
   }
 
   return (<>
-    {button.showLabel && <ParameterSliderLabel>{button.label}</ParameterSliderLabel>}
+    {parameterButton.label && <ParameterSliderLabel>{parameterButton.label}</ParameterSliderLabel>}
     <ParameterSliderStyled className={'parameterSlider'} onMouseDown={handleMouseDown} ref={inputRef} themeDto={theme} aria-readonly={disabled}>
       <input type="range" min={min} max={max} step={step} defaultValue={numberValue} style={{ display: 'none' }} />
       <div className={'slider'} style={{ width: `${width}%` }} />
     </ParameterSliderStyled>
-    {button.useCost && <ExpIcon enoughExp={enoughExp} exp={button.useCost} />}
+    {parameterButton.useCost && <ExpIcon enoughExp={enoughExp} exp={parameterButton.useCost} />}
   </>);
 }
 

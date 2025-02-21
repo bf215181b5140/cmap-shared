@@ -1,34 +1,34 @@
 import styled from 'styled-components';
 import { MouseEvent, useMemo } from 'react';
-import { ParameterSlider } from './parameterSlider.component';
-import { ParameterButton } from './parameterButton.component';
-import { ButtonDTO, ButtonTypeSchema, ThemeDTO, UseButtonDTO } from '../../../src';
+import { ParameterSliderComponent } from './parameterSlider.component';
+import { ParameterButtonComponent } from './parameterButton.component';
+import { ParameterButtonDTO, ParameterButtonTypeSchema, ThemeDTO, UseParameterButtonDTO } from '../../../src';
 
 interface LayoutButtonProps {
   theme: ThemeDTO;
-  button: ButtonDTO;
+  parameterButton: ParameterButtonDTO;
   value?: string | number | boolean;
   exp?: number;
-  onClick?: (event: MouseEvent<HTMLDivElement>, useButton: UseButtonDTO) => void;
+  onClick?: (event: MouseEvent<HTMLDivElement>, useButton: UseParameterButtonDTO) => void;
 }
 
-export function LayoutButton({ theme, button, value, exp, onClick }: LayoutButtonProps) {
+export function LayoutButtonComponent({ theme, parameterButton, value, exp, onClick }: LayoutButtonProps) {
 
   const enoughExp = useMemo(() => {
-    if (!button.useCost) return true;
+    if (!parameterButton.useCost) return true;
     if (exp === undefined) return true;
-    return exp >= button.useCost;
-  }, [button.useCost, exp])
+    return exp >= parameterButton.useCost;
+  }, [parameterButton.useCost, exp])
 
   const disabled = !enoughExp;
 
   function parameterElement() {
-    switch (button.buttonType) {
-      case ButtonTypeSchema.Values.Button:
-      case ButtonTypeSchema.Values.Toggle:
-        return <ParameterButton theme={theme} button={button} value={value} enoughExp={enoughExp} disabled={disabled} onClick={onClick} />;
-      case ButtonTypeSchema.Values.Slider:
-        return <ParameterSlider theme={theme} button={button} value={value} enoughExp={enoughExp} disabled={disabled} onClick={onClick} />;
+    switch (parameterButton.buttonType) {
+      case ParameterButtonTypeSchema.Values.Button:
+      case ParameterButtonTypeSchema.Values.Toggle:
+        return <ParameterButtonComponent theme={theme} parameterButton={parameterButton} value={value} enoughExp={enoughExp} disabled={disabled} onClick={onClick} />;
+      case ParameterButtonTypeSchema.Values.Slider:
+        return <ParameterSliderComponent theme={theme} parameterButton={parameterButton} value={value} enoughExp={enoughExp} disabled={disabled} onClick={onClick} />;
     }
   }
 

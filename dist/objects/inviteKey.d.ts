@@ -17,6 +17,7 @@ export declare const InviteKeySchema: z.ZodObject<{
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
         presetParameters: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -37,6 +38,7 @@ export declare const InviteKeySchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -55,6 +57,7 @@ export declare const InviteKeySchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }>>;
 }, "strip", z.ZodTypeAny, {
@@ -77,6 +80,7 @@ export declare const InviteKeySchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     } | undefined;
 }, {
@@ -99,6 +103,7 @@ export declare const InviteKeySchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     } | undefined;
 }>;

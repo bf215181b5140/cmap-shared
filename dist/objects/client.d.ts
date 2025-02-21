@@ -36,6 +36,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterBadges: z.ZodNumber;
         presets: z.ZodNumber;
         presetParameters: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
         groups: z.ZodNumber;
         buttons: z.ZodNumber;
         inviteKeys: z.ZodNumber;
@@ -56,6 +57,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }, {
         groups: number;
@@ -74,6 +76,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     }>>;
     background: z.ZodOptional<z.ZodObject<{
@@ -94,6 +97,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
             presetParameters: z.ZodNumber;
+            avatarButtons: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -114,6 +118,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -132,6 +137,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -154,6 +160,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -176,6 +183,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -197,6 +205,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: z.ZodNumber;
             presets: z.ZodNumber;
             presetParameters: z.ZodNumber;
+            avatarButtons: z.ZodNumber;
             groups: z.ZodNumber;
             buttons: z.ZodNumber;
             inviteKeys: z.ZodNumber;
@@ -217,6 +226,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }, {
             groups: number;
@@ -235,6 +245,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         }>>;
     }, "strip", z.ZodTypeAny, {
@@ -257,6 +268,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     }, {
@@ -279,6 +291,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     }>>;
@@ -312,17 +325,11 @@ export declare const ClientSchema: z.ZodObject<{
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }>, "many">;
             interactionKeyId: z.ZodNullable<z.ZodString>;
-            buttons: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            parameterButtons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
                 id: z.ZodString;
                 label: z.ZodString;
-                showLabel: z.ZodBoolean;
-                path: z.ZodString;
-                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
-                valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>>;
-                buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
-                imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                 order: z.ZodNumber;
-                useCost: z.ZodNullable<z.ZodNumber>;
+                imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
                 image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
                     id: z.ZodString;
                     fileName: z.ZodString;
@@ -336,6 +343,13 @@ export declare const ClientSchema: z.ZodObject<{
                     fileName: string;
                     urlPath: string;
                 }>>>;
+                interactionKeyId: z.ZodNullable<z.ZodString>;
+            }, {
+                path: z.ZodString;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+                valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>>;
+                buttonType: z.ZodEnum<["Button", "Slider", "Toggle"]>;
+                useCost: z.ZodNullable<z.ZodNumber>;
                 callbackParameters: z.ZodArray<z.ZodObject<{
                     path: z.ZodString;
                     value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
@@ -362,8 +376,7 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
                 }>, "many">;
-                interactionKeyId: z.ZodNullable<z.ZodString>;
-            }, "strip", z.ZodTypeAny, {
+            }>, "strip", z.ZodTypeAny, {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -381,10 +394,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -408,10 +420,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -428,9 +439,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -448,10 +459,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -468,9 +478,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -488,10 +498,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -524,23 +533,11 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }>, "many">>;
-        presets: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        presetButtons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodString;
             label: z.ZodString;
-            showLabel: z.ZodBoolean;
-            parameters: z.ZodArray<z.ZodObject<{
-                path: z.ZodString;
-                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
-            }, "strip", z.ZodTypeAny, {
-                value: number | boolean;
-                path: string;
-            }, {
-                value: number | boolean;
-                path: string;
-            }>, "many">;
-            imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
             order: z.ZodNumber;
-            useCost: z.ZodNullable<z.ZodNumber>;
+            imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
             image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
                 id: z.ZodString;
                 fileName: z.ZodString;
@@ -554,6 +551,19 @@ export declare const ClientSchema: z.ZodObject<{
                 fileName: string;
                 urlPath: string;
             }>>>;
+            interactionKeyId: z.ZodNullable<z.ZodString>;
+        }, {
+            parameters: z.ZodArray<z.ZodObject<{
+                path: z.ZodString;
+                value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+            }, "strip", z.ZodTypeAny, {
+                value: number | boolean;
+                path: string;
+            }, {
+                value: number | boolean;
+                path: string;
+            }>, "many">;
+            useCost: z.ZodNullable<z.ZodNumber>;
             callbackParameters: z.ZodArray<z.ZodObject<{
                 path: z.ZodString;
                 value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
@@ -580,8 +590,7 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }>, "many">;
-            interactionKeyId: z.ZodNullable<z.ZodString>;
-        }, "strip", z.ZodTypeAny, {
+        }>, "strip", z.ZodTypeAny, {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -597,7 +606,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -624,7 +632,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -656,9 +663,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -676,10 +683,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -696,7 +702,7 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-        presets?: {
+        presetButtons?: {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -712,7 +718,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -744,9 +749,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -764,10 +769,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -784,7 +788,7 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-        presets?: {
+        presetButtons?: {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -800,7 +804,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -812,6 +815,52 @@ export declare const ClientSchema: z.ZodObject<{
                 urlPath: string;
             } | null | undefined;
         }[] | undefined;
+    }>, "many">>;
+    avatarButtons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+        id: z.ZodString;
+        label: z.ZodString;
+        order: z.ZodNumber;
+        imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
+        image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
+            id: z.ZodString;
+            fileName: z.ZodString;
+            urlPath: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        }, {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        }>>>;
+        interactionKeyId: z.ZodNullable<z.ZodString>;
+    }, {
+        avatarId: z.ZodString;
+    }>, "strip", z.ZodTypeAny, {
+        id: string;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
+        order: number;
+        label: string;
+        interactionKeyId: string | null;
+        avatarId: string;
+        image?: {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        } | null | undefined;
+    }, {
+        id: string;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
+        order: number;
+        label: string;
+        interactionKeyId: string | null;
+        avatarId: string;
+        image?: {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        } | null | undefined;
     }>, "many">>;
     interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
@@ -855,6 +904,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -888,9 +938,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -908,10 +958,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -928,7 +977,7 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-        presets?: {
+        presetButtons?: {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -944,7 +993,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -956,6 +1004,19 @@ export declare const ClientSchema: z.ZodObject<{
                 urlPath: string;
             } | null | undefined;
         }[] | undefined;
+    }[] | undefined;
+    avatarButtons?: {
+        id: string;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
+        order: number;
+        label: string;
+        interactionKeyId: string | null;
+        avatarId: string;
+        image?: {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        } | null | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -974,6 +1035,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     } | undefined;
     theme?: {
@@ -996,6 +1058,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -1028,6 +1091,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;
@@ -1061,9 +1125,9 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
-            buttons?: {
+            showLabel: boolean;
+            parameterButtons?: {
                 id: string;
                 imageOrientation: "Horizontal" | "Square" | "Vertical";
                 order: number;
@@ -1081,10 +1145,9 @@ export declare const ClientSchema: z.ZodObject<{
                     path: string;
                     seconds: number;
                 }[];
-                showLabel: boolean;
+                interactionKeyId: string | null;
                 valueAlt: number | boolean | null;
                 buttonType: "Button" | "Slider" | "Toggle";
-                interactionKeyId: string | null;
                 image?: {
                     id: string;
                     fileName: string;
@@ -1101,7 +1164,7 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-        presets?: {
+        presetButtons?: {
             id: string;
             imageOrientation: "Horizontal" | "Square" | "Vertical";
             order: number;
@@ -1117,7 +1180,6 @@ export declare const ClientSchema: z.ZodObject<{
                 path: string;
                 seconds: number;
             }[];
-            showLabel: boolean;
             interactionKeyId: string | null;
             parameters: {
                 value: number | boolean;
@@ -1129,6 +1191,19 @@ export declare const ClientSchema: z.ZodObject<{
                 urlPath: string;
             } | null | undefined;
         }[] | undefined;
+    }[] | undefined;
+    avatarButtons?: {
+        id: string;
+        imageOrientation: "Horizontal" | "Square" | "Vertical";
+        order: number;
+        label: string;
+        interactionKeyId: string | null;
+        avatarId: string;
+        image?: {
+            id: string;
+            fileName: string;
+            urlPath: string;
+        } | null | undefined;
     }[] | undefined;
     tier?: {
         groups: number;
@@ -1147,6 +1222,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterBadges: number;
         presets: number;
         presetParameters: number;
+        avatarButtons: number;
         inviteKeys: number;
     } | undefined;
     theme?: {
@@ -1169,6 +1245,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterBadges: number;
             presets: number;
             presetParameters: number;
+            avatarButtons: number;
             inviteKeys: number;
         } | undefined;
     } | undefined;

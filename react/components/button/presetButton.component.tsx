@@ -1,23 +1,23 @@
 import styled, { css } from 'styled-components';
-import { ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, PresetDTO, ThemeDTO, UsePresetDTO } from '../../../src';
+import { ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, PresetButtonDTO, ThemeDTO, UsePresetButtonDTO } from '../../../src';
 import React, { MouseEvent, useMemo, useState } from 'react';
 import { ExpIcon } from '../expIcon/expIcon.component';
 import { ButtonBaseStyle } from './button.style';
 
 interface PresetButtonProps {
   theme: ThemeDTO;
-  preset: PresetDTO;
+  presetButton: PresetButtonDTO;
   exp?: number;
-  onClick?: (event: MouseEvent<HTMLDivElement>, usePreset: UsePresetDTO) => void;
+  onClick?: (event: MouseEvent<HTMLDivElement>, usePreset: UsePresetButtonDTO) => void;
 }
 
-export function PresetButton({ theme, preset, exp, onClick }: PresetButtonProps) {
+export function PresetButtonComponent({ theme, presetButton, exp, onClick }: PresetButtonProps) {
 
   const enoughExp = useMemo(() => {
-    if (!preset.useCost) return true;
+    if (!presetButton.useCost) return true;
     if (exp === undefined) return true;
-    return exp >= preset.useCost;
-  }, [preset.useCost, exp])
+    return exp >= presetButton.useCost;
+  }, [presetButton.useCost, exp])
 
   const disabled = !enoughExp;
 
@@ -26,7 +26,7 @@ export function PresetButton({ theme, preset, exp, onClick }: PresetButtonProps)
   function onClickInternal(event: React.MouseEvent<HTMLDivElement>) {
     if (presetUsed) return;
 
-    if (onClick) onClick(event, { id: preset.id });
+    if (onClick) onClick(event, { id: presetButton.id });
 
     setPresetUsed(true);
     setTimeout(() => setPresetUsed(false), 100);
@@ -34,9 +34,9 @@ export function PresetButton({ theme, preset, exp, onClick }: PresetButtonProps)
 
   return (<PresetButtonStyled>
     <ParameterButtonStyled className={'parameterButton'} themeDto={theme} aria-readonly={disabled} onClick={onClickInternal} presetUsed={presetUsed}>
-      {preset.image && <ParameterButtonPicture src={imageUrlPathToUrl(preset.image.urlPath)} imageOrientation={preset.imageOrientation} />}
-      {preset.showLabel && <ParameterButtonLabel>{preset.label}</ParameterButtonLabel>}
-      {preset.useCost && <ExpIcon enoughExp={enoughExp} exp={preset.useCost} />}
+      {presetButton.image && <ParameterButtonPicture src={imageUrlPathToUrl(presetButton.image.urlPath)} imageOrientation={presetButton.imageOrientation} />}
+      {presetButton.label && <ParameterButtonLabel>{presetButton.label}</ParameterButtonLabel>}
+      {presetButton.useCost && <ExpIcon enoughExp={enoughExp} exp={presetButton.useCost} />}
     </ParameterButtonStyled>
   </PresetButtonStyled>)
 }
