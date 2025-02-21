@@ -7,7 +7,6 @@ export const GroupFormSchema = z.object({
   layoutId: idSchema,
   id: idSchema.nullable(),
   label: labelOptionalSchema,
-  showLabel: z.boolean(),
   order: z.number(),
   width: GroupWidthSchema,
   visibilityParameters: z.array(VisibilityParameterFormSchema),

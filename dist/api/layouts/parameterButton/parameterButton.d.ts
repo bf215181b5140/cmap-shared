@@ -59,8 +59,8 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     interactionKeyId: string | null;
     valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
-    showLabel: boolean;
     groupId: string;
+    showLabel: boolean;
 }, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -82,8 +82,8 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     interactionKeyId: string | null;
     valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
-    showLabel: boolean;
     groupId: string;
+    showLabel: boolean;
 }>, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -105,8 +105,8 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     interactionKeyId: string | null;
     valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
-    showLabel: boolean;
     groupId: string;
+    showLabel: boolean;
 }, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -128,8 +128,8 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     interactionKeyId: string | null;
     valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
-    showLabel: boolean;
     groupId: string;
+    showLabel: boolean;
 }>;
 export type ParameterButtonFormDTO = z.infer<typeof ParameterButtonFormSchema>;
 export declare const ParameterButtonCopySchema: z.ZodObject<{

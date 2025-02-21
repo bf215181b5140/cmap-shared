@@ -3,7 +3,6 @@ export declare const GroupFormSchema: z.ZodObject<{
     layoutId: z.ZodString;
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
-    showLabel: z.ZodBoolean;
     order: z.ZodNumber;
     width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
     visibilityParameters: z.ZodArray<z.ZodObject<{
@@ -31,7 +30,6 @@ export declare const GroupFormSchema: z.ZodObject<{
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
     interactionKeyId: string | null;
-    showLabel: boolean;
     layoutId: string;
 }, {
     id: string | null;
@@ -44,7 +42,6 @@ export declare const GroupFormSchema: z.ZodObject<{
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
     interactionKeyId: string | null;
-    showLabel: boolean;
     layoutId: string;
 }>;
 export type GroupFormDTO = z.infer<typeof GroupFormSchema>;

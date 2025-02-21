@@ -7,7 +7,6 @@ import { VisibilityParameterSchema } from './visibilityParameter';
 export const GroupSchema = z.object({
   id: IdSchema,
   label: z.string(),
-  showLabel: z.boolean(),
   order: z.number(),
   width: GroupWidthSchema,
   visibilityParameters: z.array(VisibilityParameterSchema),

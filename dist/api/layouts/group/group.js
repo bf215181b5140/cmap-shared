@@ -9,7 +9,6 @@ exports.GroupFormSchema = zod_1.z.object({
     layoutId: shared_1.idSchema,
     id: shared_1.idSchema.nullable(),
     label: shared_1.labelOptionalSchema,
-    showLabel: zod_1.z.boolean(),
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),

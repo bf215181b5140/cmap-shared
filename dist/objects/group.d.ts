@@ -2,7 +2,6 @@ import { z } from 'zod';
 export declare const GroupSchema: z.ZodObject<{
     id: z.ZodString;
     label: z.ZodString;
-    showLabel: z.ZodBoolean;
     order: z.ZodNumber;
     width: z.ZodEnum<["None", "Third", "Half", "Full"]>;
     visibilityParameters: z.ZodArray<z.ZodObject<{
@@ -134,7 +133,6 @@ export declare const GroupSchema: z.ZodObject<{
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
     interactionKeyId: string | null;
-    showLabel: boolean;
     parameterButtons?: {
         id: string;
         imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -173,7 +171,6 @@ export declare const GroupSchema: z.ZodObject<{
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }[];
     interactionKeyId: string | null;
-    showLabel: boolean;
     parameterButtons?: {
         id: string;
         imageOrientation: "Horizontal" | "Square" | "Vertical";
