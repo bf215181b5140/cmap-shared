@@ -1,9 +1,9 @@
 import { z } from 'zod';
 export declare const UsedAvatarButtonSchema: z.ZodObject<{
-    value: z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>;
+    value: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    value: number | boolean;
+    value: string;
 }, {
-    value: number | boolean;
+    value: string;
 }>;
 export type UsedAvatarButtonDTO = z.infer<typeof UsedAvatarButtonSchema>;
