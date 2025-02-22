@@ -1,12 +1,12 @@
 import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { MouseEvent } from 'react';
 import { LayoutGroupGap } from '../layout/layout.component';
-import { GroupDTO, GroupWidth, ThemeDTO } from '../../../src';
+import { BaseGroupDTO, GroupWidth, ThemeDTO } from '../../../src';
 import { LayoutButtonWrapper } from '../button/layoutButtonWrapper.component';
 
 interface LayoutGroupProps {
   theme: ThemeDTO;
-  group: GroupDTO;
+  group: BaseGroupDTO;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   children?: React.ReactNode;
 }
@@ -16,7 +16,7 @@ export function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProp
   const readonly = !onClick;
 
   return (<LayoutGroupStyled className={'layoutGroup'} themeDto={theme} width={group.width} onClick={onClick} aria-readonly={readonly}>
-    {group.showLabel && <h2 style={{ marginTop: '0' }}>{group.label}</h2>}
+    {group.label && <h2 style={{ marginTop: '0' }}>{group.label}</h2>}
     <LayoutButtonWrapper>
       {children}
     </LayoutButtonWrapper>

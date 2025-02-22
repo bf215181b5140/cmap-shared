@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LayoutSchema = void 0;
 const shared_1 = require("../shared");
 const zod_1 = require("zod");
-const group_1 = require("./group");
+const parameterGroup_1 = require("./parameterGroup");
 const parameterBadge_1 = require("./parameterBadge");
-const presetButton_1 = require("./presetButton");
+const presetGroup_1 = require("./presetGroup");
 exports.LayoutSchema = zod_1.z.object({
     id: shared_1.IdSchema,
     label: zod_1.z.string(),
@@ -16,7 +16,7 @@ exports.LayoutSchema = zod_1.z.object({
     useCostEnabled: zod_1.z.boolean(),
     useCostPath: zod_1.z.string().nullable(),
     useCostMax: zod_1.z.number().nullable(),
-    groups: zod_1.z.array(group_1.GroupSchema).optional(),
+    parameterGroups: zod_1.z.array(parameterGroup_1.ParameterGroupSchema).optional(),
+    presetGroups: zod_1.z.array(presetGroup_1.PresetGroupSchema).optional(),
     parameterBadges: zod_1.z.array(parameterBadge_1.ParameterBadgeSchema).optional(),
-    presetButtons: zod_1.z.array(presetButton_1.PresetButtonSchema).optional(),
 });

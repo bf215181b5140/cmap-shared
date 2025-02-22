@@ -1,22 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProfileFormSchema = exports.ProfilePageSchema = void 0;
-const client_1 = require("../../objects/client");
+exports.ProfilePageSchema = void 0;
 const zod_1 = require("zod");
-const clientVisibility_1 = require("../../enums/clientVisibility");
-exports.ProfilePageSchema = client_1.ClientSchema.required({
-    image: true,
-    tier: true,
-    background: true,
-    theme: true,
-    layouts: true,
-    interactionKeys: true,
-});
-exports.ProfileFormSchema = zod_1.z.object({
-    displayName: zod_1.z.string().min(3, 'Display name too short').max(32, 'Display name too long (max 32 characters)'),
-    bio: zod_1.z.string().max(1000, 'Bio too long (max 1000 characters)'),
-    visibility: clientVisibility_1.ClientVisibilitySchema,
-    defaultLayoutId: zod_1.z.string().max(20).nullable(),
-    unknownAvatarMessage: zod_1.z.string().max(1000, 'Message too long (max 1000 characters)'),
-    offlineMessage: zod_1.z.string().max(1000, 'Message too long (max 1000 characters)'),
+const tier_1 = require("../../objects/tier");
+const background_1 = require("../../objects/background");
+const theme_1 = require("../../objects/theme");
+const layout_1 = require("../../objects/layout");
+const avatarGroup_1 = require("../../objects/avatarGroup");
+const interactionKey_1 = require("../../objects/interactionKey");
+exports.ProfilePageSchema = zod_1.z.object({
+    tier: tier_1.TierSchema,
+    background: background_1.BackgroundSchema,
+    theme: theme_1.ThemeSchema,
+    layouts: zod_1.z.array(layout_1.LayoutSchema),
+    avatarGroups: zod_1.z.array(avatarGroup_1.AvatarGroupSchema),
+    interactionKeys: zod_1.z.array(interactionKey_1.InteractionKeySchema),
 });
