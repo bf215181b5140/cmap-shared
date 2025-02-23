@@ -66,5 +66,5 @@ function imageOrientationToAspectRatio(imageOrientation) {
 function getForcedObjectLabel(object, type) {
     if (object.label)
         return object.label;
-    return type + ' #' + object.order;
+    return 'Unnamed ' + type + ' #' + object.order;
 }
