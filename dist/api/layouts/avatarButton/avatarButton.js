@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AvatarButtonFormSchema = void 0;
+exports.AvatarButtonCopySchema = exports.AvatarButtonFormSchema = void 0;
 const zod_1 = require("zod");
 const shared_1 = require("../../../primitives/shared");
 const imageOrientation_1 = require("../../../enums/imageOrientation");
@@ -12,4 +12,8 @@ exports.AvatarButtonFormSchema = zod_1.z.object({
     order: zod_1.z.number(),
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     interactionKeyId: shared_1.idSchema.nullable(),
+});
+exports.AvatarButtonCopySchema = zod_1.z.object({
+    layoutId: shared_1.idSchema,
+    id: shared_1.idSchema,
 });

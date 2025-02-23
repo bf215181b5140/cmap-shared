@@ -51,7 +51,7 @@ export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormS
 export { StylePageSchema, StylePageDTO } from './api/style/style';
 export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
 export { PresetButtonFormSchema, PresetButtonFormDTO, PresetButtonCopySchema, PresetButtonCopyDTO } from './api/layouts/presetButton/presetButtons';
-export { AvatarButtonFormSchema, AvatarButtonFormDTO } from './api/layouts/avatarButton/avatarButton';
+export { AvatarButtonFormSchema, AvatarButtonFormDTO, AvatarButtonCopySchema, AvatarButtonCopyDTO } from './api/layouts/avatarButton/avatarButton';
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, passwordSchema, usernameSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 // ------------------------------ Other ------------------------------ //
