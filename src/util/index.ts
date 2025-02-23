@@ -55,3 +55,14 @@ export function imageOrientationToAspectRatio(imageOrientation: ImageOrientation
   }
 }
 
+/**
+ * Return object label or construct a label from object order.
+ *
+ * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Parameter button #3)
+ *
+ */
+export function getForcedObjectLabel(object: { label: string, order: number }, type: 'Group' | 'Parameter button' | 'Preset button' | 'Avatar button') {
+  if (object.label) return object.label;
+  return type + ' #' + object.order;
+}
+

@@ -21,3 +21,13 @@ export declare function imageUrlPathToUrl(urlPath: string): string;
  *
  */
 export declare function imageOrientationToAspectRatio(imageOrientation: ImageOrientation): "4/3" | "3/4" | "16/9";
+/**
+ * Return object label or construct a label from object order.
+ *
+ * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Parameter button #3)
+ *
+ */
+export declare function getForcedObjectLabel(object: {
+    label: string;
+    order: number;
+}, type: 'Group' | 'Parameter button' | 'Preset button' | 'Avatar button'): string;

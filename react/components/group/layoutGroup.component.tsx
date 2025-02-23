@@ -24,7 +24,7 @@ export function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProp
 }
 
 const LayoutGroupStyled = styled.div<{ themeDto: ThemeDTO, width: GroupWidth }>`
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
 
   &[aria-readonly='false'] {

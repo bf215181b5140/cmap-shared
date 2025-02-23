@@ -4,6 +4,7 @@ exports.convertParameterValueFromString = convertParameterValueFromString;
 exports.trimNumberDecimals = trimNumberDecimals;
 exports.imageUrlPathToUrl = imageUrlPathToUrl;
 exports.imageOrientationToAspectRatio = imageOrientationToAspectRatio;
+exports.getForcedObjectLabel = getForcedObjectLabel;
 const index_1 = require("../index");
 /**
  * Converts a string to valid parameter number or boolean, else return undefined
@@ -55,4 +56,15 @@ function imageOrientationToAspectRatio(imageOrientation) {
         default:
             return '16/9';
     }
+}
+/**
+ * Return object label or construct a label from object order.
+ *
+ * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Parameter button #3)
+ *
+ */
+function getForcedObjectLabel(object, type) {
+    if (object.label)
+        return object.label;
+    return type + ' #' + object.order;
 }
