@@ -24,7 +24,7 @@ export declare function imageOrientationToAspectRatio(imageOrientation: ImageOri
 /**
  * Return object label or construct a label from object order.
  *
- * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Parameter button #3)
+ * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Unnamed parameter #3)
  *
  */
 export declare function getForcedObjectLabel(object: {
