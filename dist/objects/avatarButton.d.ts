@@ -19,14 +19,14 @@ export declare const AvatarButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     }>>>;
     interactionKeyId: z.ZodNullable<z.ZodString>;
 }, {
-    avatarId: z.ZodString;
+    vrcAvatarId: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
     id: string;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
     order: number;
     label: string;
     interactionKeyId: string | null;
-    avatarId: string;
+    vrcAvatarId: string;
     image?: {
         id: string;
         fileName: string;
@@ -38,7 +38,7 @@ export declare const AvatarButtonSchema: z.ZodObject<z.objectUtil.extendShape<{
     order: number;
     label: string;
     interactionKeyId: string | null;
-    avatarId: string;
+    vrcAvatarId: string;
     image?: {
         id: string;
         fileName: string;

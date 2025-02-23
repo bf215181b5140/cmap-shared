@@ -10,7 +10,7 @@ interface ParameterSliderProps {
   value?: string | number | boolean;
   enoughExp: boolean;
   disabled: boolean;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>, useButton: UseParameterButtonDTO) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>, useParameterButton: UseParameterButtonDTO) => void;
 }
 
 export function ParameterSliderComponent({ theme, parameterButton, value, enoughExp, disabled, onClick }: ParameterSliderProps) {

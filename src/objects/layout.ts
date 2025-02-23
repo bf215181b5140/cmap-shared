@@ -1,8 +1,8 @@
 import { IdSchema } from '../shared';
 import { z } from 'zod';
-import { ParameterGroupSchema } from './parameterGroup';
+import { GroupSchema } from './group';
 import { ParameterBadgeSchema } from './parameterBadge';
-import { PresetGroupSchema } from './presetGroup';
+import { PresetButtonSchema } from './presetButton';
 
 export const LayoutSchema = z.object({
   id: IdSchema,
@@ -14,9 +14,9 @@ export const LayoutSchema = z.object({
   useCostEnabled: z.boolean(),
   useCostPath: z.string().nullable(),
   useCostMax: z.number().nullable(),
-  parameterGroups: z.array(ParameterGroupSchema).optional(),
-  presetGroups: z.array(PresetGroupSchema).optional(),
+  groups: z.array(GroupSchema).optional(),
   parameterBadges: z.array(ParameterBadgeSchema).optional(),
+  presetButtons: z.array(PresetButtonSchema).optional(),
 });
 
 export type LayoutDTO = z.infer<typeof LayoutSchema>;

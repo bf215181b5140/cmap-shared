@@ -1,27 +1,6 @@
 import { z } from 'zod';
-export declare const ClientSchema: z.ZodObject<{
-    id: z.ZodString;
-    username: z.ZodString;
-    displayName: z.ZodString;
-    bio: z.ZodString;
-    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
-    defaultLayoutId: z.ZodNullable<z.ZodString>;
-    unknownAvatarMessage: z.ZodString;
-    offlineMessage: z.ZodString;
-    image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
-        id: z.ZodString;
-        fileName: z.ZodString;
-        urlPath: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }>>>;
-    tier: z.ZodOptional<z.ZodObject<{
+export declare const LayoutsPageSchema: z.ZodObject<{
+    tier: z.ZodObject<{
         id: z.ZodString;
         rank: z.ZodNumber;
         label: z.ZodString;
@@ -78,8 +57,8 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         inviteKeys: number;
-    }>>;
-    background: z.ZodOptional<z.ZodObject<{
+    }>;
+    background: z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<{
@@ -186,8 +165,8 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    }>>;
-    theme: z.ZodOptional<z.ZodObject<{
+    }>;
+    theme: z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         tier: z.ZodOptional<z.ZodObject<{
@@ -294,8 +273,8 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    }>>;
-    layouts: z.ZodOptional<z.ZodArray<z.ZodObject<{
+    }>;
+    layouts: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         avatars: z.ZodArray<z.ZodString, "many">;
@@ -810,8 +789,8 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-    }>, "many">>;
-    avatarButtons: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
+    }>, "many">;
+    avatarButtons: z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         id: z.ZodString;
         label: z.ZodString;
         order: z.ZodNumber;
@@ -856,8 +835,8 @@ export declare const ClientSchema: z.ZodObject<{
             fileName: string;
             urlPath: string;
         } | null | undefined;
-    }>, "many">>;
-    interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<{
+    }>, "many">;
+    interactionKeys: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
         key: z.ZodString;
@@ -869,17 +848,9 @@ export declare const ClientSchema: z.ZodObject<{
         key: string;
         id: string;
         label: string;
-    }>, "many">>;
+    }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    id: string;
-    visibility: "Visible" | "Hidden" | "Private";
-    username: string;
-    displayName: string;
-    bio: string;
-    defaultLayoutId: string | null;
-    unknownAvatarMessage: string;
-    offlineMessage: string;
-    background?: {
+    background: {
         id: string;
         label: string;
         tier?: {
@@ -902,18 +873,13 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    } | undefined;
-    image?: {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    } | null | undefined;
-    interactionKeys?: {
+    };
+    interactionKeys: {
         key: string;
         id: string;
         label: string;
-    }[] | undefined;
-    layouts?: {
+    }[];
+    layouts: {
         id: string;
         label: string;
         avatars: string[];
@@ -998,8 +964,8 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-    }[] | undefined;
-    avatarButtons?: {
+    }[];
+    avatarButtons: {
         id: string;
         imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
@@ -1011,8 +977,8 @@ export declare const ClientSchema: z.ZodObject<{
             fileName: string;
             urlPath: string;
         } | null | undefined;
-    }[] | undefined;
-    tier?: {
+    }[];
+    tier: {
         groups: number;
         id: string;
         color: string;
@@ -1031,8 +997,8 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         inviteKeys: number;
-    } | undefined;
-    theme?: {
+    };
+    theme: {
         id: string;
         label: string;
         tier?: {
@@ -1055,17 +1021,9 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    } | undefined;
+    };
 }, {
-    id: string;
-    visibility: "Visible" | "Hidden" | "Private";
-    username: string;
-    displayName: string;
-    bio: string;
-    defaultLayoutId: string | null;
-    unknownAvatarMessage: string;
-    offlineMessage: string;
-    background?: {
+    background: {
         id: string;
         label: string;
         tier?: {
@@ -1088,18 +1046,13 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    } | undefined;
-    image?: {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    } | null | undefined;
-    interactionKeys?: {
+    };
+    interactionKeys: {
         key: string;
         id: string;
         label: string;
-    }[] | undefined;
-    layouts?: {
+    }[];
+    layouts: {
         id: string;
         label: string;
         avatars: string[];
@@ -1184,8 +1137,8 @@ export declare const ClientSchema: z.ZodObject<{
             path: string;
             icon: string;
         }[] | undefined;
-    }[] | undefined;
-    avatarButtons?: {
+    }[];
+    avatarButtons: {
         id: string;
         imageOrientation: "Horizontal" | "Square" | "Vertical";
         order: number;
@@ -1197,8 +1150,8 @@ export declare const ClientSchema: z.ZodObject<{
             fileName: string;
             urlPath: string;
         } | null | undefined;
-    }[] | undefined;
-    tier?: {
+    }[];
+    tier: {
         groups: number;
         id: string;
         color: string;
@@ -1217,8 +1170,8 @@ export declare const ClientSchema: z.ZodObject<{
         visibilityParameters: number;
         callbackParameters: number;
         inviteKeys: number;
-    } | undefined;
-    theme?: {
+    };
+    theme: {
         id: string;
         label: string;
         tier?: {
@@ -1241,6 +1194,6 @@ export declare const ClientSchema: z.ZodObject<{
             callbackParameters: number;
             inviteKeys: number;
         } | undefined;
-    } | undefined;
+    };
 }>;
-export type ClientDTO = z.infer<typeof ClientSchema>;
+export type LayoutsPageDTO = z.infer<typeof LayoutsPageSchema>;

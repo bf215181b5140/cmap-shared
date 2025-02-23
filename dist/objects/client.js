@@ -10,7 +10,7 @@ const interactionKey_1 = require("./interactionKey");
 const background_1 = require("./background");
 const theme_1 = require("./theme");
 const clientVisibility_1 = require("../enums/clientVisibility");
-const avatarGroup_1 = require("./avatarGroup");
+const avatarButton_1 = require("./avatarButton");
 exports.ClientSchema = zod_1.z.object({
     id: shared_1.IdSchema,
     username: zod_1.z.string(),
@@ -25,6 +25,6 @@ exports.ClientSchema = zod_1.z.object({
     background: background_1.BackgroundSchema.optional(),
     theme: theme_1.ThemeSchema.optional(),
     layouts: zod_1.z.array(layout_1.LayoutSchema).optional(),
-    avatarGroups: zod_1.z.array(avatarGroup_1.AvatarGroupSchema).optional(),
+    avatarButtons: zod_1.z.array(avatarButton_1.AvatarButtonSchema).optional(),
     interactionKeys: zod_1.z.array(interactionKey_1.InteractionKeySchema).optional(),
 });

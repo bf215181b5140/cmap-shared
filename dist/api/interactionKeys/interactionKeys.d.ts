@@ -1,84 +1,6 @@
 import { z } from 'zod';
-export declare const ClientSchema: z.ZodObject<{
+export declare const InteractionKeysPageSchema: z.ZodObject<{
     id: z.ZodString;
-    username: z.ZodString;
-    displayName: z.ZodString;
-    bio: z.ZodString;
-    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
-    defaultLayoutId: z.ZodNullable<z.ZodString>;
-    unknownAvatarMessage: z.ZodString;
-    offlineMessage: z.ZodString;
-    image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
-        id: z.ZodString;
-        fileName: z.ZodString;
-        urlPath: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }, {
-        id: string;
-        fileName: string;
-        urlPath: string;
-    }>>>;
-    tier: z.ZodOptional<z.ZodObject<{
-        id: z.ZodString;
-        rank: z.ZodNumber;
-        label: z.ZodString;
-        color: z.ZodString;
-        interactionKeys: z.ZodNumber;
-        layouts: z.ZodNumber;
-        layoutAvatars: z.ZodNumber;
-        useCost: z.ZodBoolean;
-        health: z.ZodBoolean;
-        groups: z.ZodNumber;
-        parameterButtons: z.ZodNumber;
-        presetButtons: z.ZodNumber;
-        presetButtonParameters: z.ZodNumber;
-        parameterBadges: z.ZodNumber;
-        avatarButtons: z.ZodNumber;
-        visibilityParameters: z.ZodNumber;
-        callbackParameters: z.ZodNumber;
-        inviteKeys: z.ZodNumber;
-    }, "strip", z.ZodTypeAny, {
-        groups: number;
-        id: string;
-        color: string;
-        label: string;
-        rank: number;
-        interactionKeys: number;
-        layouts: number;
-        layoutAvatars: number;
-        useCost: boolean;
-        health: boolean;
-        parameterButtons: number;
-        presetButtons: number;
-        presetButtonParameters: number;
-        parameterBadges: number;
-        avatarButtons: number;
-        visibilityParameters: number;
-        callbackParameters: number;
-        inviteKeys: number;
-    }, {
-        groups: number;
-        id: string;
-        color: string;
-        label: string;
-        rank: number;
-        interactionKeys: number;
-        layouts: number;
-        layoutAvatars: number;
-        useCost: boolean;
-        health: boolean;
-        parameterButtons: number;
-        presetButtons: number;
-        presetButtonParameters: number;
-        parameterBadges: number;
-        avatarButtons: number;
-        visibilityParameters: number;
-        callbackParameters: number;
-        inviteKeys: number;
-    }>>;
     background: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
@@ -187,114 +109,35 @@ export declare const ClientSchema: z.ZodObject<{
             inviteKeys: number;
         } | undefined;
     }>>;
-    theme: z.ZodOptional<z.ZodObject<{
+    visibility: z.ZodEnum<["Visible", "Hidden", "Private"]>;
+    image: z.ZodOptional<z.ZodNullable<z.ZodObject<{
         id: z.ZodString;
-        label: z.ZodString;
-        tier: z.ZodOptional<z.ZodObject<{
-            id: z.ZodString;
-            rank: z.ZodNumber;
-            label: z.ZodString;
-            color: z.ZodString;
-            interactionKeys: z.ZodNumber;
-            layouts: z.ZodNumber;
-            layoutAvatars: z.ZodNumber;
-            useCost: z.ZodBoolean;
-            health: z.ZodBoolean;
-            groups: z.ZodNumber;
-            parameterButtons: z.ZodNumber;
-            presetButtons: z.ZodNumber;
-            presetButtonParameters: z.ZodNumber;
-            parameterBadges: z.ZodNumber;
-            avatarButtons: z.ZodNumber;
-            visibilityParameters: z.ZodNumber;
-            callbackParameters: z.ZodNumber;
-            inviteKeys: z.ZodNumber;
-        }, "strip", z.ZodTypeAny, {
-            groups: number;
-            id: string;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            layoutAvatars: number;
-            useCost: boolean;
-            health: boolean;
-            parameterButtons: number;
-            presetButtons: number;
-            presetButtonParameters: number;
-            parameterBadges: number;
-            avatarButtons: number;
-            visibilityParameters: number;
-            callbackParameters: number;
-            inviteKeys: number;
-        }, {
-            groups: number;
-            id: string;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            layoutAvatars: number;
-            useCost: boolean;
-            health: boolean;
-            parameterButtons: number;
-            presetButtons: number;
-            presetButtonParameters: number;
-            parameterBadges: number;
-            avatarButtons: number;
-            visibilityParameters: number;
-            callbackParameters: number;
-            inviteKeys: number;
-        }>>;
+        fileName: z.ZodString;
+        urlPath: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         id: string;
-        label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            layoutAvatars: number;
-            useCost: boolean;
-            health: boolean;
-            parameterButtons: number;
-            presetButtons: number;
-            presetButtonParameters: number;
-            parameterBadges: number;
-            avatarButtons: number;
-            visibilityParameters: number;
-            callbackParameters: number;
-            inviteKeys: number;
-        } | undefined;
+        fileName: string;
+        urlPath: string;
     }, {
         id: string;
+        fileName: string;
+        urlPath: string;
+    }>>>;
+    username: z.ZodString;
+    displayName: z.ZodString;
+    interactionKeys: z.ZodArray<z.ZodObject<{
+        id: z.ZodString;
+        label: z.ZodString;
+        key: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        key: string;
+        id: string;
         label: string;
-        tier?: {
-            groups: number;
-            id: string;
-            color: string;
-            label: string;
-            rank: number;
-            interactionKeys: number;
-            layouts: number;
-            layoutAvatars: number;
-            useCost: boolean;
-            health: boolean;
-            parameterButtons: number;
-            presetButtons: number;
-            presetButtonParameters: number;
-            parameterBadges: number;
-            avatarButtons: number;
-            visibilityParameters: number;
-            callbackParameters: number;
-            inviteKeys: number;
-        } | undefined;
-    }>>;
+    }, {
+        key: string;
+        id: string;
+        label: string;
+    }>, "many">;
     layouts: z.ZodOptional<z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
@@ -857,24 +700,206 @@ export declare const ClientSchema: z.ZodObject<{
             urlPath: string;
         } | null | undefined;
     }>, "many">>;
-    interactionKeys: z.ZodOptional<z.ZodArray<z.ZodObject<{
+    tier: z.ZodObject<{
+        id: z.ZodString;
+        rank: z.ZodNumber;
+        label: z.ZodString;
+        color: z.ZodString;
+        interactionKeys: z.ZodNumber;
+        layouts: z.ZodNumber;
+        layoutAvatars: z.ZodNumber;
+        useCost: z.ZodBoolean;
+        health: z.ZodBoolean;
+        groups: z.ZodNumber;
+        parameterButtons: z.ZodNumber;
+        presetButtons: z.ZodNumber;
+        presetButtonParameters: z.ZodNumber;
+        parameterBadges: z.ZodNumber;
+        avatarButtons: z.ZodNumber;
+        visibilityParameters: z.ZodNumber;
+        callbackParameters: z.ZodNumber;
+        inviteKeys: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        groups: number;
+        id: string;
+        color: string;
+        label: string;
+        rank: number;
+        interactionKeys: number;
+        layouts: number;
+        layoutAvatars: number;
+        useCost: boolean;
+        health: boolean;
+        parameterButtons: number;
+        presetButtons: number;
+        presetButtonParameters: number;
+        parameterBadges: number;
+        avatarButtons: number;
+        visibilityParameters: number;
+        callbackParameters: number;
+        inviteKeys: number;
+    }, {
+        groups: number;
+        id: string;
+        color: string;
+        label: string;
+        rank: number;
+        interactionKeys: number;
+        layouts: number;
+        layoutAvatars: number;
+        useCost: boolean;
+        health: boolean;
+        parameterButtons: number;
+        presetButtons: number;
+        presetButtonParameters: number;
+        parameterBadges: number;
+        avatarButtons: number;
+        visibilityParameters: number;
+        callbackParameters: number;
+        inviteKeys: number;
+    }>;
+    bio: z.ZodString;
+    defaultLayoutId: z.ZodNullable<z.ZodString>;
+    unknownAvatarMessage: z.ZodString;
+    offlineMessage: z.ZodString;
+    theme: z.ZodOptional<z.ZodObject<{
         id: z.ZodString;
         label: z.ZodString;
-        key: z.ZodString;
+        tier: z.ZodOptional<z.ZodObject<{
+            id: z.ZodString;
+            rank: z.ZodNumber;
+            label: z.ZodString;
+            color: z.ZodString;
+            interactionKeys: z.ZodNumber;
+            layouts: z.ZodNumber;
+            layoutAvatars: z.ZodNumber;
+            useCost: z.ZodBoolean;
+            health: z.ZodBoolean;
+            groups: z.ZodNumber;
+            parameterButtons: z.ZodNumber;
+            presetButtons: z.ZodNumber;
+            presetButtonParameters: z.ZodNumber;
+            parameterBadges: z.ZodNumber;
+            avatarButtons: z.ZodNumber;
+            visibilityParameters: z.ZodNumber;
+            callbackParameters: z.ZodNumber;
+            inviteKeys: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            groups: number;
+            id: string;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            layoutAvatars: number;
+            useCost: boolean;
+            health: boolean;
+            parameterButtons: number;
+            presetButtons: number;
+            presetButtonParameters: number;
+            parameterBadges: number;
+            avatarButtons: number;
+            visibilityParameters: number;
+            callbackParameters: number;
+            inviteKeys: number;
+        }, {
+            groups: number;
+            id: string;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            layoutAvatars: number;
+            useCost: boolean;
+            health: boolean;
+            parameterButtons: number;
+            presetButtons: number;
+            presetButtonParameters: number;
+            parameterBadges: number;
+            avatarButtons: number;
+            visibilityParameters: number;
+            callbackParameters: number;
+            inviteKeys: number;
+        }>>;
     }, "strip", z.ZodTypeAny, {
-        key: string;
         id: string;
         label: string;
+        tier?: {
+            groups: number;
+            id: string;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            layoutAvatars: number;
+            useCost: boolean;
+            health: boolean;
+            parameterButtons: number;
+            presetButtons: number;
+            presetButtonParameters: number;
+            parameterBadges: number;
+            avatarButtons: number;
+            visibilityParameters: number;
+            callbackParameters: number;
+            inviteKeys: number;
+        } | undefined;
     }, {
-        key: string;
         id: string;
         label: string;
-    }>, "many">>;
+        tier?: {
+            groups: number;
+            id: string;
+            color: string;
+            label: string;
+            rank: number;
+            interactionKeys: number;
+            layouts: number;
+            layoutAvatars: number;
+            useCost: boolean;
+            health: boolean;
+            parameterButtons: number;
+            presetButtons: number;
+            presetButtonParameters: number;
+            parameterBadges: number;
+            avatarButtons: number;
+            visibilityParameters: number;
+            callbackParameters: number;
+            inviteKeys: number;
+        } | undefined;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     id: string;
     visibility: "Visible" | "Hidden" | "Private";
     username: string;
     displayName: string;
+    interactionKeys: {
+        key: string;
+        id: string;
+        label: string;
+    }[];
+    tier: {
+        groups: number;
+        id: string;
+        color: string;
+        label: string;
+        rank: number;
+        interactionKeys: number;
+        layouts: number;
+        layoutAvatars: number;
+        useCost: boolean;
+        health: boolean;
+        parameterButtons: number;
+        presetButtons: number;
+        presetButtonParameters: number;
+        parameterBadges: number;
+        avatarButtons: number;
+        visibilityParameters: number;
+        callbackParameters: number;
+        inviteKeys: number;
+    };
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
@@ -908,11 +933,6 @@ export declare const ClientSchema: z.ZodObject<{
         fileName: string;
         urlPath: string;
     } | null | undefined;
-    interactionKeys?: {
-        key: string;
-        id: string;
-        label: string;
-    }[] | undefined;
     layouts?: {
         id: string;
         label: string;
@@ -1012,26 +1032,6 @@ export declare const ClientSchema: z.ZodObject<{
             urlPath: string;
         } | null | undefined;
     }[] | undefined;
-    tier?: {
-        groups: number;
-        id: string;
-        color: string;
-        label: string;
-        rank: number;
-        interactionKeys: number;
-        layouts: number;
-        layoutAvatars: number;
-        useCost: boolean;
-        health: boolean;
-        parameterButtons: number;
-        presetButtons: number;
-        presetButtonParameters: number;
-        parameterBadges: number;
-        avatarButtons: number;
-        visibilityParameters: number;
-        callbackParameters: number;
-        inviteKeys: number;
-    } | undefined;
     theme?: {
         id: string;
         label: string;
@@ -1061,6 +1061,31 @@ export declare const ClientSchema: z.ZodObject<{
     visibility: "Visible" | "Hidden" | "Private";
     username: string;
     displayName: string;
+    interactionKeys: {
+        key: string;
+        id: string;
+        label: string;
+    }[];
+    tier: {
+        groups: number;
+        id: string;
+        color: string;
+        label: string;
+        rank: number;
+        interactionKeys: number;
+        layouts: number;
+        layoutAvatars: number;
+        useCost: boolean;
+        health: boolean;
+        parameterButtons: number;
+        presetButtons: number;
+        presetButtonParameters: number;
+        parameterBadges: number;
+        avatarButtons: number;
+        visibilityParameters: number;
+        callbackParameters: number;
+        inviteKeys: number;
+    };
     bio: string;
     defaultLayoutId: string | null;
     unknownAvatarMessage: string;
@@ -1094,11 +1119,6 @@ export declare const ClientSchema: z.ZodObject<{
         fileName: string;
         urlPath: string;
     } | null | undefined;
-    interactionKeys?: {
-        key: string;
-        id: string;
-        label: string;
-    }[] | undefined;
     layouts?: {
         id: string;
         label: string;
@@ -1198,26 +1218,6 @@ export declare const ClientSchema: z.ZodObject<{
             urlPath: string;
         } | null | undefined;
     }[] | undefined;
-    tier?: {
-        groups: number;
-        id: string;
-        color: string;
-        label: string;
-        rank: number;
-        interactionKeys: number;
-        layouts: number;
-        layoutAvatars: number;
-        useCost: boolean;
-        health: boolean;
-        parameterButtons: number;
-        presetButtons: number;
-        presetButtonParameters: number;
-        parameterBadges: number;
-        avatarButtons: number;
-        visibilityParameters: number;
-        callbackParameters: number;
-        inviteKeys: number;
-    } | undefined;
     theme?: {
         id: string;
         label: string;
@@ -1243,4 +1243,32 @@ export declare const ClientSchema: z.ZodObject<{
         } | undefined;
     } | undefined;
 }>;
-export type ClientDTO = z.infer<typeof ClientSchema>;
+export type InteractionKeysPageDTO = z.infer<typeof InteractionKeysPageSchema>;
+export declare const InteractionKeysFormSchema: z.ZodObject<{
+    interactionKeys: z.ZodArray<z.ZodObject<{
+        id: z.ZodNullable<z.ZodString>;
+        label: z.ZodString;
+        key: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        key: string;
+        id: string | null;
+        label: string;
+    }, {
+        key: string;
+        id: string | null;
+        label: string;
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    interactionKeys: {
+        key: string;
+        id: string | null;
+        label: string;
+    }[];
+}, {
+    interactionKeys: {
+        key: string;
+        id: string | null;
+        label: string;
+    }[];
+}>;
+export type InteractionKeysFormDTO = z.infer<typeof InteractionKeysFormSchema>;

@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
-import { AvatarButtonDTO, ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, PresetButtonDTO, ThemeDTO, UseAvatarButtonDTO, UsePresetButtonDTO } from '../../../src';
-import React, { MouseEvent, useMemo, useState } from 'react';
-import { ExpIcon } from '../expIcon/expIcon.component';
+import { AvatarButtonDTO, ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, ThemeDTO, UseAvatarButtonDTO } from '../../../src';
+import React, { MouseEvent, useState } from 'react';
 import { ButtonBaseStyle } from './button.style';
 
 interface PresetButtonProps {
@@ -10,7 +9,7 @@ interface PresetButtonProps {
   onClick?: (event: MouseEvent<HTMLDivElement>, useAvatarButton: UseAvatarButtonDTO) => void;
 }
 
-export function PresetButtonComponent({ theme, avatarButton, onClick }: PresetButtonProps) {
+export function AvatarButtonComponent({ theme, avatarButton, onClick }: PresetButtonProps) {
 
   const [avatarUsed, setAvatarUsed] = useState(false);
 
