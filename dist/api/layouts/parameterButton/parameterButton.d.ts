@@ -3,7 +3,6 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     groupId: z.ZodString;
     id: z.ZodNullable<z.ZodString>;
     label: z.ZodString;
-    showLabel: z.ZodBoolean;
     path: z.ZodString;
     value: z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>;
     valueAlt: z.ZodNullable<z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodUnion<[z.ZodEffects<z.ZodString, number | boolean, string>, z.ZodEffects<z.ZodNumber, number, number>, z.ZodBoolean]>]>>;
@@ -60,7 +59,6 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     groupId: string;
-    showLabel: boolean;
 }, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -83,7 +81,6 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     groupId: string;
-    showLabel: boolean;
 }>, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -106,7 +103,6 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     groupId: string;
-    showLabel: boolean;
 }, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";
@@ -129,7 +125,6 @@ export declare const ParameterButtonFormSchema: z.ZodEffects<z.ZodObject<{
     valueAlt: string | number | boolean | null;
     buttonType: "Button" | "Slider" | "Toggle";
     groupId: string;
-    showLabel: boolean;
 }>;
 export type ParameterButtonFormDTO = z.infer<typeof ParameterButtonFormSchema>;
 export declare const ParameterButtonCopySchema: z.ZodObject<{

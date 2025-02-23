@@ -12,7 +12,6 @@ exports.ParameterButtonFormSchema = zod_1.z.object({
     groupId: shared_1.idSchema,
     id: shared_1.idSchema.nullable(),
     label: shared_1.labelOptionalSchema,
-    showLabel: zod_1.z.boolean(),
     path: parameter_1.parameterPathSchema,
     value: parameter_1.parameterValueFormSchema,
     valueAlt: zod_1.z.union([zod_1.z.literal('').transform(() => null), parameter_1.parameterValueFormSchema]).nullable(),

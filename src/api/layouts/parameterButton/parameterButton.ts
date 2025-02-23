@@ -10,7 +10,6 @@ export const ParameterButtonFormSchema = z.object({
   groupId: idSchema,
   id: idSchema.nullable(),
   label: labelOptionalSchema,
-  showLabel: z.boolean(),
   path: parameterPathSchema,
   value: parameterValueFormSchema,
   valueAlt: z.union([z.literal('').transform(() => null), parameterValueFormSchema]).nullable(),
