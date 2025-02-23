@@ -15,7 +15,6 @@ export const AvatarButtonFormSchema = z.object({
 export type AvatarButtonFormDTO = z.infer<typeof AvatarButtonFormSchema>;
 
 export const AvatarButtonCopySchema = z.object({
-  layoutId: idSchema,
   id: idSchema,
 });
 

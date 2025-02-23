@@ -14,6 +14,5 @@ exports.AvatarButtonFormSchema = zod_1.z.object({
     interactionKeyId: shared_1.idSchema.nullable(),
 });
 exports.AvatarButtonCopySchema = zod_1.z.object({
-    layoutId: shared_1.idSchema,
     id: shared_1.idSchema,
 });

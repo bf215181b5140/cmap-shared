@@ -23,13 +23,10 @@ export declare const AvatarButtonFormSchema: z.ZodObject<{
 }>;
 export type AvatarButtonFormDTO = z.infer<typeof AvatarButtonFormSchema>;
 export declare const AvatarButtonCopySchema: z.ZodObject<{
-    layoutId: z.ZodString;
     id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id: string;
-    layoutId: string;
 }, {
     id: string;
-    layoutId: string;
 }>;
 export type AvatarButtonCopyDTO = z.infer<typeof AvatarButtonCopySchema>;
