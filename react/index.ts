@@ -5,6 +5,7 @@ export { LayoutButtonComponent } from './components/button/layoutButton.componen
 export { ParameterButtonComponent } from './components/button/parameterButton.component';
 export { ParameterSliderComponent } from './components/button/parameterSlider.component';
 export { PresetButtonComponent } from './components/button/presetButton.component';
+export { AvatarButtonComponent } from './components/button/avatarButton.component';
 export { LayoutButtonWrapper } from './components/button/layoutButtonWrapper.component';
 export { LayoutGroup } from './components/group/layoutGroup.component';
 export { Layout, LayoutGroupGap } from './components/layout/layout.component';
