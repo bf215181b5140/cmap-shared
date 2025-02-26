@@ -6,6 +6,7 @@ export { ImageOrientationSchema, ImageOrientation } from './enums/imageOrientati
 export { NotificationTypeSchema, NotificationType } from './enums/notificationType';
 export { ParameterBadgeTypeSchema, ParameterBadgeType } from './enums/parameterBadgeType';
 export { VisibilityParameterConditionSchema, VisibilityParameterCondition } from './enums/visibilityParameterCondition';
+export { DetectedGameSchema, DetectedGame } from './enums/detectedGame';
 // ------------------------------ Objects ------------------------------ //
 export { VrcParameterSchema, VrcParameter } from './objects/vrcParameter';
 export { BackgroundDTO, BackgroundSchema } from './objects/background';
@@ -34,6 +35,7 @@ export { UsedAvatarButtonSchema, UsedAvatarButtonDTO } from './objects/usedAvata
 export { PresetParameterSchema, PresetParameterDTO, PresetParameterFormSchema, PresetParameterFormDTO } from './objects/presetParameter';
 export { AvatarButtonSchema, AvatarButtonDTO } from './objects/avatarButton';
 export { BaseButtonSchema, BaseButtonDTO } from './objects/baseButton';
+export { DetectedGamesSchema, DetectedGamesDTO } from './objects/detectedGames';
 // ------------------------------ Primitives ------------------------------ //
 export { parameterPathSchema, parameterValueAvatarIdSchema, parameterValueStringSchema, parameterValueNumberSchema, parameterValueSchema, parameterValueFormSchema, parameterValueOrAvatarSchema, parameterValueOrAvatarFormSchema, parameterValueSimpleSchema, parameterValueOrAvatarSimpleSchema } from './primitives/parameter';
 // ------------------------------ API ------------------------------ //
