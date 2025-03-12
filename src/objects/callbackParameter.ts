@@ -4,7 +4,7 @@ import { parameterPathSchema, parameterValueFormSchema, parameterValueSimpleSche
 export const CallbackParameterFormSchema = z.object({
   path: parameterPathSchema,
   value: parameterValueFormSchema,
-  seconds: z.number().min(0, 'Minimum delay is 0 seconds').max(20, 'Maximum delay is 20 seconds'),
+  seconds: z.number().min(0, 'Minimum delay is 0 seconds').max(60, 'Maximum delay is 60 seconds'),
 });
 
 export type CallbackParameterFormDTO = z.infer<typeof CallbackParameterFormSchema>;
