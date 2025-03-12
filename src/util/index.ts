@@ -61,7 +61,7 @@ export function imageOrientationToAspectRatio(imageOrientation: ImageOrientation
  * For example a ParameterButton might have no (empty) label, but to display it sometimes we need a placeholder text based on order that refers to it (Unnamed parameter #3)
  *
  */
-export function getForcedItemLabel(item: { label: string, order: number }, type: 'group' | 'parameter' | 'preset' | 'avatar') {
+export function getForcedItemLabel(item: { label: string, order: number }, type: 'group' | 'parameter' | 'button' | 'preset' | 'avatar') {
   if (item.label) return item.label;
   return 'Unnamed ' + type + ' #' + item.order;
 }

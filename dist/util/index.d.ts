@@ -30,4 +30,4 @@ export declare function imageOrientationToAspectRatio(imageOrientation: ImageOri
 export declare function getForcedItemLabel(item: {
     label: string;
     order: number;
-}, type: 'group' | 'parameter' | 'preset' | 'avatar'): string;
+}, type: 'group' | 'parameter' | 'button' | 'preset' | 'avatar'): string;
