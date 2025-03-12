@@ -3,8 +3,9 @@ import { MouseEvent, useMemo } from 'react';
 import { ParameterSliderComponent } from './parameterSlider.component';
 import { ParameterButtonComponent } from './parameterButton.component';
 import { ParameterButtonDTO, ParameterButtonTypeSchema, ThemeDTO, UseParameterButtonDTO } from '../../../src';
+import { DragItemProps } from '../../util';
 
-interface LayoutButtonProps {
+interface LayoutButtonProps extends DragItemProps {
   theme: ThemeDTO;
   parameterButton: ParameterButtonDTO;
   value?: string | number | boolean;
@@ -12,13 +13,13 @@ interface LayoutButtonProps {
   onClick?: (event: MouseEvent<HTMLDivElement>, useButton: UseParameterButtonDTO) => void;
 }
 
-export function LayoutButtonComponent({ theme, parameterButton, value, exp, onClick }: LayoutButtonProps) {
+export function LayoutButtonComponent({ theme, parameterButton, value, exp, onClick, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: LayoutButtonProps) {
 
   const enoughExp = useMemo(() => {
     if (!parameterButton.useCost) return true;
     if (exp === undefined) return true;
     return exp >= parameterButton.useCost;
-  }, [parameterButton.useCost, exp])
+  }, [parameterButton.useCost, exp]);
 
   const disabled = !enoughExp;
 
@@ -32,7 +33,7 @@ export function LayoutButtonComponent({ theme, parameterButton, value, exp, onCl
     }
   }
 
-  return (<LayoutButtonStyled className={'layoutButton'}>
+  return (<LayoutButtonStyled className={'layoutButton'} {...{draggable, onDragStart, onDragEnd, onDragOver, onDrop}}>
     {parameterElement()}
   </LayoutButtonStyled>);
 }

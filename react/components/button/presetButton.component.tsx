@@ -3,21 +3,22 @@ import { ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, Pre
 import React, { MouseEvent, useMemo, useState } from 'react';
 import { ExpIcon } from '../expIcon/expIcon.component';
 import { ButtonBaseStyle } from './button.style';
+import { DragItemProps } from '../../util';
 
-interface PresetButtonProps {
+interface PresetButtonProps extends DragItemProps {
   theme: ThemeDTO;
   presetButton: PresetButtonDTO;
   exp?: number;
   onClick?: (event: MouseEvent<HTMLDivElement>, usePreset: UsePresetButtonDTO) => void;
 }
 
-export function PresetButtonComponent({ theme, presetButton, exp, onClick }: PresetButtonProps) {
+export function PresetButtonComponent({ theme, presetButton, exp, onClick, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: PresetButtonProps) {
 
   const enoughExp = useMemo(() => {
     if (!presetButton.useCost) return true;
     if (exp === undefined) return true;
     return exp >= presetButton.useCost;
-  }, [presetButton.useCost, exp])
+  }, [presetButton.useCost, exp]);
 
   const disabled = !enoughExp;
 
@@ -32,21 +33,20 @@ export function PresetButtonComponent({ theme, presetButton, exp, onClick }: Pre
     setTimeout(() => setPresetUsed(false), 100);
   }
 
-  return (<PresetButtonStyled>
+  return (<PresetButtonStyled {...{draggable, onDragStart, onDragEnd, onDragOver, onDrop}}>
     <ParameterButtonStyled className={'parameterButton'} themeDto={theme} aria-readonly={disabled} onClick={onClickInternal} presetUsed={presetUsed}>
       {presetButton.image && <ParameterButtonPicture src={imageUrlPathToUrl(presetButton.image.urlPath)} imageOrientation={presetButton.imageOrientation} />}
       {presetButton.label && <ParameterButtonLabel>{presetButton.label}</ParameterButtonLabel>}
       {presetButton.useCost && <ExpIcon enoughExp={enoughExp} exp={presetButton.useCost} />}
     </ParameterButtonStyled>
-  </PresetButtonStyled>)
+  </PresetButtonStyled>);
 }
 
 const PresetButtonStyled = styled.div`
-    width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid-column;
-    position: relative;
-
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid-column;
+  position: relative;
 `;
 
 const ParameterButtonStyled = styled(ButtonBaseStyle)<{ presetUsed: boolean }>`

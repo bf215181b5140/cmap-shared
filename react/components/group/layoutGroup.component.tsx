@@ -3,19 +3,21 @@ import { MouseEvent } from 'react';
 import { LayoutGroupGap } from '../layout/layout.component';
 import { GroupDTO, GroupWidth, ThemeDTO } from '../../../src';
 import { LayoutButtonWrapper } from '../button/layoutButtonWrapper.component';
+import { DragItemProps } from '../../util';
 
-interface LayoutGroupProps {
+interface LayoutGroupProps extends DragItemProps{
   theme: ThemeDTO;
   group: GroupDTO;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   children?: React.ReactNode;
 }
 
-export function LayoutGroup({ theme, group, onClick, children }: LayoutGroupProps) {
+export function LayoutGroup({ theme, group, onClick, children, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: LayoutGroupProps) {
 
   const readonly = !onClick;
 
-  return (<LayoutGroupStyled className={'layoutGroup'} themeDto={theme} width={group.width} onClick={onClick} aria-readonly={readonly}>
+  return (<LayoutGroupStyled className={'layoutGroup'} themeDto={theme} width={group.width} onClick={onClick} aria-readonly={readonly}
+                             {...{draggable, onDragStart, onDragEnd, onDragOver, onDrop}}>
     {group.label && <h2 style={{ marginTop: '0' }}>{group.label}</h2>}
     <LayoutButtonWrapper>
       {children}

@@ -13,3 +13,5 @@ export { LoadingSpinner } from './components/loadingSpinner/loadingSpinner.compo
 export { ExpIcon } from './components/expIcon/expIcon.component';
 // ------------------------------ Style ------------------------------ //
 export { theme } from './style/theme';
+// ------------------------------ Util ------------------------------ //
+export { DragItemProps } from './util';

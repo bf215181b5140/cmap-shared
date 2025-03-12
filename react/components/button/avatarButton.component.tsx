@@ -2,14 +2,15 @@ import styled, { css } from 'styled-components';
 import { AvatarButtonDTO, ImageOrientation, imageOrientationToAspectRatio, imageUrlPathToUrl, ThemeDTO, UseAvatarButtonDTO } from '../../../src';
 import React, { MouseEvent, useState } from 'react';
 import { ButtonBaseStyle } from './button.style';
+import { DragItemProps } from '../../util';
 
-interface PresetButtonProps {
+interface PresetButtonProps extends DragItemProps {
   theme: ThemeDTO;
   avatarButton: AvatarButtonDTO;
   onClick?: (event: MouseEvent<HTMLDivElement>, useAvatarButton: UseAvatarButtonDTO) => void;
 }
 
-export function AvatarButtonComponent({ theme, avatarButton, onClick }: PresetButtonProps) {
+export function AvatarButtonComponent({ theme, avatarButton, onClick, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: PresetButtonProps) {
 
   const [avatarUsed, setAvatarUsed] = useState(false);
 
@@ -22,20 +23,19 @@ export function AvatarButtonComponent({ theme, avatarButton, onClick }: PresetBu
     setTimeout(() => setAvatarUsed(false), 100);
   }
 
-  return (<PresetButtonStyled>
+  return (<PresetButtonStyled {...{draggable, onDragStart, onDragEnd, onDragOver, onDrop}}>
     <ParameterButtonStyled className={'parameterButton'} themeDto={theme} onClick={onClickInternal} presetUsed={avatarUsed}>
       {avatarButton.image && <ParameterButtonPicture src={imageUrlPathToUrl(avatarButton.image.urlPath)} imageOrientation={avatarButton.imageOrientation} />}
       {avatarButton.label && <ParameterButtonLabel>{avatarButton.label}</ParameterButtonLabel>}
     </ParameterButtonStyled>
-  </PresetButtonStyled>)
+  </PresetButtonStyled>);
 }
 
 const PresetButtonStyled = styled.div`
-    width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid-column;
-    position: relative;
-
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid-column;
+  position: relative;
 `;
 
 const ParameterButtonStyled = styled(ButtonBaseStyle)<{ presetUsed: boolean }>`
