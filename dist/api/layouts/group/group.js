@@ -12,7 +12,7 @@ exports.GroupFormSchema = zod_1.z.object({
     order: zod_1.z.number(),
     width: groupWidth_1.GroupWidthSchema,
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
-    interactionKeyId: shared_1.idSchema.nullable(),
+    interactionKeyId: shared_1.interactionKeyIdSchema,
 });
 exports.GroupCopySchema = zod_1.z.object({
     layoutId: shared_1.idSchema,

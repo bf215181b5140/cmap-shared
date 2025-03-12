@@ -5,7 +5,7 @@ export declare const AvatarButtonFormSchema: z.ZodObject<{
     vrcAvatarId: z.ZodString;
     order: z.ZodNumber;
     imageOrientation: z.ZodEnum<["Horizontal", "Square", "Vertical"]>;
-    interactionKeyId: z.ZodNullable<z.ZodString>;
+    interactionKeyId: z.ZodNullable<z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodString]>>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     imageOrientation: "Horizontal" | "Square" | "Vertical";

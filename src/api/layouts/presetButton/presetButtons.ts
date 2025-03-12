@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { CallbackParameterFormSchema } from '../../../objects/callbackParameter';
 import { ImageOrientationSchema } from '../../../enums/imageOrientation';
 import { VisibilityParameterFormSchema } from '../../../objects/visibilityParameter';
-import { idSchema, labelOptionalSchema } from '../../../primitives/shared';
+import { idSchema, interactionKeyIdSchema, labelOptionalSchema } from '../../../primitives/shared';
 import { PresetParameterFormSchema } from '../../../objects/presetParameter';
 
 export const PresetButtonFormSchema = z.object({
@@ -15,7 +15,7 @@ export const PresetButtonFormSchema = z.object({
   useCost: z.number().nullable(),
   callbackParameters: z.array(CallbackParameterFormSchema),
   visibilityParameters: z.array(VisibilityParameterFormSchema),
-  interactionKeyId: idSchema.nullable(),
+  interactionKeyId: interactionKeyIdSchema,
 });
 
 export type PresetButtonFormDTO = z.infer<typeof PresetButtonFormSchema>;

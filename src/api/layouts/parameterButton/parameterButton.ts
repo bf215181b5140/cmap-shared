@@ -4,7 +4,7 @@ import { ImageOrientationSchema } from '../../../enums/imageOrientation';
 import { CallbackParameterFormSchema } from '../../../objects/callbackParameter';
 import { VisibilityParameterFormSchema } from '../../../objects/visibilityParameter';
 import { parameterPathSchema, parameterValueFormSchema } from '../../../primitives/parameter';
-import { idSchema, labelOptionalSchema } from '../../../primitives/shared';
+import { idSchema, interactionKeyIdSchema, labelOptionalSchema } from '../../../primitives/shared';
 
 export const ParameterButtonFormSchema = z.object({
   groupId: idSchema,
@@ -19,7 +19,7 @@ export const ParameterButtonFormSchema = z.object({
   useCost: z.number().nullable(),
   callbackParameters: z.array(CallbackParameterFormSchema),
   visibilityParameters: z.array(VisibilityParameterFormSchema),
-  interactionKeyId: idSchema.nullable(),
+  interactionKeyId: interactionKeyIdSchema,
 }).superRefine((val, ctx) => {
   // Check valueAlt requirement
   if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && val.valueAlt === null) {

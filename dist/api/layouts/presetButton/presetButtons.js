@@ -17,7 +17,7 @@ exports.PresetButtonFormSchema = zod_1.z.object({
     useCost: zod_1.z.number().nullable(),
     callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterFormSchema),
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
-    interactionKeyId: shared_1.idSchema.nullable(),
+    interactionKeyId: shared_1.interactionKeyIdSchema,
 });
 exports.PresetButtonCopySchema = zod_1.z.object({
     layoutId: shared_1.idSchema,

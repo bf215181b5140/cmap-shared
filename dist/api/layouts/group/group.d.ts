@@ -18,7 +18,7 @@ export declare const GroupFormSchema: z.ZodObject<{
         path: string;
         condition: "Equal" | "Not_equal" | "Less_than" | "More_than";
     }>, "many">;
-    interactionKeyId: z.ZodNullable<z.ZodString>;
+    interactionKeyId: z.ZodNullable<z.ZodUnion<[z.ZodEffects<z.ZodLiteral<"">, null, "">, z.ZodString]>>;
 }, "strip", z.ZodTypeAny, {
     id: string | null;
     width: "None" | "Third" | "Half" | "Full";

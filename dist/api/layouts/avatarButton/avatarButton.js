@@ -11,7 +11,7 @@ exports.AvatarButtonFormSchema = zod_1.z.object({
     vrcAvatarId: parameter_1.parameterValueAvatarIdSchema,
     order: zod_1.z.number(),
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
-    interactionKeyId: shared_1.idSchema.nullable(),
+    interactionKeyId: shared_1.interactionKeyIdSchema,
 });
 exports.AvatarButtonCopySchema = zod_1.z.object({
     id: shared_1.idSchema,

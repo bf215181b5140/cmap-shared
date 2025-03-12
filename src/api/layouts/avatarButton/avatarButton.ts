@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { idSchema, labelOptionalSchema } from '../../../primitives/shared';
+import { idSchema, interactionKeyIdSchema, labelOptionalSchema } from '../../../primitives/shared';
 import { ImageOrientationSchema } from '../../../enums/imageOrientation';
 import { parameterValueAvatarIdSchema } from '../../../primitives/parameter';
 
@@ -9,7 +9,7 @@ export const AvatarButtonFormSchema = z.object({
   vrcAvatarId: parameterValueAvatarIdSchema,
   order: z.number(),
   imageOrientation: ImageOrientationSchema,
-  interactionKeyId: idSchema.nullable(),
+  interactionKeyId: interactionKeyIdSchema,
 });
 
 export type AvatarButtonFormDTO = z.infer<typeof AvatarButtonFormSchema>;

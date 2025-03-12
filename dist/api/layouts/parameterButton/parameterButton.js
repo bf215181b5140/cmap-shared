@@ -21,7 +21,7 @@ exports.ParameterButtonFormSchema = zod_1.z.object({
     useCost: zod_1.z.number().nullable(),
     callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterFormSchema),
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
-    interactionKeyId: shared_1.idSchema.nullable(),
+    interactionKeyId: shared_1.interactionKeyIdSchema,
 }).superRefine((val, ctx) => {
     // Check valueAlt requirement
     if ((val.buttonType === 'Slider' || val.buttonType === 'Toggle') && val.valueAlt === null) {
