@@ -57,7 +57,7 @@ export { AvatarButtonFormSchema, AvatarButtonFormDTO, AvatarButtonCopySchema, Av
 // ------------------------------ Shared ------------------------------ //
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, passwordSchema, usernameSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
 // ------------------------------ Other ------------------------------ //
-export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
+export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio, getForcedItemLabel } from './util';
 // ------------------------------ Const ------------------------------ //
 export const URL_LIVE = 'https://changemyavatarparams.com';
 export const URL = process.env.NODE_ENV === 'production' ? URL_LIVE : 'http://localhost:8080';

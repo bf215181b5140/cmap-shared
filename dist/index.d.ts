@@ -50,6 +50,6 @@ export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyForm
 export { PresetButtonFormSchema, PresetButtonFormDTO, PresetButtonCopySchema, PresetButtonCopyDTO } from './api/layouts/presetButton/presetButtons';
 export { AvatarButtonFormSchema, AvatarButtonFormDTO, AvatarButtonCopySchema, AvatarButtonCopyDTO } from './api/layouts/avatarButton/avatarButton';
 export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, passwordSchema, usernameSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
-export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio } from './util';
+export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio, getForcedItemLabel } from './util';
 export declare const URL_LIVE = "https://changemyavatarparams.com";
 export declare const URL: string;
