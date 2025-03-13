@@ -11,6 +11,8 @@ export { LayoutGroup } from './components/group/layoutGroup.component';
 export { Layout, LayoutGroupGap } from './components/layout/layout.component';
 export { LoadingSpinner } from './components/loadingSpinner/loadingSpinner.component';
 export { ExpIcon } from './components/expIcon/expIcon.component';
+export { ParameterBadge } from './components/parameterBadge/parameterBadge.component';
+export { HealthAndExp } from './components/healthAndExp/healthAndExp.component';
 // ------------------------------ Style ------------------------------ //
 export { theme } from './style/theme';
 // ------------------------------ Util ------------------------------ //
