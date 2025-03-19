@@ -1,6 +1,6 @@
 {
   "main": "dist/index.js",
-  "name": "cmap2-shared",
+  "name": "cmap-shared",
   "version": "3.0.0",
   "description": "Change my avatar params shared library",
   "repository": {
