@@ -1,7 +1,11 @@
 import styled from 'styled-components';
+// @ts-ignore
 import emptyHealth from '../../../images/hpBarEmpty.png';
+// @ts-ignore
 import fullHealth from '../../../images/hpBarFull.png';
+// @ts-ignore
 import expBarEmpty from '../../../images/expBarEmpty.png';
+// @ts-ignore
 import expBarFull from '../../../images/expBarFull.png';
 import { LayoutDTO } from '../../../src';
 
