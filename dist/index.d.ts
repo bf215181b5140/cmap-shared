@@ -1,202 +1,55 @@
-import { ReactNode } from "react";
-import { AvatarsPageDto, ProfilePageDto } from './dtos';
-import { IgnoredParams } from './const';
-import { theme } from './react/theme';
-export { IgnoredParams };
-export { ProfilePageDto, AvatarsPageDto };
-export { theme };
-export interface VrcParameter {
-    path: string;
-    value: boolean | number | string;
-}
-export interface UsedButton {
-    buttonId: string;
-    value: string;
-}
-export interface Profile {
-    client: ClientDto;
-    backgrounds: BackgroundDto[];
-    buttonStyles: ButtonStyleDto[];
-}
-export interface Avatars {
-    tier: TierDto;
-    buttonStyle: ButtonStyleDto;
-    avatars: AvatarDto[];
-}
-export interface ParametersForm {
-    avatarId: string;
-    parameters: ParameterDto[];
-}
-export interface ControlParametersForm {
-    avatarId: string;
-    controlParameters: ControlParameterDto[];
-}
-export interface Tiers {
-    tiers: TierDto[];
-    clientTier: TierDto;
-}
-export interface ClientWithActivity extends ClientDto {
-    isActive: boolean;
-    isConnected: boolean;
-}
-export interface ReactProps {
-    children?: ReactNode;
-}
-export declare class RegistrationInfoDto {
-    available: boolean;
-    keyRequired: boolean;
-}
-export declare class RegistrationFormDto {
-    username: string;
-    passwordOne: string;
-    passwordTwo: string;
-    registrationKey: string;
-    fingerprint: string;
-}
-declare class BaseDto {
-    id: string;
-    createDate: Date;
-    updateDate: Date;
-}
-declare class BaseParentDto extends BaseDto {
-    parentId?: string;
-}
-export declare class TierDto {
-    tier: ClientTier;
-    rank: number;
-    color: string;
-    avatars: number;
-    layouts: number;
-    buttons: number;
-    controlParameters: number;
-    useCost: boolean;
-    hp: boolean;
-}
-export declare class BackgroundDto {
-    className: string;
-    Label: string;
-    tier: TierDto;
-}
-export declare class ButtonStyleDto {
-    className: string;
-    Label: string;
-    tier: TierDto;
-}
-export declare class ClientDto extends BaseDto {
-    username: string;
-    displayName: string;
-    bio: string | null;
-    image: string | null;
-    hidden: boolean;
-    tier: TierDto;
-    background: BackgroundDto;
-    buttonStyle: ButtonStyleDto;
-    avatars: AvatarDto[] | undefined | null;
-}
-export declare class AvatarDto extends BaseParentDto {
-    vrcId: string;
-    label: string;
-    default: boolean;
-    layouts: LayoutDto[] | undefined | null;
-    parameters: ParameterDto[] | undefined | null;
-    controlParameters: ControlParameterDto[] | undefined | null;
-}
-export declare class ParameterDto extends BaseParentDto {
-    label: string;
-    path: string;
-    valueType: ValueType;
-}
-export declare class ControlParameterDto extends BaseParentDto {
-    label: string;
-    role: ParameterRole;
-    path: string;
-    valuePrimary: string;
-    valueSecondary: string;
-    valueType: ValueType;
-}
-export declare class LayoutDto extends BaseParentDto {
-    label: string;
-    order: number;
-    width: ContentBoxWidth;
-    buttons: ButtonDto[] | undefined | null;
-}
-export declare class ButtonDto extends BaseParentDto {
-    label: string;
-    path: string;
-    value: string;
-    valueAlt: string;
-    valueType: ValueType;
-    buttonType: ButtonType;
-    image: string | null;
-    imageOrientation: ButtonImageOrientation;
-    order: number;
-    useCost: number | null;
-    controlParameter: ControlParameterDto | null;
-    controlParameterId: string | undefined | null;
-}
-export declare class TierKeyDto {
-    key: string;
-    tier: ClientTier;
-    used: boolean;
-}
-export declare class FileUploadDto {
-    parentType: string;
-    parentId: string;
-    file: File;
-}
-export declare class FieldOption {
-    key: string;
-    value: string;
-}
-export declare enum ClientTier {
-    Basic = "Basic",
-    Standard = "Standard",
-    Premium = "Premium"
-}
-export declare enum ParameterRole {
-    UseCost = "Use cost",
-    HP = "HP",
-    Callback = "Callback"
-}
-export declare enum ValueType {
-    Int = "Int",
-    Float = "Float",
-    Bool = "Bool"
-}
-export declare enum ButtonType {
-    Button = "button",
-    Slider = "slider",
-    Toggle = "toggle"
-}
-export declare enum ButtonImageOrientation {
-    Horizontal = "Horizontal",
-    Vertical = "Vertical",
-    Square = "Square"
-}
-export declare enum InputType {
-    Text = "text",
-    Button = "button",
-    Checkbox = "checkbox",
-    Date = "date",
-    Email = "email",
-    File = "file",
-    Hidden = "hidden",
-    Number = "number",
-    Password = "password",
-    Radio = "radio",
-    Range = "range",
-    Reset = "reset",
-    Submit = "submit",
-    Time = "time",
-    Url = "url",
-    Label = "label",
-    Boolean = "boolean",
-    Select = "select",
-    Textarea = "textarea"
-}
-export declare enum ContentBoxWidth {
-    None = "none",
-    Third = "third",
-    Half = "half",
-    Full = "full"
-}
+export { ParameterButtonTypeSchema, ParameterButtonType } from './enums/parameterButtonType';
+export { ClientVisibilitySchema, ClientVisibility } from './enums/clientVisibility';
+export { GroupWidthSchema, GroupWidth } from './enums/groupWidth';
+export { ImageOrientationSchema, ImageOrientation } from './enums/imageOrientation';
+export { NotificationTypeSchema, NotificationType } from './enums/notificationType';
+export { ParameterBadgeTypeSchema, ParameterBadgeType } from './enums/parameterBadgeType';
+export { VisibilityParameterConditionSchema, VisibilityParameterCondition } from './enums/visibilityParameterCondition';
+export { DetectedGameSchema, DetectedGame } from './enums/detectedGame';
+export { VrcParameterSchema, VrcParameter } from './objects/vrcParameter';
+export { BackgroundDTO, BackgroundSchema } from './objects/background';
+export { ParameterButtonDTO, ParameterButtonSchema } from './objects/parameterButton';
+export { ClientDTO, ClientSchema } from './objects/client';
+export { GroupDTO, GroupSchema } from './objects/group';
+export { InteractionKeyDTO, InteractionKeySchema } from './objects/interactionKey';
+export { LayoutDTO, LayoutSchema } from './objects/layout';
+export { InviteKeyDTO, InviteKeySchema } from './objects/inviteKey';
+export { ParameterBadgeDTO, ParameterBadgeSchema } from './objects/parameterBadge';
+export { ThemeDTO, ThemeSchema } from './objects/theme';
+export { TierDTO, TierSchema } from './objects/tier';
+export { UpdateDTO, UpdateSchema } from './objects/update';
+export { UploadedFileDTO, UploadedFileSchema } from './objects/uploadedFile';
+export { KeyValueSchema, KeyValueDTO } from './objects/keyValue';
+export { CallbackParameterSchema, CallbackParameterDTO, CallbackParameterFormSchema, CallbackParameterFormDTO } from './objects/callbackParameter';
+export { VisibilityParameterSchema, VisibilityParameterDTO, VisibilityParameterFormSchema, VisibilityParameterFormDTO } from './objects/visibilityParameter';
+export { PresetButtonSchema, PresetButtonDTO } from './objects/presetButton';
+export { ParameterSchema, ParameterDTO } from './objects/parameter';
+export { UseParameterButtonSchema, UseParameterButtonDTO } from './objects/useParameterButton';
+export { UsedParameterButtonSchema, UsedParameterButtonDTO } from './objects/usedParameterButton';
+export { UsePresetButtonSchema, UsePresetButtonDTO } from './objects/usePresetButton';
+export { UsedPresetButtonSchema, UsedPresetButtonDTO } from './objects/usedPresetButton';
+export { UseAvatarButtonSchema, UseAvatarButtonDTO } from './objects/useAvatarButton';
+export { UsedAvatarButtonSchema, UsedAvatarButtonDTO } from './objects/usedAvatarButton';
+export { PresetParameterSchema, PresetParameterDTO, PresetParameterFormSchema, PresetParameterFormDTO } from './objects/presetParameter';
+export { AvatarButtonSchema, AvatarButtonDTO } from './objects/avatarButton';
+export { BaseButtonSchema, BaseButtonDTO } from './objects/baseButton';
+export { DetectedGamesSchema, DetectedGamesDTO } from './objects/detectedGames';
+export { parameterPathSchema, parameterValueAvatarIdSchema, parameterValueStringSchema, parameterValueNumberSchema, parameterValueSchema, parameterValueFormSchema, parameterValueOrAvatarSchema, parameterValueOrAvatarFormSchema, parameterValueSimpleSchema, parameterValueOrAvatarSimpleSchema } from './primitives/parameter';
+export { ApiResponseSchema, ApiResponseDTO } from './api';
+export { LoginTokenSchema, LoginTokenDTO, LoginFormSchema, LoginFormDTO } from './api/login/login';
+export { RegisterInfoSchema, RegisterInfoDTO, RegisterFormSchema, RegisterFormDTO, RegisterWithKeyFormSchema, RegisterWithKeyFormDTO } from './api/register/register';
+export { ProfilePageSchema, ProfilePageDTO, ProfileFormSchema, ProfileFormDTO } from './api/profile/profile';
+export { LayoutsPageSchema, LayoutsPageDTO } from './api/layouts/layouts';
+export { ParameterBadgeFormSchema, ParameterBadgeFormDTO } from './api/layouts/layout/parameterBadges/parameterBadges';
+export { LayoutFormSchema, LayoutFormDTO, LayoutCopySchema, LayoutCopyDTO } from './api/layouts/layout/layout';
+export { GroupFormSchema, GroupFormDTO, GroupCopySchema, GroupCopyDTO } from './api/layouts/group/group';
+export { ParameterButtonFormSchema, ParameterButtonFormDTO, ParameterButtonCopySchema, ParameterButtonCopyDTO } from './api/layouts/parameterButton/parameterButton';
+export { InteractionKeysPageSchema, InteractionKeysPageDTO, InteractionKeysFormSchema, InteractionKeysFormDTO } from './api/interactionKeys/interactionKeys';
+export { StylePageSchema, StylePageDTO } from './api/style/style';
+export { TiersPageSchema, TiersPageDTO, UseInviteKeyFormSchema, UseInviteKeyFormDTO, GeneratedInviteKeySchema, GeneratedInviteKeyDTO } from './api/tiers/tiers';
+export { PresetButtonFormSchema, PresetButtonFormDTO, PresetButtonCopySchema, PresetButtonCopyDTO } from './api/layouts/presetButton/presetButtons';
+export { AvatarButtonFormSchema, AvatarButtonFormDTO, AvatarButtonCopySchema, AvatarButtonCopyDTO } from './api/layouts/avatarButton/avatarButton';
+export { BaseFormDTO, BaseFormSchema, BaseIdDTO, BaseIdSchema, BaseNullableIdDTO, BaseNullableIdSchema, IdSchema, passwordSchema, usernameSchema, OrderSchema, OrderDTO, interactionKeySchema } from './shared';
+export { convertParameterValueFromString, trimNumberDecimals, imageUrlPathToUrl, imageOrientationToAspectRatio, getForcedItemLabel } from './util';
+export declare const URL_LIVE = "https://changemyavatarparams.com";
+export declare const URL: string;

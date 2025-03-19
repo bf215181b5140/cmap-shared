@@ -1,206 +1,154 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentBoxWidth = exports.InputType = exports.ButtonImageOrientation = exports.ButtonType = exports.ValueType = exports.ParameterRole = exports.ClientTier = exports.FieldOption = exports.FileUploadDto = exports.TierKeyDto = exports.ButtonDto = exports.LayoutDto = exports.ControlParameterDto = exports.ParameterDto = exports.AvatarDto = exports.ClientDto = exports.ButtonStyleDto = exports.BackgroundDto = exports.TierDto = exports.RegistrationFormDto = exports.RegistrationInfoDto = exports.theme = exports.AvatarsPageDto = exports.ProfilePageDto = exports.IgnoredParams = void 0;
-var dtos_1 = require("./dtos");
-Object.defineProperty(exports, "AvatarsPageDto", { enumerable: true, get: function () { return dtos_1.AvatarsPageDto; } });
-Object.defineProperty(exports, "ProfilePageDto", { enumerable: true, get: function () { return dtos_1.ProfilePageDto; } });
-var const_1 = require("./const");
-Object.defineProperty(exports, "IgnoredParams", { enumerable: true, get: function () { return const_1.IgnoredParams; } });
-var theme_1 = require("./react/theme");
-Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return theme_1.theme; } });
-// -- Classes -- //
-var RegistrationInfoDto = /** @class */ (function () {
-    function RegistrationInfoDto() {
-    }
-    return RegistrationInfoDto;
-}());
-exports.RegistrationInfoDto = RegistrationInfoDto;
-var RegistrationFormDto = /** @class */ (function () {
-    function RegistrationFormDto() {
-    }
-    return RegistrationFormDto;
-}());
-exports.RegistrationFormDto = RegistrationFormDto;
-var BaseDto = /** @class */ (function () {
-    function BaseDto() {
-        this.id = null;
-    }
-    return BaseDto;
-}());
-var BaseParentDto = /** @class */ (function (_super) {
-    __extends(BaseParentDto, _super);
-    function BaseParentDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return BaseParentDto;
-}(BaseDto));
-var TierDto = /** @class */ (function () {
-    function TierDto() {
-    }
-    return TierDto;
-}());
-exports.TierDto = TierDto;
-var BackgroundDto = /** @class */ (function () {
-    function BackgroundDto() {
-    }
-    return BackgroundDto;
-}());
-exports.BackgroundDto = BackgroundDto;
-var ButtonStyleDto = /** @class */ (function () {
-    function ButtonStyleDto() {
-    }
-    return ButtonStyleDto;
-}());
-exports.ButtonStyleDto = ButtonStyleDto;
-var ClientDto = /** @class */ (function (_super) {
-    __extends(ClientDto, _super);
-    function ClientDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return ClientDto;
-}(BaseDto));
-exports.ClientDto = ClientDto;
-var AvatarDto = /** @class */ (function (_super) {
-    __extends(AvatarDto, _super);
-    function AvatarDto() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return AvatarDto;
-}(BaseParentDto));
-exports.AvatarDto = AvatarDto;
-var ParameterDto = /** @class */ (function (_super) {
-    __extends(ParameterDto, _super);
-    function ParameterDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.path = '/avatar/parameters/';
-        return _this;
-    }
-    return ParameterDto;
-}(BaseParentDto));
-exports.ParameterDto = ParameterDto;
-var ControlParameterDto = /** @class */ (function (_super) {
-    __extends(ControlParameterDto, _super);
-    function ControlParameterDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.path = '/avatar/parameters/';
-        return _this;
-    }
-    return ControlParameterDto;
-}(BaseParentDto));
-exports.ControlParameterDto = ControlParameterDto;
-var LayoutDto = /** @class */ (function (_super) {
-    __extends(LayoutDto, _super);
-    function LayoutDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.width = ContentBoxWidth.Full;
-        return _this;
-    }
-    return LayoutDto;
-}(BaseParentDto));
-exports.LayoutDto = LayoutDto;
-var ButtonDto = /** @class */ (function (_super) {
-    __extends(ButtonDto, _super);
-    function ButtonDto() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.path = '/avatar/parameters/';
-        _this.valueType = ValueType.Int;
-        _this.buttonType = ButtonType.Button;
-        _this.imageOrientation = ButtonImageOrientation.Horizontal;
-        return _this;
-    }
-    return ButtonDto;
-}(BaseParentDto));
-exports.ButtonDto = ButtonDto;
-var TierKeyDto = /** @class */ (function () {
-    function TierKeyDto() {
-    }
-    return TierKeyDto;
-}());
-exports.TierKeyDto = TierKeyDto;
-var FileUploadDto = /** @class */ (function () {
-    function FileUploadDto() {
-    }
-    return FileUploadDto;
-}());
-exports.FileUploadDto = FileUploadDto;
-var FieldOption = /** @class */ (function () {
-    function FieldOption() {
-    }
-    return FieldOption;
-}());
-exports.FieldOption = FieldOption;
-// -- Enums -- //
-var ClientTier;
-(function (ClientTier) {
-    ClientTier["Basic"] = "Basic";
-    ClientTier["Standard"] = "Standard";
-    ClientTier["Premium"] = "Premium";
-})(ClientTier = exports.ClientTier || (exports.ClientTier = {}));
-var ParameterRole;
-(function (ParameterRole) {
-    ParameterRole["UseCost"] = "Use cost";
-    ParameterRole["HP"] = "HP";
-    ParameterRole["Callback"] = "Callback";
-})(ParameterRole = exports.ParameterRole || (exports.ParameterRole = {}));
-var ValueType;
-(function (ValueType) {
-    ValueType["Int"] = "Int";
-    ValueType["Float"] = "Float";
-    ValueType["Bool"] = "Bool";
-})(ValueType = exports.ValueType || (exports.ValueType = {}));
-var ButtonType;
-(function (ButtonType) {
-    ButtonType["Button"] = "button";
-    ButtonType["Slider"] = "slider";
-    ButtonType["Toggle"] = "toggle";
-})(ButtonType = exports.ButtonType || (exports.ButtonType = {}));
-var ButtonImageOrientation;
-(function (ButtonImageOrientation) {
-    ButtonImageOrientation["Horizontal"] = "Horizontal";
-    ButtonImageOrientation["Vertical"] = "Vertical";
-    ButtonImageOrientation["Square"] = "Square";
-})(ButtonImageOrientation = exports.ButtonImageOrientation || (exports.ButtonImageOrientation = {}));
-var InputType;
-(function (InputType) {
-    InputType["Text"] = "text";
-    InputType["Button"] = "button";
-    InputType["Checkbox"] = "checkbox";
-    InputType["Date"] = "date";
-    InputType["Email"] = "email";
-    InputType["File"] = "file";
-    InputType["Hidden"] = "hidden";
-    InputType["Number"] = "number";
-    InputType["Password"] = "password";
-    InputType["Radio"] = "radio";
-    InputType["Range"] = "range";
-    InputType["Reset"] = "reset";
-    InputType["Submit"] = "submit";
-    InputType["Time"] = "time";
-    InputType["Url"] = "url";
-    InputType["Label"] = "label";
-    InputType["Boolean"] = "boolean";
-    InputType["Select"] = "select";
-    InputType["Textarea"] = "textarea";
-})(InputType = exports.InputType || (exports.InputType = {}));
-var ContentBoxWidth;
-(function (ContentBoxWidth) {
-    ContentBoxWidth["None"] = "none";
-    ContentBoxWidth["Third"] = "third";
-    ContentBoxWidth["Half"] = "half";
-    ContentBoxWidth["Full"] = "full";
-})(ContentBoxWidth = exports.ContentBoxWidth || (exports.ContentBoxWidth = {}));
+exports.ApiResponseSchema = exports.parameterValueOrAvatarSimpleSchema = exports.parameterValueSimpleSchema = exports.parameterValueOrAvatarFormSchema = exports.parameterValueOrAvatarSchema = exports.parameterValueFormSchema = exports.parameterValueSchema = exports.parameterValueNumberSchema = exports.parameterValueStringSchema = exports.parameterValueAvatarIdSchema = exports.parameterPathSchema = exports.DetectedGamesSchema = exports.BaseButtonSchema = exports.AvatarButtonSchema = exports.PresetParameterFormSchema = exports.PresetParameterSchema = exports.UsedAvatarButtonSchema = exports.UseAvatarButtonSchema = exports.UsedPresetButtonSchema = exports.UsePresetButtonSchema = exports.UsedParameterButtonSchema = exports.UseParameterButtonSchema = exports.ParameterSchema = exports.PresetButtonSchema = exports.VisibilityParameterFormSchema = exports.VisibilityParameterSchema = exports.CallbackParameterFormSchema = exports.CallbackParameterSchema = exports.KeyValueSchema = exports.UploadedFileSchema = exports.UpdateSchema = exports.TierSchema = exports.ThemeSchema = exports.ParameterBadgeSchema = exports.InviteKeySchema = exports.LayoutSchema = exports.InteractionKeySchema = exports.GroupSchema = exports.ClientSchema = exports.ParameterButtonSchema = exports.BackgroundSchema = exports.VrcParameterSchema = exports.DetectedGameSchema = exports.VisibilityParameterConditionSchema = exports.ParameterBadgeTypeSchema = exports.NotificationTypeSchema = exports.ImageOrientationSchema = exports.GroupWidthSchema = exports.ClientVisibilitySchema = exports.ParameterButtonTypeSchema = void 0;
+exports.URL = exports.URL_LIVE = exports.getForcedItemLabel = exports.imageOrientationToAspectRatio = exports.imageUrlPathToUrl = exports.trimNumberDecimals = exports.convertParameterValueFromString = exports.interactionKeySchema = exports.OrderSchema = exports.usernameSchema = exports.passwordSchema = exports.IdSchema = exports.BaseNullableIdSchema = exports.BaseIdSchema = exports.BaseFormSchema = exports.AvatarButtonCopySchema = exports.AvatarButtonFormSchema = exports.PresetButtonCopySchema = exports.PresetButtonFormSchema = exports.GeneratedInviteKeySchema = exports.UseInviteKeyFormSchema = exports.TiersPageSchema = exports.StylePageSchema = exports.InteractionKeysFormSchema = exports.InteractionKeysPageSchema = exports.ParameterButtonCopySchema = exports.ParameterButtonFormSchema = exports.GroupCopySchema = exports.GroupFormSchema = exports.LayoutCopySchema = exports.LayoutFormSchema = exports.ParameterBadgeFormSchema = exports.LayoutsPageSchema = exports.ProfileFormSchema = exports.ProfilePageSchema = exports.RegisterWithKeyFormSchema = exports.RegisterFormSchema = exports.RegisterInfoSchema = exports.LoginFormSchema = exports.LoginTokenSchema = void 0;
+// ------------------------------ Enums ------------------------------ //
+var parameterButtonType_1 = require("./enums/parameterButtonType");
+Object.defineProperty(exports, "ParameterButtonTypeSchema", { enumerable: true, get: function () { return parameterButtonType_1.ParameterButtonTypeSchema; } });
+var clientVisibility_1 = require("./enums/clientVisibility");
+Object.defineProperty(exports, "ClientVisibilitySchema", { enumerable: true, get: function () { return clientVisibility_1.ClientVisibilitySchema; } });
+var groupWidth_1 = require("./enums/groupWidth");
+Object.defineProperty(exports, "GroupWidthSchema", { enumerable: true, get: function () { return groupWidth_1.GroupWidthSchema; } });
+var imageOrientation_1 = require("./enums/imageOrientation");
+Object.defineProperty(exports, "ImageOrientationSchema", { enumerable: true, get: function () { return imageOrientation_1.ImageOrientationSchema; } });
+var notificationType_1 = require("./enums/notificationType");
+Object.defineProperty(exports, "NotificationTypeSchema", { enumerable: true, get: function () { return notificationType_1.NotificationTypeSchema; } });
+var parameterBadgeType_1 = require("./enums/parameterBadgeType");
+Object.defineProperty(exports, "ParameterBadgeTypeSchema", { enumerable: true, get: function () { return parameterBadgeType_1.ParameterBadgeTypeSchema; } });
+var visibilityParameterCondition_1 = require("./enums/visibilityParameterCondition");
+Object.defineProperty(exports, "VisibilityParameterConditionSchema", { enumerable: true, get: function () { return visibilityParameterCondition_1.VisibilityParameterConditionSchema; } });
+var detectedGame_1 = require("./enums/detectedGame");
+Object.defineProperty(exports, "DetectedGameSchema", { enumerable: true, get: function () { return detectedGame_1.DetectedGameSchema; } });
+// ------------------------------ Objects ------------------------------ //
+var vrcParameter_1 = require("./objects/vrcParameter");
+Object.defineProperty(exports, "VrcParameterSchema", { enumerable: true, get: function () { return vrcParameter_1.VrcParameterSchema; } });
+var background_1 = require("./objects/background");
+Object.defineProperty(exports, "BackgroundSchema", { enumerable: true, get: function () { return background_1.BackgroundSchema; } });
+var parameterButton_1 = require("./objects/parameterButton");
+Object.defineProperty(exports, "ParameterButtonSchema", { enumerable: true, get: function () { return parameterButton_1.ParameterButtonSchema; } });
+var client_1 = require("./objects/client");
+Object.defineProperty(exports, "ClientSchema", { enumerable: true, get: function () { return client_1.ClientSchema; } });
+var group_1 = require("./objects/group");
+Object.defineProperty(exports, "GroupSchema", { enumerable: true, get: function () { return group_1.GroupSchema; } });
+var interactionKey_1 = require("./objects/interactionKey");
+Object.defineProperty(exports, "InteractionKeySchema", { enumerable: true, get: function () { return interactionKey_1.InteractionKeySchema; } });
+var layout_1 = require("./objects/layout");
+Object.defineProperty(exports, "LayoutSchema", { enumerable: true, get: function () { return layout_1.LayoutSchema; } });
+var inviteKey_1 = require("./objects/inviteKey");
+Object.defineProperty(exports, "InviteKeySchema", { enumerable: true, get: function () { return inviteKey_1.InviteKeySchema; } });
+var parameterBadge_1 = require("./objects/parameterBadge");
+Object.defineProperty(exports, "ParameterBadgeSchema", { enumerable: true, get: function () { return parameterBadge_1.ParameterBadgeSchema; } });
+var theme_1 = require("./objects/theme");
+Object.defineProperty(exports, "ThemeSchema", { enumerable: true, get: function () { return theme_1.ThemeSchema; } });
+var tier_1 = require("./objects/tier");
+Object.defineProperty(exports, "TierSchema", { enumerable: true, get: function () { return tier_1.TierSchema; } });
+var update_1 = require("./objects/update");
+Object.defineProperty(exports, "UpdateSchema", { enumerable: true, get: function () { return update_1.UpdateSchema; } });
+var uploadedFile_1 = require("./objects/uploadedFile");
+Object.defineProperty(exports, "UploadedFileSchema", { enumerable: true, get: function () { return uploadedFile_1.UploadedFileSchema; } });
+var keyValue_1 = require("./objects/keyValue");
+Object.defineProperty(exports, "KeyValueSchema", { enumerable: true, get: function () { return keyValue_1.KeyValueSchema; } });
+var callbackParameter_1 = require("./objects/callbackParameter");
+Object.defineProperty(exports, "CallbackParameterSchema", { enumerable: true, get: function () { return callbackParameter_1.CallbackParameterSchema; } });
+Object.defineProperty(exports, "CallbackParameterFormSchema", { enumerable: true, get: function () { return callbackParameter_1.CallbackParameterFormSchema; } });
+var visibilityParameter_1 = require("./objects/visibilityParameter");
+Object.defineProperty(exports, "VisibilityParameterSchema", { enumerable: true, get: function () { return visibilityParameter_1.VisibilityParameterSchema; } });
+Object.defineProperty(exports, "VisibilityParameterFormSchema", { enumerable: true, get: function () { return visibilityParameter_1.VisibilityParameterFormSchema; } });
+var presetButton_1 = require("./objects/presetButton");
+Object.defineProperty(exports, "PresetButtonSchema", { enumerable: true, get: function () { return presetButton_1.PresetButtonSchema; } });
+var parameter_1 = require("./objects/parameter");
+Object.defineProperty(exports, "ParameterSchema", { enumerable: true, get: function () { return parameter_1.ParameterSchema; } });
+var useParameterButton_1 = require("./objects/useParameterButton");
+Object.defineProperty(exports, "UseParameterButtonSchema", { enumerable: true, get: function () { return useParameterButton_1.UseParameterButtonSchema; } });
+var usedParameterButton_1 = require("./objects/usedParameterButton");
+Object.defineProperty(exports, "UsedParameterButtonSchema", { enumerable: true, get: function () { return usedParameterButton_1.UsedParameterButtonSchema; } });
+var usePresetButton_1 = require("./objects/usePresetButton");
+Object.defineProperty(exports, "UsePresetButtonSchema", { enumerable: true, get: function () { return usePresetButton_1.UsePresetButtonSchema; } });
+var usedPresetButton_1 = require("./objects/usedPresetButton");
+Object.defineProperty(exports, "UsedPresetButtonSchema", { enumerable: true, get: function () { return usedPresetButton_1.UsedPresetButtonSchema; } });
+var useAvatarButton_1 = require("./objects/useAvatarButton");
+Object.defineProperty(exports, "UseAvatarButtonSchema", { enumerable: true, get: function () { return useAvatarButton_1.UseAvatarButtonSchema; } });
+var usedAvatarButton_1 = require("./objects/usedAvatarButton");
+Object.defineProperty(exports, "UsedAvatarButtonSchema", { enumerable: true, get: function () { return usedAvatarButton_1.UsedAvatarButtonSchema; } });
+var presetParameter_1 = require("./objects/presetParameter");
+Object.defineProperty(exports, "PresetParameterSchema", { enumerable: true, get: function () { return presetParameter_1.PresetParameterSchema; } });
+Object.defineProperty(exports, "PresetParameterFormSchema", { enumerable: true, get: function () { return presetParameter_1.PresetParameterFormSchema; } });
+var avatarButton_1 = require("./objects/avatarButton");
+Object.defineProperty(exports, "AvatarButtonSchema", { enumerable: true, get: function () { return avatarButton_1.AvatarButtonSchema; } });
+var baseButton_1 = require("./objects/baseButton");
+Object.defineProperty(exports, "BaseButtonSchema", { enumerable: true, get: function () { return baseButton_1.BaseButtonSchema; } });
+var detectedGames_1 = require("./objects/detectedGames");
+Object.defineProperty(exports, "DetectedGamesSchema", { enumerable: true, get: function () { return detectedGames_1.DetectedGamesSchema; } });
+// ------------------------------ Primitives ------------------------------ //
+var parameter_2 = require("./primitives/parameter");
+Object.defineProperty(exports, "parameterPathSchema", { enumerable: true, get: function () { return parameter_2.parameterPathSchema; } });
+Object.defineProperty(exports, "parameterValueAvatarIdSchema", { enumerable: true, get: function () { return parameter_2.parameterValueAvatarIdSchema; } });
+Object.defineProperty(exports, "parameterValueStringSchema", { enumerable: true, get: function () { return parameter_2.parameterValueStringSchema; } });
+Object.defineProperty(exports, "parameterValueNumberSchema", { enumerable: true, get: function () { return parameter_2.parameterValueNumberSchema; } });
+Object.defineProperty(exports, "parameterValueSchema", { enumerable: true, get: function () { return parameter_2.parameterValueSchema; } });
+Object.defineProperty(exports, "parameterValueFormSchema", { enumerable: true, get: function () { return parameter_2.parameterValueFormSchema; } });
+Object.defineProperty(exports, "parameterValueOrAvatarSchema", { enumerable: true, get: function () { return parameter_2.parameterValueOrAvatarSchema; } });
+Object.defineProperty(exports, "parameterValueOrAvatarFormSchema", { enumerable: true, get: function () { return parameter_2.parameterValueOrAvatarFormSchema; } });
+Object.defineProperty(exports, "parameterValueSimpleSchema", { enumerable: true, get: function () { return parameter_2.parameterValueSimpleSchema; } });
+Object.defineProperty(exports, "parameterValueOrAvatarSimpleSchema", { enumerable: true, get: function () { return parameter_2.parameterValueOrAvatarSimpleSchema; } });
+// ------------------------------ API ------------------------------ //
+var api_1 = require("./api");
+Object.defineProperty(exports, "ApiResponseSchema", { enumerable: true, get: function () { return api_1.ApiResponseSchema; } });
+var login_1 = require("./api/login/login");
+Object.defineProperty(exports, "LoginTokenSchema", { enumerable: true, get: function () { return login_1.LoginTokenSchema; } });
+Object.defineProperty(exports, "LoginFormSchema", { enumerable: true, get: function () { return login_1.LoginFormSchema; } });
+var register_1 = require("./api/register/register");
+Object.defineProperty(exports, "RegisterInfoSchema", { enumerable: true, get: function () { return register_1.RegisterInfoSchema; } });
+Object.defineProperty(exports, "RegisterFormSchema", { enumerable: true, get: function () { return register_1.RegisterFormSchema; } });
+Object.defineProperty(exports, "RegisterWithKeyFormSchema", { enumerable: true, get: function () { return register_1.RegisterWithKeyFormSchema; } });
+var profile_1 = require("./api/profile/profile");
+Object.defineProperty(exports, "ProfilePageSchema", { enumerable: true, get: function () { return profile_1.ProfilePageSchema; } });
+Object.defineProperty(exports, "ProfileFormSchema", { enumerable: true, get: function () { return profile_1.ProfileFormSchema; } });
+var layouts_1 = require("./api/layouts/layouts");
+Object.defineProperty(exports, "LayoutsPageSchema", { enumerable: true, get: function () { return layouts_1.LayoutsPageSchema; } });
+var parameterBadges_1 = require("./api/layouts/layout/parameterBadges/parameterBadges");
+Object.defineProperty(exports, "ParameterBadgeFormSchema", { enumerable: true, get: function () { return parameterBadges_1.ParameterBadgeFormSchema; } });
+var layout_2 = require("./api/layouts/layout/layout");
+Object.defineProperty(exports, "LayoutFormSchema", { enumerable: true, get: function () { return layout_2.LayoutFormSchema; } });
+Object.defineProperty(exports, "LayoutCopySchema", { enumerable: true, get: function () { return layout_2.LayoutCopySchema; } });
+var group_2 = require("./api/layouts/group/group");
+Object.defineProperty(exports, "GroupFormSchema", { enumerable: true, get: function () { return group_2.GroupFormSchema; } });
+Object.defineProperty(exports, "GroupCopySchema", { enumerable: true, get: function () { return group_2.GroupCopySchema; } });
+var parameterButton_2 = require("./api/layouts/parameterButton/parameterButton");
+Object.defineProperty(exports, "ParameterButtonFormSchema", { enumerable: true, get: function () { return parameterButton_2.ParameterButtonFormSchema; } });
+Object.defineProperty(exports, "ParameterButtonCopySchema", { enumerable: true, get: function () { return parameterButton_2.ParameterButtonCopySchema; } });
+var interactionKeys_1 = require("./api/interactionKeys/interactionKeys");
+Object.defineProperty(exports, "InteractionKeysPageSchema", { enumerable: true, get: function () { return interactionKeys_1.InteractionKeysPageSchema; } });
+Object.defineProperty(exports, "InteractionKeysFormSchema", { enumerable: true, get: function () { return interactionKeys_1.InteractionKeysFormSchema; } });
+var style_1 = require("./api/style/style");
+Object.defineProperty(exports, "StylePageSchema", { enumerable: true, get: function () { return style_1.StylePageSchema; } });
+var tiers_1 = require("./api/tiers/tiers");
+Object.defineProperty(exports, "TiersPageSchema", { enumerable: true, get: function () { return tiers_1.TiersPageSchema; } });
+Object.defineProperty(exports, "UseInviteKeyFormSchema", { enumerable: true, get: function () { return tiers_1.UseInviteKeyFormSchema; } });
+Object.defineProperty(exports, "GeneratedInviteKeySchema", { enumerable: true, get: function () { return tiers_1.GeneratedInviteKeySchema; } });
+var presetButtons_1 = require("./api/layouts/presetButton/presetButtons");
+Object.defineProperty(exports, "PresetButtonFormSchema", { enumerable: true, get: function () { return presetButtons_1.PresetButtonFormSchema; } });
+Object.defineProperty(exports, "PresetButtonCopySchema", { enumerable: true, get: function () { return presetButtons_1.PresetButtonCopySchema; } });
+var avatarButton_2 = require("./api/layouts/avatarButton/avatarButton");
+Object.defineProperty(exports, "AvatarButtonFormSchema", { enumerable: true, get: function () { return avatarButton_2.AvatarButtonFormSchema; } });
+Object.defineProperty(exports, "AvatarButtonCopySchema", { enumerable: true, get: function () { return avatarButton_2.AvatarButtonCopySchema; } });
+// ------------------------------ Shared ------------------------------ //
+var shared_1 = require("./shared");
+Object.defineProperty(exports, "BaseFormSchema", { enumerable: true, get: function () { return shared_1.BaseFormSchema; } });
+Object.defineProperty(exports, "BaseIdSchema", { enumerable: true, get: function () { return shared_1.BaseIdSchema; } });
+Object.defineProperty(exports, "BaseNullableIdSchema", { enumerable: true, get: function () { return shared_1.BaseNullableIdSchema; } });
+Object.defineProperty(exports, "IdSchema", { enumerable: true, get: function () { return shared_1.IdSchema; } });
+Object.defineProperty(exports, "passwordSchema", { enumerable: true, get: function () { return shared_1.passwordSchema; } });
+Object.defineProperty(exports, "usernameSchema", { enumerable: true, get: function () { return shared_1.usernameSchema; } });
+Object.defineProperty(exports, "OrderSchema", { enumerable: true, get: function () { return shared_1.OrderSchema; } });
+Object.defineProperty(exports, "interactionKeySchema", { enumerable: true, get: function () { return shared_1.interactionKeySchema; } });
+// ------------------------------ Other ------------------------------ //
+var util_1 = require("./util");
+Object.defineProperty(exports, "convertParameterValueFromString", { enumerable: true, get: function () { return util_1.convertParameterValueFromString; } });
+Object.defineProperty(exports, "trimNumberDecimals", { enumerable: true, get: function () { return util_1.trimNumberDecimals; } });
+Object.defineProperty(exports, "imageUrlPathToUrl", { enumerable: true, get: function () { return util_1.imageUrlPathToUrl; } });
+Object.defineProperty(exports, "imageOrientationToAspectRatio", { enumerable: true, get: function () { return util_1.imageOrientationToAspectRatio; } });
+Object.defineProperty(exports, "getForcedItemLabel", { enumerable: true, get: function () { return util_1.getForcedItemLabel; } });
+// ------------------------------ Const ------------------------------ //
+exports.URL_LIVE = 'https://changemyavatarparams.com';
+exports.URL = process.env.NODE_ENV === 'production' ? exports.URL_LIVE : 'http://localhost:8080';

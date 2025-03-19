@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
+    "module": "Node16",
+    "target": "ES2022",
     "outDir": "dist",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "strict": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ]
 }
