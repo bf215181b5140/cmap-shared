@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import { parameterValueAvatarIdSchema, parameterValueSimpleSchema } from '../primitives/parameter';
+import { parameterValueSimpleSchema } from '../primitives/parameter';
+import { idSchema } from '../primitives/shared';
 
 export const UseCustomPresetSchema = z.object({
-  avatarId: parameterValueAvatarIdSchema,
+  layoutId: idSchema,
   parameters: z.array(parameterValueSimpleSchema).max(50),
 });
 

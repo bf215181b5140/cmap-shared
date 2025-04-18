@@ -1,12 +1,12 @@
 import { z } from 'zod';
 export declare const UsedCustomPresetSchema: z.ZodObject<{
-    avatarId: z.ZodString;
+    avatarIds: z.ZodArray<z.ZodString, "many">;
     parameters: z.ZodArray<z.ZodUnion<[z.ZodNumber, z.ZodBoolean]>, "many">;
 }, "strip", z.ZodTypeAny, {
     parameters: (number | boolean)[];
-    avatarId: string;
+    avatarIds: string[];
 }, {
     parameters: (number | boolean)[];
-    avatarId: string;
+    avatarIds: string[];
 }>;
 export type UsedCustomPresetDTO = z.infer<typeof UsedCustomPresetSchema>;

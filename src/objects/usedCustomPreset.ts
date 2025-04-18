@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { parameterValueAvatarIdSchema, parameterValueSimpleSchema } from '../primitives/parameter';
 
 export const UsedCustomPresetSchema = z.object({
-  avatarId: parameterValueAvatarIdSchema,
+  avatarIds: z.array(z.string()),
   parameters: z.array(parameterValueSimpleSchema).max(50),
 });
 
