@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import { parameterValueSimpleSchema } from '../primitives/parameter';
 import { idSchema } from '../primitives/shared';
+import { ParameterSchema } from './parameter';
 
 export const UseCustomPresetSchema = z.object({
   layoutId: idSchema,
-  parameters: z.array(parameterValueSimpleSchema).max(50),
+  parameters: z.array(ParameterSchema).max(50),
 });
 
 export type UseCustomPresetDTO = z.infer<typeof UseCustomPresetSchema>;
