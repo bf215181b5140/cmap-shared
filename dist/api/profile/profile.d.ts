@@ -148,6 +148,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostEnabled: z.ZodBoolean;
         useCostPath: z.ZodNullable<z.ZodString>;
         useCostMax: z.ZodNullable<z.ZodNumber>;
+        customPresetsEnabled: z.ZodBoolean;
+        customPresetsWhitelist: z.ZodArray<z.ZodString, "many">;
+        customPresetsBlacklist: z.ZodArray<z.ZodString, "many">;
         groups: z.ZodOptional<z.ZodArray<z.ZodObject<{
             id: z.ZodString;
             label: z.ZodString;
@@ -493,6 +496,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostEnabled: boolean;
         useCostPath: string | null;
         useCostMax: number | null;
+        customPresetsEnabled: boolean;
+        customPresetsWhitelist: string[];
+        customPresetsBlacklist: string[];
         groups?: {
             id: string;
             width: "None" | "Third" | "Half" | "Full";
@@ -578,6 +584,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostEnabled: boolean;
         useCostPath: string | null;
         useCostMax: number | null;
+        customPresetsEnabled: boolean;
+        customPresetsWhitelist: string[];
+        customPresetsBlacklist: string[];
         groups?: {
             id: string;
             width: "None" | "Third" | "Half" | "Full";
@@ -919,6 +928,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostEnabled: boolean;
         useCostPath: string | null;
         useCostMax: number | null;
+        customPresetsEnabled: boolean;
+        customPresetsWhitelist: string[];
+        customPresetsBlacklist: string[];
         groups?: {
             id: string;
             width: "None" | "Third" | "Half" | "Full";
@@ -1105,6 +1117,9 @@ export declare const ProfilePageSchema: z.ZodObject<{
         useCostEnabled: boolean;
         useCostPath: string | null;
         useCostMax: number | null;
+        customPresetsEnabled: boolean;
+        customPresetsWhitelist: string[];
+        customPresetsBlacklist: string[];
         groups?: {
             id: string;
             width: "None" | "Third" | "Half" | "Full";
