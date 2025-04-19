@@ -35,6 +35,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterButtons: z.ZodNumber;
         presetButtons: z.ZodNumber;
         presetButtonParameters: z.ZodNumber;
+        customPresets: z.ZodBoolean;
         parameterBadges: z.ZodNumber;
         avatarButtons: z.ZodNumber;
         visibilityParameters: z.ZodNumber;
@@ -54,6 +55,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterButtons: number;
         presetButtons: number;
         presetButtonParameters: number;
+        customPresets: boolean;
         parameterBadges: number;
         avatarButtons: number;
         visibilityParameters: number;
@@ -73,6 +75,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterButtons: number;
         presetButtons: number;
         presetButtonParameters: number;
+        customPresets: boolean;
         parameterBadges: number;
         avatarButtons: number;
         visibilityParameters: number;
@@ -96,6 +99,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: z.ZodNumber;
             presetButtons: z.ZodNumber;
             presetButtonParameters: z.ZodNumber;
+            customPresets: z.ZodBoolean;
             parameterBadges: z.ZodNumber;
             avatarButtons: z.ZodNumber;
             visibilityParameters: z.ZodNumber;
@@ -115,6 +119,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -134,6 +139,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -157,6 +163,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -180,6 +187,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -204,6 +212,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: z.ZodNumber;
             presetButtons: z.ZodNumber;
             presetButtonParameters: z.ZodNumber;
+            customPresets: z.ZodBoolean;
             parameterBadges: z.ZodNumber;
             avatarButtons: z.ZodNumber;
             visibilityParameters: z.ZodNumber;
@@ -223,6 +232,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -242,6 +252,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -265,6 +276,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -288,6 +300,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -905,6 +918,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -1038,6 +1052,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterButtons: number;
         presetButtons: number;
         presetButtonParameters: number;
+        customPresets: boolean;
         parameterBadges: number;
         avatarButtons: number;
         visibilityParameters: number;
@@ -1061,6 +1076,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -1094,6 +1110,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;
@@ -1227,6 +1244,7 @@ export declare const ClientSchema: z.ZodObject<{
         parameterButtons: number;
         presetButtons: number;
         presetButtonParameters: number;
+        customPresets: boolean;
         parameterBadges: number;
         avatarButtons: number;
         visibilityParameters: number;
@@ -1250,6 +1268,7 @@ export declare const ClientSchema: z.ZodObject<{
             parameterButtons: number;
             presetButtons: number;
             presetButtonParameters: number;
+            customPresets: boolean;
             parameterBadges: number;
             avatarButtons: number;
             visibilityParameters: number;

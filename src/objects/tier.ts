@@ -15,6 +15,7 @@ export const TierSchema = z.object({
   parameterButtons: z.number(),
   presetButtons: z.number(),
   presetButtonParameters: z.number(),
+  customPresets: z.boolean(),
   parameterBadges: z.number(),
   avatarButtons: z.number(),
   visibilityParameters: z.number(),
