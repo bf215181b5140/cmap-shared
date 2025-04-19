@@ -11,7 +11,7 @@ interface AvatarButtonProps extends DragItemProps {
   onClick?: (event: MouseEvent<HTMLDivElement>, useAvatarButton: UseAvatarButtonDTO) => void;
 }
 
-export function AvatarButtonComponent({ theme, avatarButton, onClick, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: AvatarButtonProps) {
+export function AvatarButtonComponent({ theme, avatarButton, active, onClick, draggable, onDragStart, onDragEnd, onDragOver, onDrop }: AvatarButtonProps) {
 
   const [avatarUsed, setAvatarUsed] = useState(false);
 
@@ -25,7 +25,7 @@ export function AvatarButtonComponent({ theme, avatarButton, onClick, draggable,
   }
 
   return (<AvatarButtonStyled {...{draggable, onDragStart, onDragEnd, onDragOver, onDrop}}>
-    <ParameterButtonStyled className={'parameterButton'} themeDto={theme} onClick={onClickInternal} presetUsed={avatarUsed}>
+    <ParameterButtonStyled className={'parameterButton'} themeDto={theme} onClick={onClickInternal} avatarUsed={avatarUsed} aria-current={active}>
       {avatarButton.image && <ParameterButtonPicture src={imageUrlPathToUrl(avatarButton.image.urlPath)} imageOrientation={avatarButton.imageOrientation} />}
       {avatarButton.label && <ParameterButtonLabel>{avatarButton.label}</ParameterButtonLabel>}
     </ParameterButtonStyled>
@@ -39,12 +39,12 @@ const AvatarButtonStyled = styled.div`
   position: relative;
 `;
 
-const ParameterButtonStyled = styled(ButtonBaseStyle)<{ presetUsed: boolean }>`
+const ParameterButtonStyled = styled(ButtonBaseStyle)<{ avatarUsed: boolean }>`
   min-height: 72px;
   overflow: hidden;
   position: relative;
 
-  ${props => props.presetUsed && css`transform: scale(1) !important;`}
+  ${props => props.avatarUsed && css`transform: scale(1) !important;`}
 `;
 
 const ParameterButtonPicture = styled.div<{ src: string, imageOrientation: ImageOrientation }>`
