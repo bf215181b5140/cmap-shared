@@ -6,5 +6,5 @@ const shared_1 = require("../primitives/shared");
 const parameter_1 = require("./parameter");
 exports.UseCustomPresetSchema = zod_1.z.object({
     layoutId: shared_1.idSchema,
-    parameters: zod_1.z.array(parameter_1.ParameterSchema).max(50),
+    parameters: zod_1.z.array(parameter_1.ParameterSchema).max(100),
 });

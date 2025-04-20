@@ -3,7 +3,7 @@ import { ParameterSchema } from './parameter';
 
 export const UsedCustomPresetSchema = z.object({
   avatarIds: z.array(z.string()),
-  parameters: z.array(ParameterSchema).max(50),
+  parameters: z.array(ParameterSchema).max(100),
 });
 
 export type UsedCustomPresetDTO = z.infer<typeof UsedCustomPresetSchema>;
