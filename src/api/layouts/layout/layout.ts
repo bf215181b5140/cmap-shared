@@ -8,10 +8,10 @@ export const LayoutFormSchema = z.object({
   avatars: z.array(parameterValueAvatarIdSchema),
   healthEnabled: z.boolean(),
   healthPath: parameterPathSchema.nullable(),
-  healthMax: z.number().nullable(),
+  healthMax: z.number().int().nullable(),
   useCostEnabled: z.boolean(),
   useCostPath: parameterPathSchema.nullable(),
-  useCostMax: z.number().nullable(),
+  useCostMax: z.number().int().nullable(),
 });
 
 export type LayoutFormDTO = z.infer<typeof LayoutFormSchema>;

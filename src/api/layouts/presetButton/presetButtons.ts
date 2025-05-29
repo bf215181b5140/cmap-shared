@@ -12,7 +12,7 @@ export const PresetButtonFormSchema = z.object({
   parameters: z.array(PresetParameterFormSchema),
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
-  useCost: z.number().nullable(),
+  useCost: z.number().int().nullable(),
   callbackParameters: z.array(CallbackParameterFormSchema),
   visibilityParameters: z.array(VisibilityParameterFormSchema),
   interactionKeyId: interactionKeyIdSchema,

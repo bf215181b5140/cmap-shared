@@ -10,10 +10,10 @@ exports.LayoutFormSchema = zod_1.z.object({
     avatars: zod_1.z.array(parameter_1.parameterValueAvatarIdSchema),
     healthEnabled: zod_1.z.boolean(),
     healthPath: parameter_1.parameterPathSchema.nullable(),
-    healthMax: zod_1.z.number().nullable(),
+    healthMax: zod_1.z.number().int().nullable(),
     useCostEnabled: zod_1.z.boolean(),
     useCostPath: parameter_1.parameterPathSchema.nullable(),
-    useCostMax: zod_1.z.number().nullable(),
+    useCostMax: zod_1.z.number().int().nullable(),
 });
 exports.LayoutCopySchema = zod_1.z.object({
     id: shared_1.idSchema,

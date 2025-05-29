@@ -16,7 +16,7 @@ export const ParameterButtonFormSchema = z.object({
   buttonType: ParameterButtonTypeSchema,
   imageOrientation: ImageOrientationSchema,
   order: z.number(),
-  useCost: z.number().nullable(),
+  useCost: z.number().int().nullable(),
   callbackParameters: z.array(CallbackParameterFormSchema),
   visibilityParameters: z.array(VisibilityParameterFormSchema),
   interactionKeyId: interactionKeyIdSchema,

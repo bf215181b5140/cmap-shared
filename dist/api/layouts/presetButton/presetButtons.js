@@ -14,7 +14,7 @@ exports.PresetButtonFormSchema = zod_1.z.object({
     parameters: zod_1.z.array(presetParameter_1.PresetParameterFormSchema),
     imageOrientation: imageOrientation_1.ImageOrientationSchema,
     order: zod_1.z.number(),
-    useCost: zod_1.z.number().nullable(),
+    useCost: zod_1.z.number().int().nullable(),
     callbackParameters: zod_1.z.array(callbackParameter_1.CallbackParameterFormSchema),
     visibilityParameters: zod_1.z.array(visibilityParameter_1.VisibilityParameterFormSchema),
     interactionKeyId: shared_1.interactionKeyIdSchema,

@@ -1,6 +1,4 @@
 import { z } from 'zod';
-import { UploadedFileSchema } from './uploadedFile';
-import { ImageOrientationSchema } from '../enums/imageOrientation';
 import { VisibilityParameterSchema } from './visibilityParameter';
 import { CallbackParameterSchema } from './callbackParameter';
 import { ParameterSchema } from './parameter';
